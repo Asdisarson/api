@@ -9,7 +9,7 @@ router.get('/:id', function(req, res, next) {
     var token = db.JSON();
     var options = {
         'method': 'GET',
-        'url': 'https://stage-api.travia.is/api/v1/properties/'+ req.params.room + '/rooms',
+        'url': 'https://stage-api.travia.is/api/v1/properties/'+ req.params.id + '/rooms',
         'headers': {
             'Authorization': 'Bearer ' + token.access_token
         }
