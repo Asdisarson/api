@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
         }
     };
     if (params.propertyId) {
-        options.url = options.url + 'propertyId='+params.propertyId;
+        options.url = options.url + '&propertyId='+params.propertyId;
     }
     if (params.numberOfExtraBeds) {
         options.url = options.url + '&numberOfExtraBeds=' + params.numberOfExtraBeds;
