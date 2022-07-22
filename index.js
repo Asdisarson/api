@@ -1,3 +1,4 @@
+    const PORT = process.env.PORT || 5000
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -9,7 +10,7 @@ var queriesRouter = require('./routes/queries');
 var roomsRouter = require('./routes/rooms');
 var cartRouter = require('./routes/cart');
 const JSONdb = require("simple-json-db");
-
+var app = express()
 
 app.use(logger('dev'));
 app.use(express.urlencoded({ extended: false }));
@@ -54,9 +55,9 @@ app.use('/properties', propertiesRouter);
 app.use('/queries', queriesRouter);
 app.use('/rooms', roomsRouter);
 app.use('/cart', cartRouter);
-
-let port = process.env.PORT;
-if (port == null || port == "") {
-    port = 8000;
-}
-app.listen(port);
+app
+  .use(express.static(path.join(__dirname, 'public')))
+  .set('views', path.join(__dirname, 'views'))
+  .set('view engine', 'ejs')
+  .get('/', (req, res) => res.render('pages/index'))
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
