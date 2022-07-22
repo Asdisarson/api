@@ -2,7 +2,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const port = 8080   
 
 var indexRouter = require('./routes/index');
 var propertiesRouter = require('./routes/properties');
@@ -57,6 +56,8 @@ app.use('/queries', queriesRouter);
 app.use('/rooms', roomsRouter);
 app.use('/cart', cartRouter);
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+let port = process.env.PORT;
+if (port == null || port == "") {
+    port = 8000;
+}
+app.listen(port);   
