@@ -14,23 +14,23 @@ router.get('/', function(req, res, next) {
             'Authorization': 'Bearer ' + token.access_token
         }
     };
-    if (params.propertyId) {
-        options.url = options.url + '&propertyId='+params.propertyId;
+    if (req.params.propertyId) {
+        options.url = options.url + '&propertyId='+req.params.propertyId;
     }
-    if (params.numberOfExtraBeds) {
-        options.url = options.url + '&numberOfExtraBeds=' + params.numberOfExtraBeds;
+    if (req.params.numberOfExtraBeds) {
+        options.url = options.url + '&numberOfExtraBeds=' + req.params.numberOfExtraBeds;
     }
-    if (params.numberOfRooms) {
-        options.url = options.url + '&numberOfRooms='+params.numberOfRooms;
+    if (req.params.numberOfRooms) {
+        options.url = options.url + '&numberOfRooms='+req.params.numberOfRooms;
     }
-    if (params.roomIds) {
-        options.url = options.url + '&roomIds='+params.roomIds;
+    if (req.params.roomIds) {
+        options.url = options.url + '&roomIds='+req.params.roomIds;
     }
-    if (params.end) {
-        options.url = options.url + '&end='+params.end;
+    if (req.params.end) {
+        options.url = options.url + '&end='+req.params.end;
     }
-    if (params.start) {
-        options.url = options.url + '&start='+params.start;
+    if (req.params.start) {
+        options.url = options.url + '&start='+req.params.start;
     }
 
     request(options, function (error, response) {
