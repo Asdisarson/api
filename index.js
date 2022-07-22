@@ -52,7 +52,7 @@ app.use((req, res, next) => {
 })
 app.use('/', indexRouter);
 app.use('/properties', propertiesRouter);
-app.use('/queries', queriesRouter);
+app.use('/search', queriesRouter);
 app.use('/rooms', roomsRouter);
 app.use('/cart', cartRouter);
 app
