@@ -19,7 +19,7 @@ router.get('', function(req, res, next) {
     if(req.query.room){
         options = {
             'method': 'GET',
-            'url': 'https://stage-api.travia.is/api/v1/properties/' + req.params.id + '/rooms',
+            'url': 'https://stage-api.travia.is/api/v1/properties/' + req.query.id + '/rooms',
             'headers': {
                 'Authorization': 'Bearer ' + token.access_token
             }
