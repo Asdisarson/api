@@ -14,6 +14,9 @@ router.get('/', function(req, res, next) {
             'Authorization': 'Bearer ' + token.access_token
         }
     };
+    if(req.query) {
+        options.url = options.url + '?';
+    }
     if (req.query.propertyId) {
         options.url = options.url + '&propertyId='+req.query.propertyId;
     }
@@ -32,7 +35,12 @@ router.get('/', function(req, res, next) {
     if (req.query.start) {
         options.url = options.url + '&start='+req.query.start;
     }
-
+    if (req.query.numberOfPeople) {
+        options.url = options.url + '&numberOfPeople='+req.query.numberOfPeople;
+    }
+    if (req.query.numberOfExtraBeds) {
+        options.url = options.url + '&numberOfExtraBeds='+req.query.numberOfExtraBeds;
+    }
     request(options, function (error, response) {
         if (error) throw new Error(error)
         console.log(response.body);
