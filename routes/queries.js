@@ -44,7 +44,15 @@ router.get('/', function(req, res, next) {
         request(options, function (error, response) {
             if (error) throw new Error(error)
             console.log(response.body);
-            res.send(JSON.parse(response.body));
+            var array = [];
+            array.push(
+                response.body
+            );
+            res.send(
+                {
+                    results: JSON.parse(array)
+                }
+            )
         });
     }
     else {
