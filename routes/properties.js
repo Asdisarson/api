@@ -43,8 +43,11 @@ router.get('', function(req, res, next) {
                   array.result.push(
                       JSON.parse(response.body))
               }
+              else {
               array.result =
                   JSON.parse(response.body)
+
+              }
 
 
               res.send(array);
