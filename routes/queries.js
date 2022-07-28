@@ -4,7 +4,7 @@ var request = require('request');
 const JSONdb = require("simple-json-db");
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('', function(req, res, next) {
     var db = new JSONdb('./db.json');
     var token = db.JSON();
     var options = {
@@ -44,15 +44,15 @@ router.get('/', function(req, res, next) {
         request(options, function (error, response) {
             if (error) throw new Error(error)
             console.log(response.body);
-            var array = [];
-            array.push(
-                response.body
-            );
-            res.send(
+            var array = {
+            result : []}
+            array.result.push(
                 JSON.parse(response.body)
-            )
-        });
-    }
+            );
+
+            res.send(array);
+
+}) }
     else {
         res.sendStatus(503)
     }

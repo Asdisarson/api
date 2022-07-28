@@ -16,10 +16,10 @@ router.get('', function(req, res, next) {
             }
         };
     }
-    if(req.query.room){
+    else if(req.query.room){
         options = {
             'method': 'GET',
-            'url': 'https://stage-api.travia.is/api/v1/properties/' + req.query.id + '/rooms',
+            'url': 'https://stage-api.travia.is/api/v1/properties/' + req.query.room + '/rooms',
             'headers': {
                 'Authorization': 'Bearer ' + token.access_token
             }
@@ -36,6 +36,7 @@ router.get('', function(req, res, next) {
         ;
           request(options, function (error, response) {
             if (error) throw new Error(error)
+
             console.log(response.body);
             res.send(response.body);
         });
