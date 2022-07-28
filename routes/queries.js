@@ -48,13 +48,8 @@ router.get('/', function(req, res, next) {
             array.push(
                 response.body
             );
-            array.push(
-                response.body
-            )
             res.send(
-                {
-                    results: JSON.parse(array)
-                }
+                JSON.parse(response.body)
             )
         });
     }
