@@ -39,9 +39,9 @@ router.get('', function(req, res, next) {
               console.log(response.body);
               var array = {
                   result : []}
-              array.result.push(
+              array.result =
                   JSON.parse(response.body)
-              );
+
 
               res.send(array);
         });
