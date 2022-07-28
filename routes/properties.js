@@ -36,9 +36,14 @@ router.get('', function(req, res, next) {
         ;
           request(options, function (error, response) {
             if (error) throw new Error(error)
+              console.log(response.body);
+              var array = {
+                  result : []}
+              array.result.push(
+                  JSON.parse(response.body)
+              );
 
-            console.log(response.body);
-            res.send(response.body);
+              res.send(array);
         });
 });
 module.exports = router;
