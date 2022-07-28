@@ -46,7 +46,7 @@ router.get('/', function(req, res, next) {
             console.log(response.body);
             var array = [];
             array.push(
-                response.body
+                response.body,response.body
             );
             res.send(
                 {
