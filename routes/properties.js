@@ -39,6 +39,10 @@ router.get('', function(req, res, next) {
               console.log(response.body);
               var array = {
                   result : []}
+              if(req.query.id){
+                  array.result.push(
+                      JSON.parse(response.body))
+              }
               array.result =
                   JSON.parse(response.body)
 
