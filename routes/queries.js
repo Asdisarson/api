@@ -46,8 +46,11 @@ router.get('/', function(req, res, next) {
             console.log(response.body);
             var array = [];
             array.push(
-                response.body,response.body
+                response.body
             );
+            array.push(
+                response.body
+            )
             res.send(
                 {
                     results: JSON.parse(array)
