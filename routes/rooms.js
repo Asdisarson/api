@@ -1,11 +1,34 @@
 var express = require('express');
 const JSONdb = require("simple-json-db");
 const request = require("request");
+const {save} = require("./request");
 var router = express.Router();
-
-/* GET users listing. */
 router.get('/:id', function(req, res, next) {
     var db = new JSONdb('./db.json');
+    var cached = db.JSON();
+    if(cached.cache)  {
+        next();
+    }
+    else {
+        save();
+            next()
+
+    }
+});
+router.get('/:id', function(req, res, next) {
+    var db = new JSONdb('./data.json');
+    var data = db.JSON();
+    var result = data.data.find(obj => {
+        return obj.id.toString() === req.params.id;
+    })
+    res.send({
+        data:result.rooms
+    });
+});
+
+/* GET users listing.
+router.get('/:id', function(req, res, next) {
+  /*  var db = new JSONdb('./db.json');
     var token = db.JSON();
     var options = {
         'method': 'GET',
@@ -24,6 +47,8 @@ router.get('/:id', function(req, res, next) {
              JSON.parse(response.body)
          );
 
-         res.send(array);    });});
+         res.send(array);    });
 
+
+         });*/
 module.exports = router;

@@ -10,24 +10,48 @@ var queriesRouter = require('./routes/queries');
 var roomsRouter = require('./routes/rooms');
 var cartRouter = require('./routes/cart');
 const JSONdb = require("simple-json-db");
+    const request = require("request");
+    const options = require("./routes/auth");
+    const func = require("./routes/request");
 var app = express()
 
 app.use(logger('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+    var db = new JSONdb('./db.json');
+    var dbUpdated = new JSONdb('./lastUpdate.json');
+    dbUpdated.JSON({
+        lastModified:false
+    })
+    dbUpdated.sync()
+    app.use((req, res, next) => {
+        var dbUpdated = new JSONdb('./lastUpdate.json');
+        var updated = dbUpdated.JSON();
+        const date1 = new Date(updated.lastModified);
+        const date2 = new Date();
+        const diffTime = Math.abs(date2 - date1);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        if(diffDays>1||!updated.lastModified) {
+            return request(options, function (error, response) {
+                if (error) throw new Error(error)
+                console.log(JSON.parse(response.body))
+                var json = JSON.parse(response.body);
+                db.JSON(json);
+                db.sync();
+                func.save();
 
-app.use((req, res, next) => {
-    var request = require('request')
-  var db = new JSONdb('./db.json');
-        var options = require('./routes/auth.js')
-         return request(options, function (error, response) {
-            if (error) throw new Error(error)
-             var json = JSON.parse(response.body);
-            db.JSON(json);
-            db.sync();
-            return next();
-        });
+                    next();
+
+            });
+        }
+        else{
+            db.JSON({cache:true})
+            db.sync()
+        }
+         next()
+
+
         // -----------------------------------------------------------------------
     // authentication middleware
 /*
