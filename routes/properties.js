@@ -21,7 +21,7 @@ router.get('', function (req, res, next){
     {var db = new JSONdb('./data.json');
         var data = db.JSON();
         var result = data.data.filter(obj => {
-            return obj.id.toString() === req.query.hotelId;
+            return obj.hotelId.toString() === req.query.hotelId;
         })
         res.send({
             data:result
@@ -70,7 +70,7 @@ router.get('/:id', function(req, res, next) {
     var db = new JSONdb('./data.json');
     var data = db.JSON();
     var result = data.data.find(obj => {
-        return obj.id.toString() === req.params.hotelId;
+        return obj.hotelId.toString() === req.params.hotelId;
     })
     res.send({
         data:result
