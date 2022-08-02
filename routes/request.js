@@ -121,14 +121,17 @@ module.exports = {
                             var hotelargs = {
                                 id: response1.body.id,
                                 name: response1.body.name,
+                                description: response1.body.description,
                                 address: response1.body.location.address,
                                 city: response1.body.location.city,
+                                country: response1.body.country,
                                 postalCode: response1.body.location.postalCode,
                                 latitude: response1.body.location.latitude,
                                 longitude: response1.body.location.longitude,
                                 email: response1.body.contact.email,
                                 phone: response1.body.contact.phone,
                                 propertyTypeName: response1.body.propertyTypeName,
+                                amenity: response1.body.amenity,
                                 rooms: []
                             }
 

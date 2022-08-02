@@ -20,11 +20,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
     var db = new JSONdb('./db.json');
-    var dbUpdated = new JSONdb('./lastUpdate.json');
-    dbUpdated.JSON({
+    var clean = new JSONdb('./lastUpdate.json');
+    clean.JSON({
         lastModified:false
     })
-    dbUpdated.sync()
+    clean.sync()
     app.use((req, res, next) => {
         var dbUpdated = new JSONdb('./lastUpdate.json');
         var updated = dbUpdated.JSON();
