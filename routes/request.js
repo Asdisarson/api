@@ -37,7 +37,7 @@ module.exports = {
         });
     },
     search: function(params) {
-        var db = new JSONdb('./db.json');
+       var db = new JSONdb('./db.json');
         var request = require('request');
         var token = db.JSON();
         var options = {
@@ -132,9 +132,11 @@ module.exports = {
                                 phone: response1.body.contact.phone,
                                 propertyTypeName: response1.body.propertyTypeName,
                                 amenity: response1.body.amenity,
-                                rooms: []
-                            }
+                                rooms: [],
+                                featuredImage : "",
+                                images:[],
 
+                            }
                             response2.body = JSON.parse(response2.body)
                             for (var j = 0; j < response2.body.length; j++) {
                                 var imgs = [];
@@ -151,12 +153,24 @@ module.exports = {
                                     propertyId: response2.body[j].propertyId,
                                     name: response2.body[j].name,
                                     minOccupancy: response2.body[j].minOccupancy,
+                                    maxOccupancy: response2.body[j].maxOccupancy,
+                                    roomSize: response2.body[j].roomSize,
+                                    description: response2.body[j].description,
+                                    roomAmenityNames: response2.body[j].roomAmenityNames,
                                     wholeYearAvailability: response2.body[j].wholeYearAvailability,
                                     roomTypeName: response2.body[j].roomTypeName,
                                     roomCategoryName: response2.body[j].roomCategoryName,
                                     img: imgs[0],
                                     gallery: imgs,
-                                    addons: addons
+                                    addons: addons,
+                                    price:0,
+                                    currency:"",
+                                    currencySign:"",
+                                    originalPrice:0,
+                                    originalCurrency:"",
+                                    originalSign:"",
+
+
                                 }
 
                                 hotelargs.rooms.push(roomargs);
@@ -180,6 +194,24 @@ module.exports = {
         });
 
 
+    },
+    getData: function(roomId, propertyId,i,y) {
+
+        var date= new Date();
+        var newDate = new Date(date.setMonth(date.getMonth()+i));
+        var secDate = new Date(date.setMonth(date.getMonth()+y));
+
+        var params = {
+            roomIds: roomId,
+            propertyId: propertyId,
+            numberOfRooms:1,
+            numberOfExtraBeds:1,
+            end: secDate.toISOString(),
+            start: newDate.toISOString()
+
+        }
+        var data = this.search(params)
+        return data
     },
     rooms: function(room) {
         var db = new JSONdb('./db.json');

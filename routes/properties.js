@@ -20,8 +20,8 @@ router.get('', function (req, res, next){
     if(req.query.id)
     {var db = new JSONdb('./data.json');
         var data = db.JSON();
-        var result = data.data.find(obj => {
-            return obj.id.toString() === req.query.id;
+        var result = data.data.filter(obj => {
+            return obj.id.toString() === req.query.hotelId;
         })
         res.send({
             data:result
