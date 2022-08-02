@@ -119,7 +119,7 @@ module.exports = {
                             if (error2) throw new Error(error2)
                             console.log(JSON.parse(response2.body))
                             var hotelargs = {
-                                id: response1.body.id,
+                                hotelId: response1.body.id,
                                 name: response1.body.name,
                                 description: response1.body.description,
                                 address: response1.body.location.address,
@@ -149,7 +149,7 @@ module.exports = {
                                 }
 
                                 var roomargs = {
-                                    id: response2.body[j].id,
+                                    roomId: response2.body[j].id,
                                     propertyId: response2.body[j].propertyId,
                                     name: response2.body[j].name,
                                     minOccupancy: response2.body[j].minOccupancy,
