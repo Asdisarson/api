@@ -3,7 +3,7 @@ const JSONdb = require("simple-json-db");
 const request = require("request");
 const {save} = require("./request");
 var router = express.Router();
-router.get(':id', function(req, res, next) {
+router.get('', function(req, res, next) {
     var db = new JSONdb('./db.json');
     var cached = db.JSON();
     if(cached.cache)  {
@@ -15,7 +15,7 @@ router.get(':id', function(req, res, next) {
 
     }
 });
-router.get(':id', function(req, res, next) {
+router.get('', function(req, res, next) {
     var db = new JSONdb('./data.json');
     var data = db.JSON();
     var result = data.data.find(obj => {
