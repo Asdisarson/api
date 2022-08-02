@@ -17,7 +17,7 @@ router.get('', function(req, res, next) {
     }
 });
 router.get('', function (req, res, next){
-    if(req.query.id)
+    if(req.query.hotelId)
     {var db = new JSONdb('./data.json');
         var data = db.JSON();
         var result = data.data.filter(obj => {
