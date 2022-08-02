@@ -26,30 +26,31 @@ app.use(cookieParser());
     })
     clean.sync()
     app.use((req, res, next) => {
-        var dbUpdated = new JSONdb('./lastUpdate.json');
-        var updated = dbUpdated.JSON();
-        const date1 = new Date(updated.lastModified);
-        const date2 = new Date();
-        const diffTime = Math.abs(date2 - date1);
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-        if(diffDays>1||!updated.lastModified) {
-            return request(options, function (error, response) {
-                if (error) throw new Error(error)
-                console.log(JSON.parse(response.body))
-                var json = JSON.parse(response.body);
-                db.JSON(json);
-                db.sync();
-                func.save();
+
+            var dbUpdated = new JSONdb('./lastUpdate.json');
+            var updated = dbUpdated.JSON();
+            const date1 = new Date(updated.lastModified);
+            const date2 = new Date();
+            const diffTime = Math.abs(date2 - date1);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            if(diffDays>1||!updated.lastModified) {
+                return request(options, function (error, response) {
+                    if (error) throw new Error(error)
+                    console.log(JSON.parse(response.body))
+                    var json = JSON.parse(response.body);
+                    db.JSON(json);
+                    db.sync();
+                    var pattern = /search/;
+                    if(!pattern.exec(req.path)) {
+                        func.save();
+                    }
 
                     next();
 
-            });
-        }
-        else{
-            db.JSON({cache:true})
-            db.sync()
-        }
-         next()
+                });
+            }
+                next()
+
 
 
         // -----------------------------------------------------------------------
