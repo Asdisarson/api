@@ -53,7 +53,7 @@ router.get('/', function (req, res, next){
     console.log(data.JSON());
     res.send(data.JSON());
 })
-router.get('/:id', function(req, res, next) {
+router.get('/:hotelId', function(req, res, next) {
     var db = new JSONdb('./db.json');
     var cached = db.JSON();
     if(cached.cache)  {
@@ -66,7 +66,7 @@ router.get('/:id', function(req, res, next) {
 
     }
 });
-router.get('/:id', function(req, res, next) {
+router.get('/:hotelId', function(req, res, next) {
     var db = new JSONdb('./data.json');
     var data = db.JSON();
     var result = data.data.find(obj => {
