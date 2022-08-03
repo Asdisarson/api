@@ -105,21 +105,20 @@ module.exports = {
             };
             request(options, function (error, response) {
                 if (error) throw new Error(error)
-                console.log(JSON.parse(response.body))
                 response.body = JSON.parse(response.body)
                 var request1 = require('request');
+
                 var request2 = require('request');
+                var request3 = require('request');
                 for (var i = 0; i < response.body.length; i++) {
                     options.url = 'https://stage-api.travia.is/api/v1/properties/' + response.body[i].id + '/details/cooperating';
                     request1(options, function (error1, response1) {
                         if (error1) throw new Error(error1)
-                        console.log(JSON.parse(response1.body))
                         response1.body = JSON.parse(response1.body)
                         options.url = 'https://stage-api.travia.is/api/v1/properties/' + response1.body.id + '/rooms';
                         request2(options, function (error2, response2) {
                             var storage = data.JSON();
                             if (error2) throw new Error(error2)
-                            console.log(JSON.parse(response2.body))
                             var hotelargs = {
                                 hotelId: response1.body.id,
                                 name: response1.body.name,
@@ -139,7 +138,19 @@ module.exports = {
                                 images: [],
 
                             }
-                            response2.body = JSON.parse(response2.body)
+                            options.url = 'https://stage-api.travia.is/api/v1/properties/' + response1.body.id + '/files';
+
+                            request3(options, function (error3,response3)  {
+                                if (error3) throw new Error(error3)
+                                response3.body = JSON.parse(response3.body)
+                                for (var k = 0; k < response3.body.length; k++) {
+                                    hotelargs.images.push(response3.body[k].filePath);
+                                    if(response3.body.length === (k + 1)) {
+                                        hotelargs.featuredImage = response3.body[k].filePath
+                                    }
+                                }
+
+                                response2.body = JSON.parse(response2.body)
                             for (var j = 0; j < response2.body.length; j++) {
 
                                 var imgs = [];
@@ -182,7 +193,7 @@ module.exports = {
                             data.JSON(storage);
                             data.sync();
                         })
-                    })
+                        })  })
                 }
             });
 
@@ -193,10 +204,50 @@ module.exports = {
             updated.sync()
             cache.JSON({cache: true})
             cache.sync()
+
             return true;
         });
 
 
+    },
+    getImage : function() {
+        var data = new JSONdb('./data.json')
+
+        var upt = data.JSON();
+
+        var date = new Date();
+        Date.prototype.addDays = function(days) {
+            var date = new Date(this.valueOf());
+            date.setDate(date.getDate() + days);
+            return date;
+        }
+
+        date.addDays(30);
+        var secDate = new Date();
+        secDate.addDays(31)
+        for (var i = 0; i < upt.length; i++) {
+
+            options.url = 'https://stage-api.travia.is/api/v1/travelAgents/577/search/availability'
+            options.url = options.url + '?propertyId=' + upt[i].rooms[0].propertyId;
+            options.url = options.url + '&numberOfExtraBeds='+ 1;
+            options.url = options.url + '&numberOfRooms=' + 1;
+            options.url = options.url + '&roomIds=' + upt[i].rooms[0].roomId;
+
+            options.url = options.url + '&end=' + secDate.toISOString().split('T')[0]
+            options.url = options.url + '&start=' + date.toISOString().split('T')[0]
+            request(options, function (error, response) {
+                if (error) throw new Error(error)
+                console.log(response.body)
+                response.body = JSON.parse(response.body)
+                for (var j = 0; j < response.body.images.length; j++) {
+                    if(response.body.images.length === (j+1)) {
+                        upt[j].featuredImage = response.body.images[j].filePath
+                    }
+                }
+                upt[j].gallery = response.images;
+                data.JSON(upt);
+            });
+        }
     },
     rooms: function(room) {
         var db = new JSONdb('./db.json');

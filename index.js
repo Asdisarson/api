@@ -45,11 +45,9 @@ const JSONdb = require("simple-json-db");
         if(pattern.exec(req.path)) {
             return request(options, function (error, response) {
                 if (error) throw new Error(error)
-                console.log(JSON.parse(response.body))
                 var json = JSON.parse(response.body);
                 db.JSON(json);
                 db.sync();
-                func.save();
 
                 next();
 
@@ -58,13 +56,10 @@ const JSONdb = require("simple-json-db");
         if(diffDays>1||!updated.lastModified||!cached.cache) {
             return request(options, function (error, response) {
                 if (error) throw new Error(error)
-                console.log(JSON.parse(response.body))
                 var json = JSON.parse(response.body);
                 db.JSON(json);
                 db.sync();
-                if(!pattern.exec(req.path)) {
-                    func.save();
-                }
+              func.save();
 
                 next();
 
