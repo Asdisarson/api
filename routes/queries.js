@@ -173,11 +173,11 @@ router.get('', function(req, res, next) {
                 data.rooms.push(room)
             }
 
+                array.result.push(
+                    data
+                );
             }
 
-            array.result.push(
-                data
-            );
 
             res.send(array);
 

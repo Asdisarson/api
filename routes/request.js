@@ -117,31 +117,32 @@ module.exports = {
                         response1.body = JSON.parse(response1.body)
                         options.url = 'https://stage-api.travia.is/api/v1/properties/' + response1.body.id + '/rooms';
                         request2(options, function (error2, response2) {
-                            var storage = data.JSON();
                             if (error2) throw new Error(error2)
-                            var hotelargs = {
-                                hotelId: response1.body.id,
-                                name: response1.body.name,
-                                description: response1.body.description,
-                                address: response1.body.location.address,
-                                city: response1.body.location.city,
-                                country: response1.body.country,
-                                postalCode: response1.body.location.postalCode,
-                                latitude: response1.body.location.latitude,
-                                longitude: response1.body.location.longitude,
-                                email: response1.body.contact.email,
-                                phone: response1.body.contact.phone,
-                                propertyTypeName: response1.body.propertyTypeName,
-                                amenity: response1.body.amenity,
-                                rooms: [],
-                                featuredImage: "",
-                                images: [],
 
-                            }
                             options.url = 'https://stage-api.travia.is/api/v1/properties/' + response1.body.id + '/files';
 
                             request3(options, function (error3,response3)  {
                                 if (error3) throw new Error(error3)
+                                var storage = data.JSON();
+                                var hotelargs = {
+                                    hotelId: response1.body.id,
+                                    name: response1.body.name,
+                                    description: response1.body.description,
+                                    address: response1.body.location.address,
+                                    city: response1.body.location.city,
+                                    country: response1.body.country,
+                                    postalCode: response1.body.location.postalCode,
+                                    latitude: response1.body.location.latitude,
+                                    longitude: response1.body.location.longitude,
+                                    email: response1.body.contact.email,
+                                    phone: response1.body.contact.phone,
+                                    propertyTypeName: response1.body.propertyTypeName,
+                                    amenity: response1.body.amenity,
+                                    rooms: [],
+                                    featuredImage: "",
+                                    images: [],
+
+                                }
                                 response3.body = JSON.parse(response3.body)
                                 for (var k = 0; k < response3.body.length; k++) {
                                     hotelargs.images.push(response3.body[k].filePath);

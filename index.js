@@ -27,7 +27,14 @@ const JSONdb = require("simple-json-db");
 
 
     var db = new JSONdb('./db.json');
+    db.JSON({})
+    db.sync()
+    var obj = new JSONdb('./data.json');
+    obj.JSON({})
+    obj.sync()
     var c = new JSONdb('./cache.json');
+    c.JSON({})
+    c.sync()
     var clean = new JSONdb('./lastUpdate.json');
     clean.JSON({
         lastModified:false
