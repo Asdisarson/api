@@ -1,5 +1,6 @@
 var request = require('request');
 const JSONdb = require('simple-json-db');
+const func = require("./functions.js");
 
 
 
@@ -133,18 +134,17 @@ module.exports = {
                                 propertyTypeName: response1.body.propertyTypeName,
                                 amenity: response1.body.amenity,
                                 rooms: [],
-                                featuredImage : "",
-                                images:[],
+                                featuredImage: "",
+                                images: [],
 
                             }
                             response2.body = JSON.parse(response2.body)
                             for (var j = 0; j < response2.body.length; j++) {
-                                var args = this.getData(response2.body[j].id, response2.body[j].propertyId,3,4)
-                                console.log(args)
+
                                 var imgs = [];
                                 for (var k = 0; k < response2.body[j].files.length; k++) {
                                     imgs.push(response2.body[j].files[k].filePath);
-                               }
+                                }
                                 var addons = []
                                 for (var k = 0; k < response2.body[j].roomAddOns.length; k++) {
                                     addons.push(response2.body[j].roomAddOns[k].addOnName)
@@ -165,12 +165,12 @@ module.exports = {
                                     img: imgs[0],
                                     gallery: imgs,
                                     addons: addons,
-                                    price:0,
-                                    currency:"",
-                                    currencySign:"",
-                                    originalPrice:0,
-                                    originalCurrency:"",
-                                    originalSign:"",
+                                    price: 0,
+                                    currency: "",
+                                    currencySign: "",
+                                    originalPrice: 0,
+                                    originalCurrency: "",
+                                    originalSign: "",
 
 
                                 }
@@ -190,30 +190,12 @@ module.exports = {
                 lastModified: Date().toString()
             })
             updated.sync()
-            db.JSON({cache:true})
+            db.JSON({cache: true})
             db.sync()
             return true;
         });
 
 
-    },
-    getData: function(roomId, propertyId,i,y) {
-
-        var date= new Date();
-        var newDate = new Date(date.setMonth(date.getMonth()+i));
-        var secDate = new Date(date.setMonth(date.getMonth()+y));
-
-        var params = {
-            roomIds: roomId,
-            propertyId: propertyId,
-            numberOfRooms:1,
-            numberOfExtraBeds:1,
-            end: secDate.toISOString(),
-            start: newDate.toISOString()
-
-        }
-        var data = this.search(params)
-        return data
     },
     rooms: function(room) {
         var db = new JSONdb('./db.json');

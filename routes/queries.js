@@ -77,6 +77,9 @@ router.get('', function(req, res, next) {
     }
     options.body = JSON.stringify(data)
         request(options, function (error, response) {
+            var array = {
+                result: []
+            }
             if (error) throw new Error(error)
             console.log(response.body);
             response.body = JSON.parse(response.body)
@@ -171,9 +174,7 @@ router.get('', function(req, res, next) {
             }
 
             }
-            var array = {
-                result: []
-            }
+
             array.result.push(
                 data
             );
