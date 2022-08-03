@@ -6,7 +6,7 @@ const {save} = require("./request");
 
 /* GET users listing. */
 router.get('', function(req, res, next) {
-    var db = new JSONdb('./db.json');
+    var db = new JSONdb('./cache.json');
     var cached = db.JSON();
     if(cached.cache)  {
         next();
@@ -38,7 +38,7 @@ router.get('', function (req, res, next){
 })
 
 router.get('/', function(req, res, next) {
-    var db = new JSONdb('./db.json');
+    var db = new JSONdb('./cache.json');
     var cached = db.JSON();
     if(cached.cache)  {
         next();

@@ -15,7 +15,6 @@ module.exports = {
             start: newDate.toISOString()
 
         }
-        var data = func.search(params)
-        return data
+        return params
     }
 }

@@ -90,6 +90,7 @@ module.exports = {
     save: async function () {
         await new Promise(r => {
             var db = new JSONdb('./db.json');
+            var cache = new JSONdb('./cache.json')
             var data = new JSONdb('./data.json')
             data.JSON({data: []})
             data.sync();
@@ -190,8 +191,8 @@ module.exports = {
                 lastModified: Date().toString()
             })
             updated.sync()
-            db.JSON({cache: true})
-            db.sync()
+            cache.JSON({cache: true})
+            cache.sync()
             return true;
         });
 

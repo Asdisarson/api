@@ -112,7 +112,7 @@ router.get('', function(req, res, next) {
                 ]
             }
             for (var i = 0; i < response.body[k].images.length; i++) {
-                if(i < 1) {
+                if((i+1) === response.body[k].images.length) {
                 data.featuredImage = response.body[k].images[i].filePath
 
                 }

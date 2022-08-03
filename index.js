@@ -27,13 +27,14 @@ const JSONdb = require("simple-json-db");
 
 
     var db = new JSONdb('./db.json');
+    var c = new JSONdb('./cache.json');
     var clean = new JSONdb('./lastUpdate.json');
     clean.JSON({
         lastModified:false
     })
     clean.sync()
     app.use((req, res, next) => {
-
+            var cached = c.JSON();
             var dbUpdated = new JSONdb('./lastUpdate.json');
             var updated = dbUpdated.JSON();
             const date1 = new Date(updated.lastModified);
@@ -41,22 +42,35 @@ const JSONdb = require("simple-json-db");
             const diffTime = Math.abs(date2 - date1);
             const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
         var pattern = /search/;
+        if(pattern.exec(req.path)) {
+            return request(options, function (error, response) {
+                if (error) throw new Error(error)
+                console.log(JSON.parse(response.body))
+                var json = JSON.parse(response.body);
+                db.JSON(json);
+                db.sync();
+                func.save();
 
-        if(diffDays>1||!updated.lastModified||pattern.exec(req.path)) {
-                return request(options, function (error, response) {
-                    if (error) throw new Error(error)
-                    console.log(JSON.parse(response.body))
-                    var json = JSON.parse(response.body);
-                    db.JSON(json);
-                    db.sync();
-                    if(!pattern.exec(req.path)) {
-                        func.save();
-                    }
+                next();
 
-                    next();
+            });
+        }
+        if(diffDays>1||!updated.lastModified||!cached.cache) {
+            return request(options, function (error, response) {
+                if (error) throw new Error(error)
+                console.log(JSON.parse(response.body))
+                var json = JSON.parse(response.body);
+                db.JSON(json);
+                db.sync();
+                if(!pattern.exec(req.path)) {
+                    func.save();
+                }
 
-                });
-            }
+                next();
+
+            });
+        }
+
                 next()
 
 
