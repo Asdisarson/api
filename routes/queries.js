@@ -79,11 +79,103 @@ router.get('', function(req, res, next) {
         request(options, function (error, response) {
             if (error) throw new Error(error)
             console.log(response.body);
+            response.body = JSON.parse(response.body)
+            for (var k = 0; k < response.body.length; k++) {
+
+            data = {
+                checkInStartTime: response.body[k].checkInStartTime,
+                checkInEndTime:response.body[k].checkInEndTime,
+                propertyAmenityNames: response.body[k].propertyAmenityNames,
+                pricesFrom: response.body[k].pricesFrom,
+                pricesFromCurrencySymbol: response.body[k].pricesFromCurrencySymbol,
+                featuredImage: '',
+                gallery: response.body[k].images,
+                latitude: response.body[k].location.geoPoint.lat,
+                longitude: response.body[k].location.geoPoint.lon,
+                hotelId: response.body[k].id,
+                name: response.body[k].name,
+                propertyType: response.body[k].propertyTypeName,
+                email: response.body[k].contact.email,
+                url: response.body[k].contact.url,
+                phone: response.body[k].contact.phone,
+                address: response.body[k].location.address,
+                postalCode: response.body[k].location.postalCode,
+                city: response.body[k].location.city,
+                country: response.body[k].location.country,
+                description: response.body[k].description,
+                additionalDescription:response.body[k].additionalDescription
+                ,rooms: [
+
+                ]
+            }
+            for (var i = 0; i < response.body[k].images.length; i++) {
+                if(i < 1) {
+                data.featuredImage = response.body[k].images[i].filePath
+
+                }
+            }
+            for (var i = 0; i < response.body[k].rooms.length; i++) {
+                var room = {
+                    name: response.body[k].rooms[i].name,
+                    roomId: response.body[k].rooms[i].id,
+                    description: response.body[k].rooms[i].description,
+                    minOccupancy: response.body[k].rooms[i].minOccupancy,
+                    maxOccupancy: response.body[k].rooms[i].maxOccupancy,
+                    extraBed: response.body[k].rooms[i].extraBed,
+                    extraBedQuantity: response.body[k].rooms[i].extraBedQuantity,
+                    roomSize: response.body[k].rooms[i].roomSize,
+                    propertyId: response.body[k].rooms[i].propertyId,
+                    roomTypeName: response.body[k].rooms[i].roomTypeName,
+                    roomCategoryName: response.body[k].rooms[i].roomCategoryName,
+                    wholeYearAvailability: response.body[k].rooms[i].wholeYearAvailability,
+                    availabilityChecked: response.body[k].rooms[i].availabilityChecked,
+                    available: response.body[k].rooms[i].available,
+                    averageDailyPrice: response.body[k].rooms[i].averageDailyPrice,
+                    price: response.body[k].rooms[i].price,
+                    currencyCode: response.body[k].rooms[i].currencyCode,
+                    currencySymbol: response.body[k].rooms[i].currencySymbol,
+                    availableQuantity: response.body[k].rooms[i].availableQuantity,
+                    discount: response.body[k].rooms[i].discount,
+                    discountDescription: response.body[k].rooms[i].discountDescription,
+                    discountsUsed: response.body[k].rooms[i].discountsUsed,
+                    originalCurrencySymbol: response.body[k].rooms[i].originalCurrencySymbol,
+                    originalCurrencyCode: response.body[k].rooms[i].originalCurrencyCode,
+                    priceDescription: response.body[k].rooms[i].priceDescription,
+                    breakfastAvailable: response.body[k].rooms[i].breakfastAvailable,
+                    breakfastIncluded: response.body[k].rooms[i].breakfastIncluded,
+                    totalBreakfastPrice: response.body[k].rooms[i].totalBreakfastPrice,
+                    totalOriginalBreakfastPrice: response.body[k].rooms[i].totalOriginalBreakfastPrice,
+                    extraBedPrice: response.body[k].rooms[i].extraBedPrice,
+                    extraBedOriginalPrice: response.body[k].rooms[i].extraBedOriginalPrice,
+                    featuredImage: response.body[k].rooms[i].images[0],
+                    gallery: [],
+                    roomAddonCategories:[],
+                }
+                var addons = [];
+                var gallery = [];
+                if(response.body[k].rooms[i].gallery){
+                    for (let j = 0; j < response.body[k].rooms[i].gallery.length; j++) {
+                        gallery.push(response.body[k].rooms[i].gallery[j].filePath);
+                    }
+                }
+
+                room.gallery = gallery;
+                for (let j = 0; j < response.body[k].rooms[i].roomAddonCategories.length; j++) {
+                    addons.push({
+                        name :  response.body[k].rooms[i].roomAddonCategories[j].name,
+                        addonNames: response.body[k].rooms[i].roomAddonCategories[j].addonNames
+                    });
+                }
+                room.addons = addons;
+                data.rooms.push(room)
+            }
+
+            }
             var array = {
                 result: []
             }
             array.result.push(
-                JSON.parse(response.body)
+                data
             );
 
             res.send(array);

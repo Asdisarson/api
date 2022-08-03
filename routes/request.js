@@ -139,10 +139,12 @@ module.exports = {
                             }
                             response2.body = JSON.parse(response2.body)
                             for (var j = 0; j < response2.body.length; j++) {
+                                var args = this.getData(response2.body[j].id, response2.body[j].propertyId,3,4)
+                                console.log(args)
                                 var imgs = [];
                                 for (var k = 0; k < response2.body[j].files.length; k++) {
                                     imgs.push(response2.body[j].files[k].filePath);
-                                }
+                               }
                                 var addons = []
                                 for (var k = 0; k < response2.body[j].roomAddOns.length; k++) {
                                     addons.push(response2.body[j].roomAddOns[k].addOnName)

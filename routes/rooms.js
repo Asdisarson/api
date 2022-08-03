@@ -25,7 +25,28 @@ router.get('', function(req, res, next) {
         data:result.rooms
     });
 });
+router.get('/:hotelId', function(req, res, next) {
+    var db = new JSONdb('./db.json');
+    var cached = db.JSON();
+    if(cached.cache)  {
+        next();
+    }
+    else {
+        save();
+        next()
 
+    }
+});
+router.get('/:hotelId', function(req, res, next) {
+    var db = new JSONdb('./data.json');
+    var data = db.JSON();
+    var result = data.data.find(obj => {
+        return obj.hotelId.toString() === req.params.hotelId;
+    });
+    res.send({
+        data:result.rooms
+    });
+});
 /* GET users listing.
 router.get('/:id', function(req, res, next) {
   /*  var db = new JSONdb('./db.json');
