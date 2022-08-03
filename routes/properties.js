@@ -54,7 +54,7 @@ router.get('/', function (req, res, next){
     res.send(data.JSON());
 })
 router.get('/:hotelId', function(req, res, next) {
-    var db = new JSONdb('./db.json');
+    var db = new JSONdb('./cache.json');
     var cached = db.JSON();
     if(cached.cache)  {
         next();
