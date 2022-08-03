@@ -40,14 +40,15 @@ const JSONdb = require("simple-json-db");
             const date2 = new Date();
             const diffTime = Math.abs(date2 - date1);
             const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-            if(diffDays>1||!updated.lastModified||pattern.exec(req.path)) {
+        var pattern = /search/;
+
+        if(diffDays>1||!updated.lastModified||pattern.exec(req.path)) {
                 return request(options, function (error, response) {
                     if (error) throw new Error(error)
                     console.log(JSON.parse(response.body))
                     var json = JSON.parse(response.body);
                     db.JSON(json);
                     db.sync();
-                    var pattern = /search/;
                     if(!pattern.exec(req.path)) {
                         func.save();
                     }
