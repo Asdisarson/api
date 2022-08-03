@@ -1,9 +1,20 @@
     const PORT = process.env.PORT || 5000
 var express = require('express');
 var path = require('path');
+
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+    const bodyParser = require("express");
+    var app = express()
 
+    app.use(logger('dev'));
+    app.use(bodyParser.urlencoded({
+        extended: true
+    }));
+
+    app.use(cookieParser());
+    app.use(express.json());
+    app.use(express.urlencoded({ extended: true }));
 var indexRouter = require('./routes/index');
 var propertiesRouter = require('./routes/properties');
 var queriesRouter = require('./routes/queries');
@@ -13,11 +24,7 @@ const JSONdb = require("simple-json-db");
     const request = require("request");
     const options = require("./routes/auth");
     const func = require("./routes/request");
-var app = express()
 
-app.use(logger('dev'));
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 
     var db = new JSONdb('./db.json');
     var clean = new JSONdb('./lastUpdate.json');
@@ -33,7 +40,7 @@ app.use(cookieParser());
             const date2 = new Date();
             const diffTime = Math.abs(date2 - date1);
             const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-            if(diffDays>1||!updated.lastModified) {
+            if(diffDays>1||!updated.lastModified||pattern.exec(req.path)) {
                 return request(options, function (error, response) {
                     if (error) throw new Error(error)
                     console.log(JSON.parse(response.body))

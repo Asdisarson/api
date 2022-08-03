@@ -5,6 +5,93 @@ const JSONdb = require("simple-json-db");
 
 /* GET users listing. */
 router.get('', function(req, res, next) {
+
+    if(req.query||req.body) {
+        next();
+    }
+    else{
+        res.send({})
+    }
+
+})
+router.get('', function(req, res, next) {
+    var data ={
+        "start": "",
+        "end": "",
+        "latitude": 0,
+        "longitude": 0,
+        "numberOfPeople": 1,
+        "numberOfRooms": 1,
+        "showPropertiesWithoutCooperation": false
+    }
+    if(req.query||req.bodyUsed) {
+        var db = new JSONdb('./db.json');
+        var token = db.JSON();
+        var options = {
+            'method': 'post',
+            'url': 'https://stage-api.travia.is/api/v1/travelAgents/577/search',
+            'headers': {
+                'Authorization': 'Bearer ' + token.access_token,
+                'Content-Type': 'application/json',
+
+            },
+            'body': ''
+        };
+
+
+    if (req.query.end) {
+        data.end =  req.query.end;
+    }
+     if (req.body.end) {
+        data.end =  req.body.end;
+    }
+    if (req.query.start) {
+        data.start = req.query.start;
+    }
+     if (req.body.start) {
+        data.start =  req.body.start;
+    }
+    if (req.query.numberOfPeople) {
+        data.numberOfPeople =  req.query.numberOfPeople;
+    }
+     if (req.body.numberOfPeople) {
+        data.numberOfPeople =  req.body.numberOfPeople;
+    }
+    if (req.query.numberOfExtraBeds) {
+        data.numberOfExtraBeds = req.query.numberOfExtraBeds;
+    }
+     if (req.body.numberOfExtraBeds) {
+        data.numberOfExtraBeds =  req.body.numberOfExtraBeds;
+    }
+    if (req.query.latitude) {
+        data.latitude = req.query.latitude;
+    }
+     if (req.body.latitude) {
+        data.latitude = req.body.latitude;
+    }
+    if (req.query.longitude) {
+        data.longitude =  req.query.longitude;
+    }
+     if (req.body.longitude) {
+        data.longitude =  req.body.longitude;
+    }
+    options.body = JSON.stringify(data)
+        request(options, function (error, response) {
+            if (error) throw new Error(error)
+            console.log(response.body);
+            var array = {
+                result: []
+            }
+            array.result.push(
+                JSON.parse(response.body)
+            );
+
+            res.send(array);
+
+        })
+    }
+})
+router.get('/available', function(req, res, next) {
     var db = new JSONdb('./db.json');
     var token = db.JSON();
     var options = {
