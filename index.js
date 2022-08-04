@@ -30,10 +30,14 @@ const JSONdb = require("simple-json-db");
     db.JSON({})
     db.sync()
     var obj = new JSONdb('./data.json');
-    obj.JSON({})
+    obj.JSON({
+
+    })
     obj.sync()
     var c = new JSONdb('./cache.json');
-    c.JSON({})
+    c.JSON({
+        cache:false
+    })
     c.sync()
     var clean = new JSONdb('./lastUpdate.json');
     clean.JSON({
@@ -57,7 +61,6 @@ const JSONdb = require("simple-json-db");
                 db.sync();
 
                 next();
-                func.save();
 
             });
         }
