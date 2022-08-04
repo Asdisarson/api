@@ -177,13 +177,7 @@ module.exports = {
                                     roomCategoryName: response2.body[j].roomCategoryName,
                                     img: imgs[0],
                                     gallery: imgs,
-                                    addons: addons,
-                                    price: 0,
-                                    currency: "",
-                                    currencySign: "",
-                                    originalPrice: 0,
-                                    originalCurrency: "",
-                                    originalSign: "",
+                                    addons: addons
 
 
                                 }

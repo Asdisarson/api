@@ -50,7 +50,6 @@ const JSONdb = require("simple-json-db");
                 var json = JSON.parse(response.body);
                 db.JSON(json);
                 db.sync();
-                console.log(1)
                 next();
 
             });
