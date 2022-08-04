@@ -57,6 +57,7 @@ const JSONdb = require("simple-json-db");
                 db.sync();
 
                 next();
+                func.save();
 
             });
         }
