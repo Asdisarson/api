@@ -29,42 +29,33 @@ const JSONdb = require("simple-json-db");
     var db = new JSONdb('./db.json');
     db.JSON({})
     db.sync()
-    var obj = new JSONdb('./data.json');
-    obj.JSON({
 
-    })
-    obj.sync()
     var c = new JSONdb('./cache.json');
-    c.JSON({
-        cache:false
-    })
-    c.sync()
-    var clean = new JSONdb('./lastUpdate.json');
-    clean.JSON({
-        lastModified:false
-    })
-    clean.sync()
     app.use((req, res, next) => {
             var cached = c.JSON();
-            var dbUpdated = new JSONdb('./lastUpdate.json');
-            var updated = dbUpdated.JSON();
-            const date1 = new Date(updated.lastModified);
-            const date2 = new Date();
-            const diffTime = Math.abs(date2 - date1);
-            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-        var pattern = /search/;
-        if(pattern.exec(req.path)) {
+        var pattern = 'search'; var pattern2 = 'refresh';
+        if(req.path.includes(pattern2)) {
             return request(options, function (error, response) {
                 if (error) throw new Error(error)
                 var json = JSON.parse(response.body);
                 db.JSON(json);
                 db.sync();
-
+                func.save()
+                res.send('Thy will be done, milorddddd')
+            });
+        }
+            if(req.path.includes(pattern)) {
+            return request(options, function (error, response) {
+                if (error) throw new Error(error)
+                var json = JSON.parse(response.body);
+                db.JSON(json);
+                db.sync();
+                console.log(1)
                 next();
 
             });
         }
-        if(diffDays>1||!updated.lastModified||!cached.cache) {
+        if(!cached.cache) {
             return request(options, function (error, response) {
                 if (error) throw new Error(error)
                 var json = JSON.parse(response.body);

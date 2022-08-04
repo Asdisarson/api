@@ -33,8 +33,8 @@ router.get('', function (req, res, next){
 })
 router.get('', function (req, res, next){
     var data = new JSONdb('./data.json');
-    console.log(data.JSON());
-    res.send(data.JSON());
+    var output = data.JSON();
+    res.send(output);
 })
 
 router.get('/', function(req, res, next) {
@@ -50,8 +50,9 @@ router.get('/', function(req, res, next) {
 });
 router.get('/', function (req, res, next){
     var data = new JSONdb('./data.json');
-    console.log(data.JSON());
-    res.send(data.JSON());
+    var output = data.JSON();
+
+    res.send(output);
 })
 router.get('/:hotelId', function(req, res, next) {
     var db = new JSONdb('./cache.json');
