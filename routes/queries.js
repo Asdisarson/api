@@ -41,17 +41,25 @@ router.get('', function(req, res, next) {
 
     if (req.query.end) {
         data.end =  req.query.end;
+        data.end.replace('/./g','-')
     }
      if (req.body.end) {
-        data.end =  req.body.end;
-    }
+        data.end =  req.body.end;1
+        data.end.replace('/./g','-')
+
+     }
     if (req.query.start) {
         data.start = req.query.start;
+        data.end.replace('/./g','-')
     }
      if (req.body.start) {
         data.start =  req.body.start;
-    }
-    if (req.query.numberOfPeople) {
+        data.end.replace('/./g','-')
+
+     }
+     if (req.body.start) {
+        data.start =  req.body.start;
+    }    if (req.query.numberOfPeople) {
         data.numberOfPeople =  req.query.numberOfPeople;
     }
      if (req.body.numberOfPeople) {
