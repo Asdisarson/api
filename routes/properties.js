@@ -3,6 +3,7 @@ var router = express.Router();
 const request = require("request");
 const JSONdb = require("simple-json-db");
 const {save} = require("./request");
+const options = require("./auth");
 
 /* GET users listing. */
 router.get('', function(req, res, next) {
@@ -12,9 +13,14 @@ router.get('', function(req, res, next) {
         next();
     }
     else {
-        save();
-        next()
-    }
+        db = new JSONdb('./data.json');
+        request(options, function (error, response) {
+            if (error) throw new Error(error)
+            var json = JSON.parse(response.body);
+            db.JSON(json);
+            db.sync()
+            res.send(save());
+        })}
 });
 router.get('', function (req, res, next){
     if(req.query.hotelId)
@@ -44,9 +50,14 @@ router.get('/', function(req, res, next) {
         next();
     }
     else {
-        save();
-        next()
-    }
+        db = new JSONdb('./data.json');
+        request(options, function (error, response) {
+                if (error) throw new Error(error)
+                var json = JSON.parse(response.body);
+        db.JSON(json);
+        db.sync()
+        res.send(save());
+    })}
 });
 router.get('/', function (req, res, next){
     var data = new JSONdb('./data.json');
@@ -61,11 +72,14 @@ router.get('/:hotelId', function(req, res, next) {
         next();
     }
     else {
-        save();
-
-            next()
-
-    }
+        db = new JSONdb('./data.json');
+        request(options, function (error, response) {
+            if (error) throw new Error(error)
+            var json = JSON.parse(response.body);
+            db.JSON(json);
+            db.sync()
+            res.send(save());
+        })}
 });
 router.get('/:hotelId', function(req, res, next) {
     var db = new JSONdb('./data.json');

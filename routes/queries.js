@@ -2,17 +2,31 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 const JSONdb = require("simple-json-db");
+const options = require("./auth");
 
 /* GET users listing. */
 router.get('', function(req, res, next) {
 
     if(req.query||req.body) {
-        next();
-    }
-    else{
-        res.send({})
-    }
+        const {save} = require("./request");
+        const options = require("./auth");
 
+        /* GET users listing. */
+        var db = new JSONdb('./cache.json');
+
+        db = new JSONdb('./data.json');
+        request(options, function (error, response) {
+            if (error) throw new Error(error)
+            var json = JSON.parse(response.body);
+            db.JSON(json);
+            db.sync()
+
+            next();
+        })
+    }
+    else {
+        res.sendStatus(503)
+    }
 })
 router.get('', function(req, res, next) {
     var data ={
@@ -41,16 +55,22 @@ router.get('', function(req, res, next) {
 
     if (req.query.end) {
         data.end =  req.query.end;
+        data.end.replace('/./g','-')
     }
      if (req.body.end) {
         data.end =  req.body.end;
-    }
+        data.end.replace('/./g','-')
+
+     }
     if (req.query.start) {
         data.start = req.query.start;
+        data.end.replace('/./g','-')
     }
      if (req.body.start) {
         data.start =  req.body.start;
-    }
+        data.end.replace('/./g','-')
+
+     }
     if (req.query.numberOfPeople) {
         data.numberOfPeople =  req.query.numberOfPeople;
     }

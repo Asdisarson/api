@@ -30,43 +30,7 @@ const JSONdb = require("simple-json-db");
     db.JSON({})
     db.sync()
 
-    var c = new JSONdb('./cache.json');
     app.use((req, res, next) => {
-            var cached = c.JSON();
-        var pattern = 'search'; var pattern2 = 'refresh';
-        if(req.path.includes(pattern2)) {
-            return request(options, function (error, response) {
-                if (error) throw new Error(error)
-                var json = JSON.parse(response.body);
-                db.JSON(json);
-                db.sync();
-                func.save()
-                res.send('Thy will be done, milorddddd')
-            });
-        }
-            if(req.path.includes(pattern)) {
-            return request(options, function (error, response) {
-                if (error) throw new Error(error)
-                var json = JSON.parse(response.body);
-                db.JSON(json);
-                db.sync();
-                next();
-
-            });
-        }
-        if(!cached.cache) {
-            return request(options, function (error, response) {
-                if (error) throw new Error(error)
-                var json = JSON.parse(response.body);
-                db.JSON(json);
-                db.sync();
-              func.save();
-
-                next();
-
-            });
-        }
-
                 next()
 
 
@@ -74,21 +38,7 @@ const JSONdb = require("simple-json-db");
         // -----------------------------------------------------------------------
     // authentication middleware
 /*
-    const auth = {login: 'yourlogin', password: 'yourpassword'} // change this
 
-    // parse login and password from headers
-    const b64auth = (req.headers.authorization || '').split(' ')[1] || ''
-    const [login, password] = Buffer.from(b64auth, 'base64').toString().split(':')
-
-    // Verify login and password are set and correct
-    if (login && password && login === auth.login && password === auth.password) {
-        // Access granted...
-        return next()
-    }
-
-    // Access denied...
-    res.set('WWW-Authenticate', 'Basic realm="401"') // change this
-    res.status(401).send('Authentication required.') // custom message
 
     // -----------------------------------------------------------------------
 */

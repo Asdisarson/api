@@ -89,120 +89,118 @@ module.exports = {
     },
     save: async function () {
         await new Promise(r => {
+            var request5 = require('request');
             var db = new JSONdb('./db.json');
-            var cache = new JSONdb('./cache.json')
-            var data = new JSONdb('./data.json')
-            data.JSON({data: []})
-            data.sync();
-            var request = require('request');
-            var token = db.JSON();
-            var options = {
-                'method': 'GET',
-                'url': 'https://stage-api.travia.is/api/v1/travelAgents/cooperations/cooperatingPropertiesSelectList',
-                'headers': {
-                    'Authorization': 'Bearer ' + token.access_token
-                }
-            };
-            request(options, function (error, response) {
+            var auth = require('./auth.js')
+            request5(auth, function (error, response) {
                 if (error) throw new Error(error)
-                response.body = JSON.parse(response.body)
-                var request1 = require('request');
+                var token = JSON.parse(response.body);
+                var data = new JSONdb('./data.json')
+                data.JSON({data: []})
+                data.sync();
+                var request = require('request');
+                var options = {
+                    'method': 'GET',
+                    'url': 'https://stage-api.travia.is/api/v1/travelAgents/cooperations/cooperatingPropertiesSelectList',
+                    'headers': {
+                        'Authorization': 'Bearer ' + token.access_token
+                    }
+                };
+                request(options, function (error, response) {
+                    if (error) throw new Error(error)
+                    response.body = JSON.parse(response.body)
+                    var request1 = require('request');
 
-                var request2 = require('request');
-                var request3 = require('request');
-                for (var i = 0; i < response.body.length; i++) {
-                    options.url = 'https://stage-api.travia.is/api/v1/properties/' + response.body[i].id + '/details/cooperating';
-                    request1(options, function (error1, response1) {
-                        if (error1) throw new Error(error1)
-                        response1.body = JSON.parse(response1.body)
-                        options.url = 'https://stage-api.travia.is/api/v1/properties/' + response1.body.id + '/rooms';
-                        request2(options, function (error2, response2) {
-                            if (error2) throw new Error(error2)
+                    var request2 = require('request');
+                    var request3 = require('request');
+                    for (var i = 0; i < response.body.length; i++) {
+                        options.url = 'https://stage-api.travia.is/api/v1/properties/' + response.body[i].id + '/details/cooperating';
+                        request1(options, function (error1, response1) {
+                            if (error1) throw new Error(error1)
+                            response1.body = JSON.parse(response1.body)
+                            options.url = 'https://stage-api.travia.is/api/v1/properties/' + response1.body.id + '/rooms';
+                            request2(options, function (error2, response2) {
+                                if (error2) throw new Error(error2)
 
-                            options.url = 'https://stage-api.travia.is/api/v1/properties/' + response1.body.id + '/files';
+                                options.url = 'https://stage-api.travia.is/api/v1/properties/' + response1.body.id + '/files';
 
-                            request3(options, function (error3,response3)  {
-                                if (error3) throw new Error(error3)
-                                var storage = data.JSON();
-                                var hotelargs = {
-                                    hotelId: response1.body.id,
-                                    name: response1.body.name,
-                                    description: response1.body.description,
-                                    address: response1.body.location.address,
-                                    city: response1.body.location.city,
-                                    country: response1.body.country,
-                                    postalCode: response1.body.location.postalCode,
-                                    latitude: response1.body.location.latitude,
-                                    longitude: response1.body.location.longitude,
-                                    email: response1.body.contact.email,
-                                    phone: response1.body.contact.phone,
-                                    propertyTypeName: response1.body.propertyTypeName,
-                                    amenity: response1.body.amenity,
-                                    rooms: [],
-                                    featuredImage: "",
-                                    images: [],
+                                request3(options, function (error3, response3) {
+                                    if (error3) throw new Error(error3)
+                                    var storage = data.JSON();
+                                    var hotelargs = {
+                                        hotelId: response1.body.id,
+                                        name: response1.body.name,
+                                        description: response1.body.description,
+                                        address: response1.body.location.address,
+                                        city: response1.body.location.city,
+                                        country: response1.body.country,
+                                        postalCode: response1.body.location.postalCode,
+                                        latitude: response1.body.location.latitude,
+                                        longitude: response1.body.location.longitude,
+                                        email: response1.body.contact.email,
+                                        phone: response1.body.contact.phone,
+                                        propertyTypeName: response1.body.propertyTypeName,
+                                        amenity: response1.body.amenity,
+                                        rooms: [],
+                                        featuredImage: "",
+                                        images: [],
 
-                                }
-                                response3.body = JSON.parse(response3.body)
-                                for (var k = 0; k < response3.body.length; k++) {
-                                    hotelargs.images.push(response3.body[k].filePath);
-                                    if(response3.body.length === (k + 1)) {
-                                        hotelargs.featuredImage = response3.body[k].filePath
                                     }
-                                }
+                                    response3.body = JSON.parse(response3.body)
+                                    for (var k = 0; k < response3.body.length; k++) {
+                                        hotelargs.images.push(response3.body[k].filePath);
+                                        if (response3.body.length === (k + 1)) {
+                                            hotelargs.featuredImage = response3.body[k].filePath
+                                        }
+                                    }
 
-                                response2.body = JSON.parse(response2.body)
-                            for (var j = 0; j < response2.body.length; j++) {
+                                    response2.body = JSON.parse(response2.body)
+                                    for (var j = 0; j < response2.body.length; j++) {
 
-                                var imgs = [];
-                                for (var k = 0; k < response2.body[j].files.length; k++) {
-                                    imgs.push(response2.body[j].files[k].filePath);
-                                }
-                                var addons = []
-                                for (var k = 0; k < response2.body[j].roomAddOns.length; k++) {
-                                    addons.push(response2.body[j].roomAddOns[k].addOnName)
-                                }
+                                        var imgs = [];
+                                        for (var k = 0; k < response2.body[j].files.length; k++) {
+                                            imgs.push(response2.body[j].files[k].filePath);
+                                        }
+                                        var addons = []
+                                        for (var k = 0; k < response2.body[j].roomAddOns.length; k++) {
+                                            addons.push(response2.body[j].roomAddOns[k].addOnName)
+                                        }
 
-                                var roomargs = {
-                                    roomId: response2.body[j].id,
-                                    propertyId: response2.body[j].propertyId,
-                                    name: response2.body[j].name,
-                                    minOccupancy: response2.body[j].minOccupancy,
-                                    maxOccupancy: response2.body[j].maxOccupancy,
-                                    roomSize: response2.body[j].roomSize,
-                                    description: response2.body[j].description,
-                                    roomAmenityNames: response2.body[j].roomAmenityNames,
-                                    wholeYearAvailability: response2.body[j].wholeYearAvailability,
-                                    roomTypeName: response2.body[j].roomTypeName,
-                                    roomCategoryName: response2.body[j].roomCategoryName,
-                                    img: imgs[0],
-                                    gallery: imgs,
-                                    addons: addons
+                                        var roomargs = {
+                                            roomId: response2.body[j].id,
+                                            propertyId: response2.body[j].propertyId,
+                                            name: response2.body[j].name,
+                                            minOccupancy: response2.body[j].minOccupancy,
+                                            maxOccupancy: response2.body[j].maxOccupancy,
+                                            roomSize: response2.body[j].roomSize,
+                                            description: response2.body[j].description,
+                                            roomAmenityNames: response2.body[j].roomAmenityNames,
+                                            wholeYearAvailability: response2.body[j].wholeYearAvailability,
+                                            roomTypeName: response2.body[j].roomTypeName,
+                                            roomCategoryName: response2.body[j].roomCategoryName,
+                                            img: imgs[0],
+                                            gallery: imgs,
+                                            addons: addons
 
 
-                                }
+                                        }
 
-                                hotelargs.rooms.push(roomargs);
-                            }
-                            storage.data.push(hotelargs);
-                            data.JSON(storage);
-                            data.sync();
+                                        hotelargs.rooms.push(roomargs);
+                                    }
+                                    storage.data.push(hotelargs);
+                                    data.JSON(storage);
+                                    data.sync();
+                                })
+                            })
                         })
-                        })  })
-                }
+                    }
+                });
+
+                var cache = new JSONdb('./cache.json');
+                cache.JSON({cache: true,date:new Date().toISOString()})
+                cache.sync()
             });
-
-            var updated = new JSONdb('./lastUpdate.json');
-            updated.JSON({
-                lastModified: Date().toString()
-            })
-            updated.sync()
-            cache.JSON({cache: true})
-            cache.sync()
-
-            return true;
-        });
-
+        })
 
     },
     getImage : function() {
