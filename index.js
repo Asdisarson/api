@@ -18,6 +18,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var propertiesRouter = require('./routes/properties');
 var queriesRouter = require('./routes/queries');
+var queriesRouter2 = require('./routes/queries2');
+
 var roomsRouter = require('./routes/rooms');
 var cartRouter = require('./routes/cart');
 const JSONdb = require("simple-json-db");
@@ -96,6 +98,7 @@ const JSONdb = require("simple-json-db");
 app.use('/', indexRouter);
 app.use('/properties', propertiesRouter);
 app.use('/search', queriesRouter);
+app.use('/search2', queriesRouter2);
 app.use('/rooms', roomsRouter);
 app.use('/cart', cartRouter);
 app
