@@ -95,8 +95,7 @@ router.get('', function(req, res, next) {
             console.log(response.body);
             response.body = JSON.parse(response.body)
             for (var k = 0; k < response.body.length; k++) {
-
-            data = {
+ data = {
                 checkInStartTime: response.body[k].checkInStartTime,
                 checkInEndTime:response.body[k].checkInEndTime,
                 propertyAmenityNames: response.body[k].propertyAmenityNames,
@@ -118,8 +117,8 @@ router.get('', function(req, res, next) {
                 country: response.body[k].location.country,
                 description: response.body[k].description,
                 additionalDescription:response.body[k].additionalDescription,
-                isRoom: false
-                
+                isRoom: true
+
             }
             for (var i = 0; i < response.body[k].images.length; i++) {
                 if((i+1) === response.body[k].images.length) {
@@ -181,7 +180,9 @@ router.get('', function(req, res, next) {
                     });
                 }
                 room.addons = addons;
-                data.push(room)
+                array.result.push(
+                    room
+                );
             }
 
                 array.result.push(
