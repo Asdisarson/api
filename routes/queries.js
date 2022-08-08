@@ -16,10 +16,10 @@ router.get('', function(req, res, next) {
 })
 router.get('', function(req, res, next) {
     var data ={
-        "start": "",
-        "end": "",
         "latitude": 0,
         "longitude": 0,
+        "start": "",
+        "end": "",
         "numberOfPeople": 1,
         "numberOfRooms": 1,
         "showPropertiesWithoutCooperation": false
@@ -83,6 +83,9 @@ router.get('', function(req, res, next) {
      if (req.body.longitude) {
         data.longitude =  req.body.longitude;
     }
+         if(req.query.propertyId) {
+         data['propertyIds'] = req.query.propertyId
+     }
     options.body = JSON.stringify(data)
         request(options, function (error, response) {
             var array = {
