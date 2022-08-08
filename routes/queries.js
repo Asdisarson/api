@@ -84,7 +84,7 @@ router.get('', function(req, res, next) {
         data.longitude =  req.body.longitude;
     }
          if(req.query.propertyId) {
-         data['propertyIds'] = req.query.propertyId
+         data['propertyIds'] = [req.query.propertyId]
      }
     options.body = JSON.stringify(data)
         request(options, function (error, response) {
