@@ -117,10 +117,9 @@ router.get('', function(req, res, next) {
                 city: response.body[k].location.city,
                 country: response.body[k].location.country,
                 description: response.body[k].description,
-                additionalDescription:response.body[k].additionalDescription
-                ,rooms: [
-
-                ]
+                additionalDescription:response.body[k].additionalDescription,
+                isRoom: false
+                
             }
             for (var i = 0; i < response.body[k].images.length; i++) {
                 if((i+1) === response.body[k].images.length) {
@@ -164,6 +163,7 @@ router.get('', function(req, res, next) {
                     featuredImage: response.body[k].rooms[i].images[0],
                     gallery: [],
                     roomAddonCategories:[],
+                    isRoom: true
                 }
                 var addons = [];
                 var gallery = [];
@@ -181,7 +181,7 @@ router.get('', function(req, res, next) {
                     });
                 }
                 room.addons = addons;
-                data.rooms.push(room)
+                data.push(room)
             }
 
                 array.result.push(
