@@ -99,7 +99,7 @@ router.get('', function(req, res, next) {
             data = {
                 startDate: req.query.start,
                 endDate: req.query.end,
-                link: "propertyId:"+response.body[k].hotelId + ";",
+                link: "propertyId:"+response.body[k].id + ";",
                 checkInStartTime: response.body[k].checkInStartTime,
                 checkInEndTime:response.body[k].checkInEndTime,
                 propertyAmenityNames: response.body[k].propertyAmenityNames,
