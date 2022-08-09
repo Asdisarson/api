@@ -97,6 +97,9 @@ router.get('', function(req, res, next) {
             for (var k = 0; k < response.body.length; k++) {
 
             data = {
+                startDate: res.query.start,
+                endDate: res.query.end,
+                link: "propertyId:"+response.body[k].hotelId + ";",
                 checkInStartTime: response.body[k].checkInStartTime,
                 checkInEndTime:response.body[k].checkInEndTime,
                 propertyAmenityNames: response.body[k].propertyAmenityNames,
@@ -122,7 +125,15 @@ router.get('', function(req, res, next) {
 
                 ]
             }
-            for (var i = 0; i < response.body[k].images.length; i++) {
+                if(res.query.start) {
+                    data.link = data.link + "start:" + res.query.start + ";";
+                }
+                if(res.query.end) {
+                    data.link = data.link + "end:" + res.query.end + ";";
+                }
+                if(req.query.end) {
+                }
+                for (var i = 0; i < response.body[k].images.length; i++) {
                 if((i+1) === response.body[k].images.length) {
                 data.featuredImage = response.body[k].images[i].filePath
 
