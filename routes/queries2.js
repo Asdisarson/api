@@ -86,6 +86,7 @@ router.get('', function(req, res, next) {
         if(req.query.propertyId) {
             data['propertyIds'] = [req.query.propertyId]
         }
+       
         options.body = JSON.stringify(data)
         request(options, function (error, response) {
             var array = {
@@ -103,7 +104,7 @@ router.get('', function(req, res, next) {
                     pricesFrom: response.body[k].pricesFrom,
                     pricesFromCurrencySymbol: response.body[k].pricesFromCurrencySymbol,
                     featuredImage: '',
-                    gallery: [],
+                    gallery: response.body[k].images,
                     latitude: response.body[k].location.geoPoint.lat,
                     longitude: response.body[k].location.geoPoint.lon,
                     hotelId: response.body[k].id,
@@ -118,20 +119,62 @@ router.get('', function(req, res, next) {
                     country: response.body[k].location.country,
                     description: response.body[k].description,
                     additionalDescription:response.body[k].additionalDescription,
-                    isRoom:false
+                    isRoom:false,
+                    roomId: '',
+                    minOccupancy: '',
+                    maxOccupancy: '',
+                    extraBed: '',
+                    extraBedQuantity: '',
+                    roomSize: '',
+                    propertyId: '',
+                    roomTypeName: '',
+                    roomCategoryName: '',
+                    wholeYearAvailability:'',
+                    availabilityChecked: '',
+                    available: '',
+                    averageDailyPrice: '',
+                    price: '',
+                    currencyCode: '',
+                    currencySymbol: '',
+                    availableQuantity: '',
+                    discount: '',
+                    discountDescription: response.body[k].rooms[i].discountDescription,
+                    discountsUsed: response.body[k].rooms[i].discountsUsed,
+                    originalCurrencySymbol: response.body[k].rooms[i].originalCurrencySymbol,
+                    originalCurrencyCode: response.body[k].rooms[i].originalCurrencyCode,
+                    priceDescription: response.body[k].rooms[i].priceDescription,
+                    breakfastAvailable: response.body[k].rooms[i].breakfastAvailable,
+                    breakfastIncluded: response.body[k].rooms[i].breakfastIncluded,
+                    totalBreakfastPrice: response.body[k].rooms[i].totalBreakfastPrice,
+                    totalOriginalBreakfastPrice: response.body[k].rooms[i].totalOriginalBreakfastPrice,
+                    extraBedPrice: response.body[k].rooms[i].extraBedPrice,
+                    extraBedOriginalPrice: response.body[k].rooms[i].extraBedOriginalPrice,
+                    roomAddonCategories:[],
                 }
                 for (var i = 0; i < response.body[k].images.length; i++) {
                     if((i+1) === response.body[k].images.length) {
                         data.featuredImage = response.body[k].images[i].filePath
 
                     }
-                    response.body[k].images[i].filePath
                 }
-                 array.result.push(
-                    data
-                );
                 for (var i = 0; i < response.body[k].rooms.length; i++) {
-                    var room = {
+                    var room = {checkInStartTime: response.body[k].checkInStartTime,
+                        checkInEndTime:response.body[k].checkInEndTime,
+                        propertyAmenityNames: response.body[k].propertyAmenityNames,
+                        pricesFrom: response.body[k].pricesFrom,
+                        pricesFromCurrencySymbol: response.body[k].pricesFromCurrencySymbol,
+                        latitude: response.body[k].location.geoPoint.lat,
+                        longitude: response.body[k].location.geoPoint.lon,
+                        hotelId: response.body[k].id,
+                        propertyType: response.body[k].propertyTypeName,
+                        email: response.body[k].contact.email,
+                        url: response.body[k].contact.url,
+                        phone: response.body[k].contact.phone,
+                        address: response.body[k].location.address,
+                        postalCode: response.body[k].location.postalCode,
+                        city: response.body[k].location.city,
+                        country: response.body[k].location.country,
+                        additionalDescription:response.body[k].additionalDescription,
                         name: response.body[k].rooms[i].name,
                         roomId: response.body[k].rooms[i].id,
                         description: response.body[k].rooms[i].description,
@@ -163,17 +206,18 @@ router.get('', function(req, res, next) {
                         totalOriginalBreakfastPrice: response.body[k].rooms[i].totalOriginalBreakfastPrice,
                         extraBedPrice: response.body[k].rooms[i].extraBedPrice,
                         extraBedOriginalPrice: response.body[k].rooms[i].extraBedOriginalPrice,
-                        featuredImage: response.body[k].rooms[i].images[0].filePath,
+                        featuredImage: '',
                         gallery: [],
                         roomAddonCategories:[],
-                        isRoom:true
+                        isRoom:true,
+
                     }
                     var addons = [];
                     var gallery = [];
                     if(response.body[k].rooms[i].gallery){
                         for (let j = 0; j < response.body[k].rooms[i].gallery.length; j++) {
                             if((j+1)===response.body[k].rooms[i].gallery.length) {
-                                room.featuredImage = response.body[k].rooms[i].gallery[j].filePath;
+                                room.featuredImage = response.body[k].rooms[i].gallery[j];
                             }
                             gallery.push(response.body[k].rooms[i].gallery[j].filePath);
                         }
@@ -192,7 +236,9 @@ router.get('', function(req, res, next) {
                     );
                 }
 
-               
+                array.result.push(
+                    data
+                );
             }
 
 
