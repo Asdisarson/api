@@ -240,6 +240,7 @@ router.get('', function(req, res, next) {
                     data
                 );
             }
+            array.result = array.result.reverse()
 
 
             res.send(array);
