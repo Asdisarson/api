@@ -103,7 +103,7 @@ router.get('', function(req, res, next) {
                     pricesFrom: response.body[k].pricesFrom,
                     pricesFromCurrencySymbol: response.body[k].pricesFromCurrencySymbol,
                     featuredImage: '',
-                    gallery: response.body[k].images,
+                    gallery: [],
                     latitude: response.body[k].location.geoPoint.lat,
                     longitude: response.body[k].location.geoPoint.lon,
                     hotelId: response.body[k].id,
@@ -125,7 +125,11 @@ router.get('', function(req, res, next) {
                         data.featuredImage = response.body[k].images[i].filePath
 
                     }
+                    response.body[k].images[i].filePath
                 }
+                 array.result.push(
+                    data
+                );
                 for (var i = 0; i < response.body[k].rooms.length; i++) {
                     var room = {
                         name: response.body[k].rooms[i].name,
@@ -159,7 +163,7 @@ router.get('', function(req, res, next) {
                         totalOriginalBreakfastPrice: response.body[k].rooms[i].totalOriginalBreakfastPrice,
                         extraBedPrice: response.body[k].rooms[i].extraBedPrice,
                         extraBedOriginalPrice: response.body[k].rooms[i].extraBedOriginalPrice,
-                        featuredImage: response.body[k].rooms[i].images[0],
+                        featuredImage: response.body[k].rooms[i].images[0].filePath,
                         gallery: [],
                         roomAddonCategories:[],
                         isRoom:true
@@ -185,9 +189,7 @@ router.get('', function(req, res, next) {
                     );
                 }
 
-                array.result.push(
-                    data
-                );
+               
             }
 
 
