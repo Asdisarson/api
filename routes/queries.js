@@ -97,8 +97,8 @@ router.get('', function(req, res, next) {
             for (var k = 0; k < response.body.length; k++) {
 
             data = {
-                startDate: res.query.start,
-                endDate: res.query.end,
+                startDate: req.query.start,
+                endDate: req.query.end,
                 link: "propertyId:"+response.body[k].hotelId + ";",
                 checkInStartTime: response.body[k].checkInStartTime,
                 checkInEndTime:response.body[k].checkInEndTime,
@@ -126,10 +126,10 @@ router.get('', function(req, res, next) {
                 ]
             }
                 if(res.query.start) {
-                    data.link = data.link + "start:" + res.query.start + ";";
+                    data.link = data.link + "start:" + req.query.start + ";";
                 }
                 if(res.query.end) {
-                    data.link = data.link + "end:" + res.query.end + ";";
+                    data.link = data.link + "end:" + req.query.end + ";";
                 }
                 if(req.query.end) {
                 }
