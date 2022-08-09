@@ -172,6 +172,9 @@ router.get('', function(req, res, next) {
                     var gallery = [];
                     if(response.body[k].rooms[i].gallery){
                         for (let j = 0; j < response.body[k].rooms[i].gallery.length; j++) {
+                            if((j+1)===response.body[k].rooms[i].gallery.length) {
+                                room.featuredImage = response.body[k].rooms[i].gallery[j].filePath;
+                            }
                             gallery.push(response.body[k].rooms[i].gallery[j].filePath);
                         }
                     }
