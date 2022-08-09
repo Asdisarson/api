@@ -86,7 +86,7 @@ router.get('', function(req, res, next) {
         if(req.query.propertyId) {
             data['propertyIds'] = [req.query.propertyId]
         }
-       
+
         options.body = JSON.stringify(data)
         request(options, function (error, response) {
             var array = {
@@ -158,23 +158,23 @@ router.get('', function(req, res, next) {
                     }
                 }
                 for (var i = 0; i < response.body[k].rooms.length; i++) {
-                    var room = {checkInStartTime: response.body[k].checkInStartTime,
-                        checkInEndTime:response.body[k].checkInEndTime,
-                        propertyAmenityNames: response.body[k].propertyAmenityNames,
-                        pricesFrom: response.body[k].pricesFrom,
-                        pricesFromCurrencySymbol: response.body[k].pricesFromCurrencySymbol,
-                        latitude: response.body[k].location.geoPoint.lat,
-                        longitude: response.body[k].location.geoPoint.lon,
-                        hotelId: response.body[k].id,
-                        propertyType: response.body[k].propertyTypeName,
-                        email: response.body[k].contact.email,
-                        url: response.body[k].contact.url,
-                        phone: response.body[k].contact.phone,
-                        address: response.body[k].location.address,
-                        postalCode: response.body[k].location.postalCode,
-                        city: response.body[k].location.city,
-                        country: response.body[k].location.country,
-                        additionalDescription:response.body[k].additionalDescription,
+                    var room = {checkInStartTime:'',
+                        checkInEndTime:'',
+                        propertyAmenityNames: '',
+                        pricesFrom: '',
+                        pricesFromCurrencySymbol: '',
+                        latitude: '',
+                        longitude: '',
+                        hotelId: '',
+                        propertyType: '',
+                        email: '',
+                        url: '',
+                        phone: '',
+                        address: '',
+                        postalCode:'',
+                        city: '',
+                        country: '',
+                        additionalDescription:'',
                         name: response.body[k].rooms[i].name,
                         roomId: response.body[k].rooms[i].id,
                         description: response.body[k].rooms[i].description,
