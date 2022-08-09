@@ -244,7 +244,7 @@ router.get('', function(req, res, next) {
             array.result = array.result.reverse()
 
 
-            res.send(array.);
+            res.send(array);
 
         })
     }
