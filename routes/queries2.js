@@ -104,7 +104,7 @@ router.get('', function(req, res, next) {
                     pricesFrom: response.body[k].pricesFrom,
                     pricesFromCurrencySymbol: response.body[k].pricesFromCurrencySymbol,
                     featuredImage: '',
-                    gallery: response.body[k].images,
+                    gallery: [],
                     latitude: response.body[k].location.geoPoint.lat,
                     longitude: response.body[k].location.geoPoint.lon,
                     hotelId: response.body[k].id,
@@ -156,6 +156,7 @@ router.get('', function(req, res, next) {
                         data.featuredImage = response.body[k].images[i].filePath
 
                     }
+                    data.gallery.push(response.body[k].images[i].filePath)
                 }
                 for (var i = 0; i < response.body[k].rooms.length; i++) {
                     var room = {checkInStartTime:'',
@@ -243,7 +244,7 @@ router.get('', function(req, res, next) {
             array.result = array.result.reverse()
 
 
-            res.send(array);
+            res.send(array.);
 
         })
     }
