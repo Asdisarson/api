@@ -125,10 +125,10 @@ router.get('', function(req, res, next) {
 
                 ]
             }
-                if(res.query.start) {
+                if(req.query.start) {
                     data.link = data.link + "start:" + req.query.start + ";";
                 }
-                if(res.query.end) {
+                if(req.query.end) {
                     data.link = data.link + "end:" + req.query.end + ";";
                 }
                 if(req.query.end) {
