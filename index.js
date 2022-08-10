@@ -18,7 +18,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var propertiesRouter = require('./routes/properties');
 var queriesRouter = require('./routes/queries');
-var queriesRouter2 = require('./routes/queries2');
+    var queriesRouter2 = require('./routes/queries2');
 
 var roomsRouter = require('./routes/rooms');
 var cartRouter = require('./routes/cart');
@@ -35,7 +35,7 @@ const JSONdb = require("simple-json-db");
     var c = new JSONdb('./cache.json');
     app.use((req, res, next) => {
             var cached = c.JSON();
-        var pattern = 'search'; var pattern2 = 'refresh';
+        var pattern = 'search'; var pattern2 = 'refresh';var pattern3 = 'cart';
         if(req.path.includes(pattern2)) {
             return request(options, function (error, response) {
                 if (error) throw new Error(error)
@@ -46,7 +46,7 @@ const JSONdb = require("simple-json-db");
                 res.send('Thy will be done, milorddddd')
             });
         }
-            if(req.path.includes(pattern)) {
+            if(req.path.includes(pattern)||req.path.includes(pattern3)) {
             return request(options, function (error, response) {
                 if (error) throw new Error(error)
                 var json = JSON.parse(response.body);
