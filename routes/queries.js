@@ -177,11 +177,12 @@ router.get('', function(req, res, next) {
                     featuredImage: "",
                     gallery: [],
                     roomAddonCategories:[],
+                    booking:''
                 }
                 var addons = [];
                 var gallery = [];
                 if (room.availabilityChecked) {
-                    room['booking'] = "cart/?add-to-cart=14&propertyId="+response.body[k].rooms[i].propertyId+
+                    room.booking = "cart/?add-to-cart=14&propertyId="+response.body[k].rooms[i].propertyId+
                     "&roomId="+response.body[k].rooms[i].id+"&product_id=14" +
                         "&propertyAddress=" + response.body[k].location.address + "&countryId=" +
                         response.body[k].location.country + "&startDate=" +
