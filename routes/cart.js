@@ -40,16 +40,30 @@ router.post('/', function(req, res, next) {
     request(options, function (error, response) {
         response.body = JSON.parse(response.body)
         if(response.body.bookingCartStatusCode==="OPEN") {
-            res.send({
-                totalQuantity:response.body.bookings[0].totalQuantity,
-                totalPrice:response.body.bookings[0].totalPrice,
-                totalPax:response.body.bookings[0].totalPax,
-                totalOriginalPrice:response.body.bookings[0].totalOriginalPrice,
-                cartId:response.body.bookings[0].bookingCartId,
-                dateCreated:response.body.bookings[0].dateCreated,
-                name: response.body.bookings[0].name + " - FROM:[" + response.body.bookings[0].startDate + "] TO: [" + response.body.bookings[0].endDate + "]" ,
-                valid:true
-            })
+            var booking = {}
+            if (response.body.bookings[0].totalQuantity) {
+                booking['totalQuantity'] = response.body.bookings[0].totalQuantity
+            }
+            if (response.body.bookings[0].totalPrice) {
+                booking['totalPrice'] = response.body.bookings[0].totalPrice
+
+            }
+            if (response.body.bookings[0].totalPax) {
+                booking['totalPax'] = response.body.bookings[0].totalPax
+
+            }
+            if (response.body.bookings[0].totalOriginalPrice) {
+                booking['totalOriginalPrice'] = response.body.bookings[0].totalOriginalPrice
+
+            }
+            if (response.body.bookings[0].dateCreated) {
+                booking['dateCreated'] = response.body.bookings[0].dateCreated
+
+            }
+            booking['name'] = response.body.bookings[0].name + " - FROM:[" + response.body.bookings[0].startDate + "] TO: [" + response.body.bookings[0].endDate + "]"
+                booking['cartId'] = response.body.bookings[0].bookingCartId
+            booking['valid'] = true
+            res.send(booking)
         }
         else {
             res.send({valid:false})
