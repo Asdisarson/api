@@ -12,7 +12,7 @@ router.post('/', function(req, res, next) {
     var token = db.JSON();
     var options = {
         'method': 'post',
-        'url': 'https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts',
+        'url': 'https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts?createNewBookingCart=true',
         'headers': {
             'Authorization': 'Bearer ' + token.access_token,
             'Content-Type': 'application/json',
@@ -77,7 +77,7 @@ router.post('/confirm', function(req, res, next) {
     var token = db.JSON();
     var options = {
         'method': 'post',
-        'url': 'https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts?createNewBookingCart=true',
+        'url': 'https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts',
         'headers': {
             'Authorization': 'Bearer ' + token.access_token,
             'Content-Type': 'application/json',
