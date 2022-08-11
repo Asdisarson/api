@@ -26,21 +26,15 @@ router.post('/', function(req, res, next) {
         {
             "endDate": req.body.endDate,
             "name": req.body.name,
-            "notes": '',
-            "numberOfNights": req.body.numberOfNights,
-            "pax": req.body.pax,
-            "propertyAddress": req.body.propertyAddress,
             "quantity": req.body.quantity,
             "roomId": req.body.roomId,
             "startDate": req.body.startDate,
         }
     ],
         "confirm": false,
-        "countryId": req.body.countryId,
         "instant": true,
         "name": req.body.name,
-        "notes": '',
-        "propertyId":req.body.propertyId,
+            "propertyId":req.body.propertyId,
     }
     options.body = JSON.stringify(options.body)
     request(options, function (error, response) {
@@ -53,6 +47,7 @@ router.post('/', function(req, res, next) {
                 totalOriginalPrice:response.body.bookings[0].totalOriginalPrice,
                 cartId:response.body.id,
                 dateCreated:response.body.bookings[0].dateCreated,
+                name:response.body.name,
                 valid:true
             })
         }
