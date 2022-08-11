@@ -181,14 +181,11 @@ router.get('', function(req, res, next) {
                 }
                 var addons = [];
                 var gallery = [];
-                if (room.availabilityChecked && req.query.start  &&req.query.end &&req.query.numberOfNights && req.query.quantity && req.pax.name) {
+                if (room.availabilityChecked && req.query.start  &&req.query.end && req.query.quantity) {
                     room.booking = "cart/?add-to-cart=14&propertyId="+response.body[k].rooms[i].propertyId+
-                    "&roomId="+response.body[k].rooms[i].id+"&product_id=14" +
-                        "&propertyAddress=" + response.body[k].location.address + "&countryId=" +
-                        response.body[k].location.country + "&startDate=" +
-                        req.query.start + "&endDate" + req.query.end + "&numberOfNights=" + req.query.numberOfNights +
+                    "&roomId="+response.body[k].rooms[i].id+"&product_id=14"+ "&startDate=" +
+                        req.query.start + "&endDate" + req.query.end +
                         "&quantity=" + req.query.quantity +  "&name=" + response.body[k].name + "-" + room.name
-                    + "&pax=" + req.query.pax
 
                 }
 
