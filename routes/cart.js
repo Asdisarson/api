@@ -98,7 +98,7 @@ router.post('/confirm', function(req, res, next) {
                 totalOriginalPrice:response.body.bookings[0].totalOriginalPrice,
                 cartId:response.body.bookings[0].bookingCartId,
                 dateCreated:response.body.bookings[0].dateCreated,
-                name:response.body.bookings[0].name + " - FROM:[" + response.body.bookings[0].startDate + "] TO: [" + response.body.bookings[0].endDate + "]" ,
+                nameChange:response.body.bookings[0].name + " - FROM:[" + response.body.bookings[0].startDate + "] TO: [" + response.body.bookings[0].endDate + "]" ,
                 valid:true
             })
         }
