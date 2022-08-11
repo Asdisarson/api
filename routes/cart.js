@@ -63,7 +63,7 @@ router.post('/confirm', function(req, res, next) {
     var token = db.JSON();
     var options = {
         'method': 'post',
-        'url': 'https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts',
+        'url': 'https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts?createNewBookingCart=true',
         'headers': {
             'Authorization': 'Bearer ' + token.access_token,
             'Content-Type': 'application/json',
@@ -96,9 +96,9 @@ router.post('/confirm', function(req, res, next) {
                 totalPrice:response.body.bookings[0].totalPrice,
                 totalPax:response.body.bookings[0].totalPax,
                 totalOriginalPrice:response.body.bookings[0].totalOriginalPrice,
-                cartId:response.body.id,
+                cartId:response.body.bookings[0].bookingCartId,
                 dateCreated:response.body.bookings[0].dateCreated,
-                name:response.body.bookings[0].name + " - FROM:[" + response.body.bookings[0].bookingRooms[0].startDate + "] TO: [" + response.body.bookings[0].bookingRooms[0].endDate + "]" ,
+                name:response.body.bookings[0].name + " - FROM:[" + response.body.bookings[0].startDate + "] TO: [" + response.body.bookings[0].endDate + "]" ,
                 valid:true
             })
         }
