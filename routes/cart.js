@@ -45,9 +45,9 @@ router.post('/', function(req, res, next) {
                 totalPrice:response.body.bookings[0].totalPrice,
                 totalPax:response.body.bookings[0].totalPax,
                 totalOriginalPrice:response.body.bookings[0].totalOriginalPrice,
-                cartId:response.body.id,
+                cartId:response.body.bookings[0].bookingCartId,
                 dateCreated:response.body.bookings[0].dateCreated,
-                name:response.body.bookings[0].name + " - FROM:[" + response.body.bookings[0].bookingRooms[0].startDate + "] TO: [" + response.body.bookings[0].bookingRooms[0].endDate + "]" ,
+                name: response.body.bookings[0].name + " - FROM:[" + response.body.bookings[0].startDate + "] TO: [" + response.body.bookings[0].endDate + "]" ,
                 valid:true
             })
         }
@@ -91,16 +91,7 @@ router.post('/confirm', function(req, res, next) {
     request(options, function (error, response) {
         response.body = JSON.parse(response.body)
         if(response.body.bookingCartStatusCode==="OPEN") {
-            res.send({
-                totalQuantity:response.body.bookings[0].totalQuantity,
-                totalPrice:response.body.bookings[0].totalPrice,
-                totalPax:response.body.bookings[0].totalPax,
-                totalOriginalPrice:response.body.bookings[0].totalOriginalPrice,
-                cartId:response.body.bookings[0].bookingCartId,
-                dateCreated:response.body.bookings[0].dateCreated,
-                name: response.body.bookings[0].name + " - FROM:[" + response.body.bookings[0].startDate + "] TO: [" + response.body.bookings[0].endDate + "]" ,
-                valid:true
-            })
+            res.send()
         }
         else {
             res.send({valid:false})
