@@ -12,7 +12,7 @@ router.post('/', function(req, res, next) {
     var token = db.JSON();
     var options = {
         'method': 'post',
-        'url': 'https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts?createNewBookingCart=true',
+        'url': 'https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts',
         'headers': {
             'Authorization': 'Bearer ' + token.access_token,
             'Content-Type': 'application/json',
@@ -39,6 +39,7 @@ router.post('/', function(req, res, next) {
     options.body = JSON.stringify(options.body)
     request(options, function (error, response) {
         response.body = JSON.parse(response.body)
+        console.log(response.body)
         if(response.body.bookingCartStatusCode==="OPEN") {
             var booking = {}
             if (response.body.bookings[0].totalQuantity) {
@@ -94,6 +95,7 @@ router.post('/confirm', function(req, res, next) {
                 "quantity": req.body.quantity,
                 "roomId": req.body.roomId,
                 "startDate": req.body.startDate,
+                "pax" : req.body.pax
             }
         ],
         "confirm": false,
