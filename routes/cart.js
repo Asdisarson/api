@@ -29,6 +29,7 @@ router.post('/', function(req, res, next) {
                 "quantity": req.body.quantity,
                 "roomId": req.body.roomId,
                 "startDate": req.body.startDate,
+                "pax" : req.body.pax
             }
         ],
         "confirm": false,
