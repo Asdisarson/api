@@ -47,7 +47,7 @@ router.post('/', function(req, res, next) {
                 totalOriginalPrice:response.body.bookings[0].totalOriginalPrice,
                 cartId:response.body.id,
                 dateCreated:response.body.bookings[0].dateCreated,
-                name:response.body.name,
+                nameChange:response.body.name,
                 valid:true
             })
         }
