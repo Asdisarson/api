@@ -2,51 +2,41 @@ var express = require('express');
 const JSONdb = require("simple-json-db");
 const request = require("request");
 const {save} = require("./request");
+const {getHotelCache, getRoomCache} = require("./cache");
 var router = express.Router();
-router.get('', function(req, res, next) {
-    var db = new JSONdb('./cache.json');
-    var cached = db.JSON();
-    if(cached.cache)  {
-        next();
-    }
-    else {
-        save();
-            next()
 
-    }
-});
-router.get('', function(req, res, next) {
-    var db = new JSONdb('./data.json');
-    var data = db.JSON();
-    var result = data.data.find(obj => {
-        return obj.hotelId.toString() === req.query.hotelId;
-    });
-    res.send({
-        data:result.rooms
-    });
-});
-router.get('/:hotelId', function(req, res, next) {
-    var db = new JSONdb('./cache.json');
-    var cached = db.JSON();
-    if(cached.cache)  {
-        next();
-    }
-    else {
-        save();
-        next()
+router.get('', function (req, res, next){
+    if(req.query.hotelId||req.query.propertyId) {
+        if(req.query.propertyId)  {
+            req.query.hotelId = req.query.propertyId
+        }
 
+        res.send({
+            data:getRoomCache(req.query.hotelId)
+        });}
+
+    else{
+        res.send ({
+            roomId: '',
+            propertyId: '',
+            name: '',
+            minOccupancy: '',
+            maxOccupancy: '',
+            roomSize: '',
+            description: '',
+            roomAmenityNames: '',
+            wholeYearAvailability: '',
+            roomTypeName: '',
+            roomCategoryName: '',
+            img: '',
+            gallery: [],
+            addons: [],
+            isEmpty: false
+        })
     }
-});
-router.get('/:hotelId', function(req, res, next) {
-    var db = new JSONdb('./data.json');
-    var data = db.JSON();
-    var result = data.data.find(obj => {
-        return obj.hotelId.toString() === req.params.hotelId;
-    });
-    res.send({
-        data:result.rooms
-    });
-});
+})
+
+
 /* GET users listing.
 router.get('/:id', function(req, res, next) {
   /*  var db = new JSONdb('./db.json');

@@ -1,6 +1,5 @@
 var request = require('request');
 const JSONdb = require('simple-json-db');
-const func = require("./functions.js");
 
 
 
@@ -87,15 +86,14 @@ module.exports = {
             if (arr[i].id === value) return arr[i].rooms;
         }
     },
+
+
     save: async function () {
         await new Promise(r => {
-            var db = new JSONdb('./db.json');
-            var cache = new JSONdb('./cache.json')
-            var data = new JSONdb('./data.json')
-            data.JSON({data: []})
-            data.sync();
+            var db = new JSONdb('./cache.json')
+            var cache = db.JSON()
             var request = require('request');
-            var token = db.JSON();
+            var token = cache.token;
             var options = {
                 'method': 'GET',
                 'url': 'https://stage-api.travia.is/api/v1/travelAgents/cooperations/cooperatingPropertiesSelectList',
@@ -123,7 +121,6 @@ module.exports = {
 
                             request3(options, function (error3,response3)  {
                                 if (error3) throw new Error(error3)
-                                var storage = data.JSON();
                                 var hotelargs = {
                                     hotelId: response1.body.id,
                                     name: response1.body.name,
@@ -141,7 +138,7 @@ module.exports = {
                                     rooms: [],
                                     featuredImage: "",
                                     images: [],
-
+                                    isEmpty:false
                                 }
                                 response3.body = JSON.parse(response3.body)
                                 for (var k = 0; k < response3.body.length; k++) {
@@ -177,30 +174,25 @@ module.exports = {
                                     roomCategoryName: response2.body[j].roomCategoryName,
                                     img: imgs[0],
                                     gallery: imgs,
-                                    addons: addons
+                                    addons: addons,
+                                    isEmpty: false
 
 
                                 }
 
                                 hotelargs.rooms.push(roomargs);
                             }
-                            storage.data.push(hotelargs);
-                            data.JSON(storage);
-                            data.sync();
+                            cache.data.push(hotelargs);
+                            db.JSON(cache)
+                            db.sync();
                         })
                         })  })
                 }
             });
+            db.set('cache', true)
+            db.sync()
 
-            var updated = new JSONdb('./lastUpdate.json');
-            updated.JSON({
-                lastModified: Date().toString()
-            })
-            updated.sync()
-            cache.JSON({cache: true})
-            cache.sync()
-
-            return true;
+            return db.JSON().data;
         });
 
 

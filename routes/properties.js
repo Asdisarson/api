@@ -1,30 +1,16 @@
 var express = require('express');
 var router = express.Router();
-const request = require("request");
 const JSONdb = require("simple-json-db");
 const {save} = require("./request");
+const {getHotelCache} = require("./cache");
 
 /* GET users listing. */
-router.get('', function(req, res, next) {
-    var db = new JSONdb('./cache.json');
-    var cached = db.JSON();
-    if(cached.cache)  {
-        next();
-    }
-    else {
-        save();
-        next()
-    }
-});
+
 router.get('', function (req, res, next){
-    if(req.query.hotelId)
-    {var db = new JSONdb('./data.json');
-        var data = db.JSON();
-        var result = data.data.filter(obj => {
-            return obj.hotelId.toString() === req.query.hotelId;
-        })
+    if(req.query.hotelId) {
+
         res.send({
-            data:result
+            data:getHotelCache(req.query.hotelId)
         });}
 
    else{
@@ -32,52 +18,35 @@ router.get('', function (req, res, next){
    }
 })
 router.get('', function (req, res, next){
-    var data = new JSONdb('./data.json');
-    var output = data.JSON();
-    res.send(output);
-})
-
-router.get('/', function(req, res, next) {
-    var db = new JSONdb('./cache.json');
-    var cached = db.JSON();
-    if(cached.cache)  {
-        next();
+    var data = new JSONdb('./cache.json');
+    var output = data.get('data');
+    console.log(output)
+    if(output.length > 0){
+        res.send({data:output});
     }
     else {
-        save();
-        next()
+        save()
+        res.send({data:[{
+            hotelId: '',
+            name: '',
+            description: '',
+            address: '',
+            city: '',
+            country: '',
+            postalCode: '',
+            latitude: '',
+            longitude: '',
+            email: '',
+            phone: '',
+            propertyTypeName: '',
+            amenity: [],
+            rooms: [],
+            featuredImage: "",
+            images: [],
+            isEmpty:true
+        }]})
     }
-});
-router.get('/', function (req, res, next){
-    var data = new JSONdb('./data.json');
-    var output = data.JSON();
-
-    res.send(output);
 })
-router.get('/:hotelId', function(req, res, next) {
-    var db = new JSONdb('./cache.json');
-    var cached = db.JSON();
-    if(cached.cache)  {
-        next();
-    }
-    else {
-        save();
-
-            next()
-
-    }
-});
-router.get('/:hotelId', function(req, res, next) {
-    var db = new JSONdb('./data.json');
-    var data = db.JSON();
-    var result = data.data.filter(obj => {
-        return obj.hotelId.toString() === req.params.hotelId;
-    })
-    res.send({
-        data:result
-    });
-
-});
 
 
 module.exports = router;

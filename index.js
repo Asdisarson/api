@@ -6,99 +6,67 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
     const bodyParser = require("express");
     var app = express()
-
+    const JSONdb = require("simple-json-db");
+    const request = require("request");
+    const auth = require("./routes/auth");
     app.use(logger('dev'));
     app.use(bodyParser.urlencoded({
         extended: true
     }));
+    const {save} = require("./routes/request");
+    var indexRouter = require('./routes/index');
+    var propertiesRouter = require('./routes/properties');
+    var queriesRouter = require('./routes/search');
 
+    var roomsRouter = require('./routes/rooms');
+    var cartRouter = require('./routes/cart');
+    const {setTimeOut, checkCache} = require("./routes/checktime");
     app.use(cookieParser());
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
-var indexRouter = require('./routes/index');
-var propertiesRouter = require('./routes/properties');
-var queriesRouter = require('./routes/queries');
-    var queriesRouter2 = require('./routes/queries2');
-
-var roomsRouter = require('./routes/rooms');
-var cartRouter = require('./routes/cart');
-const JSONdb = require("simple-json-db");
-    const request = require("request");
-    const options = require("./routes/auth");
-    const func = require("./routes/request");
 
 
-    var db = new JSONdb('./db.json');
-    db.JSON({})
-    db.sync()
+    request(auth, function(error, response) {
+        if (error) throw new Error(error)
+        var db = new JSONdb('./cache.json');
 
-    var c = new JSONdb('./cache.json');
+        db.JSON({cache:false,
+            cacheTimeOut: setTimeOut(3).toString(),
+            token: JSON.parse(response.body),
+            data: [],
+            cart:[]
+        });
+        db.sync();
+        save();
+        console.log(db.JSON())
+
+    })
     app.use((req, res, next) => {
-            var cached = c.JSON();
-        var pattern = 'search'; var pattern2 = 'refresh';var pattern3 = 'cart';
-        if(req.path.includes(pattern2)) {
-            return request(options, function (error, response) {
-                if (error) throw new Error(error)
-                var json = JSON.parse(response.body);
-                db.JSON(json);
-                db.sync();
-                func.save()
-                res.send('Thy will be done, milorddddd')
-            });
+      var  db = new JSONdb('./cache.json');
+        var cached = db.JSON().cache;
+        checkCache(db.JSON().cacheTimeOut)
+        if(cached)  {
+            console.log('cache')
+            next();
         }
-            if(req.path.includes(pattern)||req.path.includes(pattern3)) {
-            return request(options, function (error, response) {
+        else {
+            request(auth, function(error, response) {
                 if (error) throw new Error(error)
-                var json = JSON.parse(response.body);
-                db.JSON(json);
+                console.log('Auth')
+                db.set('token',JSON.parse(response.body));
                 db.sync();
-                next();
-
-            });
-        }
-        if(!cached.cache) {
-            return request(options, function (error, response) {
-                if (error) throw new Error(error)
-                var json = JSON.parse(response.body);
-                db.JSON(json);
-                db.sync();
-              func.save();
-
-                next();
-
-            });
-        }
-
+                save();
                 next()
 
+            })
+        }
+    })
 
 
-        // -----------------------------------------------------------------------
-    // authentication middleware
-/*
-    const auth = {login: 'yourlogin', password: 'yourpassword'} // change this
 
-    // parse login and password from headers
-    const b64auth = (req.headers.authorization || '').split(' ')[1] || ''
-    const [login, password] = Buffer.from(b64auth, 'base64').toString().split(':')
-
-    // Verify login and password are set and correct
-    if (login && password && login === auth.login && password === auth.password) {
-        // Access granted...
-        return next()
-    }
-
-    // Access denied...
-    res.set('WWW-Authenticate', 'Basic realm="401"') // change this
-    res.status(401).send('Authentication required.') // custom message
-
-    // -----------------------------------------------------------------------
-*/
-})
 app.use('/', indexRouter);
 app.use('/properties', propertiesRouter);
 app.use('/search', queriesRouter);
-app.use('/search2', queriesRouter2);
 app.use('/rooms', roomsRouter);
 app.use('/cart', cartRouter);
 app
