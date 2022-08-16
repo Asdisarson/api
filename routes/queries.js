@@ -20,8 +20,8 @@ router.get('', function(req, res, next) {
         "longitude": 0,
         "start": "",
         "end": "",
-        "numberOfPeople": 1,
-        "numberOfRooms": 1,
+        "numberOfPeople": 0,
+        "numberOfRooms": 0,
         "showPropertiesWithoutCooperation": false
     }
     if(req.query||req.bodyUsed) {
@@ -53,7 +53,8 @@ router.get('', function(req, res, next) {
     }
         if (req.query.numberOfExtraBeds) {
             data.numberOfExtraBeds = req.query.numberOfExtraBeds;
-        }if (req.query.numberOfRooms) {
+        }
+        if (req.query.numberOfRooms) {
             data.numberOfRooms = req.query.numberOfRooms;
         }
 
@@ -71,6 +72,7 @@ router.get('', function(req, res, next) {
     options.body = JSON.stringify(data)
         request(options, function (error, response) {
             var array = {
+                query:req.query,
                 result: []
             }
             if (error) throw new Error(error)
@@ -105,8 +107,9 @@ router.get('', function(req, res, next) {
                 additionalDescription:response.body[k].additionalDescription
                 ,rooms: [
 
-                ]
+                ],
             }
+
                 if(req.query.start) {
                     data.link = data.link + "start:" + req.query.start + ";";
                 }
