@@ -41,12 +41,10 @@ router.get('', function(req, res, next) {
 
     if (req.query.end) {
         data.end =  req.query.end;
-        data.end = data.end.replaceAll('/./g','-')
     }
 
     if (req.query.start) {
         data.start = req.query.start;
-        data.start = data.start.replaceAll('/./g','-')
     }
     if (req.query.numberOfPeople) {
         data.numberOfPeople =  req.query.numberOfPeople;
