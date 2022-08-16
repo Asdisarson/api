@@ -41,20 +41,19 @@ router.get('', function(req, res, next) {
 
     if (req.query.end) {
         data.end =  req.query.end;
-        data.end.replace('/./g','-')
+        data.end = data.end.replaceAll('/./g','-')
     }
      if (req.body.end) {
-        data.end =  req.body.end;1
-        data.end.replace('/./g','-')
-
+        data.end =  req.body.end;
+       data.end = data.end.replaceAll('/./g','-')
      }
     if (req.query.start) {
         data.start = req.query.start;
-        data.end.replace('/./g','-')
+        data.start = data.start.replaceAll('/./g','-')
     }
      if (req.body.start) {
         data.start =  req.body.start;
-        data.end.replace('/./g','-')
+         data.start = data.start.replaceAll('/./g','-')
 
      }
      if (req.body.start) {
