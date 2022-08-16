@@ -16,12 +16,8 @@ router.get('', function(req, res, next) {
 })
 router.get('', function(req, res, next) {
     var data ={
-        "latitude": 0,
-        "longitude": 0,
         "start": "",
         "end": "",
-        "numberOfPeople": 0,
-        "numberOfRooms": 0,
         "showPropertiesWithoutCooperation": false
     }
     if(req.query||req.bodyUsed) {
@@ -49,21 +45,21 @@ router.get('', function(req, res, next) {
         data.start = data.start.replaceAll('.', '-')
     }
     if (req.query.numberOfPeople) {
-        data.numberOfPeople =  req.query.numberOfPeople;
+        data["numberOfPeople"] =  req.query.numberOfPeople;
     }
         if (req.query.numberOfExtraBeds) {
-            data.numberOfExtraBeds = req.query.numberOfExtraBeds;
+            data["numberOfExtraBeds"] = req.query.numberOfExtraBeds;
         }
         if (req.query.numberOfRooms) {
-            data.numberOfRooms = req.query.numberOfRooms;
+            data["numberOfRooms"] = req.query.numberOfRooms;
         }
 
     if (req.query.latitude) {
-        data.latitude = req.query.latitude;
+        data["latitude"] = req.query.latitude;
     }
 
     if (req.query.longitude) {
-        data.longitude =  req.query.longitude;
+        data["longitude"] =  req.query.longitude;
     }
 
          if(req.query.propertyId) {
@@ -72,7 +68,8 @@ router.get('', function(req, res, next) {
     options.body = JSON.stringify(data)
         request(options, function (error, response) {
             var array = {
-                query:req.query,
+                query:req.query
+                ,
                 result: []
             }
             if (error) throw new Error(error)

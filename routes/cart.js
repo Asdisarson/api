@@ -90,8 +90,11 @@ router.post('', function(req, res, next) {
                 totalPax:'',
                 totalOriginalPrice:'',
                 dateCreated: '',
+                startDate:req.body.startDate,
+                endDate:req.body.endDate,
                 cartId: '',
-                valid: false
+                valid: false,
+                propertyId:req.body.propertyId,
             };
                 booking.totalQuantity = response.body.bookings[0].totalQuantity
 
@@ -106,6 +109,7 @@ router.post('', function(req, res, next) {
             booking.name = response.body.bookings[0].name + " - FROM:[" + response.body.bookings[0].startDate + "] TO: [" + response.body.bookings[0].endDate + "]"
             booking.cartId = response.body.bookings[0].bookingCartId
             booking.valid = true
+            console.log(booking)
             res.send(booking)
         }
         else {
