@@ -15,12 +15,8 @@ router.get('', function(req, res, next) {
 });
 router.get('', function(req, res, next) {
     var data ={
-        "latitude": 0,
-        "longitude": 0,
         "start": "",
         "end": "",
-        "numberOfPeople": 1,
-        "numberOfRooms": 1,
         "showPropertiesWithoutCooperation": false
     }
     if(req.query||req.bodyUsed) {
@@ -37,56 +33,40 @@ router.get('', function(req, res, next) {
             'body': ''
         };
 
-
         if (req.query.end) {
             data.end =  req.query.end;
-            data.end.replace('/./g','-')
+            data.end = data.end.replaceAll('.','-')
         }
-        if (req.body.end) {
-            data.end =  req.body.end;1
-            data.end.replace('/./g','-')
 
-        }
         if (req.query.start) {
             data.start = req.query.start;
-            data.end.replace('/./g','-')
+            data.start = data.start.replaceAll('.', '-')
         }
-        if (req.body.start) {
-            data.start =  req.body.start;
-            data.end.replace('/./g','-')
-
-        }
-
         if (req.query.numberOfPeople) {
-            data.numberOfPeople =  req.query.numberOfPeople;
-        }
-        if (req.body.numberOfPeople) {
-            data.numberOfPeople =  req.body.numberOfPeople;
+            data["numberOfPeople"] =  req.query.numberOfPeople;
         }
         if (req.query.numberOfExtraBeds) {
-            data.numberOfExtraBeds = req.query.numberOfExtraBeds;
+            data["numberOfExtraBeds"] = req.query.numberOfExtraBeds;
         }
-        if (req.body.numberOfExtraBeds) {
-            data.numberOfExtraBeds =  req.body.numberOfExtraBeds;
+        if (req.query.numberOfRooms) {
+            data["numberOfRooms"] = req.query.numberOfRooms;
         }
+
         if (req.query.latitude) {
-            data.latitude = req.query.latitude;
+            data["latitude"] = req.query.latitude;
         }
-        if (req.body.latitude) {
-            data.latitude = req.body.latitude;
-        }
+
         if (req.query.longitude) {
-            data.longitude =  req.query.longitude;
+            data["longitude"] =  req.query.longitude;
         }
-        if (req.body.longitude) {
-            data.longitude =  req.body.longitude;
-        }
+
         if(req.query.propertyId) {
             data['propertyIds'] = [req.query.propertyId]
         }
         options.body = JSON.stringify(data)
         request(options, function (error, response) {
             var array = {
+                query:req.query,
                 result: []
             }
             if (error) throw new Error(error)
