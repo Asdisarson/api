@@ -164,7 +164,7 @@ router.get('', function(req, res, next) {
                     var addons = [];
                     var gallery = [];
                     if (room.availabilityChecked && req.query.start  &&req.query.end && req.query.numberOfRooms&& req.query.numberOfPeople) {
-                        room.booking = "cart/?add-to-cart=1209&propertyId="+response.body[k].rooms[i].propertyId+
+                        room.booking = "?add-to-cart=1209&propertyId="+response.body[k].rooms[i].propertyId+
                             "&roomId="+response.body[k].rooms[i].id+"&product_id=1209"+ "&startDate=" +
                             req.query.start + "&endDate=" + req.query.end +
                             "&numberOfRooms=" + req.query.numberOfRooms +  "&name=" + response.body[k].name + "-" + room.name + "&numberOfPeople=" + req.query.numberOfPeople
