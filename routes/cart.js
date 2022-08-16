@@ -70,7 +70,8 @@ router.post('', function(req, res, next) {
                 "quantity": req.body.quantity,
                 "roomId": req.body.roomId,
                 "startDate": req.body.startDate,
-                "pax" : req.body.pax
+                "pax" : req.body.numberOfPeople,
+                "numberOfRooms" : req.body.numberOfRooms
             }
         ],
         "confirm": false,
@@ -106,7 +107,7 @@ router.post('', function(req, res, next) {
 
                 booking.dateCreated = response.body.bookings[0].dateCreated
 
-            booking.name = response.body.bookings[0].name + " - FROM:[" + response.body.bookings[0].startDate + "] TO: [" + response.body.bookings[0].endDate + "]"
+            booking.name = response.body.bookings[0].name + " - FROM:[" + booking.startDate + "] TO: [" + booking.endDate + "]"
             booking.cartId = response.body.bookings[0].bookingCartId
             booking.valid = true
             console.log(booking)

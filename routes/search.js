@@ -168,7 +168,7 @@ router.get('', function(req, res, next) {
                             "&roomId="+response.body[k].rooms[i].id+"&product_id=1209"+ "&startDate=" +
                             req.query.start + "&endDate" + req.query.end +
                             "&numberOfRooms=" + req.query.numberOfRooms +  "&name=" + response.body[k].name + "-" + room.name + "&numberOfPeople=" + req.query.numberOfPeople
-
+                        + "&quantity=1"
                     }
 
 
