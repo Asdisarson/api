@@ -43,45 +43,26 @@ router.get('', function(req, res, next) {
         data.end =  req.query.end;
         data.end = data.end.replaceAll('/./g','-')
     }
-     if (req.body.end) {
-        data.end =  req.body.end;
-       data.end = data.end.replaceAll('/./g','-')
-     }
+
     if (req.query.start) {
         data.start = req.query.start;
         data.start = data.start.replaceAll('/./g','-')
     }
-     if (req.body.start) {
-        data.start =  req.body.start;
-         data.start = data.start.replaceAll('/./g','-')
-
-     }
-     if (req.body.start) {
-        data.start =  req.body.start;
-    }    if (req.query.numberOfPeople) {
+    if (req.query.numberOfPeople) {
         data.numberOfPeople =  req.query.numberOfPeople;
-    }
-     if (req.body.numberOfPeople) {
-        data.numberOfPeople =  req.body.numberOfPeople;
     }
     if (req.query.numberOfExtraBeds) {
         data.numberOfExtraBeds = req.query.numberOfExtraBeds;
     }
-     if (req.body.numberOfExtraBeds) {
-        data.numberOfExtraBeds =  req.body.numberOfExtraBeds;
-    }
+
     if (req.query.latitude) {
         data.latitude = req.query.latitude;
     }
-     if (req.body.latitude) {
-        data.latitude = req.body.latitude;
-    }
+
     if (req.query.longitude) {
         data.longitude =  req.query.longitude;
     }
-     if (req.body.longitude) {
-        data.longitude =  req.body.longitude;
-    }
+
          if(req.query.propertyId) {
          data['propertyIds'] = [req.query.propertyId]
      }
