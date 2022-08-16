@@ -163,11 +163,11 @@ router.get('', function(req, res, next) {
                 }
                 var addons = [];
                 var gallery = [];
-                if (room.availabilityChecked && req.query.start  &&req.query.end && req.query.quantity) {
+                if (room.availabilityChecked && req.query.start  &&req.query.end && req.query.numberOfRooms) {
                     room.booking = "cart/?add-to-cart=1209&propertyId="+response.body[k].rooms[i].propertyId+
                     "&roomId="+response.body[k].rooms[i].id+"&product_id=1209"+ "&startDate=" +
                         req.query.start + "&endDate" + req.query.end +
-                        "&quantity=" + req.query.quantity +  "&name=" + response.body[k].name + "-" + room.name
+                        "&quantity=" + req.query.numberOfRooms +  "&name=" + response.body[k].name + "-" + room.name
 
                 }
 
