@@ -35,12 +35,12 @@ router.get('', function(req, res, next) {
 
         if (req.query.end) {
             data.end =  req.query.end;
-            data.end = data.end.replaceAll('.','-')
+            data.end = data.end.replace('.','-')
         }
 
         if (req.query.start) {
             data.start = req.query.start;
-            data.start = data.start.replaceAll('.', '-')
+            data.start = data.start.replace('/./g', '/-/g')
         }
         if (req.query.numberOfPeople) {
             data["numberOfPeople"] =  req.query.numberOfPeople;
@@ -107,6 +107,12 @@ router.get('', function(req, res, next) {
                 }
                 if(req.query.end) {
                     data.link = data.link + "end:" + req.query.end + ";";
+                }
+                if(req.query.numberOfPeople) {
+                    data.link = data.link + "numberOfPeople:" + req.query.numberOfPeople + ";";
+                }
+                if(req.query.numberOfRooms) {
+                    data.link = data.link + "numberOfRooms:" + req.query.numberOfRooms + ";";
                 }
 
                 for (var i = 0; i < response.body[k].images.length; i++) {
