@@ -41,10 +41,12 @@ router.get('', function(req, res, next) {
 
     if (req.query.end) {
         data.end =  req.query.end;
+        data.end = data.end.replaceAll('.','-')
     }
 
     if (req.query.start) {
         data.start = req.query.start;
+        data.start = data.start.replaceAll('.', '-')
     }
     if (req.query.numberOfPeople) {
         data.numberOfPeople =  req.query.numberOfPeople;
