@@ -53,7 +53,12 @@ var logger = require('morgan');
             request(auth, function(error, response) {
                 if (error) throw new Error(error)
                 console.log('Auth')
-                db.set('token',JSON.parse(response.body));
+                db.JSON({cache:false,
+                    cacheTimeOut: setTimeOut(3).toString(),
+                    token: JSON.parse(response.body),
+                    data: [],
+                    cart:[]
+                });
                 db.sync();
                 save();
                 next()

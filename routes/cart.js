@@ -104,7 +104,7 @@ router.post('', function(req, res, next) {
                 booking.dateCreated = response.body.bookings[0].dateCreated
 
             booking.name = response.body.bookings[0].name + " - FROM:[" + response.body.bookings[0].startDate + "] TO: [" + response.body.bookings[0].endDate + "]"
-                booking.cartId = response.body.bookings[0].bookingCartId
+            booking.cartId = response.body.bookings[0].bookingCartId
             booking.valid = true
             res.send(booking)
         }
