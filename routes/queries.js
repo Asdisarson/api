@@ -51,9 +51,11 @@ router.get('', function(req, res, next) {
     if (req.query.numberOfPeople) {
         data.numberOfPeople =  req.query.numberOfPeople;
     }
-    if (req.query.numberOfExtraBeds) {
-        data.numberOfExtraBeds = req.query.numberOfExtraBeds;
-    }
+        if (req.query.numberOfExtraBeds) {
+            data.numberOfExtraBeds = req.query.numberOfExtraBeds;
+        }if (req.query.numberOfRooms) {
+            data.numberOfRooms = req.query.numberOfRooms;
+        }
 
     if (req.query.latitude) {
         data.latitude = req.query.latitude;
