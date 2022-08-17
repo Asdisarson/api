@@ -35,13 +35,14 @@ router.get('', function(req, res, next) {
 
         if (req.query.end) {
             data.end =  req.query.end;
-            data.end = data.end.replace('/./g','-')
+            data.end = new Date(req.query.end)
+            data.end = data.end.toISOString().substring(0,10)
         }
 
         if (req.query.start) {
             data.start = req.query.start;
-            data.start = data.start.replace('/./g', '-')
-        }
+            data.start = new Date(req.query.start)
+            data.start = data.start.toISOString().substring(0,10)        }
         if (req.query.numberOfPeople) {
             data["numberOfPeople"] =  req.query.numberOfPeople;
         }
