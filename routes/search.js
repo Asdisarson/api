@@ -19,7 +19,6 @@ router.get('', function(req, res, next) {
         "end": "",
         "showPropertiesWithoutCooperation": false
     }
-    if( !(Object.keys(req.query).length === 0)) {
         var db = new JSONdb('./cache.json');
         var token = db.get('token');
         var options = {
@@ -79,35 +78,102 @@ router.get('', function(req, res, next) {
             for (var k = 0; k < response.body.length; k++) {
 
                 data = {
-                    startDate: req.query.start,
-                    endDate: req.query.end,
-                    link: "propertyId:"+response.body[k].id + ";",
-                    checkInStartTime: response.body[k].checkInStartTime,
-                    checkInEndTime:response.body[k].checkInEndTime,
-                    propertyAmenityNames: response.body[k].propertyAmenityNames,
-                    pricesFrom: response.body[k].pricesFrom,
-                    pricesFromCurrencySymbol: response.body[k].pricesFromCurrencySymbol,
+                    startDate: '',
+                    endDate: '',
+                    link: '',
+                    checkInStartTime: '',
+                    checkInEndTime:'',
+                    propertyAmenityNames: '',
+                    pricesFrom:'',
+                    pricesFromCurrencySymbol:'',
                     featuredImage: '',
                     gallery: [],
-                    latitude: response.body[k].location.geoPoint.lat,
-                    longitude: response.body[k].location.geoPoint.lon,
-                    hotelId: response.body[k].id,
-                    name: response.body[k].name,
-                    propertyType: response.body[k].propertyTypeName,
-                    email: response.body[k].contact.email,
-                    url: response.body[k].contact.url,
-                    phone: response.body[k].contact.phone,
-                    address: response.body[k].location.address,
-                    postalCode: response.body[k].location.postalCode,
-                    city: response.body[k].location.city,
-                    country: response.body[k].location.country,
-                    description: response.body[k].description,
-                    additionalDescription:response.body[k].additionalDescription
+                    latitude: '',
+                    longitude: '',
+                    hotelId:'',
+                    name:'',
+                    propertyType:'',
+                    email: '',
+                    url: '',
+                    phone: '',
+                    address: '',
+                    postalCode: '',
+                    city: '',
+                    country: '',
+                    description: '',
+                    additionalDescription:''
                     ,rooms: [
 
                     ]
                 }
 
+                if(req.query.start) {
+                    data.startDate = req.query.start
+                }
+                if(req.query.end) {
+                    data.endDate = req.query.end
+                }
+                if(response.body[k].id) {
+                    data.link = "propertyId:"+response.body[k].id + ";"
+                    data.id = response.body[k].id
+                }
+                if(response.body[k].checkInStartTime) {
+                    data.checkInStartTime =response.body[k].checkInStartTime;
+                }
+                if(response.body[k].checkInEndTime) {
+                    data.checkInEndTime =response.body[k].checkInEndTime;
+                }
+                if(response.body[k].propertyAmenityNames) {
+                    data.propertyAmenityNames =response.body[k].propertyAmenityNames;
+                }
+                if(response.body[k].pricesFrom) {
+                    data.pricesFrom =response.body[k].pricesFrom;
+                }
+                if(response.body[k].pricesFromCurrencySymbol) {
+                    data.pricesFromCurrencySymbol =response.body[k].pricesFromCurrencySymbol;
+                }
+                if(response.body[k].location.geoPoint.lat) {
+                    data.latitude =response.body[k].location.geoPoint.lat;
+                }
+                if(response.body[k].location.geoPoint.lat) {
+                    data.longitude =response.body[k].location.geoPoint.lat;
+                }
+                if(response.body[k].name) {
+                    data.name =response.body[k].name;
+                }
+                if(response.body[k].propertyTypeName) {
+                    data.propertyTypeName =response.body[k].propertyTypeName;
+                }
+                if(response.body[k].contact.email) {
+                    data.email =response.body[k].contact.email;
+                }
+                if(response.body[k].contact.url) {
+                    data.url =response.body[k].contact.url;
+                }
+                if(response.body[k].contact.phone) {
+                    data.phone =response.body[k].contact.phone;
+                }
+                if(response.body[k].contact.email) {
+                    data.email =response.body[k].contact.email;
+                }
+                if(response.body[k].location.address) {
+                    data.address =response.body[k].location.address;
+                }
+                if(response.body[k].location.postalCode) {
+                    data.postalCode =response.body[k].location.postalCode
+                }
+                if(response.body[k].location.city) {
+                    data.city =response.body[k].location.city;
+                }
+                if(response.body[k].location.country) {
+                    data.country =response.body[k].location.country;
+                }
+                if(response.body[k].description) {
+                    data.description =response.body[k].description;
+                }
+                if(response.body[k].additionalDescription) {
+                    data.additionalDescription =response.body[k].additionalDescription;
+                }
                 if(req.query.start) {
                     data.link = data.link + "start:" + req.query.start + ";";
                 }
@@ -206,40 +272,7 @@ router.get('', function(req, res, next) {
             res.send(array);
 
         })
-    }
-    else{
-        res.send(    {
-                query:req.query,
-                req:{},
-            result: [{
-                startDate: '',
-                endDate:'',
-                link: '',
-                checkInStartTime: '',
-                checkInEndTime:'',
-                propertyAmenityNames: '',
-                pricesFrom: '',
-                pricesFromCurrencySymbol: '',
-                featuredImage: '',
-                gallery: [],
-                latitude:'',
-                longitude: '',
-                hotelId: '',
-                name:'',
-                propertyType: '',
-                email: '',
-                url: '',
-                phone: '',
-                address: '',
-                postalCode: '',
-                city: '',
-                country:'',
-                description: '',
-                additionalDescription:''
-                ,rooms: [
 
-                ]
-            }]})
-    }
+
 })
 module.exports = router;
