@@ -79,8 +79,8 @@ router.get('', function(req, res, next) {
             for (var k = 0; k < response.body.length; k++) {
 
                 data = {
-                    query:req.query,
-                    req:options,
+                    query:JSON.stringify(req.query),
+                    req:JSON.stringify(options),
                     startDate: '',
                     endDate: '',
                     link: '',
@@ -273,8 +273,8 @@ router.get('', function(req, res, next) {
 
             if(array.result.length === 0) {
                 array.result.push({
-                    query:req.query,
-                    req:options,
+                    query:JSON.stringify(req.query),
+                    req:JSON.stringify(options),
                     startDate: '',
                     endDate: '',
                     link: '',
