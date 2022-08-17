@@ -94,7 +94,7 @@ router.get('', function(req, res, next) {
 
                 ]
             }]})
-        }
+        }}
         options.body = JSON.stringify(data)
         request(options, function (error, response) {
             var array = {
