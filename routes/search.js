@@ -269,7 +269,7 @@ router.get('', function(req, res, next) {
                 );
             }
 
-            if(array.length === 0) {
+            if(array.result.length === 0) {
                 array.result.push({
                     startDate: '',
                     endDate: '',
