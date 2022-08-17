@@ -35,12 +35,12 @@ router.get('', function(req, res, next) {
 
         if (req.query.end) {
             data.end =  req.query.end;
-            data.end = data.end.replace('.','-')
+            data.end = data.end.replace('/\./g','-')
         }
 
         if (req.query.start) {
             data.start = req.query.start;
-            data.start = data.start.replace('/./g', '/-/g')
+            data.start = data.start.replace('/\./g', '-')
         }
         if (req.query.numberOfPeople) {
             data["numberOfPeople"] =  req.query.numberOfPeople;
@@ -167,7 +167,7 @@ router.get('', function(req, res, next) {
                         room.booking = "?add-to-cart=1209&propertyId="+response.body[k].rooms[i].propertyId+
                             "&roomId="+response.body[k].rooms[i].id+"&product_id=1209"+ "&startDate=" +
                             req.query.start + "&endDate=" + req.query.end +  "&name=" + response.body[k].name + "-" + room.name + "&numberOfPeople=" + req.query.numberOfPeople
-                        + "&quantity=1"
+                       + "&quantity=1"
                     }
 
 
