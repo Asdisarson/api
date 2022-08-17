@@ -73,6 +73,7 @@ router.get('', function(req, res, next) {
                 req:options,
                 result: []
             }
+
             if (error) throw new Error(error)
             response.body = JSON.parse(response.body)
             for (var k = 0; k < response.body.length; k++) {
@@ -268,7 +269,37 @@ router.get('', function(req, res, next) {
                 );
             }
 
+            if(array.length === 0) {
+                array.result.push({
+                    startDate: '',
+                    endDate: '',
+                    link: '',
+                    checkInStartTime: '',
+                    checkInEndTime:'',
+                    propertyAmenityNames: '',
+                    pricesFrom:'',
+                    pricesFromCurrencySymbol:'',
+                    featuredImage: '',
+                    gallery: [],
+                    latitude: '',
+                    longitude: '',
+                    hotelId:'',
+                    name:'',
+                    propertyType:'',
+                    email: '',
+                    url: '',
+                    phone: '',
+                    address: '',
+                    postalCode: '',
+                    city: '',
+                    country: '',
+                    description: '',
+                    additionalDescription:''
+                    ,rooms: [
 
+                    ]
+                })
+            }
             res.send(array);
 
         })
