@@ -19,6 +19,8 @@ router.get('', function(req, res, next) {
         "end": "",
         "showPropertiesWithoutCooperation": false
     }
+    var linkstartDate = ''
+    var linkendDate = ''
         var db = new JSONdb('./cache.json');
         var token = db.get('token');
         var options = {
@@ -39,12 +41,15 @@ router.get('', function(req, res, next) {
             data.end =  req.query.end;
             data.end = new Date(req.query.end*1000)
             data.end = data.end.toISOString().substring(0,10)
+            linKendDate = data.end
+
         }
 
         if (req.query.start) {
             data.start = req.query.start;
             data.start = new Date(req.query.start*1000)
             data.start = data.start.toISOString().substring(0, 10)
+            linkstartDate = data.start
         }
 
         if (req.query.numberOfPeople) {
@@ -244,7 +249,7 @@ router.get('', function(req, res, next) {
                     if (room.availabilityChecked && req.query.start  &&req.query.end && req.query.numberOfPeople) {
                         room.booking = "?add-to-cart=1209&propertyId="+response.body[k].rooms[i].propertyId+
                             "&roomId="+response.body[k].rooms[i].id+"&product_id=1209"+ "&startDate=" +
-                            req.query.start + "&endDate=" + req.query.end +  "&name=" + response.body[k].name + "-" + room.name + "&numberOfPeople=" + req.query.numberOfPeople
+                            linkstartDate + "&endDate=" + linkendDate +  "&name=" + response.body[k].name + "-" + room.name + "&numberOfPeople=" + req.query.numberOfPeople
                        + "&quantity=1"
                     }
 
