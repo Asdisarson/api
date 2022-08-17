@@ -31,7 +31,10 @@ router.get('', function(req, res, next) {
             },
             'body': ''
         };
-
+        if(req.query.duration) {
+            req.query['start'] = req.query.duration[0]
+            req.query['end'] = req.query.duration[1]
+        }
         if (req.query.end) {
             data.end =  req.query.end;
             data.end = new Date(req.query.end)
