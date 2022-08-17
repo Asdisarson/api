@@ -19,7 +19,7 @@ router.get('', function(req, res, next) {
         "end": "",
         "showPropertiesWithoutCooperation": false
     }
-    if(req.query||req.bodyUsed) {
+    if( !(Object.keys(req.query).length === 0)) {
         var db = new JSONdb('./cache.json');
         var token = db.get('token');
         var options = {
@@ -42,7 +42,9 @@ router.get('', function(req, res, next) {
         if (req.query.start) {
             data.start = req.query.start;
             data.start = new Date(req.query.start)
-            data.start = data.start.toISOString().substring(0,10)
+            data.start = data.start.toISOString().substring(0, 10)
+        }
+
         if (req.query.numberOfPeople) {
             data["numberOfPeople"] =  req.query.numberOfPeople;
         }
@@ -64,37 +66,7 @@ router.get('', function(req, res, next) {
         if(req.query.propertyId) {
             data['propertyIds'] = [req.query.propertyId]
         }
-        if(!data.start){
-            res.send(    {result: [{
-                startDate: req.query.start,
-                endDate: req.query.end,
-                link: "propertyId:"+response.body[k].id + ";",
-                checkInStartTime: response.body[k].checkInStartTime,
-                checkInEndTime:response.body[k].checkInEndTime,
-                propertyAmenityNames: response.body[k].propertyAmenityNames,
-                pricesFrom: response.body[k].pricesFrom,
-                pricesFromCurrencySymbol: response.body[k].pricesFromCurrencySymbol,
-                featuredImage: '',
-                gallery: [],
-                latitude: response.body[k].location.geoPoint.lat,
-                longitude: response.body[k].location.geoPoint.lon,
-                hotelId: response.body[k].id,
-                name: response.body[k].name,
-                propertyType: response.body[k].propertyTypeName,
-                email: response.body[k].contact.email,
-                url: response.body[k].contact.url,
-                phone: response.body[k].contact.phone,
-                address: response.body[k].location.address,
-                postalCode: response.body[k].location.postalCode,
-                city: response.body[k].location.city,
-                country: response.body[k].location.country,
-                description: response.body[k].description,
-                additionalDescription:response.body[k].additionalDescription
-                ,rooms: [
 
-                ]
-            }]})
-        }}
         options.body = JSON.stringify(data)
         request(options, function (error, response) {
             var array = {
@@ -234,6 +206,40 @@ router.get('', function(req, res, next) {
             res.send(array);
 
         })
+    }
+    else{
+        res.send(    {
+                query:req.query,
+                req:{},
+            result: [{
+                startDate: '',
+                endDate:'',
+                link: '',
+                checkInStartTime: '',
+                checkInEndTime:'',
+                propertyAmenityNames: '',
+                pricesFrom: '',
+                pricesFromCurrencySymbol: '',
+                featuredImage: '',
+                gallery: [],
+                latitude:'',
+                longitude: '',
+                hotelId: '',
+                name:'',
+                propertyType: '',
+                email: '',
+                url: '',
+                phone: '',
+                address: '',
+                postalCode: '',
+                city: '',
+                country:'',
+                description: '',
+                additionalDescription:''
+                ,rooms: [
+
+                ]
+            }]})
     }
 })
 module.exports = router;
