@@ -41,7 +41,7 @@ router.get('', function(req, res, next) {
             data.end =  req.query.end;
             data.end = new Date(req.query.end*1000)
             data.end = data.end.toISOString().substring(0,10)
-            linKendDate = data.end
+            linkendDate = data.end
 
         }
 
