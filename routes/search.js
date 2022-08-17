@@ -37,13 +37,13 @@ router.get('', function(req, res, next) {
         }
         if (req.query.end) {
             data.end =  req.query.end;
-            data.end = new Date(req.query.end)
+            data.end = new Date(req.query.end*1000)
             data.end = data.end.toISOString().substring(0,10)
         }
 
         if (req.query.start) {
             data.start = req.query.start;
-            data.start = new Date(req.query.start)
+            data.start = new Date(req.query.start*1000)
             data.start = data.start.toISOString().substring(0, 10)
         }
 
