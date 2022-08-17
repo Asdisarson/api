@@ -42,7 +42,8 @@ router.get('', function(req, res, next) {
         if (req.query.start) {
             data.start = req.query.start;
             data.start = new Date(req.query.start)
-            data.start = data.start.toISOString().substring(0,10)        }
+            data.start = data.start.toISOString().substring(0,10)
+        console.log(data.start)}
         if (req.query.numberOfPeople) {
             data["numberOfPeople"] =  req.query.numberOfPeople;
         }
@@ -68,6 +69,7 @@ router.get('', function(req, res, next) {
         request(options, function (error, response) {
             var array = {
                 query:req.query,
+                req:options,
                 result: []
             }
             if (error) throw new Error(error)
