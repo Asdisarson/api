@@ -79,6 +79,8 @@ router.get('', function(req, res, next) {
             for (var k = 0; k < response.body.length; k++) {
 
                 data = {
+                    query:req.query,
+                    req:options,
                     startDate: '',
                     endDate: '',
                     link: '',

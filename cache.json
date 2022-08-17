@@ -1,14 +1,77 @@
 {
     "cache": false,
-    "cacheTimeOut": "Wed Aug 17 2022 16:57:16 GMT+0000 (Greenwich Mean Time)",
+    "cacheTimeOut": "Wed Aug 17 2022 17:08:32 GMT+0000 (Greenwich Mean Time)",
     "token": {
-        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3VudHJ5X2NvZGUiOiJJUyIsImluY2x1ZGVfc3ViX2FjY291bnRzIjpmYWxzZSwidXNlcl9pZCI6NDk3LCJhY3RpdmVfYWNjb3VudHMiOiI5MjYiLCJ1c2VyX25hbWUiOiJsYXJ1c0Bpc2xhbmRzdmVmaXIuaXMiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwidXNlcl9mdWxsX25hbWUiOiJMw6FydXMgw5Nza2Fyc3NvbiIsImRlZmF1bHRfYWNjb3VudF9pZCI6OTI2LCJleHAiOjE2NjA3NDU4MzYsImF1dGhvcml0aWVzIjpbIlRSVl9BcHByb3ZlX29yX1JlamVjdF9Cb29raW5nc185MjYiLCJUUlZfU2VlX0Jvb2tpbmdzXzkyNiIsIlRSVl9NYW5hZ2VfUm9sZXNfOTI2IiwiVFJWX1NlZV9Qcm9wZXJ0eV9Hcm91cHNfOTI2IiwiVFJWX1VwZGF0ZV9BbGxvdG1lbnRzXzkyNiIsIlRSVl9NYW5hZ2VfVHJhdmVsX0FnZW5jaWVzXzkyNiIsIlRSVl9TZWFyY2hfOTI2IiwiVFJWX01hbmFnZV9QcmljZV9MaXN0c185MjYiLCJUUlZfQXBwcm92ZV9vcl9SZWplY3RfQWxsb3RtZW50c185MjYiLCJUUlZfUmVhc3NpZ25fQm9va2luZ3NfOTI2IiwiVFJWX0NyZWF0ZV9Cb29raW5nc185MjYiLCJUUlZfTWFuYWdlX1VzZXJzXzkyNiIsIlRSVl9PZmZlcl9BbGxvdG1lbnRzXzkyNiIsIlRSVl9VcGRhdGVfQm9va2luZ3NfOTI2IiwiVFJWX1NlZV9BbGxvdG1lbnRzXzkyNiIsIlRSVl9TZWVfQ2FuY2VsbGF0aW9uX1BvbGljaWVzXzkyNiIsIlRSVl9NYW5hZ2VfQ2FuY2VsbGF0aW9uX1BvbGljaWVzXzkyNiIsIlRSVl9TZWVfQ29vcGVyYXRpb25zXzkyNiIsIlRSVl9DYW5jZWxfQWxsb3RtZW50c185MjYiLCJUUlZfTWFuYWdlX1Byb3BlcnRpZXNfOTI2IiwiVFJWX1NlZV9QcmljZV9MaXN0c185MjYiLCJUUlZfTWFuYWdlX1Byb3BlcnR5X0dyb3Vwc185MjYiLCJUUlZfU2VlX1Byb3BlcnRpZXNfOTI2IiwiVFJWX01hbmFnZV9BY2NvdW50c19hbmRfQXV0aG9yaXphdGlvbl85MjYiLCJUUlZfU2VlX1RyYXZlbF9BZ2VuY2llc185MjYiLCJUUlZfUmVxdWVzdF9BbGxvdG1lbnRzXzkyNiIsIlRSVl9DYW5jZWxfQ29vcGVyYXRpb25fOTI2IiwiVFJWX1VwZGF0ZV9Db29wZXJhdGlvbl9TZXR0aW5nc185MjYiLCJUUlZfUmVxdWVzdF9Db29wZXJhdGlvbl85MjYiLCJUUlZfQXBwcm92ZV9vcl9SZWplY3RfQ29vcGVyYXRpb25fUmVxdWVzdF85MjYiLCJUUlZfRGFzaGJvYXJkXzkyNiIsIlRSVl9DYW5jZWxfQm9va2luZ3NfOTI2Il0sImp0aSI6ImM5MTkzYzcyLTk4NTktNGRjZS05NjhlLWY1MDgxNTE0OGU4MSIsImNsaWVudF9pZCI6IkdvZG8ifQ.lJwpq0VldyEH1KMjCMdTLnTwNAR0rrJ37zvYQVlOYrEXXAVed5NPdHqb-_5EXQC_l4Pp0jxY1FrHLOz_h1qkoGIlUYkFX0IZ-gWxabprnulqbStLKtf4oxx2PIMEVeTYpsDjPtJxobzB_vRyZvnNtIqBUF4uOhv5anqQNpCk2G2i5_rX0rKfiJk9ezBk15JPXk0fqxWTUzv11I95nbUMRNOAbeQKmJfrlOrlZq2cuGLbydGYOH3rn6HTMeiJNtddEniL-0xtI9FkMDIM1lOsbb1D3LcXuhG05gHTlwino8uObuz6Tikykh15X6SMg3dyVjyvuIyIYPLZE8panAwwww",
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3VudHJ5X2NvZGUiOiJJUyIsImluY2x1ZGVfc3ViX2FjY291bnRzIjpmYWxzZSwidXNlcl9pZCI6NDk3LCJhY3RpdmVfYWNjb3VudHMiOiI5MjYiLCJ1c2VyX25hbWUiOiJsYXJ1c0Bpc2xhbmRzdmVmaXIuaXMiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwidXNlcl9mdWxsX25hbWUiOiJMw6FydXMgw5Nza2Fyc3NvbiIsImRlZmF1bHRfYWNjb3VudF9pZCI6OTI2LCJleHAiOjE2NjA3NDY1MTIsImF1dGhvcml0aWVzIjpbIlRSVl9BcHByb3ZlX29yX1JlamVjdF9Cb29raW5nc185MjYiLCJUUlZfU2VlX0Jvb2tpbmdzXzkyNiIsIlRSVl9NYW5hZ2VfUm9sZXNfOTI2IiwiVFJWX1NlZV9Qcm9wZXJ0eV9Hcm91cHNfOTI2IiwiVFJWX1VwZGF0ZV9BbGxvdG1lbnRzXzkyNiIsIlRSVl9NYW5hZ2VfVHJhdmVsX0FnZW5jaWVzXzkyNiIsIlRSVl9TZWFyY2hfOTI2IiwiVFJWX01hbmFnZV9QcmljZV9MaXN0c185MjYiLCJUUlZfQXBwcm92ZV9vcl9SZWplY3RfQWxsb3RtZW50c185MjYiLCJUUlZfUmVhc3NpZ25fQm9va2luZ3NfOTI2IiwiVFJWX0NyZWF0ZV9Cb29raW5nc185MjYiLCJUUlZfTWFuYWdlX1VzZXJzXzkyNiIsIlRSVl9PZmZlcl9BbGxvdG1lbnRzXzkyNiIsIlRSVl9VcGRhdGVfQm9va2luZ3NfOTI2IiwiVFJWX1NlZV9BbGxvdG1lbnRzXzkyNiIsIlRSVl9TZWVfQ2FuY2VsbGF0aW9uX1BvbGljaWVzXzkyNiIsIlRSVl9NYW5hZ2VfQ2FuY2VsbGF0aW9uX1BvbGljaWVzXzkyNiIsIlRSVl9TZWVfQ29vcGVyYXRpb25zXzkyNiIsIlRSVl9DYW5jZWxfQWxsb3RtZW50c185MjYiLCJUUlZfTWFuYWdlX1Byb3BlcnRpZXNfOTI2IiwiVFJWX1NlZV9QcmljZV9MaXN0c185MjYiLCJUUlZfTWFuYWdlX1Byb3BlcnR5X0dyb3Vwc185MjYiLCJUUlZfU2VlX1Byb3BlcnRpZXNfOTI2IiwiVFJWX01hbmFnZV9BY2NvdW50c19hbmRfQXV0aG9yaXphdGlvbl85MjYiLCJUUlZfU2VlX1RyYXZlbF9BZ2VuY2llc185MjYiLCJUUlZfUmVxdWVzdF9BbGxvdG1lbnRzXzkyNiIsIlRSVl9DYW5jZWxfQ29vcGVyYXRpb25fOTI2IiwiVFJWX1VwZGF0ZV9Db29wZXJhdGlvbl9TZXR0aW5nc185MjYiLCJUUlZfUmVxdWVzdF9Db29wZXJhdGlvbl85MjYiLCJUUlZfQXBwcm92ZV9vcl9SZWplY3RfQ29vcGVyYXRpb25fUmVxdWVzdF85MjYiLCJUUlZfRGFzaGJvYXJkXzkyNiIsIlRSVl9DYW5jZWxfQm9va2luZ3NfOTI2Il0sImp0aSI6IjU2MWUwNmNmLTNmN2EtNGU1ZS05MmYyLTI2MTMxMDJhZTFmMCIsImNsaWVudF9pZCI6IkdvZG8ifQ.BzxQf6DbcJ_De_Q2pTSKRWc9b4ZUZaNHc-NNsJsT7z0DdLx4oJnJBhadtl_ecNuG9nIKkcIGL3e31KuA8rW9UVqDNTT6Mpiw2dwrZ534jNrsnF8kjHFPgJaKS-dU5Apuf_dY5iVRnhtsztMnN6zq_Ib3pa9DdmeSBuYgDHrofAqm51Qlui9LkEU2_J2M6Vbl5fxHyDCzKkAo0PnizupSxJpF3QyL0l9woWqffZTDUIETFr86bYZxPg6HDhUtiDaigiU9wwqwjtt3IKpxGGDBvafVVPX8tGx6mHyQHicWhPnOcM-nU0YN0q6iZ1dzP_3Xax7fl-lmMngYtbE51Oc4hA",
         "token_type": "bearer",
-        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmNsdWRlX3N1Yl9hY2NvdW50cyI6ZmFsc2UsInVzZXJfbmFtZSI6ImxhcnVzQGlzbGFuZHN2ZWZpci5pcyIsImRlZmF1bHRfYWNjb3VudF9pZCI6OTI2LCJhdXRob3JpdGllcyI6WyJUUlZfQXBwcm92ZV9vcl9SZWplY3RfQm9va2luZ3NfOTI2IiwiVFJWX1NlZV9Cb29raW5nc185MjYiLCJUUlZfTWFuYWdlX1JvbGVzXzkyNiIsIlRSVl9TZWVfUHJvcGVydHlfR3JvdXBzXzkyNiIsIlRSVl9VcGRhdGVfQWxsb3RtZW50c185MjYiLCJUUlZfTWFuYWdlX1RyYXZlbF9BZ2VuY2llc185MjYiLCJUUlZfU2VhcmNoXzkyNiIsIlRSVl9NYW5hZ2VfUHJpY2VfTGlzdHNfOTI2IiwiVFJWX0FwcHJvdmVfb3JfUmVqZWN0X0FsbG90bWVudHNfOTI2IiwiVFJWX1JlYXNzaWduX0Jvb2tpbmdzXzkyNiIsIlRSVl9DcmVhdGVfQm9va2luZ3NfOTI2IiwiVFJWX01hbmFnZV9Vc2Vyc185MjYiLCJUUlZfT2ZmZXJfQWxsb3RtZW50c185MjYiLCJUUlZfVXBkYXRlX0Jvb2tpbmdzXzkyNiIsIlRSVl9TZWVfQWxsb3RtZW50c185MjYiLCJUUlZfU2VlX0NhbmNlbGxhdGlvbl9Qb2xpY2llc185MjYiLCJUUlZfTWFuYWdlX0NhbmNlbGxhdGlvbl9Qb2xpY2llc185MjYiLCJUUlZfU2VlX0Nvb3BlcmF0aW9uc185MjYiLCJUUlZfQ2FuY2VsX0FsbG90bWVudHNfOTI2IiwiVFJWX01hbmFnZV9Qcm9wZXJ0aWVzXzkyNiIsIlRSVl9TZWVfUHJpY2VfTGlzdHNfOTI2IiwiVFJWX01hbmFnZV9Qcm9wZXJ0eV9Hcm91cHNfOTI2IiwiVFJWX1NlZV9Qcm9wZXJ0aWVzXzkyNiIsIlRSVl9NYW5hZ2VfQWNjb3VudHNfYW5kX0F1dGhvcml6YXRpb25fOTI2IiwiVFJWX1NlZV9UcmF2ZWxfQWdlbmNpZXNfOTI2IiwiVFJWX1JlcXVlc3RfQWxsb3RtZW50c185MjYiLCJUUlZfQ2FuY2VsX0Nvb3BlcmF0aW9uXzkyNiIsIlRSVl9VcGRhdGVfQ29vcGVyYXRpb25fU2V0dGluZ3NfOTI2IiwiVFJWX1JlcXVlc3RfQ29vcGVyYXRpb25fOTI2IiwiVFJWX0FwcHJvdmVfb3JfUmVqZWN0X0Nvb3BlcmF0aW9uX1JlcXVlc3RfOTI2IiwiVFJWX0Rhc2hib2FyZF85MjYiLCJUUlZfQ2FuY2VsX0Jvb2tpbmdzXzkyNiJdLCJjbGllbnRfaWQiOiJHb2RvIiwiY291bnRyeV9jb2RlIjoiSVMiLCJ1c2VyX2lkIjo0OTcsImFjdGl2ZV9hY2NvdW50cyI6IjkyNiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJ1c2VyX2Z1bGxfbmFtZSI6IkzDoXJ1cyDDk3NrYXJzc29uIiwiYXRpIjoiYzkxOTNjNzItOTg1OS00ZGNlLTk2OGUtZjUwODE1MTQ4ZTgxIiwiZXhwIjoxNjYzMzM2NjM2LCJqdGkiOiIyOWNiMTdkMy1mZGYwLTQ0OGYtYWIyYi1kZGNmNzAxZDExZGMifQ.i34QD6MQao8wOF1bAXxBpVwAo50SCKqZCQ33mWCsZ9YLGC3x1KjBxRktMT6gSBxjWzV03EAWiXwwteT0-5RWYo-Vh-cnHFaGSvEE6MWDavDbgNDkS5TzK3rVXg1dli9fM8Ni-G_Xu_dO2u2qHwm_4twv98dwpynlthyyg8Bx9eT07f82Aivp0D1J6sI3yjYL2boRwNubHnGRKSr0YNJpvpKmCgusnOzilBJcNoO9e1eGZ-RttVxuwrvLvGFOa18LhA3rZYxoXz1Ls1LThYe8jIy3p64UhZ7QL5SnbnVnHTpKHERoIMf8PgPrTtWGwHJ7nae7e7jEu2lkkSWuz1UkGw",
-        "expires_in": "2022-08-17T14:17:15.532",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmNsdWRlX3N1Yl9hY2NvdW50cyI6ZmFsc2UsInVzZXJfbmFtZSI6ImxhcnVzQGlzbGFuZHN2ZWZpci5pcyIsImRlZmF1bHRfYWNjb3VudF9pZCI6OTI2LCJhdXRob3JpdGllcyI6WyJUUlZfQXBwcm92ZV9vcl9SZWplY3RfQm9va2luZ3NfOTI2IiwiVFJWX1NlZV9Cb29raW5nc185MjYiLCJUUlZfTWFuYWdlX1JvbGVzXzkyNiIsIlRSVl9TZWVfUHJvcGVydHlfR3JvdXBzXzkyNiIsIlRSVl9VcGRhdGVfQWxsb3RtZW50c185MjYiLCJUUlZfTWFuYWdlX1RyYXZlbF9BZ2VuY2llc185MjYiLCJUUlZfU2VhcmNoXzkyNiIsIlRSVl9NYW5hZ2VfUHJpY2VfTGlzdHNfOTI2IiwiVFJWX0FwcHJvdmVfb3JfUmVqZWN0X0FsbG90bWVudHNfOTI2IiwiVFJWX1JlYXNzaWduX0Jvb2tpbmdzXzkyNiIsIlRSVl9DcmVhdGVfQm9va2luZ3NfOTI2IiwiVFJWX01hbmFnZV9Vc2Vyc185MjYiLCJUUlZfT2ZmZXJfQWxsb3RtZW50c185MjYiLCJUUlZfVXBkYXRlX0Jvb2tpbmdzXzkyNiIsIlRSVl9TZWVfQWxsb3RtZW50c185MjYiLCJUUlZfU2VlX0NhbmNlbGxhdGlvbl9Qb2xpY2llc185MjYiLCJUUlZfTWFuYWdlX0NhbmNlbGxhdGlvbl9Qb2xpY2llc185MjYiLCJUUlZfU2VlX0Nvb3BlcmF0aW9uc185MjYiLCJUUlZfQ2FuY2VsX0FsbG90bWVudHNfOTI2IiwiVFJWX01hbmFnZV9Qcm9wZXJ0aWVzXzkyNiIsIlRSVl9TZWVfUHJpY2VfTGlzdHNfOTI2IiwiVFJWX01hbmFnZV9Qcm9wZXJ0eV9Hcm91cHNfOTI2IiwiVFJWX1NlZV9Qcm9wZXJ0aWVzXzkyNiIsIlRSVl9NYW5hZ2VfQWNjb3VudHNfYW5kX0F1dGhvcml6YXRpb25fOTI2IiwiVFJWX1NlZV9UcmF2ZWxfQWdlbmNpZXNfOTI2IiwiVFJWX1JlcXVlc3RfQWxsb3RtZW50c185MjYiLCJUUlZfQ2FuY2VsX0Nvb3BlcmF0aW9uXzkyNiIsIlRSVl9VcGRhdGVfQ29vcGVyYXRpb25fU2V0dGluZ3NfOTI2IiwiVFJWX1JlcXVlc3RfQ29vcGVyYXRpb25fOTI2IiwiVFJWX0FwcHJvdmVfb3JfUmVqZWN0X0Nvb3BlcmF0aW9uX1JlcXVlc3RfOTI2IiwiVFJWX0Rhc2hib2FyZF85MjYiLCJUUlZfQ2FuY2VsX0Jvb2tpbmdzXzkyNiJdLCJjbGllbnRfaWQiOiJHb2RvIiwiY291bnRyeV9jb2RlIjoiSVMiLCJ1c2VyX2lkIjo0OTcsImFjdGl2ZV9hY2NvdW50cyI6IjkyNiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJ1c2VyX2Z1bGxfbmFtZSI6IkzDoXJ1cyDDk3NrYXJzc29uIiwiYXRpIjoiNTYxZTA2Y2YtM2Y3YS00ZTVlLTkyZjItMjYxMzEwMmFlMWYwIiwiZXhwIjoxNjYzMzM3MzEyLCJqdGkiOiIxNjVlNTY5ZS1jNGIwLTQ0NjItYjNjZS1iZDQyODNhNGMzM2EifQ.UN7nHIAb_lH74cHTeKfdvvCVdPp3RV56AlPpQlgzqeI344_HRLZUtMDsAiuM2Fu2lBF9yhwB5KwKdfN5_zRQnf0wmgZqGvJ5nIgk6-D82j1D-WLkwRYPT-eYDsKK17OmK1q1WVwPtX-uX0SuAx91n_bXSRMxEFNLMSB8dHMvrvVnfDT1-HV0DC43nBmMWFHtCoSSpnyXVJniDeHNBxEaMhgbWrMjWRDU0WEBxxNBpBTU3kS0jHFE5db5M0bnKfXH3GiSdxgHlju8x1QK4POvqbO6OfrqO8WZAKn2opijrqLhMsIC28EO2UxTa1ZZKbuvqg2gCs-EPmzn9FW5yNm9Vg",
+        "expires_in": "2022-08-17T14:28:31.438",
         "scope": "read write"
     },
     "data": [
+        {
+            "hotelId": 4,
+            "name": "Travia demo hotel",
+            "description": null,
+            "address": "Laugavegur 176",
+            "city": "Reykjavik",
+            "postalCode": "105",
+            "latitude": 64.14218559999999,
+            "longitude": -21.9049063,
+            "email": "haukur@godo.is",
+            "phone": "6622231",
+            "propertyTypeName": "Hotel",
+            "rooms": [
+                {
+                    "roomId": 5,
+                    "propertyId": 4,
+                    "name": "Standard",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 2,
+                    "roomSize": null,
+                    "description": null,
+                    "roomAmenityNames": [],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Double",
+                    "roomCategoryName": "Standard",
+                    "img": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:57_fb0798a9-92ea-49ef-be7b-b22e39198d35_noRooms.png",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:57_fb0798a9-92ea-49ef-be7b-b22e39198d35_noRooms.png",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:46_adbb2702-09c2-4002-b164-63abebd9a928_Capture.PNG"
+                    ],
+                    "addons": [
+                        "Breakfast",
+                        "Extra bed"
+                    ],
+                    "isEmpty": false
+                },
+                {
+                    "roomId": 66,
+                    "propertyId": 4,
+                    "name": "new",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 2,
+                    "roomSize": null,
+                    "description": null,
+                    "roomAmenityNames": [],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Double",
+                    "roomCategoryName": "Standard",
+                    "gallery": [],
+                    "addons": [
+                        "Breakfast"
+                    ],
+                    "isEmpty": false
+                }
+            ],
+            "featuredImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:16_b6a1249c-918a-4cd4-a1e5-d486c55df3b3_all3.png",
+            "images": [
+                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:11_390bd8e0-a0dd-4bbc-bc5b-664e1bc062fc_all4.png",
+                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:04_1519cfe7-6179-47a4-a881-059ac1238cd7_all3.png",
+                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:16_b6a1249c-918a-4cd4-a1e5-d486c55df3b3_all3.png"
+            ],
+            "isEmpty": false
+        },
         {
             "hotelId": 429,
             "name": "Naughty By Nature",
@@ -91,69 +154,6 @@
             ],
             "featuredImage": "",
             "images": [],
-            "isEmpty": false
-        },
-        {
-            "hotelId": 4,
-            "name": "Travia demo hotel",
-            "description": null,
-            "address": "Laugavegur 176",
-            "city": "Reykjavik",
-            "postalCode": "105",
-            "latitude": 64.14218559999999,
-            "longitude": -21.9049063,
-            "email": "haukur@godo.is",
-            "phone": "6622231",
-            "propertyTypeName": "Hotel",
-            "rooms": [
-                {
-                    "roomId": 5,
-                    "propertyId": 4,
-                    "name": "Standard",
-                    "minOccupancy": 1,
-                    "maxOccupancy": 2,
-                    "roomSize": null,
-                    "description": null,
-                    "roomAmenityNames": [],
-                    "wholeYearAvailability": true,
-                    "roomTypeName": "Double",
-                    "roomCategoryName": "Standard",
-                    "img": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:57_fb0798a9-92ea-49ef-be7b-b22e39198d35_noRooms.png",
-                    "gallery": [
-                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:57_fb0798a9-92ea-49ef-be7b-b22e39198d35_noRooms.png",
-                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:46_adbb2702-09c2-4002-b164-63abebd9a928_Capture.PNG"
-                    ],
-                    "addons": [
-                        "Breakfast",
-                        "Extra bed"
-                    ],
-                    "isEmpty": false
-                },
-                {
-                    "roomId": 66,
-                    "propertyId": 4,
-                    "name": "new",
-                    "minOccupancy": 1,
-                    "maxOccupancy": 2,
-                    "roomSize": null,
-                    "description": null,
-                    "roomAmenityNames": [],
-                    "wholeYearAvailability": true,
-                    "roomTypeName": "Double",
-                    "roomCategoryName": "Standard",
-                    "gallery": [],
-                    "addons": [
-                        "Breakfast"
-                    ],
-                    "isEmpty": false
-                }
-            ],
-            "featuredImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:16_b6a1249c-918a-4cd4-a1e5-d486c55df3b3_all3.png",
-            "images": [
-                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:11_390bd8e0-a0dd-4bbc-bc5b-664e1bc062fc_all4.png",
-                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:04_1519cfe7-6179-47a4-a881-059ac1238cd7_all3.png",
-                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:16_b6a1249c-918a-4cd4-a1e5-d486c55df3b3_all3.png"
-            ],
             "isEmpty": false
         },
         {
