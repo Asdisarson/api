@@ -273,6 +273,8 @@ router.get('', function(req, res, next) {
 
             if(array.result.length === 0) {
                 array.result.push({
+                    query:req.query,
+                    req:options,
                     startDate: '',
                     endDate: '',
                     link: '',
