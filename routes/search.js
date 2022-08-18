@@ -222,8 +222,8 @@ router.get('', function(req, res, next) {
                         wholeYearAvailability: response.body[k].rooms[i].wholeYearAvailability,
                         availabilityChecked: response.body[k].rooms[i].availabilityChecked,
                         available: response.body[k].rooms[i].available,
-                        averageDailyPrice: response.body[k].rooms[i].averageDailyPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'),
-                        price: response.body[k].rooms[i].price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'),
+                        averageDailyPrice: response.body[k].rooms[i].averageDailyPrice,
+                        price: response.body[k].rooms[i].price,
                         currencyCode: response.body[k].rooms[i].currencyCode,
                         currencySymbol: response.body[k].rooms[i].currencySymbol,
                         availableQuantity: response.body[k].rooms[i].availableQuantity,
@@ -235,14 +235,14 @@ router.get('', function(req, res, next) {
                         priceDescription: response.body[k].rooms[i].priceDescription,
                         breakfastAvailable: response.body[k].rooms[i].breakfastAvailable,
                         breakfastIncluded: response.body[k].rooms[i].breakfastIncluded,
-                        totalBreakfastPrice: response.body[k].rooms[i].totalBreakfastPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'),
+                        totalBreakfastPrice: response.body[k].rooms[i].totalBreakfastPrice,
                         totalOriginalBreakfastPrice: response.body[k].rooms[i].totalOriginalBreakfastPrice,
-                        extraBedPrice: response.body[k].rooms[i].extraBedPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'),
+                        extraBedPrice: response.body[k].rooms[i].extraBedPrice,
                         extraBedOriginalPrice: response.body[k].rooms[i].extraBedOriginalPrice,
                         featuredImage: "",
                         gallery: [],
                         roomAddonCategories:[],
-                        booking:'',
+                        booking:''
                     }
                     var addons = [];
                     var gallery = [];
