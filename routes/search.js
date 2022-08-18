@@ -33,7 +33,6 @@ router.get('', function(req, res, next) {
             },
             'body': ''
         };
-        res.send(JSON.stringify(req.query))
         if(req.query.duration) {
             req.query['start'] = req.query.duration[0]
             req.query['end'] = req.query.duration[1]
