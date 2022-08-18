@@ -1,64 +1,14 @@
 {
     "cache": false,
-    "cacheTimeOut": "Wed Aug 17 2022 19:16:59 GMT+0000 (Greenwich Mean Time)",
+    "cacheTimeOut": "Thu Aug 18 2022 12:54:19 GMT+0000 (Greenwich Mean Time)",
     "token": {
-        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3VudHJ5X2NvZGUiOiJJUyIsImluY2x1ZGVfc3ViX2FjY291bnRzIjpmYWxzZSwidXNlcl9pZCI6NDk3LCJhY3RpdmVfYWNjb3VudHMiOiI5MjYiLCJ1c2VyX25hbWUiOiJsYXJ1c0Bpc2xhbmRzdmVmaXIuaXMiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwidXNlcl9mdWxsX25hbWUiOiJMw6FydXMgw5Nza2Fyc3NvbiIsImRlZmF1bHRfYWNjb3VudF9pZCI6OTI2LCJleHAiOjE2NjA3NTQyMTksImF1dGhvcml0aWVzIjpbIlRSVl9BcHByb3ZlX29yX1JlamVjdF9Cb29raW5nc185MjYiLCJUUlZfU2VlX0Jvb2tpbmdzXzkyNiIsIlRSVl9NYW5hZ2VfUm9sZXNfOTI2IiwiVFJWX1NlZV9Qcm9wZXJ0eV9Hcm91cHNfOTI2IiwiVFJWX1VwZGF0ZV9BbGxvdG1lbnRzXzkyNiIsIlRSVl9NYW5hZ2VfVHJhdmVsX0FnZW5jaWVzXzkyNiIsIlRSVl9TZWFyY2hfOTI2IiwiVFJWX01hbmFnZV9QcmljZV9MaXN0c185MjYiLCJUUlZfQXBwcm92ZV9vcl9SZWplY3RfQWxsb3RtZW50c185MjYiLCJUUlZfUmVhc3NpZ25fQm9va2luZ3NfOTI2IiwiVFJWX0NyZWF0ZV9Cb29raW5nc185MjYiLCJUUlZfTWFuYWdlX1VzZXJzXzkyNiIsIlRSVl9PZmZlcl9BbGxvdG1lbnRzXzkyNiIsIlRSVl9VcGRhdGVfQm9va2luZ3NfOTI2IiwiVFJWX1NlZV9BbGxvdG1lbnRzXzkyNiIsIlRSVl9TZWVfQ2FuY2VsbGF0aW9uX1BvbGljaWVzXzkyNiIsIlRSVl9NYW5hZ2VfQ2FuY2VsbGF0aW9uX1BvbGljaWVzXzkyNiIsIlRSVl9TZWVfQ29vcGVyYXRpb25zXzkyNiIsIlRSVl9DYW5jZWxfQWxsb3RtZW50c185MjYiLCJUUlZfTWFuYWdlX1Byb3BlcnRpZXNfOTI2IiwiVFJWX1NlZV9QcmljZV9MaXN0c185MjYiLCJUUlZfTWFuYWdlX1Byb3BlcnR5X0dyb3Vwc185MjYiLCJUUlZfU2VlX1Byb3BlcnRpZXNfOTI2IiwiVFJWX01hbmFnZV9BY2NvdW50c19hbmRfQXV0aG9yaXphdGlvbl85MjYiLCJUUlZfU2VlX1RyYXZlbF9BZ2VuY2llc185MjYiLCJUUlZfUmVxdWVzdF9BbGxvdG1lbnRzXzkyNiIsIlRSVl9DYW5jZWxfQ29vcGVyYXRpb25fOTI2IiwiVFJWX1VwZGF0ZV9Db29wZXJhdGlvbl9TZXR0aW5nc185MjYiLCJUUlZfUmVxdWVzdF9Db29wZXJhdGlvbl85MjYiLCJUUlZfQXBwcm92ZV9vcl9SZWplY3RfQ29vcGVyYXRpb25fUmVxdWVzdF85MjYiLCJUUlZfRGFzaGJvYXJkXzkyNiIsIlRSVl9DYW5jZWxfQm9va2luZ3NfOTI2Il0sImp0aSI6IjI3Yjg1MzA5LTFjOGQtNDU1MS1iZDA2LTlmNWY4NzE4MzU0ZiIsImNsaWVudF9pZCI6IkdvZG8ifQ.HiHOmVoxmuZrRH4081HEzWb-mJLsojZlCEsytZnApVBD1fwavcOJ14kviN7tjWZsqKoSOeV4yAH8cVgC0JQzUe8AhJP5Y5DEySrpKENB17nz4oHMjCAI5G740egVt57Nzx3TYfGdYQKqnc5O7EzDuRSthQToYLs-bnKa7nVyK64PIxZIB_BSgK3MOtwohCLWH92K6jIrTFegSPsywOxfFJvxmDrwsmFKbh9ytuu8sy-BlS08w2FQjQoc3jgqZxNs_tygIkUcMBnmcDhfxzJ_9Ft3t6AgadbcO9c5mAD3oi6Wdl_m_IVZhDu5-uplmaGS5W_aM64bxHwQCkh40PDHMA",
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3VudHJ5X2NvZGUiOiJJUyIsImluY2x1ZGVfc3ViX2FjY291bnRzIjpmYWxzZSwidXNlcl9pZCI6NDk3LCJhY3RpdmVfYWNjb3VudHMiOiI5MjYiLCJ1c2VyX25hbWUiOiJsYXJ1c0Bpc2xhbmRzdmVmaXIuaXMiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwidXNlcl9mdWxsX25hbWUiOiJMw6FydXMgw5Nza2Fyc3NvbiIsImRlZmF1bHRfYWNjb3VudF9pZCI6OTI2LCJleHAiOjE2NjA4MTc2NTksImF1dGhvcml0aWVzIjpbIlRSVl9BcHByb3ZlX29yX1JlamVjdF9Cb29raW5nc185MjYiLCJUUlZfU2VlX0Jvb2tpbmdzXzkyNiIsIlRSVl9NYW5hZ2VfUm9sZXNfOTI2IiwiVFJWX1NlZV9Qcm9wZXJ0eV9Hcm91cHNfOTI2IiwiVFJWX1VwZGF0ZV9BbGxvdG1lbnRzXzkyNiIsIlRSVl9NYW5hZ2VfVHJhdmVsX0FnZW5jaWVzXzkyNiIsIlRSVl9TZWFyY2hfOTI2IiwiVFJWX01hbmFnZV9QcmljZV9MaXN0c185MjYiLCJUUlZfQXBwcm92ZV9vcl9SZWplY3RfQWxsb3RtZW50c185MjYiLCJUUlZfUmVhc3NpZ25fQm9va2luZ3NfOTI2IiwiVFJWX0NyZWF0ZV9Cb29raW5nc185MjYiLCJUUlZfTWFuYWdlX1VzZXJzXzkyNiIsIlRSVl9PZmZlcl9BbGxvdG1lbnRzXzkyNiIsIlRSVl9VcGRhdGVfQm9va2luZ3NfOTI2IiwiVFJWX1NlZV9BbGxvdG1lbnRzXzkyNiIsIlRSVl9TZWVfQ2FuY2VsbGF0aW9uX1BvbGljaWVzXzkyNiIsIlRSVl9NYW5hZ2VfQ2FuY2VsbGF0aW9uX1BvbGljaWVzXzkyNiIsIlRSVl9TZWVfQ29vcGVyYXRpb25zXzkyNiIsIlRSVl9DYW5jZWxfQWxsb3RtZW50c185MjYiLCJUUlZfTWFuYWdlX1Byb3BlcnRpZXNfOTI2IiwiVFJWX1NlZV9QcmljZV9MaXN0c185MjYiLCJUUlZfTWFuYWdlX1Byb3BlcnR5X0dyb3Vwc185MjYiLCJUUlZfU2VlX1Byb3BlcnRpZXNfOTI2IiwiVFJWX01hbmFnZV9BY2NvdW50c19hbmRfQXV0aG9yaXphdGlvbl85MjYiLCJUUlZfU2VlX1RyYXZlbF9BZ2VuY2llc185MjYiLCJUUlZfUmVxdWVzdF9BbGxvdG1lbnRzXzkyNiIsIlRSVl9DYW5jZWxfQ29vcGVyYXRpb25fOTI2IiwiVFJWX1VwZGF0ZV9Db29wZXJhdGlvbl9TZXR0aW5nc185MjYiLCJUUlZfUmVxdWVzdF9Db29wZXJhdGlvbl85MjYiLCJUUlZfQXBwcm92ZV9vcl9SZWplY3RfQ29vcGVyYXRpb25fUmVxdWVzdF85MjYiLCJUUlZfRGFzaGJvYXJkXzkyNiIsIlRSVl9DYW5jZWxfQm9va2luZ3NfOTI2Il0sImp0aSI6ImMzODNiMjIxLWEwMDgtNGRjMi04N2ZjLWIzMzk2ODRiZTcyZSIsImNsaWVudF9pZCI6IkdvZG8ifQ.N6kh41BB2nzpvc2p-KMBBe5UJm44Mr_fPfSiqZD0gZQr2-ijju-Jyro8s9UAOWYf2nCQFAJrQc4sUQoFCwLAMT0xGL8Sv6fHd7Xkoh36teSIw6cjfgELjkxuS-Ga6N1eYa8MBlEPL_7BWWhXADQtA_XBZHiT0rXCPaD38YMiDdApxyr6q8aXAMqrpsdzNOGNqbJzTnLT8UwHFUnIlxVglF-KNjpi3VG41nfW5Q1tjb8S4x8fDRHwqeRg9hlwLVo9QOqy0BB0M2NXZ0x5xKrQXY-ZMalf6RDna3hLy3Qdcnk0jKEYhbaml7CaFuTZEmeVAaI6tAS_e0Y5uIoj7YGQMQ",
         "token_type": "bearer",
-        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmNsdWRlX3N1Yl9hY2NvdW50cyI6ZmFsc2UsInVzZXJfbmFtZSI6ImxhcnVzQGlzbGFuZHN2ZWZpci5pcyIsImRlZmF1bHRfYWNjb3VudF9pZCI6OTI2LCJhdXRob3JpdGllcyI6WyJUUlZfQXBwcm92ZV9vcl9SZWplY3RfQm9va2luZ3NfOTI2IiwiVFJWX1NlZV9Cb29raW5nc185MjYiLCJUUlZfTWFuYWdlX1JvbGVzXzkyNiIsIlRSVl9TZWVfUHJvcGVydHlfR3JvdXBzXzkyNiIsIlRSVl9VcGRhdGVfQWxsb3RtZW50c185MjYiLCJUUlZfTWFuYWdlX1RyYXZlbF9BZ2VuY2llc185MjYiLCJUUlZfU2VhcmNoXzkyNiIsIlRSVl9NYW5hZ2VfUHJpY2VfTGlzdHNfOTI2IiwiVFJWX0FwcHJvdmVfb3JfUmVqZWN0X0FsbG90bWVudHNfOTI2IiwiVFJWX1JlYXNzaWduX0Jvb2tpbmdzXzkyNiIsIlRSVl9DcmVhdGVfQm9va2luZ3NfOTI2IiwiVFJWX01hbmFnZV9Vc2Vyc185MjYiLCJUUlZfT2ZmZXJfQWxsb3RtZW50c185MjYiLCJUUlZfVXBkYXRlX0Jvb2tpbmdzXzkyNiIsIlRSVl9TZWVfQWxsb3RtZW50c185MjYiLCJUUlZfU2VlX0NhbmNlbGxhdGlvbl9Qb2xpY2llc185MjYiLCJUUlZfTWFuYWdlX0NhbmNlbGxhdGlvbl9Qb2xpY2llc185MjYiLCJUUlZfU2VlX0Nvb3BlcmF0aW9uc185MjYiLCJUUlZfQ2FuY2VsX0FsbG90bWVudHNfOTI2IiwiVFJWX01hbmFnZV9Qcm9wZXJ0aWVzXzkyNiIsIlRSVl9TZWVfUHJpY2VfTGlzdHNfOTI2IiwiVFJWX01hbmFnZV9Qcm9wZXJ0eV9Hcm91cHNfOTI2IiwiVFJWX1NlZV9Qcm9wZXJ0aWVzXzkyNiIsIlRSVl9NYW5hZ2VfQWNjb3VudHNfYW5kX0F1dGhvcml6YXRpb25fOTI2IiwiVFJWX1NlZV9UcmF2ZWxfQWdlbmNpZXNfOTI2IiwiVFJWX1JlcXVlc3RfQWxsb3RtZW50c185MjYiLCJUUlZfQ2FuY2VsX0Nvb3BlcmF0aW9uXzkyNiIsIlRSVl9VcGRhdGVfQ29vcGVyYXRpb25fU2V0dGluZ3NfOTI2IiwiVFJWX1JlcXVlc3RfQ29vcGVyYXRpb25fOTI2IiwiVFJWX0FwcHJvdmVfb3JfUmVqZWN0X0Nvb3BlcmF0aW9uX1JlcXVlc3RfOTI2IiwiVFJWX0Rhc2hib2FyZF85MjYiLCJUUlZfQ2FuY2VsX0Jvb2tpbmdzXzkyNiJdLCJjbGllbnRfaWQiOiJHb2RvIiwiY291bnRyeV9jb2RlIjoiSVMiLCJ1c2VyX2lkIjo0OTcsImFjdGl2ZV9hY2NvdW50cyI6IjkyNiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJ1c2VyX2Z1bGxfbmFtZSI6IkzDoXJ1cyDDk3NrYXJzc29uIiwiYXRpIjoiMjdiODUzMDktMWM4ZC00NTUxLWJkMDYtOWY1Zjg3MTgzNTRmIiwiZXhwIjoxNjYzMzQ1MDE5LCJqdGkiOiI3NTNkOWYzNS0wMzQ0LTRhMGMtYjI3ZC1kY2U3MDgxMDhmMTMifQ.TI256JR5--LzTlUT3-BTRVht1okR6aGoIBSSpdJD0XDj_QhfkBimT4MbHtXDPDIns7FYuDDObCyqzC7wn463cPKENxOt9IfVrbhzP1clLdAIsv729tw3_qYXloTMcFqA6mEfsHiMVlfCvk8XNLr46Ka0vyGK0BHSm_ozIFCoD2y4qLKBQmMXPRLzzemEoClwLoFKQ9Ah4Z-m4qJODyLxe5V8XGjIH--5fopsVlT4bWS4wJZCsk3psMBnDzYV-xhvWGhqgPMFOcyDU6saID5MqHwWp-8KaAHcvNaPbdTDASPo1nndP08JHIQq2kW5OTjE9CHtz7m9rpGeVNQ2DrHVgg",
-        "expires_in": "2022-08-17T16:36:58.314",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmNsdWRlX3N1Yl9hY2NvdW50cyI6ZmFsc2UsInVzZXJfbmFtZSI6ImxhcnVzQGlzbGFuZHN2ZWZpci5pcyIsImRlZmF1bHRfYWNjb3VudF9pZCI6OTI2LCJhdXRob3JpdGllcyI6WyJUUlZfQXBwcm92ZV9vcl9SZWplY3RfQm9va2luZ3NfOTI2IiwiVFJWX1NlZV9Cb29raW5nc185MjYiLCJUUlZfTWFuYWdlX1JvbGVzXzkyNiIsIlRSVl9TZWVfUHJvcGVydHlfR3JvdXBzXzkyNiIsIlRSVl9VcGRhdGVfQWxsb3RtZW50c185MjYiLCJUUlZfTWFuYWdlX1RyYXZlbF9BZ2VuY2llc185MjYiLCJUUlZfU2VhcmNoXzkyNiIsIlRSVl9NYW5hZ2VfUHJpY2VfTGlzdHNfOTI2IiwiVFJWX0FwcHJvdmVfb3JfUmVqZWN0X0FsbG90bWVudHNfOTI2IiwiVFJWX1JlYXNzaWduX0Jvb2tpbmdzXzkyNiIsIlRSVl9DcmVhdGVfQm9va2luZ3NfOTI2IiwiVFJWX01hbmFnZV9Vc2Vyc185MjYiLCJUUlZfT2ZmZXJfQWxsb3RtZW50c185MjYiLCJUUlZfVXBkYXRlX0Jvb2tpbmdzXzkyNiIsIlRSVl9TZWVfQWxsb3RtZW50c185MjYiLCJUUlZfU2VlX0NhbmNlbGxhdGlvbl9Qb2xpY2llc185MjYiLCJUUlZfTWFuYWdlX0NhbmNlbGxhdGlvbl9Qb2xpY2llc185MjYiLCJUUlZfU2VlX0Nvb3BlcmF0aW9uc185MjYiLCJUUlZfQ2FuY2VsX0FsbG90bWVudHNfOTI2IiwiVFJWX01hbmFnZV9Qcm9wZXJ0aWVzXzkyNiIsIlRSVl9TZWVfUHJpY2VfTGlzdHNfOTI2IiwiVFJWX01hbmFnZV9Qcm9wZXJ0eV9Hcm91cHNfOTI2IiwiVFJWX1NlZV9Qcm9wZXJ0aWVzXzkyNiIsIlRSVl9NYW5hZ2VfQWNjb3VudHNfYW5kX0F1dGhvcml6YXRpb25fOTI2IiwiVFJWX1NlZV9UcmF2ZWxfQWdlbmNpZXNfOTI2IiwiVFJWX1JlcXVlc3RfQWxsb3RtZW50c185MjYiLCJUUlZfQ2FuY2VsX0Nvb3BlcmF0aW9uXzkyNiIsIlRSVl9VcGRhdGVfQ29vcGVyYXRpb25fU2V0dGluZ3NfOTI2IiwiVFJWX1JlcXVlc3RfQ29vcGVyYXRpb25fOTI2IiwiVFJWX0FwcHJvdmVfb3JfUmVqZWN0X0Nvb3BlcmF0aW9uX1JlcXVlc3RfOTI2IiwiVFJWX0Rhc2hib2FyZF85MjYiLCJUUlZfQ2FuY2VsX0Jvb2tpbmdzXzkyNiJdLCJjbGllbnRfaWQiOiJHb2RvIiwiY291bnRyeV9jb2RlIjoiSVMiLCJ1c2VyX2lkIjo0OTcsImFjdGl2ZV9hY2NvdW50cyI6IjkyNiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJ1c2VyX2Z1bGxfbmFtZSI6IkzDoXJ1cyDDk3NrYXJzc29uIiwiYXRpIjoiYzM4M2IyMjEtYTAwOC00ZGMyLTg3ZmMtYjMzOTY4NGJlNzJlIiwiZXhwIjoxNjYzNDA4NDU5LCJqdGkiOiJjZmE4MjY3Zi1jYTM4LTRkYjEtYTg5Mi01ZGM5MmUwMzg4ZTgifQ.WPHTRpuxA_YahoE7nYlV_ekml7fAME9QZNBGx5ooqf54TDcqQ8xRnEmIqajGLeMHaOf7fnQZbutNQ3I9ePFkTddqH5AjfXAOEKB1DZEvIftPJ80iPP8VbrUdiOWN6ueRYY_Ezh3LNlL-R0D1b1uLuljh7IVS8cVSwk46NwisuMtl0JxovQ4SiOUn0tq5oGwHOUC2sbmsnbGzIhEGui_Zh6QkqhRfDSIbVykotD3tzI3lVLGUjlXPPiXWouA6Oje-mWr5wiwoBbMG5oavGigeMxzLJQvPALEdd_3x27VH0x3Dqv2K648IV2T8Nyi8pBpF65NqVSDod4672qTVqwac_w",
+        "expires_in": "2022-08-18T10:14:18.347",
         "scope": "read write"
     },
     "data": [
-        {
-            "hotelId": 432,
-            "name": "Channex 1 test",
-            "description": null,
-            "address": "test",
-            "city": "Kopavogur",
-            "postalCode": "140",
-            "latitude": 64.1033023,
-            "longitude": -21.8832579,
-            "email": "aleksandarm@iborn.net",
-            "phone": "243400",
-            "propertyTypeName": "Hotel",
-            "rooms": [
-                {
-                    "roomId": 662,
-                    "propertyId": 432,
-                    "name": "Standard Double",
-                    "minOccupancy": 1,
-                    "maxOccupancy": 2,
-                    "roomSize": null,
-                    "description": null,
-                    "roomAmenityNames": [],
-                    "wholeYearAvailability": true,
-                    "roomTypeName": "Double",
-                    "roomCategoryName": "Standard",
-                    "gallery": [],
-                    "addons": [],
-                    "isEmpty": false
-                },
-                {
-                    "roomId": 663,
-                    "propertyId": 432,
-                    "name": "Standard Single",
-                    "minOccupancy": 1,
-                    "maxOccupancy": 1,
-                    "roomSize": null,
-                    "description": null,
-                    "roomAmenityNames": [],
-                    "wholeYearAvailability": true,
-                    "roomTypeName": "Single",
-                    "roomCategoryName": "Standard",
-                    "gallery": [],
-                    "addons": [],
-                    "isEmpty": false
-                }
-            ],
-            "featuredImage": "",
-            "images": [],
-            "isEmpty": false
-        },
         {
             "hotelId": 429,
             "name": "Naughty By Nature",
@@ -154,6 +104,56 @@
                 "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:04_1519cfe7-6179-47a4-a881-059ac1238cd7_all3.png",
                 "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:16_b6a1249c-918a-4cd4-a1e5-d486c55df3b3_all3.png"
             ],
+            "isEmpty": false
+        },
+        {
+            "hotelId": 432,
+            "name": "Channex 1 test",
+            "description": null,
+            "address": "test",
+            "city": "Kopavogur",
+            "postalCode": "140",
+            "latitude": 64.1033023,
+            "longitude": -21.8832579,
+            "email": "aleksandarm@iborn.net",
+            "phone": "243400",
+            "propertyTypeName": "Hotel",
+            "rooms": [
+                {
+                    "roomId": 662,
+                    "propertyId": 432,
+                    "name": "Standard Double",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 2,
+                    "roomSize": null,
+                    "description": null,
+                    "roomAmenityNames": [],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Double",
+                    "roomCategoryName": "Standard",
+                    "gallery": [],
+                    "addons": [],
+                    "isEmpty": false
+                },
+                {
+                    "roomId": 663,
+                    "propertyId": 432,
+                    "name": "Standard Single",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 1,
+                    "roomSize": null,
+                    "description": null,
+                    "roomAmenityNames": [],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Single",
+                    "roomCategoryName": "Standard",
+                    "gallery": [],
+                    "addons": [],
+                    "isEmpty": false
+                }
+            ],
+            "featuredImage": "",
+            "images": [],
             "isEmpty": false
         },
         {
