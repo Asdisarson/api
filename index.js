@@ -17,6 +17,7 @@ var logger = require('morgan');
     var indexRouter = require('./routes/index');
     var propertiesRouter = require('./routes/properties');
     var queriesRouter = require('./routes/search');
+    var queriesRouter2 = require('./routes/search2');
 
     var roomsRouter = require('./routes/rooms');
     var cartRouter = require('./routes/cart');
@@ -71,7 +72,8 @@ var logger = require('morgan');
 
 app.use('/', indexRouter);
 app.use('/properties', propertiesRouter);
-app.use('/search', queriesRouter);
+    app.use('/search', queriesRouter);
+    app.use('/search', queriesRouter2);
 app.use('/rooms', roomsRouter);
 app.use('/cart', cartRouter);
 app
