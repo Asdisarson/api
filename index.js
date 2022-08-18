@@ -73,7 +73,7 @@ var logger = require('morgan');
 app.use('/', indexRouter);
 app.use('/properties', propertiesRouter);
     app.use('/search', queriesRouter);
-    app.use('/search', queriesRouter2);
+    app.use('/search2', queriesRouter2);
 app.use('/rooms', roomsRouter);
 app.use('/cart', cartRouter);
 app

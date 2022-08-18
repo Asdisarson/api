@@ -113,10 +113,8 @@ router.get('', function(req, res, next) {
                 city: '',
                 country: '',
                 description: '',
-                additionalDescription:''
-                ,rooms: [
-
-                ]
+                additionalDescription:'',
+                isRoom:false
             }
 
             if(req.query.start) {
@@ -243,7 +241,8 @@ router.get('', function(req, res, next) {
                     featuredImage: "",
                     gallery: [],
                     roomAddonCategories:[],
-                    booking:''
+                    booking:'',
+                    isRoom:true
                 }
                 var addons = [];
                 var gallery = [];
@@ -272,7 +271,14 @@ router.get('', function(req, res, next) {
                     });
                 }
                 room.addons = addons;
-                data.push(room)
+
+                array.result.push(
+                    data
+                );
+
+                array.result.push(
+                    room
+                );
             }
 
             array.result.push(
@@ -338,7 +344,8 @@ router.get('', function(req, res, next) {
                 extraBedPrice: '',
                 extraBedOriginalPrice: '',
                 roomAddonCategories:[],
-                booking:''
+                booking:'',
+                isRoom:false
             })
         }
         array.result = array.result.reverse();
