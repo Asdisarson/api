@@ -67,7 +67,6 @@ var logger = require('morgan');
     })
 
 
-
 app.use('/', indexRouter);
 app.use('/properties', propertiesRouter);
     app.use('/search', queriesRouter);
