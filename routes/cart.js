@@ -123,14 +123,17 @@ router.post('/:cartId/confirm', function(req, res, next) {
     var db = new JSONdb('./cache.json');
     var token = db.JSON();
     var options = {
-        'method': 'post',
-        'url': 'https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts/'+ req.params.cartId + '/confirm',
+        'method': 'PUT',
+        'url': 'https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts/'+ req.params.cartId,
         'headers': {
             'Authorization': 'Bearer ' + token.access_token,
             'Content-Type': 'application/json',
 
         },
-        'body': {}
+        'body': {
+            "bookingCartId": req.params.cartId,
+            "confirm":true
+        }
     };
     options.body = JSON.stringify(options.body)
     request(options, function (error, response) {
@@ -226,4 +229,3 @@ router.put('/cancel/:cartId', function(req, res, next) {
 });
 
 module.exports = router;
-
