@@ -1,30 +1,29 @@
-var express = require('express');
+var express = require("express");
 const JSONdb = require("simple-json-db");
 const request = require("request");
 const request1 = require("request");
 
-const auth = require("./auth");
 var router = express.Router();
 
 
-router.get('/:cartId', function(req, res, next) {
+router.get("/:cartId", function(req, res, next) {
     if(!req.query.booking) {
-        var db = new JSONdb('./cache.json');
-        var auth = require('./auth.js');
+        var db = new JSONdb("./cache.json");
+        var auth = require("./auth.js");
         request(auth, function(error, response) {
             if (error) throw new Error(error)
-            db.set('token',JSON.parse(response.body));
+            db.set("token",JSON.parse(response.body));
             db.sync();
-            var token = db.get('token')
+            var token = db.get("token")
             var options = {
-                'method': 'post',
-                'url': 'https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts/' + req.params.cartId, /* Check if new cart*/
-                'headers': {
-                    'Authorization': 'Bearer ' + token.access_token,
-                    'Content-Type': 'application/json',
+                "method": "post",
+                "url": "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts/" + req.params.cartId, /* Check if new cart*/
+                "headers": {
+                    "Authorization": "Bearer " + token.access_token,
+                    "Content-Type": "application/json",
 
                 },
-                'body': {}
+                "body": {}
             };
             request1(options, function (error, response) {
                 response.body = JSON.parse(response.body)
@@ -37,29 +36,29 @@ router.get('/:cartId', function(req, res, next) {
     }
 });
 router.use( function(req, res, next) {
-    var db = new JSONdb('./cache.json');
-    var auth = require('./auth.js');
+    var db = new JSONdb("./cache.json");
+    var auth = require("./auth.js");
     request(auth, function(error, response) {
         if (error) throw new Error(error)
-        db.set('token',JSON.parse(response.body));
+        db.set("token",JSON.parse(response.body));
         db.sync();
         next();
     })
 });
-router.post('', function(req, res, next) {
+router.post("", function(req, res, next) {
     console.log(req.body);
 
-    var db = new JSONdb('./cache.json');
-    var token = db.get('token');
+    var db = new JSONdb("./cache.json");
+    var token = db.get("token");
     var options = {
-        'method': 'post',
-        'url': 'https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts?createNewBookingCart=true', /* Check if new cart*/
-        'headers': {
-            'Authorization': 'Bearer ' + token.access_token,
-            'Content-Type': 'application/json',
+        "method": "post",
+        "url": "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts?createNewBookingCart=true", /* Check if new cart*/
+        "headers": {
+            "Authorization": "Bearer " + token.access_token,
+            "Content-Type": "application/json",
 
         },
-        'body': {}
+        "body": {}
     };
     options.body = {
 
@@ -84,15 +83,15 @@ router.post('', function(req, res, next) {
         console.log(response.body)
         if(response.body.bookingCartStatusCode==="OPEN") {
             var booking = {
-                name: '',
-                totalQuantity:'',
-                totalPrice:'',
-                totalPax:'',
-                totalOriginalPrice:'',
-                dateCreated: '',
+                name: "",
+                totalQuantity:"",
+                totalPrice:"",
+                totalPax:"",
+                totalOriginalPrice:"",
+                dateCreated: "",
                 startDate:req.body.startDate,
                 endDate:req.body.endDate,
-                cartId: '',
+                cartId: "",
                 valid: false,
                 propertyId:req.body.propertyId,
             };
@@ -117,23 +116,52 @@ router.post('', function(req, res, next) {
         }
     })
 });
-router.post('/:cartId/confirm', function(req, res, next) {
+router.post("/:cartId/confirm", function(req, res, next) {
+    console.log(req.params);
     console.log(req.body);
 
-    var db = new JSONdb('./cache.json');
-    var token = db.JSON();
+    var db = new JSONdb("./cache.json");
+    var token = db.JSON().token;
     var options = {
-        'method': 'PUT',
-        'url': 'https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts/'+ req.params.cartId,
-        'headers': {
-            'Authorization': 'Bearer ' + token.access_token,
-            'Content-Type': 'application/json',
+        "method": "post",
+        "url": "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts/"+ req.params.cartId +"/confirm",
+        "headers": {
+            "Authorization": "Bearer " + token.access_token,
+            "Content-Type": "application/json",
 
         },
-        'body': {
-            "bookingCartId": req.params.cartId,
-            "confirm":true
+        "body": {
+            "bookings": [{
+                "bookingCartId":req.params.cartId
+            }]}
+    };
+    options.body = JSON.stringify(options.body)
+    request(options, function (error, response) {
+        response.body = JSON.parse(response.body)
+        console.log(response.body)
+        if(response.statusCode===200||response.statusCode===201) {
+            res.send({valid:true})
         }
+        else {
+            res.send({valid:false})
+        }
+    })
+});
+
+router.post("/:cartId/valid", function(req, res, next) {
+    console.log(req.body);
+
+    var db = new JSONdb("./cache.json");
+    var token = db.JSON();
+    var options = {
+        "method": "post",
+        "url": "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts/"+ req.params.cartId ,
+        "headers": {
+            "Authorization": "Bearer " + token.access_token,
+            "Content-Type": "application/json",
+
+        },
+        "body": {}
     };
     options.body = JSON.stringify(options.body)
     request(options, function (error, response) {
@@ -147,47 +175,20 @@ router.post('/:cartId/confirm', function(req, res, next) {
     })
 });
 
-router.post('/:cartId/valid', function(req, res, next) {
+router.delete("/:cartId", function(req, res, next) {
     console.log(req.body);
 
-    var db = new JSONdb('./cache.json');
+    var db = new JSONdb("./cache.json");
     var token = db.JSON();
     var options = {
-        'method': 'post',
-        'url': 'https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts/'+ req.params.cartId ,
-        'headers': {
-            'Authorization': 'Bearer ' + token.access_token,
-            'Content-Type': 'application/json',
+        "method": "post",
+        "url": "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts/"+ req.params.cartId,
+        "headers": {
+            "Authorization": "Bearer " + token.access_token,
+            "Content-Type": "application/json",
 
         },
-        'body': {}
-    };
-    options.body = JSON.stringify(options.body)
-    request(options, function (error, response) {
-        response.body = JSON.parse(response.body)
-        if(response.statusCode===200||response.statusCode===201) {
-            res.send({valid:true})
-        }
-        else {
-            res.send({valid:false})
-        }
-    })
-});
-
-router.delete('/:cartId', function(req, res, next) {
-    console.log(req.body);
-
-    var db = new JSONdb('./cache.json');
-    var token = db.JSON();
-    var options = {
-        'method': 'post',
-        'url': 'https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts/'+ req.params.cartId,
-        'headers': {
-            'Authorization': 'Bearer ' + token.access_token,
-            'Content-Type': 'application/json',
-
-        },
-        'body': {}
+        "body": {}
     };
     options.body = JSON.stringify(options.body)
     request(options, function (error, response) {
@@ -201,20 +202,20 @@ router.delete('/:cartId', function(req, res, next) {
     })
 });
 
-router.put('/cancel/:cartId', function(req, res, next) {
+router.put("/cancel/:cartId", function(req, res, next) {
     console.log(req.body);
 
-    var db = new JSONdb('./cache.json');
+    var db = new JSONdb("./cache.json");
     var token = db.JSON();
     var options = {
-        'method': 'post',
-        'url': 'https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts/'+ req.params.cartId,
-        'headers': {
-            'Authorization': 'Bearer ' + token.access_token,
-            'Content-Type': 'application/json',
+        "method": "post",
+        "url": "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts/"+ req.params.cartId,
+        "headers": {
+            "Authorization": "Bearer " + token.access_token,
+            "Content-Type": "application/json",
 
         },
-        'body': {}
+        "body": {}
     };
     options.body = JSON.stringify(options.body)
     request(options, function (error, response) {
