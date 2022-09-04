@@ -70,7 +70,7 @@ var logger = require('morgan');
 app.use('/', indexRouter);
 app.use('/properties', propertiesRouter);
     app.use('/search', queriesRouter);
--app.use('/rooms', roomsRouter);
+app.use('/rooms', roomsRouter);
 app.use('/cart', cartRouter);
 app
   .use(express.static(path.join(__dirname, 'public')))
