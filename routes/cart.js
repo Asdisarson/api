@@ -75,8 +75,8 @@ router.post("/", function (req, res, next) {
         ],
         "confirm": false,
         "instant": true,
-        "name": "Test booking",
-        "notes": "Test notes",
+        "name": req.body.name,
+        "notes": req.body.notes,
         "propertyId": req.body.propertyId
     };
     options.body = JSON.stringify(options.body)
@@ -99,7 +99,7 @@ router.post("/confirm", function (req, res, next) {
     var token = db.get("token");
     var options = {
         "method": "post",
-        "url": "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts?createNewBookingCart=true",
+        "url": "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts",
         "headers": {
             "Authorization": "Bearer " + token.access_token,
             "Content-Type": "application/json",
@@ -112,7 +112,9 @@ router.post("/confirm", function (req, res, next) {
 
     console.log(options)
     for (var i = 0; i < req.body.bookings.length; i++) {
-            var date1 = new Date(req.body.bookings[i].startDate);
+        options.url = "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts"
+
+        var date1 = new Date(req.body.bookings[i].startDate);
             var date2 = new Date(req.body.bookings[i].endDate);
             var timeDiff = Math.abs(date2.getTime() - date1.getTime());
             var numberOfNights = Math.ceil(timeDiff / (1000 * 3600 * 24));
@@ -136,24 +138,20 @@ router.post("/confirm", function (req, res, next) {
                 propertyId:parseInt( req.body.bookings[i].propertyId),
                     name: req.body.name,
                     instant: true,
-
+                    confirm:false
                 }
-                if(i !== 0) {
-                    options.url = "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts";
+                if(i === 0) {
+                    options.url = "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts?createNewBookingCart=true";
                 }
             if (req.body.bookings.length === (i + 1)) {
 
-                options.body["confirm"] = true;
+                options.body.confirm = true;
             }            console.log(options.body)
             options.body = JSON.stringify(options.body)
 
             request(options, function (error, response) {
                 response.body = JSON.parse(response.body)
                 console.log(response.body)
-                if(i === 0) {
-                    bookingCartId = parseInt(response.body.bookings[0].bookingCartId);
-                }
-                options.url = "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts/" + response.body.bookings[0].bookingCartId.toString()
 
             })
 
