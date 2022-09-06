@@ -157,7 +157,12 @@ router.post("/confirm", function (req, res, next) {
                 })
         }
 
-
+        if(bookingRooms.length === req.body.bookings.length){
+            bookings.push({
+                rooms: bookingRooms,
+                propertyId: parseInt(req.body.bookings[i - 1].propertyId)
+            })
+        }
     }
         for (var i = 0; i < bookings.length; i++) {
 
