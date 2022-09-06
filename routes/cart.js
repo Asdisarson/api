@@ -114,14 +114,21 @@ router.post("/confirm", function (req, res, next) {
     req.body.bookings.sort((a, b) => {
         return a.propertyId - b.propertyId;
     });
+    var bookingRooms = [];
+
     for (var i = 0; i < req.body.bookings.length; i++) {
-        var bookingRooms = [];
         var date1 = new Date(req.body.bookings[i].startDate);
         var date2 = new Date(req.body.bookings[i].endDate);
         var timeDiff = Math.abs(date2.getTime() - date1.getTime());
         var numberOfNights = Math.ceil(timeDiff / (1000 * 3600 * 24));
         if (i !== 0) {
             if (!(req.body.bookings[i].propertyId === req.body.bookings[i - 1].propertyId)) {
+                bookings.push({
+                    rooms: bookingRooms,
+                    propertyId: parseInt(req.body.bookings[i - 1].propertyId)
+                })
+                bookingRooms = [];
+
                 bookingRooms.push(req.body.bookings[i])
             } else {
                 bookingRooms.push(
@@ -150,10 +157,7 @@ router.post("/confirm", function (req, res, next) {
                 })
         }
 
-        bookings.push({
-            rooms: bookingRooms,
-            propertyId: parseInt(req.body.bookings[i].propertyId)
-        })
+
     }
         for (var i = 0; i < bookings.length; i++) {
 
