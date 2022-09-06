@@ -119,7 +119,7 @@ router.post("/confirm", function (req, res, next) {
         var date2 = new Date(req.body.bookings[i].endDate);
         var timeDiff = Math.abs(date2.getTime() - date1.getTime());
         var numberOfNights = Math.ceil(timeDiff / (1000 * 3600 * 24));
-        bookingRooms[i] =
+        bookingRooms.push(
             {
                 endDate: req.body.bookings[i].endDate,
                 name: req.body.bookings[i].name,
@@ -130,7 +130,7 @@ router.post("/confirm", function (req, res, next) {
                 startDate: req.body.bookings[i].startDate,
                 quantity: parseInt(req.body.bookings[i].quantity),
 
-            }
+            }             )
 
     }
 
