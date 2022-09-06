@@ -64,8 +64,8 @@ router.post("/", function (req, res, next) {
         "bookingRooms": [
             {
                 "endDate": req.body.endDate,
-                "name": "placeholder",
-                "notes": "placeholder",
+                "name": req.body.name,
+                "notes": '',
                 "pax": req.body.numberOfPeople,
                 "numberOfNights": req.body.numberOfNights,
                 "quantity": req.body.quantity,
