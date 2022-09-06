@@ -109,59 +109,78 @@ router.post("/confirm", function (req, res, next) {
 
         }
     };
-    var bookingRooms=[];
+    var bookings=[]
     console.log(options)
     req.body.bookings.sort((a, b) => {
         return a.propertyId - b.propertyId;
     });
     for (var i = 0; i < req.body.bookings.length; i++) {
+        var bookingRooms = [];
         var date1 = new Date(req.body.bookings[i].startDate);
         var date2 = new Date(req.body.bookings[i].endDate);
         var timeDiff = Math.abs(date2.getTime() - date1.getTime());
         var numberOfNights = Math.ceil(timeDiff / (1000 * 3600 * 24));
-        bookingRooms.push(
-            {
-                endDate: req.body.bookings[i].endDate,
-                name: req.body.bookings[i].name,
-                notes: req.body.bookings[i].notes,
-                pax: parseInt(req.body.bookings[i].pax),
-                numberOfNights:numberOfNights,
-                roomId: parseInt(req.body.bookings[i].roomId),
-                startDate: req.body.bookings[i].startDate,
-                quantity: parseInt(req.body.bookings[i].quantity),
+        if (i !== 0) {
+            if (!(req.body.bookings[i].propertyId === req.body.bookings[i - 1].propertyId)) {
+                bookingRooms.push(req.body.bookings[i])
+            } else {
+                bookingRooms.push(
+                    {
+                        endDate: req.body.bookings[i].endDate,
+                        name: req.body.bookings[i].name,
+                        notes: req.body.bookings[i].notes,
+                        pax: parseInt(req.body.bookings[i].pax),
+                        numberOfNights: numberOfNights,
+                        roomId: parseInt(req.body.bookings[i].roomId),
+                        startDate: req.body.bookings[i].startDate,
+                        quantity: parseInt(req.body.bookings[i].quantity),
+                    })
+            }
+        } else {
+            bookingRooms.push(
+                {
+                    endDate: req.body.bookings[i].endDate,
+                    name: req.body.bookings[i].name,
+                    notes: req.body.bookings[i].notes,
+                    pax: parseInt(req.body.bookings[i].pax),
+                    numberOfNights: numberOfNights,
+                    roomId: parseInt(req.body.bookings[i].roomId),
+                    startDate: req.body.bookings[i].startDate,
+                    quantity: parseInt(req.body.bookings[i].quantity),
+                })
+        }
 
-            }             )
-
+        bookings.push({
+            rooms: bookingRooms,
+            propertyId: parseInt(req.body.bookings[i].propertyId)
+        })
     }
+        for (var i = 0; i < bookings.length; i++) {
 
-        options.url = "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts"
+
+            options.url = "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts?createNewBookingCart=true";
 
 
             options.body = {
 
-                    bookingRooms: bookingRooms,
+                bookingRooms: bookings[i].rooms,
                 notes: req.body.notes,
 
-                propertyId:parseInt( req.body.bookings.propertyId),
-                    name: req.body.name,
-                    instant: true,
-                    confirm:false
-                }
-                if(i === 0) {
-                    options.url = "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts?createNewBookingCart=true";
-                }
-            if (req.body.bookings.length === (i + 1)) {
-
-                options.body.confirm = true;
-            }            console.log(options.body)
+                propertyId: bookings[i].propertyId,
+                name: req.body.name,
+                instant: true,
+                confirm: true
+            }
+            if (i === 0) {
+            }
             options.body = JSON.stringify(options.body)
 
             request(options, function (error, response) {
                 response.body = JSON.parse(response.body)
                 console.log(response.body)
-                   return response.body
+                return response.body
             })
-
+        }
 
           res.send()
 });
