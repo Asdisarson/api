@@ -64,8 +64,8 @@ router.post("/", function (req, res, next) {
         "bookingRooms": [
             {
                 "endDate": req.body.endDate,
-                "name": "Nice booking",
-                "notes": "Test",
+                "name": "placeholder",
+                "notes": "placeholder",
                 "pax": req.body.numberOfPeople,
                 "numberOfNights": req.body.numberOfNights,
                 "quantity": req.body.quantity,
@@ -111,8 +111,7 @@ router.post("/confirm", function (req, res, next) {
     };
 
     console.log(options)
-    var bookingCartId = "";
-        for (var i = 0; i < req.body.bookings.length; i++) {
+    for (var i = 0; i < req.body.bookings.length; i++) {
             var date1 = new Date(req.body.bookings[i].startDate);
             var date2 = new Date(req.body.bookings[i].endDate);
             var timeDiff = Math.abs(date2.getTime() - date1.getTime());
@@ -123,7 +122,7 @@ router.post("/confirm", function (req, res, next) {
                         {
                             endDate: req.body.bookings[i].endDate,
                             name: req.body.bookings[i].name,
-                            notes: 'req.body.bookings[i].notes',
+                            notes: req.body.bookings[i].notes,
                             pax: parseInt(req.body.bookings[i].pax),
                             numberOfNights:numberOfNights,
                             roomId: parseInt(req.body.bookings[i].roomId),
@@ -132,13 +131,15 @@ router.post("/confirm", function (req, res, next) {
 
                         }
                     ],
-                    propertyId:parseInt( req.body.bookings[i].propertyId),
-                    name: req.body.bookings[i].name,
+                notes: req.body.notes,
+
+                propertyId:parseInt( req.body.bookings[i].propertyId),
+                    name: req.body.name,
                     instant: true,
 
                 }
                 if(i !== 0) {
-                    options.body["bookingCartId"] = bookingCartId;
+                    options.url = "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts";
                 }
             if (req.body.bookings.length === (i + 1)) {
 
