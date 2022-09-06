@@ -111,7 +111,7 @@ router.post("/confirm", function (req, res, next) {
     };
     var bookingRooms=[];
     console.log(options)
-    req.booking.bookingRooms.sort((a, b) => {
+    req.body.booking.bookingRooms.sort((a, b) => {
         return a.propertyId - b.propertyId;
     });
     for (var i = 0; i < req.body.bookings.bookingRooms.length; i++) {
