@@ -152,11 +152,11 @@ router.post("/confirm", function (req, res, next) {
             request(options, function (error, response) {
                 response.body = JSON.parse(response.body)
                 console.log(response.body)
-
+                   return response.body
             })
 
         }
-
+          res.send()
 });
 
 router.post("/:cartId/valid", function (req, res, next) {
