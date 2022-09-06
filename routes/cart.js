@@ -111,10 +111,10 @@ router.post("/confirm", function (req, res, next) {
     };
     var bookingRooms=[];
     console.log(options)
-    req.body.booking.bookingRooms.sort((a, b) => {
+    req.body.bookings.sort((a, b) => {
         return a.propertyId - b.propertyId;
     });
-    for (var i = 0; i < req.body.bookings.bookingRooms.length; i++) {
+    for (var i = 0; i < req.body.bookings.length; i++) {
         var date1 = new Date(req.body.bookings[i].startDate);
         var date2 = new Date(req.body.bookings[i].endDate);
         var timeDiff = Math.abs(date2.getTime() - date1.getTime());
