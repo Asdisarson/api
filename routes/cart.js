@@ -177,7 +177,7 @@ router.post("/confirm", function (req, res, next) {
         for (var i = 0; i < bookings.length; i++) {
 
 
-            options.url = "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts?createNewBookingCart=true";
+            options.url = "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts";
 
 
             options.body = {
