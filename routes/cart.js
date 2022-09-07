@@ -188,8 +188,6 @@ router.post("/confirm", function (req, res, next) {
          options.url = "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts/" + bookings[i].bookingCartId
                         options.method = "delete"
             request(options, function (error, response) {
-                response.body = JSON.parse(response.body)
-                console.log(response.body)
             })
             options.method = "post"
 
