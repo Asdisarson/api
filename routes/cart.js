@@ -185,8 +185,9 @@ router.post("/confirm", function (req, res, next) {
     }
         for (var i = 0; i < bookings.length; i++) {
 
-         options.url = "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts/" + bookings[i].bookingCartId
+         options.url = "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts/" + bookings[i].bookingCartId.toString()
                         options.method = "delete"
+            options.body = ''
             request(options, function (error, response) {
                 console.log(response)
             })
