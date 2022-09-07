@@ -127,7 +127,9 @@ router.post("/confirm", function (req, res, next) {
                     rooms: bookingRooms,
                     propertyId: parseInt(req.body.bookings[i - 1].propertyId)
                     ,
-                    bookingCartId:parseInt(req.body.bookings[i].bookingCartId)
+                    bookingCartId:parseInt(req.body.bookings[i].bookingCartId),
+                    name:parseInt(req.body.bookings[i].name)
+
                 })
                 bookingRooms = [];
 
@@ -164,14 +166,18 @@ router.post("/confirm", function (req, res, next) {
                 bookings.push({
                     rooms: bookingRooms,
                     propertyId: parseInt(req.body.bookings[i].propertyId)          ,
-                    bookingCartId:parseInt(req.body.bookings[i].bookingCartId)
+                    bookingCartId:parseInt(req.body.bookings[i].bookingCartId),
+                    name:parseInt(req.body.bookings[i].name)
+
                 })
             }
             else {
                 bookings.push({
                     rooms: bookingRooms,
                     propertyId: parseInt(req.body.bookings[i - 1].propertyId)          ,
-                    bookingCartId:parseInt(req.body.bookings[i].bookingCartId)
+                    bookingCartId:parseInt(req.body.bookings[i].bookingCartId),
+                    name:parseInt(req.body.bookings[i].name)
+
                 })
             }
 
