@@ -126,6 +126,8 @@ router.post("/confirm", function (req, res, next) {
                 bookings.push({
                     rooms: bookingRooms,
                     propertyId: parseInt(req.body.bookings[i - 1].propertyId)
+                    ,
+                    bookingCartId:parseInt(req.body.bookings[i].bookingCartId)
                 })
                 bookingRooms = [];
 
@@ -168,7 +170,8 @@ router.post("/confirm", function (req, res, next) {
             else {
                 bookings.push({
                     rooms: bookingRooms,
-                    propertyId: parseInt(req.body.bookings[i - 1].propertyId)
+                    propertyId: parseInt(req.body.bookings[i - 1].propertyId)          ,
+                    bookingCartId:parseInt(req.body.bookings[i].bookingCartId)
                 })
             }
 
@@ -184,9 +187,9 @@ router.post("/confirm", function (req, res, next) {
 
                 bookingRooms: bookings[i].rooms,
                 notes: req.body.notes,
-
+                bookingCartId:bookings[i].bookingCartId,
                 propertyId: bookings[i].propertyId,
-                name: req.body.name,
+                name:bookings[i].name,
                 instant: true,
                 confirm: true
             }
