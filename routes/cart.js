@@ -185,15 +185,19 @@ router.post("/confirm", function (req, res, next) {
     }
         for (var i = 0; i < bookings.length; i++) {
 
-
-            options.url = "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts";
+         options.url = "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts" + bookings[i].bookingCartId.toString();
+                        options.method = "delete"
+            request(options, function (error, response) {
+                response.body = JSON.parse(response.body)
+                console.log(response.body)
+            })
+            options.url = "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts?createNewBookingCart=true";
 
 
             options.body = {
 
                 bookingRooms: bookings[i].rooms,
                 notes: req.body.notes,
-                bookingCartId:bookings[i].bookingCartId,
                 propertyId: bookings[i].propertyId,
                 name:bookings[i].name,
                 instant: true,
