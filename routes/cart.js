@@ -105,7 +105,7 @@ router.post("/confirm", function (req, res, next) {
             "Content-Type": "application/json",
 
         },
-        "body": {
+        "body":     {
 
         }
     };
@@ -185,7 +185,7 @@ router.post("/confirm", function (req, res, next) {
     }
         for (var i = 0; i < bookings.length; i++) {
 
-         options.url = "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts/" + bookings[i].bookingCartId.toString();
+         options.url = "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts/" + bookings[i].bookingCartId
                         options.method = "delete"
             request(options, function (error, response) {
                 response.body = JSON.parse(response.body)
