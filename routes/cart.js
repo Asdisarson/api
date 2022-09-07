@@ -161,7 +161,8 @@ router.post("/confirm", function (req, res, next) {
             if(bookingRooms.length === 1)   {
                 bookings.push({
                     rooms: bookingRooms,
-                    propertyId: parseInt(req.body.bookings[i].propertyId)
+                    propertyId: parseInt(req.body.bookings[i].propertyId)          ,
+                    bookingCartId:parseInt(req.body.bookings[i].bookingCartId)
                 })
             }
             else {
