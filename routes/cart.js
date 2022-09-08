@@ -59,7 +59,10 @@ router.post("/", function (req, res, next) {
         },
         "body": {}
     };
-
+    var date1 = new Date(req.body.startDate);
+    var date2 = new Date(req.body.endDate);
+    var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+    var numberOfNights = Math.ceil(timeDiff / (1000 * 3600 * 24));
     options.body = {
         "bookingRooms": [
             {
@@ -67,7 +70,7 @@ router.post("/", function (req, res, next) {
                 "name": req.body.name,
                 "notes": '',
                 "pax": req.body.numberOfPeople,
-                "numberOfNights": req.body.numberOfNights,
+                "numberOfNights": numberOfNights,
                 "quantity": req.body.quantity,
                 "roomId": req.body.roomId,
                 "startDate": req.body.startDate,
@@ -84,7 +87,8 @@ router.post("/", function (req, res, next) {
         console.log(options.url);
             response.body = JSON.parse(response.body)
             console.log(response.body)
-            res.send(response.body.bookings)
+
+            res.send(response.body)
 
         }
     )
