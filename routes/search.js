@@ -290,7 +290,9 @@ if (req.query.city) {
     var str= ( s.replace(translate_re, function(match) {
         return translate[match];
     }) );
-    array.result = array.result.filter(hotel => hotel.city === (req.query.city||str));
+    array.result = array.result.filter(hotel => hotel.city.replace(translate_re, function(match) {
+        return translate[match];
+    }) === (req.query.city||str));
 }
         if (array.result.length === 0) {
             array.result.push({
