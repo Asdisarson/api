@@ -279,7 +279,18 @@ router.get('', function (req, res, next) {
             );
         }
 if (req.query.city) {
-    array.result = array.result.filter(hotel => hotel.city === req.query.city);
+    var s = req.query.city;
+    var translate = {
+        "á": "a", "ö": "o", "ú": "u",
+        "Á": "A", "Ö": "O", "Ú": "U",
+        "Ý": "Y", "í": "i", "Í": "I",
+        "ý": "y", "ó": "o", "Ó": "O"   // probably more to come
+    };
+    var translate_re = /[áÁöÖúÚóÓýÝíÍ]/g;
+    var str= ( s.replace(translate_re, function(match) {
+        return translate[match];
+    }) );
+    array.result = array.result.filter(hotel => hotel.city === (req.query.city||str));
 }
         if (array.result.length === 0) {
             array.result.push({
