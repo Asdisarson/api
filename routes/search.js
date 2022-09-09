@@ -194,7 +194,7 @@ router.get('', function (req, res, next) {
                 data.link = data.link + "numberOfPeople:" + req.query.numberOfPeople + ";";
             }
             if (req.query.numberOfRooms) {
-                data.link = data.link + "numberOfRooms:1;";
+                data.link = data.link + "numberOfRooms:" + req.query.numberOfRooms + ";";
             }
 
             for (var i = 0; i < response.body[k].images.length; i++) {
@@ -250,9 +250,9 @@ router.get('', function (req, res, next) {
                     room.booking = "?add-to-cart=1209&propertyId=" + response.body[k].rooms[i].propertyId +
                         "&roomId=" + response.body[k].rooms[i].id + "&product_id=1209" + "&startDate=" +
                         linkstartDate + "&endDate=" + linkendDate +"&numberOfPeople=" +req.query.numberOfPeople + "&name=" + response.body[k].name + "-" + room.name + "&numberOfPeople=" + req.query.numberOfPeople
-                        + "&quantity=1"
+                        + "&quantity=" + req.query.numberOfRooms
                 }
-
+                console.log(room.booking)
 
                 if (response.body[k].rooms[i].images[0]) {
                     room.featuredImage = response.body[k].rooms[i].images[0].filePath;
