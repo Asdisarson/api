@@ -246,11 +246,11 @@ router.get('', function (req, res, next) {
                 }
                 var addons = [];
                 var gallery = [];
-                if (req.query.start && req.query.end && req.query.numberOfPeople) {
+                if (room.available && req.query.start && req.query.end && req.query.numberOfPeople) {
                     room.booking = "?add-to-cart=1209&propertyId=" + response.body[k].rooms[i].propertyId +
                         "&roomId=" + response.body[k].rooms[i].id + "&product_id=1209" + "&startDate=" +
                         linkstartDate + "&endDate=" + linkendDate +"&numberOfPeople=" +req.query.numberOfPeople + "&name=" + response.body[k].name + "-" + room.name
-                        + "&quantity=" + req.query.numberOfRooms
+                        + "&quantity=1"
                 }
                 console.log(room.booking)
 
