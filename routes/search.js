@@ -302,7 +302,12 @@ router.get('', function (req, res, next) {
               console.log(e);
         }
         if (array.result.length === 0) {
-                 data = new JSONdb('./cache.json');
+            const {save} = require("./request");
+            var fn = save();
+            if(!fn) {
+
+            }
+            data = new JSONdb('./cache.json');
                 var output = data.get('data');
                 console.log(output)
                 if(output.length > 0){
