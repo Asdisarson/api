@@ -1,6 +1,8 @@
 var express = require('express');
 const JSONdb = require("simple-json-db");
 const request = require("request");
+const {getHotelCache} = require("./cache");
+const {save} = require("./request");
 var router = express.Router();
 router.get('', function (req, res, next) {
     var db = new JSONdb('./cache.json');
@@ -300,35 +302,45 @@ router.get('', function (req, res, next) {
               console.log(e);
         }
         if (array.result.length === 0) {
-            array.result.push({
-                query: JSON.stringify(req.query),
-                req: JSON.stringify(options),
-                startDate: '',
-                endDate: '',
-                link: '',
-                checkInStartTime: '',
-                checkInEndTime: '',
-                propertyAmenityNames: '',
-                pricesFrom: '',
-                pricesFromCurrencySymbol: '',
-                featuredImage: '',
-                gallery: [],
-                latitude: '',
-                longitude: '',
-                hotelId: '',
-                name: '',
-                propertyType: '',
-                email: '',
-                url: '',
-                phone: '',
-                address: '',
-                postalCode: '',
-                city: '',
-                country: '',
-                description: '',
-                additionalDescription: ''
-                , rooms: []
-            })
+                 data = new JSONdb('./cache.json');
+                var output = data.get('data');
+                console.log(output)
+                if(output.length > 0){
+                    res.send({data:output});
+                }
+                else {
+
+                    array.result.push({
+                        query: JSON.stringify(req.query),
+                        req: JSON.stringify(options),
+                        startDate: '',
+                        endDate: '',
+                        link: '',
+                        checkInStartTime: '',
+                        checkInEndTime: '',
+                        propertyAmenityNames: '',
+                        pricesFrom: '',
+                        pricesFromCurrencySymbol: '',
+                        featuredImage: '',
+                        gallery: [],
+                        latitude: '',
+                        longitude: '',
+                        hotelId: '',
+                        name: '',
+                        propertyType: '',
+                        email: '',
+                        url: '',
+                        phone: '',
+                        address: '',
+                        postalCode: '',
+                        city: '',
+                        country: '',
+                        description: '',
+                        additionalDescription: ''
+                        , rooms: []
+                    })                }
+
+
         }
         res.send(array);
 
