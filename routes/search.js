@@ -334,11 +334,11 @@ router.get('', function (req, res, next){
     var output = data.get('data');
     console.log(output)
     if(output.length > 0){
-        res.send({data:output});
+        res.send({result:output});
     }
     else {
         save()
-        res.send({data:[{
+        res.send({result:[{
                 hotelId: '',
                 name: '',
                 description: '',
