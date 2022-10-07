@@ -1,9 +1,9 @@
 var express = require('express');
+var router = express.Router();
+
 const JSONdb = require("simple-json-db");
 const request = require("request");
-const {getHotelCache} = require("./cache");
-const {save} = require("./request");
-var router = express.Router();
+
 router.get('', function (req, res, next) {
     var db = new JSONdb('./cache.json');
     var auth = require('./auth.js');
@@ -79,7 +79,9 @@ router.get('', function (req, res, next) {
 
     options.body = JSON.stringify(data)
     request(options, function (error, response) {
-        var array = {
+        try {
+
+            var array = {
             query: req.query,
             req: options,
             result: []
@@ -251,7 +253,7 @@ router.get('', function (req, res, next) {
                 if (room.available && req.query.start && req.query.end && req.query.numberOfPeople) {
                     room.booking = "?add-to-cart=1209&propertyId=" + response.body[k].rooms[i].propertyId +
                         "&roomId=" + response.body[k].rooms[i].id + "&product_id=1209" + "&startDate=" +
-                        linkstartDate + "&endDate=" + linkendDate +"&numberOfPeople=" +req.query.numberOfPeople + "&name=" + response.body[k].name + "-" + room.name
+                        linkstartDate + "&endDate=" + linkendDate + "&numberOfPeople=" + req.query.numberOfPeople + "&name=" + response.body[k].name + "-" + room.name
                         + "&quantity=1"
                 }
                 console.log(room.booking)
@@ -280,8 +282,7 @@ router.get('', function (req, res, next) {
                 data
             );
         }
-        try {
-            if (req.query.city) {
+              if (req.query.city) {
                 var s = req.query.city;
                 var translate = {
                     "á": "a", "ö": "o", "ú": "u",
@@ -302,53 +303,57 @@ router.get('', function (req, res, next) {
               console.log(e);
         }
         if (array.result.length === 0) {
-            const {save} = require("./request");
-            var fn = save();
-            if(!fn) {
-
-            }
-            data = new JSONdb('./cache.json');
-                var output = data.get('data');
-                console.log(output)
-                if(output.length > 0){
-                    res.send({data:output});
-                }
-                else {
-
-                    array.result.push({
-                        query: JSON.stringify(req.query),
-                        req: JSON.stringify(options),
-                        startDate: '',
-                        endDate: '',
-                        link: '',
-                        checkInStartTime: '',
-                        checkInEndTime: '',
-                        propertyAmenityNames: '',
-                        pricesFrom: '',
-                        pricesFromCurrencySymbol: '',
-                        featuredImage: '',
-                        gallery: [],
-                        latitude: '',
-                        longitude: '',
-                        hotelId: '',
-                        name: '',
-                        propertyType: '',
-                        email: '',
-                        url: '',
-                        phone: '',
-                        address: '',
-                        postalCode: '',
-                        city: '',
-                        country: '',
-                        description: '',
-                        additionalDescription: ''
-                        , rooms: []
-                    })                }
-
+           next()
 
         }
         res.send(array);
 
     })
+})
+const {save} = require("./request");
+const {getHotelCache} = require("./cache");
+
+/* GET users listing. */
+
+router.get('', function (req, res, next){
+    if(req.query.hotelId) {
+
+        res.send({
+            data:getHotelCache(req.query.hotelId)
+        });}
+
+    else{
+        next();
+    }
+})
+router.get('', function (req, res, next){
+    var data = new JSONdb('./cache.json');
+    var output = data.get('data');
+    console.log(output)
+    if(output.length > 0){
+        res.send({data:output});
+    }
+    else {
+        save()
+        res.send({data:[{
+                hotelId: '',
+                name: '',
+                description: '',
+                address: '',
+                city: '',
+                country: '',
+                postalCode: '',
+                latitude: '',
+                longitude: '',
+                email: '',
+                phone: '',
+                propertyTypeName: '',
+                amenity: [],
+                rooms: [],
+                featuredImage: "",
+                images: [],
+                isEmpty:true
+            }]})
+    }
 })
 module.exports = router;
