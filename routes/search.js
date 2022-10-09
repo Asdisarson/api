@@ -243,8 +243,8 @@ router.get('', function (req, res, next) {
                     extraBedPrice: parseInt(response.body[k].rooms[i].extraBedPrice).toLocaleString('de-DE'),
                     extraBedOriginalPrice: parseInt(response.body[k].rooms[i].extraBedOriginalPrice).toLocaleString('de-DE')
                     ,
-                    featuredImage: "",
-                    gallery: [],
+                    hotelFeatureImage: "",
+                    hotelGallery: [],
                     roomAddonCategories: [],
                     booking: ''
                 }
@@ -259,7 +259,7 @@ router.get('', function (req, res, next) {
                 console.log(room.booking)
 
                 if (response.body[k].rooms[i].images[0]) {
-                    room.featuredImage = response.body[k].rooms[i].images[0].filePath;
+                    room.hotelFeatureImage = response.body[k].rooms[i].images[0].filePath;
                 }
                 if (response.body[k].rooms[i].gallery) {
                     for (let j = 0; j < response.body[k].rooms[i].gallery.length; j++) {
@@ -267,7 +267,7 @@ router.get('', function (req, res, next) {
                     }
                 }
 
-                room.gallery = gallery;
+                room.hotelGallery = gallery;
                 for (let j = 0; j < response.body[k].rooms[i].roomAddonCategories.length; j++) {
                     addons.push({
                         name: response.body[k].rooms[i].roomAddonCategories[j].name,
