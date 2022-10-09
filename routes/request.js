@@ -136,15 +136,15 @@ module.exports = {
                                     propertyTypeName: response1.body.propertyTypeName,
                                     amenity: response1.body.amenity,
                                     rooms: [],
-                                    hotelFeaturedImage: "",
-                                    hotelGallery: [],
+                                    featureImage: "",
+                                    gallery: [],
                                     isEmpty:false
                                 }
                                 response3.body = JSON.parse(response3.body)
                                 for (var k = 0; k < response3.body.length; k++) {
-                                    hotelargs.hotelGallery.push(response3.body[k].filePath);
+                                    hotelargs.gallery.push(response3.body[k].filePath);
                                     if(response3.body.length === (k + 1)) {
-                                        hotelargs.hotelFeaturedImage = response3.body[k].filePath
+                                        hotelargs.featureImage = response3.body[k].filePath
                                     }
                                 }
 
@@ -172,8 +172,8 @@ module.exports = {
                                     wholeYearAvailability: response2.body[j].wholeYearAvailability,
                                     roomTypeName: response2.body[j].roomTypeName,
                                     roomCategoryName: response2.body[j].roomCategoryName,
-                                    roomFeatureimage: imgs[0],
-                                    roomGallery: imgs,
+                                    featureimage: imgs[0],
+                                    gallery: imgs,
                                     addons: addons,
                                     isEmpty: false
 

@@ -102,8 +102,8 @@ router.get('', function (req, res, next) {
                 propertyAmenityNames: '',
                 pricesFrom: '',
                 pricesFromCurrencySymbol: '',
-                hotelFeaturedImage: '',
-                hotelGallery: [],
+                featureImage: '',
+                gallery: [],
                 latitude: '',
                 longitude: '',
                 hotelId: '',
@@ -203,10 +203,10 @@ router.get('', function (req, res, next) {
 
             for (var i = 0; i < response.body[k].images.length; i++) {
                 if ((i + 1) === response.body[k].images.length) {
-                    data.hotelFeaturedImage = response.body[k].images[i].filePath
+                    data.featureImage = response.body[k].images[i].filePath
 
                 }
-                data.hotelGallery.push(response.body[k].images[i].filePath)
+                data.gallery.push(response.body[k].images[i].filePath)
             }
             for (var i = 0; i < response.body[k].rooms.length; i++) {
                 var room = {
@@ -243,8 +243,8 @@ router.get('', function (req, res, next) {
                     extraBedPrice: parseInt(response.body[k].rooms[i].extraBedPrice).toLocaleString('de-DE'),
                     extraBedOriginalPrice: parseInt(response.body[k].rooms[i].extraBedOriginalPrice).toLocaleString('de-DE')
                     ,
-                    roomFeatureImage: "",
-                    roomGallery: [],
+                    featureImage: "",
+                    gallery: [],
                     roomAddonCategories: [],
                     booking: ''
                 }
@@ -259,7 +259,7 @@ router.get('', function (req, res, next) {
                 console.log(room.booking)
 
                 if (response.body[k].rooms[i].images[0]) {
-                    room.roomFeatureImage = response.body[k].rooms[i].images[0].filePath;
+                    room.featureImage = response.body[k].rooms[i].images[0].filePath;
                 }
                 if (response.body[k].rooms[i].gallery) {
                     for (let j = 0; j < response.body[k].rooms[i].gallery.length; j++) {
@@ -267,7 +267,7 @@ router.get('', function (req, res, next) {
                     }
                 }
 
-                room.roomGallery = gallery;
+                room.gallery = gallery;
                 for (let j = 0; j < response.body[k].rooms[i].roomAddonCategories.length; j++) {
                     addons.push({
                         name: response.body[k].rooms[i].roomAddonCategories[j].name,
@@ -349,8 +349,8 @@ router.get('', function (req, res, next){
                 propertyAmenityNames: '',
                 pricesFrom: '',
                 pricesFromCurrencySymbol: '',
-                hotelFeaturedImage: '',
-                hotelGallery: [],
+                featureImage: '',
+                gallery: [],
                 latitude: '',
                 longitude: '',
                 hotelId: '',
