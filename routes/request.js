@@ -96,7 +96,7 @@ module.exports = {
             var token = cache.token;
             var options = {
                 'method': 'GET',
-                'url': 'https://stage-api.travia.is/api/v1/travelAgents/cooperations/cooperatingPropertiesSelectList',
+                'url': 'https://stage-api.travia.is/api/v1/travelAgents/cooperations/activeCooperatingPropertiesSelectList',
                 'headers': {
                     'Authorization': 'Bearer ' + token.access_token
                 }
@@ -137,12 +137,12 @@ module.exports = {
                                     amenity: response1.body.amenity,
                                     rooms: [],
                                     featuredImage: "",
-                                    images: [],
+                                    gallery: [],
                                     isEmpty:false
                                 }
                                 response3.body = JSON.parse(response3.body)
                                 for (var k = 0; k < response3.body.length; k++) {
-                                    hotelargs.images.push(response3.body[k].filePath);
+                                    hotelargs.gallery.push(response3.body[k].filePath);
                                     if(response3.body.length === (k + 1)) {
                                         hotelargs.featuredImage = response3.body[k].filePath
                                     }
@@ -256,5 +256,3 @@ module.exports = {
         })
     }
 }
-
-
