@@ -138,8 +138,7 @@ module.exports = {
                                     rooms: [],
                                     hotelFeaturedImage: "",
                                     hotelGallery: [],
-                                    isEmpty:false,
-                                    link:"propertyId:"+response1.body.id +";"
+                                    isEmpty:false
                                 }
                                 response3.body = JSON.parse(response3.body)
                                 for (var k = 0; k < response3.body.length; k++) {
