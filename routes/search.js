@@ -379,7 +379,8 @@ router.get('', function (req, res, next){
                 country: '',
                 description: '',
                 additionalDescription: ''
-                , rooms: []
+                , rooms: [],
+                information:{}
             }]})
     }
 })
