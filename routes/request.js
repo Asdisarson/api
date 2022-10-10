@@ -184,7 +184,7 @@ module.exports = {
                                 hotelargs.rooms.push(roomargs);
                             }
                             var request4 = require('request');
-                                options.url = "https://stage-api.travia.is//api/v1/travelAgents/577/property/"+response1.body.id;
+                                options.url = "https://stage-api.travia.is//api/v1/travelAgents/577/cooperations/"+response1.body.id;
                                 request4(options, function (error4,response4) {
                                       hotelargs.information = JSON.parse(response4.body);
                                 });
