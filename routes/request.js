@@ -138,7 +138,8 @@ module.exports = {
                                     rooms: [],
                                     featureImage: "",
                                     gallery: [],
-                                    isEmpty:false
+                                    isEmpty:false,
+                                    information: {}
                                 }
                                 response3.body = JSON.parse(response3.body)
                                 for (var k = 0; k < response3.body.length; k++) {
@@ -182,7 +183,12 @@ module.exports = {
 
                                 hotelargs.rooms.push(roomargs);
                             }
-                            cache.data.push(hotelargs);
+                            var request4 = require('request');
+                                options.url = "https://stage-api.travia.is//api/v1/travelAgents/577/property/"+response1.body.id+"/cancellationPolicies/{id}";
+                                request4(options, function (error4,response4) {
+                                      hotelargs.information = JSON.parse(response4.body);
+                                });
+                                    cache.data.push(hotelargs);
                             db.JSON(cache)
                             db.sync();
                         })
