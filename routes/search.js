@@ -203,7 +203,7 @@ router.get('', function (req, res, next) {
                 data.link = data.link + "numberOfPeople:" + req.query.numberOfPeople + ";";
             }
             if (req.query.numberOfRooms) {
-                data.link = data.link + "numberOfRooms:" + "1" + ";";
+                data.link = data.link + "numberOfRooms:1;";
             }
 
             for (var i = 0; i < response.body[k].images.length; i++) {
