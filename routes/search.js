@@ -37,9 +37,7 @@ router.get('', function (req, res, next) {
     };
 
 
-    if(req.query.numberOfRooms) {
-        req.query.numberOfRooms = 1;
-    }
+
     if (req.query.duration) {
         req.query['start'] = req.query.duration[0]
         req.query['end'] = req.query.duration[1]
@@ -205,7 +203,7 @@ router.get('', function (req, res, next) {
                 data.link = data.link + "numberOfPeople:" + req.query.numberOfPeople + ";";
             }
             if (req.query.numberOfRooms) {
-                data.link = data.link + "numberOfRooms:" + req.query.numberOfRooms + ";";
+                data.link = data.link + "numberOfRooms:" + "1" + ";";
             }
 
             for (var i = 0; i < response.body[k].images.length; i++) {
