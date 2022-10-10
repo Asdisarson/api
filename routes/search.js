@@ -36,6 +36,10 @@ router.get('', function (req, res, next) {
         'body': ''
     };
 
+
+    if(req.query.numberOfRooms) {
+        req.query.numberOfRooms = 1;
+    }
     if (req.query.duration) {
         req.query['start'] = req.query.duration[0]
         req.query['end'] = req.query.duration[1]
@@ -121,6 +125,9 @@ router.get('', function (req, res, next) {
                 , rooms: []
             }
 
+            if(req.query.numberOfRooms) {
+                req.query.numberOfRooms = 1;
+            }
             if (req.query.start) {
                 data.startDate = req.query.start
             }
