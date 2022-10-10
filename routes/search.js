@@ -347,6 +347,7 @@ router.get('', function (req, res, next){
     var output = data.get('data');
     console.log(output)
     if(output.length > 0){
+        output = output.reverse();
         res.send({result:output});
     }
     else {
