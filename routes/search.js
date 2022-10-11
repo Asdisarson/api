@@ -273,8 +273,8 @@ router.get('', function (req, res, next) {
                     room.featureImage = response.body[k].rooms[i].images[0].filePath;
                 }
                 if (response.body[k].rooms[i].images.length < 0) {
-                    for (let j = 0; j < response.body[k].rooms[i].gallery.length; j++) {
-                        gallery.push(response.body[k].rooms[i].gallery[j].filePath);
+                    for (let j = 0; j < response.body[k].rooms[i].images.length; j++) {
+                        gallery.push(response.body[k].rooms[i].images[j].filePath);
                     }
                 }
 
