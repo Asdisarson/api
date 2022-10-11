@@ -144,17 +144,18 @@ module.exports = {
                                 response3.body = JSON.parse(response3.body)
                                 for (var k = 0; k < response3.body.length; k++) {
                                     hotelargs.gallery.push(response3.body[k].filePath);
-                                    if(response3.body.length === (k + 1)) {
+                                    if(k === 0) {
                                         hotelargs.featureImage = response3.body[k].filePath
                                     }
                                 }
-
+                                 hotelargs.gallery = hotelargs.gallery.reverse()
                                 response2.body = JSON.parse(response2.body)
                             for (var j = 0; j < response2.body.length; j++) {
 
                                 var imgs = [];
                                 for (var k = 0; k < response2.body[j].files.length; k++) {
                                     imgs.push(response2.body[j].files[k].filePath);
+                                    imgs = imgs.reverse();
                                 }
                                 var addons = []
                                 for (var k = 0; k < response2.body[j].roomAddOns.length; k++) {
