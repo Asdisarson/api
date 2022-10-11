@@ -87,8 +87,9 @@ router.post("/", function (req, res, next) {
         console.log(options.url);
             response.body = JSON.parse(response.body)
             console.log(response.body)
+        response.body['roomname'] = req.params.roomname
 
-            res.send(response.body)
+        res.send(response.body)
 
         }
     )
