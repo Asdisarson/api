@@ -190,7 +190,6 @@ module.exports = {
                                 request4(options, function (error4,response4) {
                                       hotelargs.information = JSON.parse(response4.body);
                                 });
-                                hotelargs = hotelargs.reverse()
                                     cache.data.push(hotelargs);
                             db.JSON(cache)
                             db.sync();
