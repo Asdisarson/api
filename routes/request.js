@@ -134,7 +134,7 @@ module.exports = {
                                     email: response1.body.contact.email,
                                     phone: response1.body.contact.phone,
                                     propertyTypeName: response1.body.propertyTypeName,
-                                    amenity: response1.body.amenity,
+                                    amenity: response1.body.propertyAmenityNames,
                                     rooms: [],
                                     featureImage: "",
                                     gallery: [],
