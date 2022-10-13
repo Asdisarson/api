@@ -321,7 +321,7 @@ router.get('', function (req, res, next) {
             }) === (req.query.city || str));
         }
 
-
+                console.log(array)
         if (array.result.length === 0) {
            next()
 
