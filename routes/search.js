@@ -297,9 +297,9 @@ router.get('', function (req, res, next) {
                 var date1 = new Date(data.startDate);
                 var date2 = new Date(data.endDate);
                 var timeDiff = Math.abs(date2.getTime() - date1.getTime());
-               var number = timeDiff.toFixed(0);
+               var number = timeDiff.toFixed(0) * 86400;
 
-                date1 = new Date(req.query.start * (number * 86400))
+                date1 = new Date((req.query.start + number) * 1000)
                 data.cancellationPolicyLastDay = date1.toISOString().substring(0, 10)
             }
 
