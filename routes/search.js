@@ -218,8 +218,11 @@ router.get('', function (req, res, next) {
                     data.featureImage = response.body[k].images[i].filePath
 
                 }
-                data.gallery[i] =(response.body[k].images[i].filePath)
+                var temp = {};
+                temp['image'] = response.body[k].images[i].filePath;
+                data.gallery.push(temp)
             }
+            data.gallery = data.gallery.reverse();
             for (var i = 0; i < response.body[k].rooms.length; i++) {
                 var room = {
 
@@ -257,13 +260,13 @@ router.get('', function (req, res, next) {
                     extraBedOriginalPrice: parseInt(response.body[k].rooms[i].extraBedOriginalPrice).toLocaleString('de-DE')
                     ,
                     featureImage: "",
-                    gallery: {},
+                    gallery: [],
                     roomAddonCategories: [],
                     booking: '',
                     cancellationPolicyLastDay : ""
                 }
                 var addons = [];
-                var gallery ={} ;
+                var gallery =[] ;
                 if (room.available && req.query.start && req.query.end && req.query.numberOfPeople) {
                     room.booking = "?add-to-cart=1209&propertyId=" + response.body[k].rooms[i].propertyId +
                         "&roomId=" + response.body[k].rooms[i].id + "&product_id=1209" + "&startDate=" +
@@ -277,11 +280,13 @@ router.get('', function (req, res, next) {
                 }
                 if (response.body[k].rooms[i].images.length < 0) {
                     for (let j = 0; j < response.body[k].rooms[i].images.length; j++) {
-                        gallery[j] = (response.body[k].rooms[i].images[j].filePath);
+                        var obj = {};
+                        obj["image"] = response.body[k].rooms[i].images[j].filePath
+                        gallery.push(obj);
                     }
                 }
 
-                room.gallery = gallery;
+                room.gallery = gallery.reverse();
                 for (let j = 0; j < response.body[k].rooms[i].roomAddonCategories.length; j++) {
                     addons.push({
                         name: response.body[k].rooms[i].roomAddonCategories[j].name,
