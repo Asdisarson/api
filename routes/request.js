@@ -134,28 +134,26 @@ module.exports = {
                                     email: response1.body.contact.email,
                                     phone: response1.body.contact.phone,
                                     propertyTypeName: response1.body.propertyTypeName,
-                                    amenity: response1.body.propertyAmenityNames,
+                                    propertyAmenityNames: response1.body.propertyAmenityNames,
                                     rooms: [],
                                     featureImage: "",
-                                    gallery: [],
-                                    isEmpty:false,
-                                    information: {}
+                                    gallery:{} ,
+                                    isEmpty:false
                                 }
                                 response3.body = JSON.parse(response3.body)
                                 for (var k = 0; k < response3.body.length; k++) {
-                                    hotelargs.gallery.push(response3.body[k].filePath);
+                                    hotelargs.gallery[k] =(response3.body[k].filePath);
                                     if(k === 0) {
                                         hotelargs.featureImage = response3.body[k].filePath
                                     }
+
                                 }
-                                 hotelargs.gallery = hotelargs.gallery.reverse()
                                 response2.body = JSON.parse(response2.body)
                             for (var j = 0; j < response2.body.length; j++) {
 
-                                var imgs = [];
+                                var imgs = {};
                                 for (var k = 0; k < response2.body[j].files.length; k++) {
-                                    imgs.push(response2.body[j].files[k].filePath);
-                                    imgs = imgs.reverse();
+                                    imgs[k] = (response2.body[j].files[k].filePath);
                                 }
                                 var addons = []
                                 for (var k = 0; k < response2.body[j].roomAddOns.length; k++) {

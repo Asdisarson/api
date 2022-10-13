@@ -11,8 +11,9 @@ router.get('', function (req, res, next) {
         if (error) throw new Error(error)
         db.set('token', JSON.parse(response.body));
         db.sync();
+        next();
+
     })
-    next();
 
 });
 router.get('', function (req, res, next) {
@@ -110,7 +111,7 @@ router.get('', function (req, res, next) {
                 pricesFrom: '',
                 pricesFromCurrencySymbol: '',
                 featureImage: '',
-                gallery: [],
+                gallery: {},
                 latitude: '',
                 longitude: '',
                 hotelId: '',
@@ -217,7 +218,7 @@ router.get('', function (req, res, next) {
                     data.featureImage = response.body[k].images[i].filePath
 
                 }
-                data.gallery.push(response.body[k].images[i].filePath)
+                data.gallery[i] =(response.body[k].images[i].filePath)
             }
             for (var i = 0; i < response.body[k].rooms.length; i++) {
                 var room = {
@@ -255,12 +256,12 @@ router.get('', function (req, res, next) {
                     extraBedOriginalPrice: parseInt(response.body[k].rooms[i].extraBedOriginalPrice).toLocaleString('de-DE')
                     ,
                     featureImage: "",
-                    gallery: [],
+                    gallery: {},
                     roomAddonCategories: [],
                     booking: ''
                 }
                 var addons = [];
-                var gallery = [];
+                var gallery ={} ;
                 if (room.available && req.query.start && req.query.end && req.query.numberOfPeople) {
                     room.booking = "?add-to-cart=1209&propertyId=" + response.body[k].rooms[i].propertyId +
                         "&roomId=" + response.body[k].rooms[i].id + "&product_id=1209" + "&startDate=" +
@@ -274,7 +275,7 @@ router.get('', function (req, res, next) {
                 }
                 if (response.body[k].rooms[i].images.length < 0) {
                     for (let j = 0; j < response.body[k].rooms[i].images.length; j++) {
-                        gallery.push(response.body[k].rooms[i].images[j].filePath);
+                        gallery[j] = (response.body[k].rooms[i].images[j].filePath);
                     }
                 }
 
@@ -288,10 +289,10 @@ router.get('', function (req, res, next) {
                 room.addons = addons;
                 data.rooms.push(room)
             }
-            var information = getHotelCache(data.id)
-            if(information.information) {
-                data.information = information.information;
-            }
+            var cancellationPolicy = getHotelCache(data.id);
+            cancellationPolicy = cancellationPolicy.information;
+
+
             array.result.push(
                 data
             );
