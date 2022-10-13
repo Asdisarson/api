@@ -198,6 +198,7 @@ module.exports = {
             db.set('cache', true)
             db.sync()
 
+            console.log(db.JSON())
             return db.JSON().data;
         });
 
