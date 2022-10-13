@@ -111,7 +111,7 @@ router.get('', function (req, res, next) {
                 pricesFrom: '',
                 pricesFromCurrencySymbol: '',
                 featureImage: '',
-                gallery: {},
+                gallery: [],
                 latitude: '',
                 longitude: '',
                 hotelId: '',
