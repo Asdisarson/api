@@ -239,7 +239,7 @@ router.get('', function (req, res, next) {
                     available: response.body[k].rooms[i].available,
                     averageDailyPrice: parseInt(response.body[k].rooms[i].averageDailyPrice).toLocaleString('de-DE'),
                     price: parseInt(response.body[k].rooms[i].price).toLocaleString('de-DE'),
-                    niceDollars: (parseInt(response.body[k].rooms[i].price) * 0.1).toLocaleString('de-DE'),
+                    niceDollars: ((parseInt(response.body[k].rooms[i].price) * 0.1).toFixed(0)).toLocaleString('de-DE'),
                     currencyCode: response.body[k].rooms[i].currencyCode,
                     currencySymbol: response.body[k].rooms[i].currencySymbol,
                     availableQuantity: response.body[k].rooms[i].availableQuantity,
@@ -294,10 +294,10 @@ router.get('', function (req, res, next) {
             var cancellationPolicy = getHotelCache(data.id);
             cancellationPolicy = cancellationPolicy.information;
             if(cancellationPolicy) {
-                var date1 = new Date(data.startDate);
-                var date2 = new Date(data.endDate);
+                var date1 = new Date(req.query.startDate);
+                var date2 = new Date(req.query.endDate);
                 var timeDiff = Math.abs(date2.getTime() - date1.getTime());
-               var number = timeDiff.toFixed(0) * 86400;
+               var number = (timeDiff.toFixed(0) * 86400);
 
                 date1 = new Date((req.query.start + number) * 1000)
                 data.cancellationPolicyLastDay = date1.toISOString().substring(0, 10)
