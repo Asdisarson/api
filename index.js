@@ -36,9 +36,7 @@ var logger = require('morgan');
             cart:[]
         });
         db.sync();
-var log = save();
-console.log(db.JSON())
-console.log(log)
+
     })
     app.use((req, res, next) => {
       var  db = new JSONdb('./cache.json');
@@ -61,7 +59,11 @@ console.log(log)
                 db.sync();
                 save();
                 next()
-
+                var log = save();
+                console.log(db.JSON())
+                if(log) {
+                    console.log(log)
+                }
             })
         }
     })
