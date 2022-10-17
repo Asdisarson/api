@@ -264,7 +264,7 @@ router.get('', function (req, res, next) {
                     gallery: [],
                     roomAddonCategories: [],
                     booking: '',
-                    cancellationPolicyLastDay : ""
+                    cancellationPolicy : []
                 }
                 var addons = [];
                 var gallery =[] ;
@@ -294,19 +294,33 @@ router.get('', function (req, res, next) {
                     });
                 }
                 room.addons = addons;
+                var cancellationPolicy = getHotelCache(data.id);
+                cancellationPolicy = cancellationPolicy.information;
+                if(cancellationPolicy) {
+                    for (var x = 0; x < cancellationPolicy.information.cancellationPolicy.cancellationPolicyRules.length; x++) {
+                        var date = new Date(req.query.start * 1000)
+                        var cancel = {}
+                        if(cancellationPolicy.information.cancellationPolicy.cancellationPolicyRules[x].rangeRoomsFrom
+                            > req.query.numberOfRooms > cancellationPolicy.information.cancellationPolicy.cancellationPolicyRules[x].rangeRoomsFrom) {
+
+                            for (var y = 0; y < cancellationPolicy.information.cancellationPolicy.cancellationPolicyRules[x].cancellationPolicyLines.length; y++) {
+
+                                if (cancellationPolicy.information.cancellationPolicy.cancellationPolicyRules[x].cancellationPolicyLines[y].interval === "DAYS") {
+                                    cancel = new Date(date.getDate() - (cancellationPolicy.cancellationPolicy.cancellationPolicyRules[x].cancellationPolicyLines[y].toPeriod))
+                                    room.cancellationPolicy.push("Hours " + data.checkInStartTime + " " + cancel.toISOString().substring(0, 10)
+                                        + cancellationPolicy.cancellationPolicy.cancellationPolicyRules[x].cancellationPolicyLines[y].percent)
+                                }
+                                if (cancellationPolicy.information.cancellationPolicy.cancellationPolicyRules[x].interval === "HOURS") {
+                                    cancel = new Date(date.getHours() - (cancellationPolicy.cancellationPolicy.cancellationPolicyRules[x].cancellationPolicyLines[y].toPeriod))
+                                    room.cancellationPolicy.push("Hours " + data.checkInStartTime + " " + cancel.toISOString().substring(0, 10)
+                                        + cancellationPolicy.cancellationPolicy.cancellationPolicyRules[x].cancellationPolicyLines[y].percent)
+                                }
+                            }                       }
+                    }
+                }
                 data.rooms.push(room)
             }
-            var cancellationPolicy = getHotelCache(data.id);
-            cancellationPolicy = cancellationPolicy.information;
-            if(cancellationPolicy) {
-                var date1 = new Date(req.query.startDate);
-                var date2 = new Date(req.query.endDate);
-                var timeDiff = Math.abs(date2.getTime() - date1.getTime());
-               var number = (timeDiff.toFixed(0) * 86400);
 
-                date1 = new Date((req.query.start + number) * 1000)
-                data.cancellationPolicyLastDay = date1.toISOString().substring(0, 10)
-            }
 
             array.result.push(
                 data
