@@ -219,7 +219,7 @@ router.get('', function (req, res, next) {
 
                 }
                 var temp = {}
-                temp[i] = response.body[k].images[i].filePath;
+                temp["image"] = response.body[k].images[i].filePath;
 
                 data.gallery.push(temp)
             }
@@ -281,7 +281,7 @@ router.get('', function (req, res, next) {
                 if (response.body[k].rooms[i].images.length > 0) {
                     for (let j = 0; j < response.body[k].rooms[i].images.length; j++) {
                      var obj = {}
-                        obj[j] = response.body[k].rooms[i].images[j].filePath
+                        obj["image"] = response.body[k].rooms[i].images[j].filePath
                         gallery.push(obj);
                     }
                 }
