@@ -276,7 +276,7 @@ router.get('', function (req, res, next) {
                 if (response.body[k].rooms[i].images[0]) {
                     room.featureImage = response.body[k].rooms[i].images[0].filePath;
                 }
-                if (response.body[k].rooms[i].images.length < 0) {
+                if (response.body[k].rooms[i].images.length > 0) {
                     for (let j = 0; j < response.body[k].rooms[i].images.length; j++) {
                      var   obj = response.body[k].rooms[i].images[j].filePath
                         gallery.push(obj);
