@@ -142,7 +142,7 @@ module.exports = {
                                 }
                                 response3.body = JSON.parse(response3.body)
                                 for (var k = 0; k < response3.body.length; k++) {
-                                    hotelargs.gallery[k] =(response3.body[k].filePath);
+                                    hotelargs.gallery[k] =response3.body[k].filePath;
                                     if(k === 0) {
                                         hotelargs.featureImage = response3.body[k].filePath
                                     }

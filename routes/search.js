@@ -220,6 +220,7 @@ router.get('', function (req, res, next) {
                 }
                 var temp = {}
                 temp["image"] = response.body[k].images[i].filePath;
+                data["gallery" + i] = response.body[k].images[i].filePath;
 
                 data.gallery.push(temp)
             }
@@ -282,6 +283,7 @@ router.get('', function (req, res, next) {
                     for (let j = 0; j < response.body[k].rooms[i].images.length; j++) {
                      var obj = {}
                         obj["image"] = response.body[k].rooms[i].images[j].filePath
+                        room["gallery" + j] = response.body[k].rooms[i].images[j].filePath
                         gallery.push(obj);
                     }
                 }
