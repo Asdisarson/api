@@ -137,7 +137,7 @@ module.exports = {
                                     propertyAmenityNames: response1.body.propertyAmenityNames,
                                     rooms: [],
                                     featureImage: "",
-                                    gallery:{} ,
+                                    gallery:[] ,
                                     isEmpty:false
                                 }
                                 response3.body = JSON.parse(response3.body)
@@ -151,7 +151,7 @@ module.exports = {
                                 response2.body = JSON.parse(response2.body)
                             for (var j = 0; j < response2.body.length; j++) {
 
-                                var imgs = {};
+                                var imgs = [];
                                 for (var k = 0; k < response2.body[j].files.length; k++) {
                                     imgs[k] = (response2.body[j].files[k].filePath);
                                 }

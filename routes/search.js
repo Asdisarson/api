@@ -218,8 +218,7 @@ router.get('', function (req, res, next) {
                     data.featureImage = response.body[k].images[i].filePath
 
                 }
-                var temp = {}
-                temp["image"] = response.body[k].images[i].filePath;
+                var temp = response.body[k].images[i].filePath;
                 data["gallery" + i] = response.body[k].images[i].filePath;
 
                 data.gallery.push(temp)
