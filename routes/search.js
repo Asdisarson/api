@@ -214,11 +214,13 @@ router.get('', function (req, res, next) {
             }
 
             for (var i = 0; i < response.body[k].images.length; i++) {
-                if ((i + 1) === response.body[k].images.length) {
+                if (response.body[k].images[i]) {
                     data.featureImage = response.body[k].images[i].filePath
 
                 }
-                var temp = response.body[k].images[i].filePath;
+                var temp = {}
+                temp[i] = response.body[k].images[i].filePath;
+
                 data.gallery.push(temp)
             }
             data.gallery = data.gallery.reverse();
@@ -278,7 +280,8 @@ router.get('', function (req, res, next) {
                 }
                 if (response.body[k].rooms[i].images.length > 0) {
                     for (let j = 0; j < response.body[k].rooms[i].images.length; j++) {
-                     var   obj = response.body[k].rooms[i].images[j].filePath
+                     var obj = {}
+                        obj[i] = response.body[k].rooms[i].images[j].filePath
                         gallery.push(obj);
                     }
                 }
