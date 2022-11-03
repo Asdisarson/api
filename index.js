@@ -13,8 +13,8 @@ var logger = require('morgan');
     app.use(bodyParser.urlencoded({
         extended: true
     }));
-    const {save} = require("./routes/request2");
-//    const {save} = require("./routes/request");
+    //const {save} = require("./routes/request2");
+const {save} = require("./routes/request");
     var indexRouter = require('./routes/index');
     var propertiesRouter = require('./routes/properties');
  //   var queriesRouter = require('./routes/searchtest');
