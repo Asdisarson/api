@@ -41,23 +41,28 @@ router.get('', function (req, res, next) {
 
 
 
-        if (req.query.duration) {
-            req.query['start'] = req.query.duration[0]
-            req.query['end'] = req.query.duration[1]
-        }
-        if (req.query.end) {
+        if (req.query.end && req.query.start) {
             data.end = req.query.end;
-            data.end = new Date(req.query.end * 1000)
-            data.end = data.end.toISOString().substring(0, 10)
-            linkendDate = data.end
-
-        }
-
-        if (req.query.start) {
             data.start = req.query.start;
-            data.start = new Date(req.query.start * 1000)
-            data.start = data.start.toISOString().substring(0, 10)
+
+            try {
+
+                if (req.query.duration) {
+                    req.query['start'] = req.query.duration[0]
+                    req.query['end'] = req.query.duration[1]
+                }
+                data.end = new Date(req.query.end * 1000)
+                data.end = data.end.toISOString().substring(0, 10)
+                data.start = new Date(req.query.start * 1000)
+                data.start = data.start.toISOString().substring(0, 10)
+            }
+            catch (e) {
+
+            }
+
+            linkendDate = data.end
             linkstartDate = data.start
+
         }
 
 
