@@ -138,7 +138,6 @@ module.exports = {
                                 }
                                 response2.body = JSON.parse(response2.body)
 
-                            hotelargs.rooms = hotelargs.rooms.reverse()
                                     cache.data.push(hotelargs);
                             db.JSON(cache)
                             db.sync();
