@@ -17,7 +17,6 @@ router.get('', function (req, res, next) {
 
 });
 router.get('', function (req, res, next) {
-    try {
          var newArray = [];
         var data = {
             "start": "",
@@ -134,11 +133,7 @@ router.get('', function (req, res, next) {
             }
 
         })
-    }
-    catch (e) {
-        console.log(e);
-        next();
-    }
+
 })
 const {save} = require("./request");
 const {getHotelCache} = require("./cache");
