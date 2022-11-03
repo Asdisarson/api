@@ -114,7 +114,7 @@ router.get('', function (req, res, next) {
                 }
 
 
-                array.result.push(
+                array.result = [
                     {
                         "link": "propertyId:115;",
                         "propertyAmenityNames": [
@@ -148,8 +148,7 @@ router.get('', function (req, res, next) {
                         "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-18T03:41:29_6b41dc6a-3dca-4309-9e3e-589ad56d15a6_80327914.jpg",
                         "name": "Nice Hotel",
                         "city": "Akureyri"
-                    }  ,
-                    {
+                    },{
                         "link": "propertyId:115;",
                         "propertyAmenityNames": [
                             "Air conditioning",
@@ -182,8 +181,304 @@ router.get('', function (req, res, next) {
                         "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-18T03:41:29_6b41dc6a-3dca-4309-9e3e-589ad56d15a6_80327914.jpg",
                         "name": "Nice Hotel",
                         "city": "Akureyri"
+                    },{
+                        "link": "propertyId:115;",
+                        "propertyAmenityNames": [
+                            "Air conditioning",
+                            "Bar",
+                            "24 hour front desk",
+                            "Business Center"
+                        ],
+                        "pricesFrom": 12214.499999999998,
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2021-10-14T01:11:54_98f68b14-3bb4-4a23-a184-bad5f8bb1a1e_1246280_16061017110043391702.jpg",
+                        "name": "Travia Stage (NET) API Test ",
+                        "city": "Reykjavík"
                     },
                     {
+                        "link": "propertyId:4;",
+                        "propertyAmenityNames": [],
+                        "pricesFrom": "",
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:16_b6a1249c-918a-4cd4-a1e5-d486c55df3b3_all3.png",
+                        "name": "Travia demo hotel",
+                        "city": "Reykjavik"
+                    },
+                    {
+                        "link": "propertyId:530;",
+                        "propertyAmenityNames": [
+                            "24 hour front desk",
+                            "Room service",
+                            "Gym",
+                            "Business Center"
+                        ],
+                        "pricesFrom": "",
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-18T03:41:29_6b41dc6a-3dca-4309-9e3e-589ad56d15a6_80327914.jpg",
+                        "name": "Nice Hotel",
+                        "city": "Akureyri"
+                    },{
+                        "link": "propertyId:115;",
+                        "propertyAmenityNames": [
+                            "Air conditioning",
+                            "Bar",
+                            "24 hour front desk",
+                            "Business Center"
+                        ],
+                        "pricesFrom": 12214.499999999998,
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2021-10-14T01:11:54_98f68b14-3bb4-4a23-a184-bad5f8bb1a1e_1246280_16061017110043391702.jpg",
+                        "name": "Travia Stage (NET) API Test ",
+                        "city": "Reykjavík"
+                    },
+                    {
+                        "link": "propertyId:4;",
+                        "propertyAmenityNames": [],
+                        "pricesFrom": "",
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:16_b6a1249c-918a-4cd4-a1e5-d486c55df3b3_all3.png",
+                        "name": "Travia demo hotel",
+                        "city": "Reykjavik"
+                    },
+                    {
+                        "link": "propertyId:530;",
+                        "propertyAmenityNames": [
+                            "24 hour front desk",
+                            "Room service",
+                            "Gym",
+                            "Business Center"
+                        ],
+                        "pricesFrom": "",
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-18T03:41:29_6b41dc6a-3dca-4309-9e3e-589ad56d15a6_80327914.jpg",
+                        "name": "Nice Hotel",
+                        "city": "Akureyri"
+                    },{
+                        "link": "propertyId:115;",
+                        "propertyAmenityNames": [
+                            "Air conditioning",
+                            "Bar",
+                            "24 hour front desk",
+                            "Business Center"
+                        ],
+                        "pricesFrom": 12214.499999999998,
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2021-10-14T01:11:54_98f68b14-3bb4-4a23-a184-bad5f8bb1a1e_1246280_16061017110043391702.jpg",
+                        "name": "Travia Stage (NET) API Test ",
+                        "city": "Reykjavík"
+                    },
+                    {
+                        "link": "propertyId:4;",
+                        "propertyAmenityNames": [],
+                        "pricesFrom": "",
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:16_b6a1249c-918a-4cd4-a1e5-d486c55df3b3_all3.png",
+                        "name": "Travia demo hotel",
+                        "city": "Reykjavik"
+                    },
+                    {
+                        "link": "propertyId:530;",
+                        "propertyAmenityNames": [
+                            "24 hour front desk",
+                            "Room service",
+                            "Gym",
+                            "Business Center"
+                        ],
+                        "pricesFrom": "",
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-18T03:41:29_6b41dc6a-3dca-4309-9e3e-589ad56d15a6_80327914.jpg",
+                        "name": "Nice Hotel",
+                        "city": "Akureyri"
+                    },{
+                        "link": "propertyId:115;",
+                        "propertyAmenityNames": [
+                            "Air conditioning",
+                            "Bar",
+                            "24 hour front desk",
+                            "Business Center"
+                        ],
+                        "pricesFrom": 12214.499999999998,
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2021-10-14T01:11:54_98f68b14-3bb4-4a23-a184-bad5f8bb1a1e_1246280_16061017110043391702.jpg",
+                        "name": "Travia Stage (NET) API Test ",
+                        "city": "Reykjavík"
+                    },
+                    {
+                        "link": "propertyId:4;",
+                        "propertyAmenityNames": [],
+                        "pricesFrom": "",
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:16_b6a1249c-918a-4cd4-a1e5-d486c55df3b3_all3.png",
+                        "name": "Travia demo hotel",
+                        "city": "Reykjavik"
+                    },
+                    {
+                        "link": "propertyId:530;",
+                        "propertyAmenityNames": [
+                            "24 hour front desk",
+                            "Room service",
+                            "Gym",
+                            "Business Center"
+                        ],
+                        "pricesFrom": "",
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-18T03:41:29_6b41dc6a-3dca-4309-9e3e-589ad56d15a6_80327914.jpg",
+                        "name": "Nice Hotel",
+                        "city": "Akureyri"
+                    },{
+                        "link": "propertyId:115;",
+                        "propertyAmenityNames": [
+                            "Air conditioning",
+                            "Bar",
+                            "24 hour front desk",
+                            "Business Center"
+                        ],
+                        "pricesFrom": 12214.499999999998,
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2021-10-14T01:11:54_98f68b14-3bb4-4a23-a184-bad5f8bb1a1e_1246280_16061017110043391702.jpg",
+                        "name": "Travia Stage (NET) API Test ",
+                        "city": "Reykjavík"
+                    },
+                    {
+                        "link": "propertyId:4;",
+                        "propertyAmenityNames": [],
+                        "pricesFrom": "",
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:16_b6a1249c-918a-4cd4-a1e5-d486c55df3b3_all3.png",
+                        "name": "Travia demo hotel",
+                        "city": "Reykjavik"
+                    },
+                    {
+                        "link": "propertyId:530;",
+                        "propertyAmenityNames": [
+                            "24 hour front desk",
+                            "Room service",
+                            "Gym",
+                            "Business Center"
+                        ],
+                        "pricesFrom": "",
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-18T03:41:29_6b41dc6a-3dca-4309-9e3e-589ad56d15a6_80327914.jpg",
+                        "name": "Nice Hotel",
+                        "city": "Akureyri"
+                    },{
+                        "link": "propertyId:115;",
+                        "propertyAmenityNames": [
+                            "Air conditioning",
+                            "Bar",
+                            "24 hour front desk",
+                            "Business Center"
+                        ],
+                        "pricesFrom": 12214.499999999998,
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2021-10-14T01:11:54_98f68b14-3bb4-4a23-a184-bad5f8bb1a1e_1246280_16061017110043391702.jpg",
+                        "name": "Travia Stage (NET) API Test ",
+                        "city": "Reykjavík"
+                    },
+                    {
+                        "link": "propertyId:4;",
+                        "propertyAmenityNames": [],
+                        "pricesFrom": "",
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:16_b6a1249c-918a-4cd4-a1e5-d486c55df3b3_all3.png",
+                        "name": "Travia demo hotel",
+                        "city": "Reykjavik"
+                    },
+                    {
+                        "link": "propertyId:530;",
+                        "propertyAmenityNames": [
+                            "24 hour front desk",
+                            "Room service",
+                            "Gym",
+                            "Business Center"
+                        ],
+                        "pricesFrom": "",
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-18T03:41:29_6b41dc6a-3dca-4309-9e3e-589ad56d15a6_80327914.jpg",
+                        "name": "Nice Hotel",
+                        "city": "Akureyri"
+                    },{
+                        "link": "propertyId:115;",
+                        "propertyAmenityNames": [
+                            "Air conditioning",
+                            "Bar",
+                            "24 hour front desk",
+                            "Business Center"
+                        ],
+                        "pricesFrom": 12214.499999999998,
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2021-10-14T01:11:54_98f68b14-3bb4-4a23-a184-bad5f8bb1a1e_1246280_16061017110043391702.jpg",
+                        "name": "Travia Stage (NET) API Test ",
+                        "city": "Reykjavík"
+                    },
+                    {
+                        "link": "propertyId:4;",
+                        "propertyAmenityNames": [],
+                        "pricesFrom": "",
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:16_b6a1249c-918a-4cd4-a1e5-d486c55df3b3_all3.png",
+                        "name": "Travia demo hotel",
+                        "city": "Reykjavik"
+                    },
+                    {
+                        "link": "propertyId:530;",
+                        "propertyAmenityNames": [
+                            "24 hour front desk",
+                            "Room service",
+                            "Gym",
+                            "Business Center"
+                        ],
+                        "pricesFrom": "",
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-18T03:41:29_6b41dc6a-3dca-4309-9e3e-589ad56d15a6_80327914.jpg",
+                        "name": "Nice Hotel",
+                        "city": "Akureyri"
+                    },{
+                        "link": "propertyId:115;",
+                        "propertyAmenityNames": [
+                            "Air conditioning",
+                            "Bar",
+                            "24 hour front desk",
+                            "Business Center"
+                        ],
+                        "pricesFrom": 12214.499999999998,
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2021-10-14T01:11:54_98f68b14-3bb4-4a23-a184-bad5f8bb1a1e_1246280_16061017110043391702.jpg",
+                        "name": "Travia Stage (NET) API Test ",
+                        "city": "Reykjavík"
+                    },
+                    {
+                        "link": "propertyId:4;",
+                        "propertyAmenityNames": [],
+                        "pricesFrom": "",
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:16_b6a1249c-918a-4cd4-a1e5-d486c55df3b3_all3.png",
+                        "name": "Travia demo hotel",
+                        "city": "Reykjavik"
+                    },
+                    {
+                        "link": "propertyId:530;",
+                        "propertyAmenityNames": [
+                            "24 hour front desk",
+                            "Room service",
+                            "Gym",
+                            "Business Center"
+                        ],
+                        "pricesFrom": "",
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-18T03:41:29_6b41dc6a-3dca-4309-9e3e-589ad56d15a6_80327914.jpg",
+                        "name": "Nice Hotel",
+                        "city": "Akureyri"
+                    },{
+                        "link": "propertyId:115;",
+                        "propertyAmenityNames": [
+                            "Air conditioning",
+                            "Bar",
+                            "24 hour front desk",
+                            "Business Center"
+                        ],
+                        "pricesFrom": 12214.499999999998,
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2021-10-14T01:11:54_98f68b14-3bb4-4a23-a184-bad5f8bb1a1e_1246280_16061017110043391702.jpg",
+                        "name": "Travia Stage (NET) API Test ",
+                        "city": "Reykjavík"
+                    },
+                    {
+                        "link": "propertyId:4;",
+                        "propertyAmenityNames": [],
+                        "pricesFrom": "",
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:16_b6a1249c-918a-4cd4-a1e5-d486c55df3b3_all3.png",
+                        "name": "Travia demo hotel",
+                        "city": "Reykjavik"
+                    },
+                    {
+                        "link": "propertyId:530;",
+                        "propertyAmenityNames": [
+                            "24 hour front desk",
+                            "Room service",
+                            "Gym",
+                            "Business Center"
+                        ],
+                        "pricesFrom": "",
+                        "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-18T03:41:29_6b41dc6a-3dca-4309-9e3e-589ad56d15a6_80327914.jpg",
+                        "name": "Nice Hotel",
+                        "city": "Akureyri"
+                    },{
                         "link": "propertyId:115;",
                         "propertyAmenityNames": [
                             "Air conditioning",
@@ -217,7 +512,7 @@ router.get('', function (req, res, next) {
                         "name": "Nice Hotel",
                         "city": "Akureyri"
                     }
-                );
+                ];
                 if(req.query.propertyId) {
                     res.send(array);
                 }
