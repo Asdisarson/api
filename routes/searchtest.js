@@ -107,7 +107,15 @@ router.get('', function (req, res, next) {
                     data.link = data.link + "numberOfRooms:1;";
                 }
 
-                        array.result.push(
+                for (var i = 0; i < response.body[k].images.length; i++) {
+                    if (response.body[k].images[i]) {
+                        data.featureImage = response.body[k].images[i].filePath
+
+                    }
+                }
+
+
+                array.result.push(
                     data
                 );
                 if(req.query.propertyId) {
