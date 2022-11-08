@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+const {getHotelCache, getRoomCache} = require("./cache");
 const JSONdb = require("simple-json-db");
 const request = require("request");
 
@@ -363,7 +363,6 @@ catch (e) {
 }
 })
 const {save} = require("./request");
-const {getHotelCache, getRoomCache} = require("./cache");
 
 /* GET users listing. */
 
