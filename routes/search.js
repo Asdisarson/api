@@ -225,7 +225,8 @@ router.get('', function (req, res, next) {
             }
             data.gallery = data.gallery.reverse();
             for (var i = 0; i < response.body[k].rooms.length; i++) {
-                rname = getRoomCache(response.body[k].rooms[i].propertyId, response.body[k].rooms[i].id)
+                var pname = getHotelCache(response.body[k].rooms[i].propertyId)
+                var name = getRoomCache(response.body[k].rooms[i].propertyId, response.body[k].rooms[i].id)
                 var room = {
 
                     name: response.body[k].rooms[i].name,
@@ -272,7 +273,7 @@ router.get('', function (req, res, next) {
                 if (room.available && req.query.start && req.query.end && req.query.numberOfPeople) {
                     room.booking = "?add-to-cart=1209&propertyId=" + response.body[k].rooms[i].propertyId +
                         "&roomId=" + response.body[k].rooms[i].id + "&product_id=1209" + "&startDate=" +
-                            linkstartDate + "&endDate=" + linkendDate + "&numberOfPeople=" + req.query.numberOfPeople + "&name=" + response.body[k].name + "&roomname=" + response.body[k].rooms[i].name
+                            linkstartDate + "&endDate=" + linkendDate + "&numberOfPeople=" + req.query.numberOfPeople + "&name=" + pname.name + "&roomname=" + rname.name
                         + "&quantity=1"
                 }
                 console.log(room.booking)
