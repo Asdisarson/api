@@ -44,11 +44,14 @@ module.exports = {
             return obj.hotelId.toString() === hotelId;
         })
     },
-    getRoomCache:function (hotelId) {
+    getRoomCache:function (hotelId, roomId) {
         var db = new JSONdb('./cache.json');
         var data = db.JSON()
-        return data.data.find(obj => {
+        var hotel = data.data.find(obj => {
             return obj.hotelId.toString() === hotelId;
+        })
+        return      hotel.rooms.find(obj => {
+            return obj.roomId.toString() === roomId;
         })
     },
 }

@@ -86,7 +86,12 @@ module.exports = {
             if (arr[i].id === value) return arr[i].rooms;
         }
     },
+    saveToTable: async function () {
+            await new Promise(r => {
 
+            });
+
+    },
 
     save: async function () {
         await new Promise(r => {
