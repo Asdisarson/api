@@ -226,7 +226,7 @@ router.get('', function (req, res, next) {
             data.gallery = data.gallery.reverse();
             for (var i = 0; i < response.body[k].rooms.length; i++) {
                 var pname = getHotelCache(response.body[k].rooms[i].propertyId)
-                var name = getRoomCache(response.body[k].rooms[i].propertyId, response.body[k].rooms[i].id)
+                var rname = getRoomCache(response.body[k].rooms[i].propertyId, response.body[k].rooms[i].id)
                 var room = {
 
                     name: response.body[k].rooms[i].name,
