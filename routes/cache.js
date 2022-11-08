@@ -15,6 +15,11 @@ module.exports = {
         db.sync();
 
     },
+    cache:function () {
+        var db = new JSONdb('./cache.json');
+        var data = db.JSON()
+return data;
+    },
     clearDataCache:function () {
         var db = new JSONdb('./cache.json');
         var data = db.JSON()
