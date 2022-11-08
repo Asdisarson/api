@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const {getHotelCache, getRoomCache} = require("./cache");
+const {getHotelCache, getRoomCache} = require("./cache.js");
 const JSONdb = require("simple-json-db");
 const request = require("request");
 
