@@ -67,7 +67,7 @@ router.post("/", function (req, res, next) {
         "bookingRooms": [
             {
                 "endDate": req.body.endDate,
-                "name": req.body.name,
+                "name": "Booking",
                 "notes": '',
                 "pax": req.body.numberOfPeople,
                 "numberOfNights": numberOfNights,
@@ -78,7 +78,7 @@ router.post("/", function (req, res, next) {
         ],
         "confirm": false,
         "instant": true,
-        "name": req.body.name,
+        "name":  "Booking",
         "notes": req.body.notes,
         "propertyId": req.body.propertyId
     };
