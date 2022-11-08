@@ -18,7 +18,7 @@ module.exports = {
     cache:function () {
         var db = new JSONdb('./cache.json');
         var data = db.JSON()
-return data;
+        return data;
     },
     clearDataCache:function () {
         var db = new JSONdb('./cache.json');
@@ -52,11 +52,13 @@ return data;
     getRoomCache:function (hotelId, roomId) {
         var db = new JSONdb('./cache.json');
         var data = db.JSON()
-        var hotel = data.data.find(obj => {
-            return obj.hotelId.toString() === hotelId;
+        return data.data.find(obj => {
+            if (obj.hotelId.toString() === hotelId) {
+             return  obj.rooms.find(room => {
+                  return room.roomId === roomId;
+              })
+            }
         })
-        return      hotel.rooms.find(obj => {
-            return obj.roomId.toString() === roomId;
-        })
+
     },
 }
