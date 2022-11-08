@@ -40,6 +40,7 @@ const {save} = require("./routes/request");
         db.sync();
 
     })
+    save()
     app.use((req, res, next) => {
       var  db = new JSONdb('./cache.json');
         var cached = db.JSON().cache;
