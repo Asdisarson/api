@@ -295,8 +295,7 @@ router.get('', function (req, res, next) {
                 }
                 room.addons = addons;
                 var cancellationPolicy = getHotelCache(data.id);
-                cancellationPolicy = cancellationPolicy.information;
-                if(cancellationPolicy) {
+                if(cancellationPolicy.information) {
                     for (var x = 0; x < cancellationPolicy.information.cancellationPolicy.cancellationPolicyRules.length; x++) {
                         var date = new Date(req.query.start * 1000)
                         var cancel = {}
