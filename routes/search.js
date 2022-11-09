@@ -294,7 +294,7 @@ router.get('', function (req, res, next) {
                     });
                 }
                 room.addons = addons;
-                var cancellationPolicy = getHotelCache(data.id);
+                var cancellationPolicy = getHotelCache(data.hotelId);
                 cancellationPolicy = cancellationPolicy.information;
                 if(cancellationPolicy) {
                     for (var x = 0; x < cancellationPolicy.information.cancellationPolicy.cancellationPolicyRules.length; x++) {
