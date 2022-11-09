@@ -295,7 +295,7 @@ router.get('', function (req, res, next) {
                 }
                 room.addons = addons;
                 var cancellationPolicy = getCancelCache(data.id);
-                data.cancellationPolicy = cancellationPolicy
+                data.cancellationPolicy = cancellationPolicy.cancellationPolicy
 
                 data.rooms.push(room)
             }
