@@ -61,4 +61,12 @@ module.exports = {
         })
 
     },
+    getCancelCache:function(hotelId) {
+        var db = new JSONdb('./cache.json');
+        var data = db.JSON()
+        var obj = data.data.filter(obj => {
+            return obj.hotelId.toString() === hotelId;
+        })
+        return obj.cancellationPolicy
+    }
 }

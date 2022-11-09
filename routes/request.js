@@ -140,6 +140,7 @@ module.exports = {
                                     phone: response1.body.contact.phone,
                                     propertyTypeName: response1.body.propertyTypeName,
                                     propertyAmenityNames: response1.body.propertyAmenityNames,
+                                    cancellationPolicy: [],
                                     rooms: [],
                                     featureImage: "",
                                     gallery:[] ,
@@ -191,7 +192,7 @@ module.exports = {
                             var request4 = require('request');
                                 options.url = "https://stage-api.travia.is//api/v1/travelAgents/577/property/"+response1.body.id + "/cooperations";
                                 request4(options, function (error4,response4) {
-                                      hotelargs.information = JSON.parse(response4.body);
+                                      hotelargs.cancellationPolicy = JSON.parse(response4.body);
                                 });
                                     cache.data.push(hotelargs);
                             db.JSON(cache)

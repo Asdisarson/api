@@ -294,31 +294,31 @@ router.get('', function (req, res, next) {
                     });
                 }
                 room.addons = addons;
-                var cancellationPolicy = getHotelCache(data.id);
+                var cancellationPolicy = getCancelCache(data.id);
                 if(cancellationPolicy) {
-                    for (var j = 0; j < cancellationPolicy.information.length; j++) {
-                        for (var z = 0; z < cancellationPolicy.information[j].cancellationPolicy.length;z++) {
+                        console.log(cancellationPolicy)
+                        for (var z = 0; z < cancellationPolicy.cancellationPolicy.length;z++) {
 
-                            for (var x = 0; x < cancellationPolicy.information[j].cancellationPolicy[z].cancellationPolicyRules.length; x++) {
+                            for (var x = 0; x < cancellationPolicy.cancellationPolicy[z].cancellationPolicyRules.length; x++) {
                             var date = new Date(req.query.start * 1000)
                             var cancel = {}
-                            if(cancellationPolicy.information[j].cancellationPolicy[z].cancellationPolicyRules[x].rangeRoomsFrom
-                                > req.query.numberOfRooms > cancellationPolicy.information[j].cancellationPolicy[z].cancellationPolicyRules[x].rangeRoomsFrom) {
+                            if(cancellationPolicy.cancellationPolicy[z].cancellationPolicyRules[x].rangeRoomsTo
+                                > req.query.numberOfRooms > cancellationPolicy.cancellationPolicy[z].cancellationPolicyRules[x].rangeRoomsFrom) {
 
-                                for (var y = 0; y < cancellationPolicy.information[j].cancellationPolicy[z].cancellationPolicyRules[x].cancellationPolicyLines.length; y++) {
+                                for (var y = 0; y < cancellationPolicy.cancellationPolicy[z].cancellationPolicyRules[x].cancellationPolicyLines.length; y++) {
 
-                                    if (cancellationPolicy.information[j].cancellationPolicy[z].cancellationPolicyRules[x].cancellationPolicyLines[y].interval === "DAYS") {
+                                    if (cancellationPolicy.cancellationPolicy[z].cancellationPolicyRules[x].cancellationPolicyLines[y].interval === "DAYS") {
                                         cancel = new Date(date.getDate() - (cancellationPolicy.cancellationPolicy[z].cancellationPolicyRules[x].cancellationPolicyLines[y].toPeriod))
                                         room.cancellationPolicy.push("Hours " + data.checkInStartTime + " " + cancel.toISOString().substring(0, 10)
                                             + cancellationPolicy.cancellationPolicy[z].cancellationPolicyRules[x].cancellationPolicyLines[y].percent)
                                     }
-                                    if (cancellationPolicy.information[j].cancellationPolicy[z].cancellationPolicyRules[x].interval === "HOURS") {
+                                    if (cancellationPolicy.cancellationPolicy[z].cancellationPolicyRules[x].interval === "HOURS") {
                                         cancel = new Date(date.getHours() - (cancellationPolicy.cancellationPolicy[z].cancellationPolicyRules[x].cancellationPolicyLines[y].toPeriod))
                                         room.cancellationPolicy.push("Hours " + data.checkInStartTime + " " + cancel.toISOString().substring(0, 10)
                                             + cancellationPolicy.cancellationPolicy[z].cancellationPolicyRules[x].cancellationPolicyLines[y].percent)
                                     }
                                 }                       }
-                        }
+
                     }
                     }
                 }
@@ -365,7 +365,7 @@ catch (e) {
 }
 })
 const {save} = require("./request");
-const {getHotelCache} = require("./cache");
+const {getHotelCache, getCancelCache} = require("./cache");
 
 /* GET users listing. */
 
