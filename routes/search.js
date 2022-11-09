@@ -298,28 +298,27 @@ router.get('', function (req, res, next) {
                 if(cancellationPolicy) {
                     for (var j = 0; j < cancellationPolicy.length; j++) {
                         console.log( cancellationPolicy[j])
-                        for (var z = 0; z < cancellationPolicy[j].cancellationPolicy.length;z++) {
 
-                            for (var x = 0; x < cancellationPolicy[j].cancellationPolicy[z].cancellationPolicyRules.length; x++) {
+                            for (var x = 0; x < cancellationPolicy[j].cancellationPolicy.cancellationPolicyRules.length; x++) {
                             var date = new Date(req.query.start * 1000)
                             var cancel = {}
-                            if(cancellationPolicy[j].cancellationPolicy[z].cancellationPolicyRules[x].rangeRoomsTo
-                                > req.query.numberOfRooms > cancellationPolicy[j].cancellationPolicy[z].cancellationPolicyRules[x].rangeRoomsFrom) {
+                            if(cancellationPolicy[j].cancellationPolicy.cancellationPolicyRules[x].rangeRoomsTo
+                                > req.query.numberOfRooms > cancellationPolicy[j].cancellationPolicy.cancellationPolicyRules[x].rangeRoomsFrom) {
 
-                                for (var y = 0; y < cancellationPolicy[j].cancellationPolicy[z].cancellationPolicyRules[x].cancellationPolicyLines.length; y++) {
+                                for (var y = 0; y < cancellationPolicy[j].cancellationPolicy.cancellationPolicyRules[x].cancellationPolicyLines.length; y++) {
 
-                                    if (cancellationPolicy[j].cancellationPolicy[z].cancellationPolicyRules[x].cancellationPolicyLines[y].interval === "DAYS") {
-                                        cancel = new Date(date.getDate() - ( cancellationPolicy[j].cancellationPolicy[z].cancellationPolicyRules[x].cancellationPolicyLines[y].toPeriod))
+                                    if (cancellationPolicy[j].cancellationPolicy.cancellationPolicyRules[x].cancellationPolicyLines[y].interval === "DAYS") {
+                                        cancel = new Date(date.getDate() - ( cancellationPolicy[j].cancellationPolicy.cancellationPolicyRules[x].cancellationPolicyLines[y].toPeriod))
                                         room.cancellationPolicy.push("Hours " + data.checkInStartTime + " " + cancel.toISOString().substring(0, 10)
-                                            + cancellationPolicy.cancellationPolicy[z].cancellationPolicyRules[x].cancellationPolicyLines[y].percent)
+                                            + cancellationPolicy.cancellationPolicy.cancellationPolicyRules[x].cancellationPolicyLines[y].percent)
                                     }
-                                    if (cancellationPolicy[j].cancellationPolicy[z].cancellationPolicyRules[x].interval === "HOURS") {
-                                        cancel = new Date(date.getHours() - ( cancellationPolicy[j].cancellationPolicy[z].cancellationPolicyRules[x].cancellationPolicyLines[y].toPeriod))
+                                    if (cancellationPolicy[j].cancellationPolicy.cancellationPolicyRules[x].interval === "HOURS") {
+                                        cancel = new Date(date.getHours() - ( cancellationPolicy[j].cancellationPolicy.cancellationPolicyRules[x].cancellationPolicyLines[y].toPeriod))
                                         room.cancellationPolicy.push("Hours " + data.checkInStartTime + " " + cancel.toISOString().substring(0, 10)
-                                            +  cancellationPolicy[j].cancellationPolicy[z].cancellationPolicyRules[x].cancellationPolicyLines[y].percent)
+                                            +  cancellationPolicy[j].cancellationPolicy.cancellationPolicyRules[x].cancellationPolicyLines[y].percent)
                                     }
                                 }                       }
-                        }
+
                     }
                     }
                 }
