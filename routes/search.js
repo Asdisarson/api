@@ -295,26 +295,29 @@ router.get('', function (req, res, next) {
                 }
                 room.addons = addons;
                 var cancellationPolicy = getHotelCache(data.id);
-                if(cancellationPolicy.information) {
-                    for (var x = 0; x < cancellationPolicy.information.cancellationPolicy.cancellationPolicyRules.length; x++) {
-                        var date = new Date(req.query.start * 1000)
-                        var cancel = {}
-                        if(cancellationPolicy.information.cancellationPolicy.cancellationPolicyRules[x].rangeRoomsFrom
-                            > req.query.numberOfRooms > cancellationPolicy.information.cancellationPolicy.cancellationPolicyRules[x].rangeRoomsFrom) {
+                if(cancellationPolicy) {
+                    for (var j = 0; j < cancellationPolicy.information.length; j++) {
 
-                            for (var y = 0; y < cancellationPolicy.information.cancellationPolicy.cancellationPolicyRules[x].cancellationPolicyLines.length; y++) {
+                        for (var x = 0; x < cancellationPolicy.information[j].cancellationPolicy.cancellationPolicyRules.length; x++) {
+                            var date = new Date(req.query.start * 1000)
+                            var cancel = {}
+                            if(cancellationPolicy.information[j].cancellationPolicy.cancellationPolicyRules[x].rangeRoomsFrom
+                                > req.query.numberOfRooms > cancellationPolicy.information[j].cancellationPolicy.cancellationPolicyRules[x].rangeRoomsFrom) {
 
-                                if (cancellationPolicy.information.cancellationPolicy.cancellationPolicyRules[x].cancellationPolicyLines[y].interval === "DAYS") {
-                                    cancel = new Date(date.getDate() - (cancellationPolicy.cancellationPolicy.cancellationPolicyRules[x].cancellationPolicyLines[y].toPeriod))
-                                    room.cancellationPolicy.push("Hours " + data.checkInStartTime + " " + cancel.toISOString().substring(0, 10)
-                                        + cancellationPolicy.cancellationPolicy.cancellationPolicyRules[x].cancellationPolicyLines[y].percent)
-                                }
-                                if (cancellationPolicy.information.cancellationPolicy.cancellationPolicyRules[x].interval === "HOURS") {
-                                    cancel = new Date(date.getHours() - (cancellationPolicy.cancellationPolicy.cancellationPolicyRules[x].cancellationPolicyLines[y].toPeriod))
-                                    room.cancellationPolicy.push("Hours " + data.checkInStartTime + " " + cancel.toISOString().substring(0, 10)
-                                        + cancellationPolicy.cancellationPolicy.cancellationPolicyRules[x].cancellationPolicyLines[y].percent)
-                                }
-                            }                       }
+                                for (var y = 0; y < cancellationPolicy.information[j].cancellationPolicy.cancellationPolicyRules[x].cancellationPolicyLines.length; y++) {
+
+                                    if (cancellationPolicy.information[j].cancellationPolicy.cancellationPolicyRules[x].cancellationPolicyLines[y].interval === "DAYS") {
+                                        cancel = new Date(date.getDate() - (cancellationPolicy.cancellationPolicy.cancellationPolicyRules[x].cancellationPolicyLines[y].toPeriod))
+                                        room.cancellationPolicy.push("Hours " + data.checkInStartTime + " " + cancel.toISOString().substring(0, 10)
+                                            + cancellationPolicy.cancellationPolicy.cancellationPolicyRules[x].cancellationPolicyLines[y].percent)
+                                    }
+                                    if (cancellationPolicy.information[j].cancellationPolicy.cancellationPolicyRules[x].interval === "HOURS") {
+                                        cancel = new Date(date.getHours() - (cancellationPolicy.cancellationPolicy.cancellationPolicyRules[x].cancellationPolicyLines[y].toPeriod))
+                                        room.cancellationPolicy.push("Hours " + data.checkInStartTime + " " + cancel.toISOString().substring(0, 10)
+                                            + cancellationPolicy.cancellationPolicy.cancellationPolicyRules[x].cancellationPolicyLines[y].percent)
+                                    }
+                                }                       }
+                    }
                     }
                 }
                 data.rooms.push(room)
