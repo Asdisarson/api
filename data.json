@@ -1,9 +1,18 @@
 {
+    "cache": true,
+    "cacheTimeOut": "Thu Nov 10 2022 14:25:13 GMT+0000 (Greenwich Mean Time)",
+    "token": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3VudHJ5X2NvZGUiOiJJUyIsImluY2x1ZGVfc3ViX2FjY291bnRzIjpmYWxzZSwidXNlcl9pZCI6NDk3LCJhY3RpdmVfYWNjb3VudHMiOiI5MjYiLCJ1c2VyX25hbWUiOiJsYXJ1c0Bpc2xhbmRzdmVmaXIuaXMiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwidXNlcl9mdWxsX25hbWUiOiJMw6FydXMgw5Nza2Fyc3NvbiIsImRlZmF1bHRfYWNjb3VudF9pZCI6OTI2LCJleHAiOjE2NjgwODA3MTMsImF1dGhvcml0aWVzIjpbIlRSVl9BcHByb3ZlX29yX1JlamVjdF9Cb29raW5nc185MjYiLCJUUlZfU2VlX0Jvb2tpbmdzXzkyNiIsIlRSVl9NYW5hZ2VfUm9sZXNfOTI2IiwiVFJWX1NlZV9Qcm9wZXJ0eV9Hcm91cHNfOTI2IiwiVFJWX1VwZGF0ZV9BbGxvdG1lbnRzXzkyNiIsIlRSVl9NYW5hZ2VfVHJhdmVsX0FnZW5jaWVzXzkyNiIsIlRSVl9TZWFyY2hfOTI2IiwiVFJWX01hbmFnZV9QcmljZV9MaXN0c185MjYiLCJUUlZfQXBwcm92ZV9vcl9SZWplY3RfQWxsb3RtZW50c185MjYiLCJUUlZfUmVhc3NpZ25fQm9va2luZ3NfOTI2IiwiVFJWX0NyZWF0ZV9Cb29raW5nc185MjYiLCJUUlZfTWFuYWdlX1VzZXJzXzkyNiIsIlRSVl9PZmZlcl9BbGxvdG1lbnRzXzkyNiIsIlRSVl9VcGRhdGVfQm9va2luZ3NfOTI2IiwiVFJWX1NlZV9BbGxvdG1lbnRzXzkyNiIsIlRSVl9TZWVfQ2FuY2VsbGF0aW9uX1BvbGljaWVzXzkyNiIsIlRSVl9NYW5hZ2VfQ2FuY2VsbGF0aW9uX1BvbGljaWVzXzkyNiIsIlRSVl9TZWVfQ29vcGVyYXRpb25zXzkyNiIsIlRSVl9DYW5jZWxfQWxsb3RtZW50c185MjYiLCJUUlZfTWFuYWdlX1Byb3BlcnRpZXNfOTI2IiwiVFJWX1NlZV9QcmljZV9MaXN0c185MjYiLCJUUlZfTWFuYWdlX1Byb3BlcnR5X0dyb3Vwc185MjYiLCJUUlZfU2VlX1Byb3BlcnRpZXNfOTI2IiwiVFJWX01hbmFnZV9BY2NvdW50c19hbmRfQXV0aG9yaXphdGlvbl85MjYiLCJUUlZfU2VlX1RyYXZlbF9BZ2VuY2llc185MjYiLCJUUlZfUmVxdWVzdF9BbGxvdG1lbnRzXzkyNiIsIlRSVl9DYW5jZWxfQ29vcGVyYXRpb25fOTI2IiwiVFJWX1VwZGF0ZV9Db29wZXJhdGlvbl9TZXR0aW5nc185MjYiLCJUUlZfUmVxdWVzdF9Db29wZXJhdGlvbl85MjYiLCJUUlZfQXBwcm92ZV9vcl9SZWplY3RfQ29vcGVyYXRpb25fUmVxdWVzdF85MjYiLCJUUlZfRGFzaGJvYXJkXzkyNiIsIlRSVl9DYW5jZWxfQm9va2luZ3NfOTI2Il0sImp0aSI6ImIzZjEzYmQ3LTY5NDgtNGNjZC1iMWY0LTA2MTgxMDE1ODI4YiIsImNsaWVudF9pZCI6IkdvZG8ifQ.PFHNMNKQ6_AHyDzrjpCY4x-feoEwZ19PWivMuCDQ4NkIJa7ThHDUW8mka0cZoH1umqLSFGxoPYsZzdttG8DvxapjWBmAv68XKmsKxGB88Ix8m-SUgYIUbWX2GmVhrxf67X2WBCwtXK4t93kJcXsTxM8kaaYK0QRJYM3qY4Gz7NL1kT4M5EjTEDy97_8YaK1TEnvZy8-p_tNeAbR1fErDaUmooDOkic0ncTmEGFyRqRYJKuyPn4b9409aPURonXOZZourzqZha0rEtj_bODr8fbHKW8SqGDzBTQjY2W2ZDni3QP0Ni0eHwNKZH7KKRObM2xTyPg2vXE-UczuL2YaNFg",
+        "token_type": "bearer",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmNsdWRlX3N1Yl9hY2NvdW50cyI6ZmFsc2UsInVzZXJfbmFtZSI6ImxhcnVzQGlzbGFuZHN2ZWZpci5pcyIsImRlZmF1bHRfYWNjb3VudF9pZCI6OTI2LCJhdXRob3JpdGllcyI6WyJUUlZfQXBwcm92ZV9vcl9SZWplY3RfQm9va2luZ3NfOTI2IiwiVFJWX1NlZV9Cb29raW5nc185MjYiLCJUUlZfTWFuYWdlX1JvbGVzXzkyNiIsIlRSVl9TZWVfUHJvcGVydHlfR3JvdXBzXzkyNiIsIlRSVl9VcGRhdGVfQWxsb3RtZW50c185MjYiLCJUUlZfTWFuYWdlX1RyYXZlbF9BZ2VuY2llc185MjYiLCJUUlZfU2VhcmNoXzkyNiIsIlRSVl9NYW5hZ2VfUHJpY2VfTGlzdHNfOTI2IiwiVFJWX0FwcHJvdmVfb3JfUmVqZWN0X0FsbG90bWVudHNfOTI2IiwiVFJWX1JlYXNzaWduX0Jvb2tpbmdzXzkyNiIsIlRSVl9DcmVhdGVfQm9va2luZ3NfOTI2IiwiVFJWX01hbmFnZV9Vc2Vyc185MjYiLCJUUlZfT2ZmZXJfQWxsb3RtZW50c185MjYiLCJUUlZfVXBkYXRlX0Jvb2tpbmdzXzkyNiIsIlRSVl9TZWVfQWxsb3RtZW50c185MjYiLCJUUlZfU2VlX0NhbmNlbGxhdGlvbl9Qb2xpY2llc185MjYiLCJUUlZfTWFuYWdlX0NhbmNlbGxhdGlvbl9Qb2xpY2llc185MjYiLCJUUlZfU2VlX0Nvb3BlcmF0aW9uc185MjYiLCJUUlZfQ2FuY2VsX0FsbG90bWVudHNfOTI2IiwiVFJWX01hbmFnZV9Qcm9wZXJ0aWVzXzkyNiIsIlRSVl9TZWVfUHJpY2VfTGlzdHNfOTI2IiwiVFJWX01hbmFnZV9Qcm9wZXJ0eV9Hcm91cHNfOTI2IiwiVFJWX1NlZV9Qcm9wZXJ0aWVzXzkyNiIsIlRSVl9NYW5hZ2VfQWNjb3VudHNfYW5kX0F1dGhvcml6YXRpb25fOTI2IiwiVFJWX1NlZV9UcmF2ZWxfQWdlbmNpZXNfOTI2IiwiVFJWX1JlcXVlc3RfQWxsb3RtZW50c185MjYiLCJUUlZfQ2FuY2VsX0Nvb3BlcmF0aW9uXzkyNiIsIlRSVl9VcGRhdGVfQ29vcGVyYXRpb25fU2V0dGluZ3NfOTI2IiwiVFJWX1JlcXVlc3RfQ29vcGVyYXRpb25fOTI2IiwiVFJWX0FwcHJvdmVfb3JfUmVqZWN0X0Nvb3BlcmF0aW9uX1JlcXVlc3RfOTI2IiwiVFJWX0Rhc2hib2FyZF85MjYiLCJUUlZfQ2FuY2VsX0Jvb2tpbmdzXzkyNiJdLCJjbGllbnRfaWQiOiJHb2RvIiwiY291bnRyeV9jb2RlIjoiSVMiLCJ1c2VyX2lkIjo0OTcsImFjdGl2ZV9hY2NvdW50cyI6IjkyNiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJ1c2VyX2Z1bGxfbmFtZSI6IkzDoXJ1cyDDk3NrYXJzc29uIiwiYXRpIjoiYjNmMTNiZDctNjk0OC00Y2NkLWIxZjQtMDYxODEwMTU4MjhiIiwiZXhwIjoxNjcwNjcxNTEzLCJqdGkiOiIzNDI5ZjExYy1hODA5LTQyY2ItOTcyNi02OGU4MjJlZDAwZTcifQ.SeJm0Xp0VBh_Ra8upwDp91Ymt2327g-KZ06Qk6mlzEkHdCESQIMVnBPxUeeGoExC5bWjsXM5W5B8A37fEkAOguZZ1SGBqH5PCSzicw3rxxf50OV0EIQktCLjgqRIUCyZngsdeItxJp2iasUghLWYTWj-d-yf33vZFU-tXDZWTnVu9-zAbThDeL4-lbfxAAtAyHrjLOIkXWNNhdsMXMHiM5dmJ2ZX3mWIR0OARRHvh09dKCbIGVqQ9uVjfcsLPHYVrBLHeCPghEHetBoQkiiPvFNg9zBx58DGO5dTjOH6qfDVm7JXnG3N8AdlvngIEC4cIrGOzJbpyDAi9UBVeSqzfA",
+        "expires_in": "2022-11-10T11:45:12.257",
+        "scope": "read write"
+    },
     "data": [
         {
             "hotelId": 4,
             "name": "Travia demo hotel",
-            "description": null,
+            "description": "This is a description",
             "address": "Laugavegur 176",
             "city": "Reykjavik",
             "postalCode": "105",
@@ -12,35 +21,9 @@
             "email": "haukur@godo.is",
             "phone": "6622231",
             "propertyTypeName": "Hotel",
+            "propertyAmenityNames": [],
+            "cancellationPolicy": [],
             "rooms": [
-                {
-                    "roomId": 5,
-                    "propertyId": 4,
-                    "name": "Standard",
-                    "minOccupancy": 1,
-                    "maxOccupancy": 2,
-                    "roomSize": null,
-                    "description": null,
-                    "roomAmenityNames": [],
-                    "wholeYearAvailability": true,
-                    "roomTypeName": "Double",
-                    "roomCategoryName": "Standard",
-                    "img": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:57_fb0798a9-92ea-49ef-be7b-b22e39198d35_noRooms.png",
-                    "gallery": [
-                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:57_fb0798a9-92ea-49ef-be7b-b22e39198d35_noRooms.png",
-                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:46_adbb2702-09c2-4002-b164-63abebd9a928_Capture.PNG"
-                    ],
-                    "addons": [
-                        "Breakfast",
-                        "Extra bed"
-                    ],
-                    "price": 0,
-                    "currency": "",
-                    "currencySign": "",
-                    "originalPrice": 0,
-                    "originalCurrency": "",
-                    "originalSign": ""
-                },
                 {
                     "roomId": 66,
                     "propertyId": 4,
@@ -53,42 +36,17 @@
                     "wholeYearAvailability": true,
                     "roomTypeName": "Double",
                     "roomCategoryName": "Standard",
+                    "cancellationPolicy": [],
                     "gallery": [],
                     "addons": [
                         "Breakfast"
                     ],
-                    "price": 0,
-                    "currency": "",
-                    "currencySign": "",
-                    "originalPrice": 0,
-                    "originalCurrency": "",
-                    "originalSign": ""
-                }
-            ],
-            "featuredImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:16_b6a1249c-918a-4cd4-a1e5-d486c55df3b3_all3.png",
-            "images": [
-                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:11_390bd8e0-a0dd-4bbc-bc5b-664e1bc062fc_all4.png",
-                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:04_1519cfe7-6179-47a4-a881-059ac1238cd7_all3.png",
-                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:16_b6a1249c-918a-4cd4-a1e5-d486c55df3b3_all3.png"
-            ]
-        },
-        {
-            "hotelId": 432,
-            "name": "Channex 1 test",
-            "description": null,
-            "address": "test",
-            "city": "Kopavogur",
-            "postalCode": "140",
-            "latitude": 64.1033023,
-            "longitude": -21.8832579,
-            "email": "aleksandarm@iborn.net",
-            "phone": "243400",
-            "propertyTypeName": "Hotel",
-            "rooms": [
+                    "isEmpty": false
+                },
                 {
-                    "roomId": 662,
-                    "propertyId": 432,
-                    "name": "Standard Double",
+                    "roomId": 5,
+                    "propertyId": 4,
+                    "name": "Standard",
                     "minOccupancy": 1,
                     "maxOccupancy": 2,
                     "roomSize": null,
@@ -97,56 +55,482 @@
                     "wholeYearAvailability": true,
                     "roomTypeName": "Double",
                     "roomCategoryName": "Standard",
-                    "gallery": [],
-                    "addons": [],
-                    "price": 0,
-                    "currency": "",
-                    "currencySign": "",
-                    "originalPrice": 0,
-                    "originalCurrency": "",
-                    "originalSign": ""
-                },
-                {
-                    "roomId": 663,
-                    "propertyId": 432,
-                    "name": "Standard Single",
-                    "minOccupancy": 1,
-                    "maxOccupancy": 1,
-                    "roomSize": null,
-                    "description": null,
-                    "roomAmenityNames": [],
-                    "wholeYearAvailability": true,
-                    "roomTypeName": "Single",
-                    "roomCategoryName": "Standard",
-                    "gallery": [],
-                    "addons": [],
-                    "price": 0,
-                    "currency": "",
-                    "currencySign": "",
-                    "originalPrice": 0,
-                    "originalCurrency": "",
-                    "originalSign": ""
+                    "cancellationPolicy": [],
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:57_fb0798a9-92ea-49ef-be7b-b22e39198d35_noRooms.png",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:57_fb0798a9-92ea-49ef-be7b-b22e39198d35_noRooms.png",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:46_adbb2702-09c2-4002-b164-63abebd9a928_Capture.PNG"
+                    ],
+                    "addons": [
+                        "Breakfast",
+                        "Extra bed"
+                    ],
+                    "isEmpty": false
                 }
             ],
-            "featuredImage": "",
-            "images": []
+            "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:11_390bd8e0-a0dd-4bbc-bc5b-664e1bc062fc_all4.png",
+            "gallery": [
+                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:11_390bd8e0-a0dd-4bbc-bc5b-664e1bc062fc_all4.png",
+                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:04_1519cfe7-6179-47a4-a881-059ac1238cd7_all3.png",
+                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:16_b6a1249c-918a-4cd4-a1e5-d486c55df3b3_all3.png"
+            ],
+            "isEmpty": false
         },
         {
-            "hotelId": 429,
-            "name": "Naughty By Nature",
-            "description": "desc",
-            "address": "Thingholtsstraeti 47",
-            "city": "Reykjavik",
-            "postalCode": "100",
-            "latitude": 64.14318879999999,
-            "longitude": -21.936942,
-            "email": "stefanp@iborn.net",
-            "phone": "+38970846476",
-            "propertyTypeName": "Hostel",
+            "hotelId": 556,
+            "name": "Travia Stage (GROSS) API Test",
+            "description": "Test property for GROSS prices\n\nPMS property ID 122207",
+            "address": "Skólavörðustígur",
+            "city": "Reykjavík",
+            "postalCode": "101",
+            "latitude": 64.1444948,
+            "longitude": -21.9303862,
+            "email": "hello@travia.is",
+            "phone": "5554363",
+            "propertyTypeName": "Hotel",
+            "propertyAmenityNames": [
+                "Air conditioning",
+                "Self service kitchen",
+                "Restaurant",
+                "Bar",
+                "24 hour front desk",
+                "Room service",
+                "Spa and wellness centre"
+            ],
+            "cancellationPolicy": [],
             "rooms": [
                 {
-                    "roomId": 659,
-                    "propertyId": 429,
+                    "roomId": 791,
+                    "propertyId": 556,
+                    "name": "Ocean View",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 2,
+                    "roomSize": null,
+                    "description": null,
+                    "roomAmenityNames": [
+                        "Socket near the bed",
+                        "Free toiletries",
+                        "Non-feather pillow",
+                        "Microwave",
+                        "Refrigerator",
+                        "Cable channels",
+                        "Pajamas",
+                        "Mountain view",
+                        "Suit press",
+                        "Sofa",
+                        "Kitchenette",
+                        "Sofa bed",
+                        "Hot tub",
+                        "Heating",
+                        "Toaster",
+                        "Coffee Machine",
+                        "Linen",
+                        "Shower",
+                        "Satellite Channels",
+                        "Barbecue",
+                        "Drying rack for clothing",
+                        "Bidet",
+                        "Washing Machine"
+                    ],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Suite",
+                    "roomCategoryName": "Deluxe",
+                    "cancellationPolicy": [],
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:43:20_206deb04-9e0c-45be-80b2-f2d0e5d898ee_hotelroom.jpg",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:43:20_206deb04-9e0c-45be-80b2-f2d0e5d898ee_hotelroom.jpg"
+                    ],
+                    "addons": [
+                        "Breakfast"
+                    ],
+                    "isEmpty": false
+                },
+                {
+                    "roomId": 790,
+                    "propertyId": 556,
+                    "name": "Mountain View",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 2,
+                    "roomSize": null,
+                    "description": null,
+                    "roomAmenityNames": [
+                        "Socket near the bed",
+                        "Free toiletries",
+                        "Garden view",
+                        "Tea/Coffee maker",
+                        "Quiet street view",
+                        "Hairdryer",
+                        "Radio",
+                        "Smoke Alarm",
+                        "Baby safety gates",
+                        "Sofa bed",
+                        "Stovetop",
+                        "Bathrobe",
+                        "Linen",
+                        "Satellite Channels",
+                        "Private bathroom",
+                        "Hypoallergenic pillow",
+                        "Bidet"
+                    ],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Double",
+                    "roomCategoryName": "Standard",
+                    "cancellationPolicy": [],
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:43:03_132525ba-f8ad-45f3-9d6b-32f865133a14_hotelroomtest4.jpg",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:43:03_132525ba-f8ad-45f3-9d6b-32f865133a14_hotelroomtest4.jpg"
+                    ],
+                    "addons": [
+                        "Breakfast"
+                    ],
+                    "isEmpty": false
+                },
+                {
+                    "roomId": 789,
+                    "propertyId": 556,
+                    "name": "River View",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 1,
+                    "roomSize": null,
+                    "description": null,
+                    "roomAmenityNames": [
+                        "Hot tub",
+                        "Free toiletries",
+                        "Clothes Rack",
+                        "Tea/Coffee maker",
+                        "Lake view",
+                        "Minibar",
+                        "Electric Blankets",
+                        "Radio",
+                        "Satellite Channels",
+                        "Private bathroom",
+                        "Drying rack for clothing"
+                    ],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Single",
+                    "roomCategoryName": "Standard",
+                    "cancellationPolicy": [],
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:42:50_11a38db0-8473-42b9-9e36-63ab77e71a59_hotelroomtest2.jpg",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:42:50_11a38db0-8473-42b9-9e36-63ab77e71a59_hotelroomtest2.jpg"
+                    ],
+                    "addons": [
+                        "Breakfast"
+                    ],
+                    "isEmpty": false
+                }
+            ],
+            "featureImage": "",
+            "gallery": [],
+            "isEmpty": false
+        },
+        {
+            "hotelId": 530,
+            "name": "Nice Hotel",
+            "description": "Situated in Reykjavík, 1.5 km from Laugardalur Family Park, ODDSSON Hotel offers modern rooms with a flat-screen TV with satellite channels and a private bathroom. Free WiFi is offered.\n\nAt the hotel, rooms have a wardrobe. Family rooms are available.\n\nA buffet breakfast is available each morning at Hotel ODDSSON.\n\nLocal buses stop across the street. Kringlan Shopping Centre is 1,5 km away. Hallgrímskirkja Church is 3.3 km from the accommodation, while Solfar Sun Voyager is 3.9 km from the property. The nearest airport is Reykjavík Domestic Airport, 5 km from ODDSSON Hotel.",
+            "address": "Akureyri",
+            "city": "Akureyri",
+            "postalCode": "600",
+            "latitude": 65.6691338,
+            "longitude": -18.1023867,
+            "email": "nicehotel@nicehotel.io",
+            "phone": "5555555",
+            "propertyTypeName": "Hotel",
+            "propertyAmenityNames": [
+                "24 hour front desk",
+                "Room service",
+                "Gym",
+                "Business Center"
+            ],
+            "cancellationPolicy": [],
+            "rooms": [
+                {
+                    "roomId": 797,
+                    "propertyId": 530,
+                    "name": "Triple Deluxe Room",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 3,
+                    "roomSize": 22,
+                    "description": null,
+                    "roomAmenityNames": [
+                        "Dvd Player",
+                        "Telephone",
+                        "Free toiletries",
+                        "Radio",
+                        "Smoke Alarm",
+                        "Sitting area",
+                        "Sofa",
+                        "Sofa bed",
+                        "Terrace",
+                        "Bathrobe",
+                        "Slippers",
+                        "Computer",
+                        "Towels",
+                        "iPad",
+                        "Shower",
+                        "Satellite Channels",
+                        "Private bathroom",
+                        "Flat-screen TV",
+                        "Bathtub",
+                        "Bidet",
+                        "Washing Machine",
+                        "Fireplace"
+                    ],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Triple",
+                    "roomCategoryName": "Deluxe",
+                    "cancellationPolicy": [],
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-11-09T12:04:28_f8d2f5a6-ef5e-4855-a2f4-7f833fe7ae69_216702647.jpg",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-11-09T12:04:28_f8d2f5a6-ef5e-4855-a2f4-7f833fe7ae69_216702647.jpg",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-11-09T12:04:28_8b6786a2-4f95-45bc-bdec-8be2e5ff38b2_216702684.jpg",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-11-09T12:04:28_74304580-c3d9-4890-8eee-7e1adf7960ad_216702642.jpg",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-11-09T12:04:28_83931bdc-a338-4bdb-9b18-c03ed6076b1e_216702678.jpg"
+                    ],
+                    "addons": [
+                        "Extra bed"
+                    ],
+                    "isEmpty": false
+                },
+                {
+                    "roomId": 767,
+                    "propertyId": 530,
+                    "name": "Nice Triple",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 3,
+                    "roomSize": 20,
+                    "description": "Tripe Nice Room",
+                    "roomAmenityNames": [
+                        "Free toiletries",
+                        "Microwave",
+                        "Shared bathroom",
+                        "Stovetop",
+                        "Oven",
+                        "Toilet paper",
+                        "Towels",
+                        "Shower",
+                        "Private bathroom",
+                        "Barbecue",
+                        "Kitchenware",
+                        "Bidet",
+                        "Washing Machine",
+                        "Outdoor dinning area",
+                        "Dishwasher",
+                        "Tea/Coffee maker",
+                        "Hairdryer",
+                        "Wine glasses",
+                        "Refrigerator",
+                        "Electric kettle",
+                        "Kitchenette",
+                        "Toaster",
+                        "Bathrobe",
+                        "Coffee Machine",
+                        "Slippers",
+                        "Bathtub",
+                        "Drying rack for clothing",
+                        "High chair"
+                    ],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Triple",
+                    "roomCategoryName": "Superior",
+                    "cancellationPolicy": [],
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-12T11:50:13_ef187186-fb07-459a-812e-7c1f08628298_204960711.jpg",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-12T11:50:13_ef187186-fb07-459a-812e-7c1f08628298_204960711.jpg",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-12T11:50:13_3b989c83-3f53-451e-b8ac-71d2c9e04414_229037253.jpg",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-18T03:41:29_6b41dc6a-3dca-4309-9e3e-589ad56d15a6_80327914.jpg",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-18T03:41:37_ce3e75fb-5490-4749-9ced-dc157c936d47_80327887.jpg",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-18T03:42:05_cdcb6bff-54f5-4b89-8003-2120f7ee9eb6_80327915.jpg"
+                    ],
+                    "addons": [
+                        "Extra bed",
+                        "Breakfast"
+                    ],
+                    "isEmpty": false
+                },
+                {
+                    "roomId": 753,
+                    "propertyId": 530,
+                    "name": "Nice Room",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 2,
+                    "roomSize": 18,
+                    "description": "Very nice room",
+                    "roomAmenityNames": [
+                        "Toilet paper",
+                        "Slippers",
+                        "Shower",
+                        "Bathtub",
+                        "Drying rack for clothing",
+                        "Bidet"
+                    ],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Double/Twin",
+                    "roomCategoryName": "Deluxe",
+                    "cancellationPolicy": [],
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-12T11:49:39_6e839352-4284-4361-af9c-bd99e6f100ef_204960846.jpg",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-12T11:49:39_6e839352-4284-4361-af9c-bd99e6f100ef_204960846.jpg",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-12T11:49:39_526923a6-8745-4cae-841a-a4dd1eb3d2f3_204960837.jpg",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-18T03:41:02_890e78fe-26d7-4d32-822d-5828b8c59790_80327957.jpg",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-18T03:41:02_b6d8c934-bac6-40b1-b1f7-d1072a68005c_80328050.jpg",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-18T03:41:23_fce7e1d0-ec43-4faf-b266-da1d1ee381e3_80328050.jpg",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-18T03:42:22_489342f5-1557-4ef5-9fac-2cd21a57435f_80327916.jpg"
+                    ],
+                    "addons": [
+                        "Breakfast",
+                        "Extra bed"
+                    ],
+                    "isEmpty": false
+                }
+            ],
+            "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-12T11:52:46_50f21d21-b29c-45cd-bbff-b63a2b2fc568_223553018.jpg",
+            "gallery": [
+                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-12T11:52:46_50f21d21-b29c-45cd-bbff-b63a2b2fc568_223553018.jpg",
+                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-12T11:53:11_97b063f3-6f9e-4620-96fb-3ae81789eb43_202609455.jpg",
+                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-12T11:53:18_dda742a0-fd2e-4f55-82f1-d8e51f71e693_204962122.jpg",
+                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-12T11:53:23_8d5ed85d-fb3c-4da2-992e-9e7b54ea6615_202609390.jpg"
+            ],
+            "isEmpty": false
+        },
+        {
+            "hotelId": 555,
+            "name": "Travia Stage (BAR) API Test",
+            "description": "Demo hotel for BAR pices\n\nPMS Property ID 60062",
+            "address": "Smárarimi",
+            "city": "Reykjavík",
+            "postalCode": "112",
+            "latitude": 64.1468586,
+            "longitude": -21.7997555,
+            "email": "hello@travia.is",
+            "phone": "5554636",
+            "propertyTypeName": "Hotel",
+            "propertyAmenityNames": [
+                "Bar",
+                "24 hour front desk",
+                "Fitness Center",
+                "Business Center"
+            ],
+            "cancellationPolicy": [],
+            "rooms": [
+                {
+                    "roomId": 788,
+                    "propertyId": 555,
+                    "name": "Junior Suite",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 2,
+                    "roomSize": null,
+                    "description": null,
+                    "roomAmenityNames": [
+                        "Board games",
+                        "TV",
+                        "Telephone",
+                        "Free toiletries",
+                        "Outdoor furniture",
+                        "Game console",
+                        "Hairdryer",
+                        "Cable channels",
+                        "Stovetop",
+                        "Alarm clock",
+                        "Minibar",
+                        "Private entrance",
+                        "Towels",
+                        "iPad",
+                        "Linen",
+                        "Streaming service (like Netflix)",
+                        "Private bathroom",
+                        "Flat-screen TV",
+                        "Barbecue",
+                        "Drying rack for clothing",
+                        "Patio",
+                        "Feather pillow",
+                        "Fireplace"
+                    ],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Suite",
+                    "roomCategoryName": "Junior",
+                    "cancellationPolicy": [],
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:35:49_d152839b-cbb1-402a-8596-a138bd4754bd_hotelroom.jpg",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:35:49_d152839b-cbb1-402a-8596-a138bd4754bd_hotelroom.jpg"
+                    ],
+                    "addons": [
+                        "Breakfast"
+                    ],
+                    "isEmpty": false
+                },
+                {
+                    "roomId": 787,
+                    "propertyId": 555,
+                    "name": "Deluxe Double",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 2,
+                    "roomSize": null,
+                    "description": null,
+                    "roomAmenityNames": [
+                        "Outdoor dinning area",
+                        "Pool view",
+                        "Slippers",
+                        "Cable channels",
+                        "Radio",
+                        "Pajamas",
+                        "Wake-up service",
+                        "Private bathroom",
+                        "Bathtub",
+                        "Suit press",
+                        "Bidet"
+                    ],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Double",
+                    "roomCategoryName": "Deluxe",
+                    "cancellationPolicy": [],
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:34:10_1411adb7-5cdd-4371-a630-2dca6e0d99a0_Hotel_room_ocean_view_2.jfif",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:34:10_1411adb7-5cdd-4371-a630-2dca6e0d99a0_Hotel_room_ocean_view_2.jfif"
+                    ],
+                    "addons": [
+                        "Breakfast"
+                    ],
+                    "isEmpty": false
+                },
+                {
+                    "roomId": 786,
+                    "propertyId": 555,
+                    "name": "Standard Double",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 2,
+                    "roomSize": null,
+                    "description": null,
+                    "roomAmenityNames": [
+                        "Sofa",
+                        "Socket near the bed",
+                        "Board games",
+                        "Toaster",
+                        "Non-feather pillow",
+                        "Coffee Machine",
+                        "iPad",
+                        "Satellite Channels",
+                        "Patio",
+                        "Shared bathroom",
+                        "Washing Machine",
+                        "Fireplace"
+                    ],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Double",
+                    "roomCategoryName": "Standard",
+                    "cancellationPolicy": [],
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:33:12_63d3ce10-f25a-4592-b66d-7c37d34caf96_IMG_3639.jpg",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:33:12_63d3ce10-f25a-4592-b66d-7c37d34caf96_IMG_3639.jpg"
+                    ],
+                    "addons": [
+                        "Breakfast"
+                    ],
+                    "isEmpty": false
+                },
+                {
+                    "roomId": 785,
+                    "propertyId": 555,
                     "name": "Standard Single",
                     "minOccupancy": 1,
                     "maxOccupancy": 1,
@@ -156,23 +540,25 @@
                     "wholeYearAvailability": true,
                     "roomTypeName": "Single",
                     "roomCategoryName": "Standard",
-                    "gallery": [],
-                    "addons": [],
-                    "price": 0,
-                    "currency": "",
-                    "currencySign": "",
-                    "originalPrice": 0,
-                    "originalCurrency": "",
-                    "originalSign": ""
+                    "cancellationPolicy": [],
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:32:55_413eddf5-429c-4d8c-bcd9-366312d1052a_Hotel_room_ocean_view.jfif",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:32:55_413eddf5-429c-4d8c-bcd9-366312d1052a_Hotel_room_ocean_view.jfif"
+                    ],
+                    "addons": [
+                        "Breakfast"
+                    ],
+                    "isEmpty": false
                 }
             ],
-            "featuredImage": "",
-            "images": []
+            "featureImage": "",
+            "gallery": [],
+            "isEmpty": false
         },
         {
             "hotelId": 115,
-            "name": "Travia Stage API Test Hotel",
-            "description": "Testing hotel,yesyeyesm test",
+            "name": "Travia Stage (NET) API Test ",
+            "description": "Testing hotel\n\nPMS property ID 123895",
             "address": "Höfðabakki 9",
             "city": "Reykjavík",
             "postalCode": "110",
@@ -181,37 +567,14 @@
             "email": "hello@travia.is",
             "phone": "+3545553646",
             "propertyTypeName": "Hotel",
+            "propertyAmenityNames": [
+                "Air conditioning",
+                "Bar",
+                "24 hour front desk",
+                "Business Center"
+            ],
+            "cancellationPolicy": [],
             "rooms": [
-                {
-                    "roomId": 247,
-                    "propertyId": 115,
-                    "name": "Great",
-                    "minOccupancy": 1,
-                    "maxOccupancy": 2,
-                    "roomSize": null,
-                    "description": null,
-                    "roomAmenityNames": [],
-                    "wholeYearAvailability": true,
-                    "roomTypeName": "Double",
-                    "roomCategoryName": "Standard",
-                    "img": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2021-10-14T01:12:29_4e6cfe40-a105-4fd9-a054-d39485c25b47_7542736b26b0676a0e9e3c4aab831241.jpg",
-                    "gallery": [
-                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2021-10-14T01:12:29_4e6cfe40-a105-4fd9-a054-d39485c25b47_7542736b26b0676a0e9e3c4aab831241.jpg"
-                    ],
-                    "addons": [
-                        "Breakfast",
-                        "water",
-                        "Extra bed",
-                        "half board",
-                        "Boat trip"
-                    ],
-                    "price": 0,
-                    "currency": "",
-                    "currencySign": "",
-                    "originalPrice": 0,
-                    "originalCurrency": "",
-                    "originalSign": ""
-                },
                 {
                     "roomId": 275,
                     "propertyId": 115,
@@ -224,7 +587,8 @@
                     "wholeYearAvailability": true,
                     "roomTypeName": "Double/Twin",
                     "roomCategoryName": "Budget",
-                    "img": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2021-10-14T01:12:45_0b39a85e-3c91-477f-ade9-7bcc2bbd0a4f_images.jfif",
+                    "cancellationPolicy": [],
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2021-10-14T01:12:45_0b39a85e-3c91-477f-ade9-7bcc2bbd0a4f_images.jfif",
                     "gallery": [
                         "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2021-10-14T01:12:45_0b39a85e-3c91-477f-ade9-7bcc2bbd0a4f_images.jfif"
                     ],
@@ -234,270 +598,42 @@
                         "Breakfast",
                         "water"
                     ],
-                    "price": 0,
-                    "currency": "",
-                    "currencySign": "",
-                    "originalPrice": 0,
-                    "originalCurrency": "",
-                    "originalSign": ""
-                }
-            ],
-            "featuredImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2021-10-14T01:11:54_98f68b14-3bb4-4a23-a184-bad5f8bb1a1e_1246280_16061017110043391702.jpg",
-            "images": [
-                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2021-10-14T01:11:54_98f68b14-3bb4-4a23-a184-bad5f8bb1a1e_1246280_16061017110043391702.jpg"
-            ]
-        },
-        {
-            "hotelId": 70,
-            "name": "4 seasons",
-            "description": "asd",
-            "address": "31 Avenue George V",
-            "city": "Paris",
-            "postalCode": "75008 ",
-            "latitude": 48.87040246887477,
-            "longitude": 2.300296761901852,
-            "email": "primary@keahotels.is",
-            "phone": "078068998",
-            "propertyTypeName": "Hotel",
-            "rooms": [
-                {
-                    "roomId": 163,
-                    "propertyId": 70,
-                    "name": "Chambre double avec balcon",
-                    "minOccupancy": 1,
-                    "maxOccupancy": 3,
-                    "roomSize": null,
-                    "description": "ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ZOMBI ",
-                    "roomAmenityNames": [],
-                    "wholeYearAvailability": true,
-                    "roomTypeName": "Double",
-                    "roomCategoryName": "Deluxe",
-                    "img": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2020-01-28T02:35:12_2e449d11-a5d4-42dc-990d-83eb10131ba1_four_seasons_hotel_terrace_view.jpg",
-                    "gallery": [
-                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2020-01-28T02:35:12_2e449d11-a5d4-42dc-990d-83eb10131ba1_four_seasons_hotel_terrace_view.jpg",
-                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2020-01-28T02:35:21_d78966dd-84c7-426e-ac32-7d8f13db8e12_232783611.jpg"
-                    ],
-                    "addons": [
-                        "Extra bed",
-                        "Breakfast",
-                        "Boat trip"
-                    ],
-                    "price": 0,
-                    "currency": "",
-                    "currencySign": "",
-                    "originalPrice": 0,
-                    "originalCurrency": "",
-                    "originalSign": ""
+                    "isEmpty": false
                 },
                 {
-                    "roomId": 164,
-                    "propertyId": 70,
-                    "name": "Double Supérieur",
-                    "minOccupancy": 1,
-                    "maxOccupancy": 5,
-                    "roomSize": 90,
-                    "description": null,
-                    "roomAmenityNames": [],
-                    "wholeYearAvailability": true,
-                    "roomTypeName": "Double",
-                    "roomCategoryName": "Superior",
-                    "img": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2020-01-28T02:35:32_44443a19-4d3c-41a8-800c-74a6ac0e8592_daf0c8c74c68464255d7a7c50e9b472c.jpg",
-                    "gallery": [
-                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2020-01-28T02:35:32_44443a19-4d3c-41a8-800c-74a6ac0e8592_daf0c8c74c68464255d7a7c50e9b472c.jpg",
-                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2020-01-28T02:36:06_66e99ded-cea7-4a8b-9d48-e302317102e6_download.jpg"
-                    ],
-                    "addons": [
-                        "Extra bed",
-                        "water",
-                        "Breakfast",
-                        "coca-cola"
-                    ],
-                    "price": 0,
-                    "currency": "",
-                    "currencySign": "",
-                    "originalPrice": 0,
-                    "originalCurrency": "",
-                    "originalSign": ""
-                },
-                {
-                    "roomId": 165,
-                    "propertyId": 70,
-                    "name": "Chambre pour une personne",
+                    "roomId": 247,
+                    "propertyId": 115,
+                    "name": "Great",
                     "minOccupancy": 1,
                     "maxOccupancy": 1,
                     "roomSize": null,
                     "description": null,
                     "roomAmenityNames": [],
                     "wholeYearAvailability": true,
-                    "roomTypeName": "Single",
+                    "roomTypeName": "Double",
                     "roomCategoryName": "Standard",
-                    "img": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2020-01-28T02:36:27_32eed84f-7d64-43ce-85d2-f0714fe2bf42_images_1_.jpg",
+                    "cancellationPolicy": [],
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2021-10-14T01:12:29_4e6cfe40-a105-4fd9-a054-d39485c25b47_7542736b26b0676a0e9e3c4aab831241.jpg",
                     "gallery": [
-                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2020-01-28T02:36:27_32eed84f-7d64-43ce-85d2-f0714fe2bf42_images_1_.jpg",
-                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2020-01-28T02:36:40_3a94c8d3-ad09-426a-9c7b-112e57a4a558_Four_Seasons_Hotel_George_V_Paris_Top_View.jpg"
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2021-10-14T01:12:29_4e6cfe40-a105-4fd9-a054-d39485c25b47_7542736b26b0676a0e9e3c4aab831241.jpg"
                     ],
                     "addons": [
-                        "water",
                         "Breakfast",
-                        "coca-cola",
-                        "Boat trip"
+                        "water",
+                        "Boat trip",
+                        "half board",
+                        "Extra bed"
                     ],
-                    "price": 0,
-                    "currency": "",
-                    "currencySign": "",
-                    "originalPrice": 0,
-                    "originalCurrency": "",
-                    "originalSign": ""
-                },
-                {
-                    "roomId": 166,
-                    "propertyId": 70,
-                    "name": "Chambre pour deux personnes",
-                    "minOccupancy": 1,
-                    "maxOccupancy": 2,
-                    "roomSize": 50,
-                    "description": null,
-                    "roomAmenityNames": [],
-                    "wholeYearAvailability": true,
-                    "roomTypeName": "Double",
-                    "roomCategoryName": "Standard",
-                    "img": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2020-01-28T02:37:04_17702b0d-e4fc-4a26-9c20-dd8ffbc9ec0a_images.jpg",
-                    "gallery": [
-                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2020-01-28T02:37:04_17702b0d-e4fc-4a26-9c20-dd8ffbc9ec0a_images.jpg",
-                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2020-01-28T02:37:10_b0fbac66-2bdf-4b87-b97a-80c856e365b9_news_main_four_seasons_hotel_george_v_paris_celebrates_love_1549731513.jpg"
-                    ],
-                    "addons": [
-                        "Breakfast"
-                    ],
-                    "price": 0,
-                    "currency": "",
-                    "currencySign": "",
-                    "originalPrice": 0,
-                    "originalCurrency": "",
-                    "originalSign": ""
-                },
-                {
-                    "roomId": 167,
-                    "propertyId": 70,
-                    "name": "Chambre twin économique",
-                    "minOccupancy": 1,
-                    "maxOccupancy": 3,
-                    "roomSize": null,
-                    "description": null,
-                    "roomAmenityNames": [],
-                    "wholeYearAvailability": true,
-                    "roomTypeName": "Twin",
-                    "roomCategoryName": "Economy",
-                    "img": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2020-01-28T02:37:36_a27d9164-4453-4bbe-919e-b7d8c0604264_daf0c8c74c68464255d7a7c50e9b472c.jpg",
-                    "gallery": [
-                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2020-01-28T02:37:36_a27d9164-4453-4bbe-919e-b7d8c0604264_daf0c8c74c68464255d7a7c50e9b472c.jpg",
-                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2020-01-28T02:37:41_e1ce7228-feeb-4df2-a8e8-0614daa0d8eb_images.jpg"
-                    ],
-                    "addons": [
-                        "Breakfast"
-                    ],
-                    "price": 0,
-                    "currency": "",
-                    "currencySign": "",
-                    "originalPrice": 0,
-                    "originalCurrency": "",
-                    "originalSign": ""
-                },
-                {
-                    "roomId": 284,
-                    "propertyId": 70,
-                    "name": "Maggie's test room Pricing sync",
-                    "minOccupancy": 1,
-                    "maxOccupancy": 4,
-                    "roomSize": 50,
-                    "description": null,
-                    "roomAmenityNames": [],
-                    "wholeYearAvailability": true,
-                    "roomTypeName": "Single",
-                    "roomCategoryName": "Economy",
-                    "gallery": [],
-                    "addons": [],
-                    "price": 0,
-                    "currency": "",
-                    "currencySign": "",
-                    "originalPrice": 0,
-                    "originalCurrency": "",
-                    "originalSign": ""
-                },
-                {
-                    "roomId": 605,
-                    "propertyId": 70,
-                    "name": "sasa",
-                    "minOccupancy": 1,
-                    "maxOccupancy": 2,
-                    "roomSize": null,
-                    "description": null,
-                    "roomAmenityNames": [],
-                    "wholeYearAvailability": true,
-                    "roomTypeName": "Double",
-                    "roomCategoryName": "Standard",
-                    "gallery": [],
-                    "addons": [],
-                    "price": 0,
-                    "currency": "",
-                    "currencySign": "",
-                    "originalPrice": 0,
-                    "originalCurrency": "",
-                    "originalSign": ""
-                },
-                {
-                    "roomId": 606,
-                    "propertyId": 70,
-                    "name": "5345",
-                    "minOccupancy": 1,
-                    "maxOccupancy": 2,
-                    "roomSize": null,
-                    "description": null,
-                    "roomAmenityNames": [],
-                    "wholeYearAvailability": true,
-                    "roomTypeName": "Double",
-                    "roomCategoryName": "Standard",
-                    "gallery": [],
-                    "addons": [],
-                    "price": 0,
-                    "currency": "",
-                    "currencySign": "",
-                    "originalPrice": 0,
-                    "originalCurrency": "",
-                    "originalSign": ""
-                },
-                {
-                    "roomId": 612,
-                    "propertyId": 70,
-                    "name": "SS From ATG",
-                    "minOccupancy": 1,
-                    "maxOccupancy": 1,
-                    "roomSize": null,
-                    "description": null,
-                    "roomAmenityNames": [],
-                    "wholeYearAvailability": true,
-                    "roomTypeName": "Single",
-                    "roomCategoryName": "Standard",
-                    "gallery": [],
-                    "addons": [],
-                    "price": 0,
-                    "currency": "",
-                    "currencySign": "",
-                    "originalPrice": 0,
-                    "originalCurrency": "",
-                    "originalSign": ""
+                    "isEmpty": false
                 }
             ],
-            "featuredImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2020-01-28T02:25:48_9d210f90-4f05-4aa7-beaa-db377c8d64ae_four_seasons_hotel_terrace_view.jpg",
-            "images": [
-                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2020-01-28T02:25:04_ad102609-9ecc-4c5f-8987-09a5a072f41c_Four_Seasons_Hotel_George_V_Paris_Top_View.jpg",
-                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2020-01-28T02:25:56_0fe53025-f5ab-4d98-b0c2-f39250d7cf2d_232783611.jpg",
-                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2020-01-28T02:26:04_a06b801d-c1ae-4a20-ac06-9501c1bf4d76_news_main_four_seasons_hotel_george_v_paris_celebrates_love_1549731513.jpg",
-                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2020-01-28T02:26:09_f4fdc21e-241c-4808-8767-53f655f07307_images.jpg",
-                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2020-01-28T02:26:13_b624c0dd-09ee-40f6-8e49-8cfd495f509a_daf0c8c74c68464255d7a7c50e9b472c.jpg",
-                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2020-05-07T07:28:58_f93f6a2c-6caf-4707-8f89-65b32c46ac2c_test_foshotel_02.jpg",
-                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2020-01-28T02:25:48_9d210f90-4f05-4aa7-beaa-db377c8d64ae_four_seasons_hotel_terrace_view.jpg"
-            ]
+            "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2021-10-14T01:11:54_98f68b14-3bb4-4a23-a184-bad5f8bb1a1e_1246280_16061017110043391702.jpg",
+            "gallery": [
+                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2021-10-14T01:11:54_98f68b14-3bb4-4a23-a184-bad5f8bb1a1e_1246280_16061017110043391702.jpg",
+                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-07T10:05:43_6056c8c3-92d0-4b79-87a3-7b069e11c749_hotel.jfif"
+            ],
+            "isEmpty": false
         }
-    ]
+    ],
+    "cart": []
 }

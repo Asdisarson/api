@@ -5,6 +5,7 @@ module.exports = {
 
         return date1.getTime() > date2.getTime();
     },
+
     setTimeOut: function (numOfHours, date = new Date()) {
         date.setTime(date.getTime() + numOfHours * 60 * 60 * 1000);
 
