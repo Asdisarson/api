@@ -215,7 +215,7 @@ router.post("/confirm", function (req, res, next) {
 
             request(options, function (error, response) {
                 response.body = JSON.parse(response.body)
-                var points = parseInt(response.body.totalPrice).toFixed(0)*0.1;
+                var points = (parseInt(response.body.totalPrice)*0.1).toFixed(0);
                 var request1 = require('request');
                 options = {
                     'method': 'PUT',
