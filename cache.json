@@ -1,159 +1,14 @@
 {
     "cache": false,
-    "cacheTimeOut": "Fri Nov 11 2022 16:59:09 GMT+0000 (Greenwich Mean Time)",
+    "cacheTimeOut": "Fri Nov 11 2022 17:05:21 GMT+0000 (Greenwich Mean Time)",
     "token": {
-        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3VudHJ5X2NvZGUiOiJJUyIsImluY2x1ZGVfc3ViX2FjY291bnRzIjpmYWxzZSwidXNlcl9pZCI6NDk3LCJhY3RpdmVfYWNjb3VudHMiOiI5MjYiLCJ1c2VyX25hbWUiOiJsYXJ1c0Bpc2xhbmRzdmVmaXIuaXMiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwidXNlcl9mdWxsX25hbWUiOiJMw6FydXMgw5Nza2Fyc3NvbiIsImRlZmF1bHRfYWNjb3VudF9pZCI6OTI2LCJleHAiOjE2NjgxNzYzNDksImF1dGhvcml0aWVzIjpbIlRSVl9BcHByb3ZlX29yX1JlamVjdF9Cb29raW5nc185MjYiLCJUUlZfU2VlX0Jvb2tpbmdzXzkyNiIsIlRSVl9NYW5hZ2VfUm9sZXNfOTI2IiwiVFJWX1NlZV9Qcm9wZXJ0eV9Hcm91cHNfOTI2IiwiVFJWX1VwZGF0ZV9BbGxvdG1lbnRzXzkyNiIsIlRSVl9NYW5hZ2VfVHJhdmVsX0FnZW5jaWVzXzkyNiIsIlRSVl9TZWFyY2hfOTI2IiwiVFJWX01hbmFnZV9QcmljZV9MaXN0c185MjYiLCJUUlZfQXBwcm92ZV9vcl9SZWplY3RfQWxsb3RtZW50c185MjYiLCJUUlZfUmVhc3NpZ25fQm9va2luZ3NfOTI2IiwiVFJWX0NyZWF0ZV9Cb29raW5nc185MjYiLCJUUlZfTWFuYWdlX1VzZXJzXzkyNiIsIlRSVl9PZmZlcl9BbGxvdG1lbnRzXzkyNiIsIlRSVl9VcGRhdGVfQm9va2luZ3NfOTI2IiwiVFJWX1NlZV9BbGxvdG1lbnRzXzkyNiIsIlRSVl9TZWVfQ2FuY2VsbGF0aW9uX1BvbGljaWVzXzkyNiIsIlRSVl9NYW5hZ2VfQ2FuY2VsbGF0aW9uX1BvbGljaWVzXzkyNiIsIlRSVl9TZWVfQ29vcGVyYXRpb25zXzkyNiIsIlRSVl9DYW5jZWxfQWxsb3RtZW50c185MjYiLCJUUlZfTWFuYWdlX1Byb3BlcnRpZXNfOTI2IiwiVFJWX1NlZV9QcmljZV9MaXN0c185MjYiLCJUUlZfTWFuYWdlX1Byb3BlcnR5X0dyb3Vwc185MjYiLCJUUlZfU2VlX1Byb3BlcnRpZXNfOTI2IiwiVFJWX01hbmFnZV9BY2NvdW50c19hbmRfQXV0aG9yaXphdGlvbl85MjYiLCJUUlZfU2VlX1RyYXZlbF9BZ2VuY2llc185MjYiLCJUUlZfUmVxdWVzdF9BbGxvdG1lbnRzXzkyNiIsIlRSVl9DYW5jZWxfQ29vcGVyYXRpb25fOTI2IiwiVFJWX1VwZGF0ZV9Db29wZXJhdGlvbl9TZXR0aW5nc185MjYiLCJUUlZfUmVxdWVzdF9Db29wZXJhdGlvbl85MjYiLCJUUlZfQXBwcm92ZV9vcl9SZWplY3RfQ29vcGVyYXRpb25fUmVxdWVzdF85MjYiLCJUUlZfRGFzaGJvYXJkXzkyNiIsIlRSVl9DYW5jZWxfQm9va2luZ3NfOTI2Il0sImp0aSI6IjljYzkzZTFlLTcxOWItNGFiNy04Y2EzLTc5M2M1MmM3YjQ5ZCIsImNsaWVudF9pZCI6IkdvZG8ifQ.gV1dbF4gLYLlAxyGNJU-csUkF39vYGLJmBcKnZhxLjJQ8qUMyF166R-kHMVrUszwFViU2lKNMIBWUhjQoJsuQm6yGgIzsdbdE8Xc2Wn7NYMGBSJOmCtdhhKf1h2JkKk8NK0NVWIif9cruH7AEiYNT-CLD2HsJgf2BmKwqbts_yihtRrCc-VsBLP9yg57ZXr7TIUe6RDmoMZOYQt0mP5p7faiLzZtOrarkRxYR6RiRyuK14T1aNISH58KMUYUAfZmvmd9QQwwLDBsrocKU_FFf-1MiSuDnvdgV1lBTzA83xryxHIQpZJCBSVfPvKeHPPDFzN9DjAL3ip3OXs6Mbv3YA",
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3VudHJ5X2NvZGUiOiJJUyIsImluY2x1ZGVfc3ViX2FjY291bnRzIjpmYWxzZSwidXNlcl9pZCI6NDk3LCJhY3RpdmVfYWNjb3VudHMiOiI5MjYiLCJ1c2VyX25hbWUiOiJsYXJ1c0Bpc2xhbmRzdmVmaXIuaXMiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwidXNlcl9mdWxsX25hbWUiOiJMw6FydXMgw5Nza2Fyc3NvbiIsImRlZmF1bHRfYWNjb3VudF9pZCI6OTI2LCJleHAiOjE2NjgxNzY3MjEsImF1dGhvcml0aWVzIjpbIlRSVl9BcHByb3ZlX29yX1JlamVjdF9Cb29raW5nc185MjYiLCJUUlZfU2VlX0Jvb2tpbmdzXzkyNiIsIlRSVl9NYW5hZ2VfUm9sZXNfOTI2IiwiVFJWX1NlZV9Qcm9wZXJ0eV9Hcm91cHNfOTI2IiwiVFJWX1VwZGF0ZV9BbGxvdG1lbnRzXzkyNiIsIlRSVl9NYW5hZ2VfVHJhdmVsX0FnZW5jaWVzXzkyNiIsIlRSVl9TZWFyY2hfOTI2IiwiVFJWX01hbmFnZV9QcmljZV9MaXN0c185MjYiLCJUUlZfQXBwcm92ZV9vcl9SZWplY3RfQWxsb3RtZW50c185MjYiLCJUUlZfUmVhc3NpZ25fQm9va2luZ3NfOTI2IiwiVFJWX0NyZWF0ZV9Cb29raW5nc185MjYiLCJUUlZfTWFuYWdlX1VzZXJzXzkyNiIsIlRSVl9PZmZlcl9BbGxvdG1lbnRzXzkyNiIsIlRSVl9VcGRhdGVfQm9va2luZ3NfOTI2IiwiVFJWX1NlZV9BbGxvdG1lbnRzXzkyNiIsIlRSVl9TZWVfQ2FuY2VsbGF0aW9uX1BvbGljaWVzXzkyNiIsIlRSVl9NYW5hZ2VfQ2FuY2VsbGF0aW9uX1BvbGljaWVzXzkyNiIsIlRSVl9TZWVfQ29vcGVyYXRpb25zXzkyNiIsIlRSVl9DYW5jZWxfQWxsb3RtZW50c185MjYiLCJUUlZfTWFuYWdlX1Byb3BlcnRpZXNfOTI2IiwiVFJWX1NlZV9QcmljZV9MaXN0c185MjYiLCJUUlZfTWFuYWdlX1Byb3BlcnR5X0dyb3Vwc185MjYiLCJUUlZfU2VlX1Byb3BlcnRpZXNfOTI2IiwiVFJWX01hbmFnZV9BY2NvdW50c19hbmRfQXV0aG9yaXphdGlvbl85MjYiLCJUUlZfU2VlX1RyYXZlbF9BZ2VuY2llc185MjYiLCJUUlZfUmVxdWVzdF9BbGxvdG1lbnRzXzkyNiIsIlRSVl9DYW5jZWxfQ29vcGVyYXRpb25fOTI2IiwiVFJWX1VwZGF0ZV9Db29wZXJhdGlvbl9TZXR0aW5nc185MjYiLCJUUlZfUmVxdWVzdF9Db29wZXJhdGlvbl85MjYiLCJUUlZfQXBwcm92ZV9vcl9SZWplY3RfQ29vcGVyYXRpb25fUmVxdWVzdF85MjYiLCJUUlZfRGFzaGJvYXJkXzkyNiIsIlRSVl9DYW5jZWxfQm9va2luZ3NfOTI2Il0sImp0aSI6IjZhNWIzMTJlLWJhZjUtNGYzZC1iNGU0LTllODhiOTIyMWI1YiIsImNsaWVudF9pZCI6IkdvZG8ifQ.I93Zjy3ve9FYqH2s0P6MGVvdd2s18Di-tvrIPkBkE44fIb2uQ7r8DD5pQDlniNCCC6nrdFEnHNvbebYFVU8LjQBnCf81pRhgjh7Nf1DAeOQnLzWbZC_0vZbYDldZ54kvr1vAYHQ8EjtGH4-3yghc7AhmxGNSahTYCyCaQU1rAUgZxzVXX3QYOgws_6ATpJWTXd7YusMlt7MBQ8j7lqr-iWdEpdoKwVT2f22P0DrNmILM7hZThDngC0aJhLhk0ED8-ylGleEAZpMZ3bXSUMFNEylfkgoxHdiuukYQNXy3OApmkEXFRFF1AYeUN7UdzGe2VoBNCyElaAQI5kfOWBAq4A",
         "token_type": "bearer",
-        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmNsdWRlX3N1Yl9hY2NvdW50cyI6ZmFsc2UsInVzZXJfbmFtZSI6ImxhcnVzQGlzbGFuZHN2ZWZpci5pcyIsImRlZmF1bHRfYWNjb3VudF9pZCI6OTI2LCJhdXRob3JpdGllcyI6WyJUUlZfQXBwcm92ZV9vcl9SZWplY3RfQm9va2luZ3NfOTI2IiwiVFJWX1NlZV9Cb29raW5nc185MjYiLCJUUlZfTWFuYWdlX1JvbGVzXzkyNiIsIlRSVl9TZWVfUHJvcGVydHlfR3JvdXBzXzkyNiIsIlRSVl9VcGRhdGVfQWxsb3RtZW50c185MjYiLCJUUlZfTWFuYWdlX1RyYXZlbF9BZ2VuY2llc185MjYiLCJUUlZfU2VhcmNoXzkyNiIsIlRSVl9NYW5hZ2VfUHJpY2VfTGlzdHNfOTI2IiwiVFJWX0FwcHJvdmVfb3JfUmVqZWN0X0FsbG90bWVudHNfOTI2IiwiVFJWX1JlYXNzaWduX0Jvb2tpbmdzXzkyNiIsIlRSVl9DcmVhdGVfQm9va2luZ3NfOTI2IiwiVFJWX01hbmFnZV9Vc2Vyc185MjYiLCJUUlZfT2ZmZXJfQWxsb3RtZW50c185MjYiLCJUUlZfVXBkYXRlX0Jvb2tpbmdzXzkyNiIsIlRSVl9TZWVfQWxsb3RtZW50c185MjYiLCJUUlZfU2VlX0NhbmNlbGxhdGlvbl9Qb2xpY2llc185MjYiLCJUUlZfTWFuYWdlX0NhbmNlbGxhdGlvbl9Qb2xpY2llc185MjYiLCJUUlZfU2VlX0Nvb3BlcmF0aW9uc185MjYiLCJUUlZfQ2FuY2VsX0FsbG90bWVudHNfOTI2IiwiVFJWX01hbmFnZV9Qcm9wZXJ0aWVzXzkyNiIsIlRSVl9TZWVfUHJpY2VfTGlzdHNfOTI2IiwiVFJWX01hbmFnZV9Qcm9wZXJ0eV9Hcm91cHNfOTI2IiwiVFJWX1NlZV9Qcm9wZXJ0aWVzXzkyNiIsIlRSVl9NYW5hZ2VfQWNjb3VudHNfYW5kX0F1dGhvcml6YXRpb25fOTI2IiwiVFJWX1NlZV9UcmF2ZWxfQWdlbmNpZXNfOTI2IiwiVFJWX1JlcXVlc3RfQWxsb3RtZW50c185MjYiLCJUUlZfQ2FuY2VsX0Nvb3BlcmF0aW9uXzkyNiIsIlRSVl9VcGRhdGVfQ29vcGVyYXRpb25fU2V0dGluZ3NfOTI2IiwiVFJWX1JlcXVlc3RfQ29vcGVyYXRpb25fOTI2IiwiVFJWX0FwcHJvdmVfb3JfUmVqZWN0X0Nvb3BlcmF0aW9uX1JlcXVlc3RfOTI2IiwiVFJWX0Rhc2hib2FyZF85MjYiLCJUUlZfQ2FuY2VsX0Jvb2tpbmdzXzkyNiJdLCJjbGllbnRfaWQiOiJHb2RvIiwiY291bnRyeV9jb2RlIjoiSVMiLCJ1c2VyX2lkIjo0OTcsImFjdGl2ZV9hY2NvdW50cyI6IjkyNiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJ1c2VyX2Z1bGxfbmFtZSI6IkzDoXJ1cyDDk3NrYXJzc29uIiwiYXRpIjoiOWNjOTNlMWUtNzE5Yi00YWI3LThjYTMtNzkzYzUyYzdiNDlkIiwiZXhwIjoxNjcwNzY3MTQ5LCJqdGkiOiJjMWFhNmY1NC0yYWY0LTQ2M2EtYmEzNC1hMTk1YmQxMWNhMDUifQ.Jj-gdJaDkCA7aM7KHEO_tcvdajrVRCu3onbXz1h92oBygCZ7RRu_T8xxVTptHkBdIZ6WFdIuruF2IqitTv8XQ_7ed9qreF5-8SGSPQEJZdoohVwKlR86BmG0AgekvsTSdgIVTSvtXnAckRjglEp89NkHTjWA09_BXjyCTKkX5EQBZesgXIWkpl8kKfDhTs6EuazNfTuuCTgxmxzUe03q9CLbUGVXFdKjSM7r8S1lbgQwrdKWDNBP9bDPK-KNPWDFhzN3C1gizdg2QGvYb5vLynpNytRldFEfZmGnK0P6y_eDbfPhA4AvElTuX9e0a0o29CvTZv__ZeKFHifyBpf6vg",
-        "expires_in": "2022-11-11T14:19:08.986",
+        "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmNsdWRlX3N1Yl9hY2NvdW50cyI6ZmFsc2UsInVzZXJfbmFtZSI6ImxhcnVzQGlzbGFuZHN2ZWZpci5pcyIsImRlZmF1bHRfYWNjb3VudF9pZCI6OTI2LCJhdXRob3JpdGllcyI6WyJUUlZfQXBwcm92ZV9vcl9SZWplY3RfQm9va2luZ3NfOTI2IiwiVFJWX1NlZV9Cb29raW5nc185MjYiLCJUUlZfTWFuYWdlX1JvbGVzXzkyNiIsIlRSVl9TZWVfUHJvcGVydHlfR3JvdXBzXzkyNiIsIlRSVl9VcGRhdGVfQWxsb3RtZW50c185MjYiLCJUUlZfTWFuYWdlX1RyYXZlbF9BZ2VuY2llc185MjYiLCJUUlZfU2VhcmNoXzkyNiIsIlRSVl9NYW5hZ2VfUHJpY2VfTGlzdHNfOTI2IiwiVFJWX0FwcHJvdmVfb3JfUmVqZWN0X0FsbG90bWVudHNfOTI2IiwiVFJWX1JlYXNzaWduX0Jvb2tpbmdzXzkyNiIsIlRSVl9DcmVhdGVfQm9va2luZ3NfOTI2IiwiVFJWX01hbmFnZV9Vc2Vyc185MjYiLCJUUlZfT2ZmZXJfQWxsb3RtZW50c185MjYiLCJUUlZfVXBkYXRlX0Jvb2tpbmdzXzkyNiIsIlRSVl9TZWVfQWxsb3RtZW50c185MjYiLCJUUlZfU2VlX0NhbmNlbGxhdGlvbl9Qb2xpY2llc185MjYiLCJUUlZfTWFuYWdlX0NhbmNlbGxhdGlvbl9Qb2xpY2llc185MjYiLCJUUlZfU2VlX0Nvb3BlcmF0aW9uc185MjYiLCJUUlZfQ2FuY2VsX0FsbG90bWVudHNfOTI2IiwiVFJWX01hbmFnZV9Qcm9wZXJ0aWVzXzkyNiIsIlRSVl9TZWVfUHJpY2VfTGlzdHNfOTI2IiwiVFJWX01hbmFnZV9Qcm9wZXJ0eV9Hcm91cHNfOTI2IiwiVFJWX1NlZV9Qcm9wZXJ0aWVzXzkyNiIsIlRSVl9NYW5hZ2VfQWNjb3VudHNfYW5kX0F1dGhvcml6YXRpb25fOTI2IiwiVFJWX1NlZV9UcmF2ZWxfQWdlbmNpZXNfOTI2IiwiVFJWX1JlcXVlc3RfQWxsb3RtZW50c185MjYiLCJUUlZfQ2FuY2VsX0Nvb3BlcmF0aW9uXzkyNiIsIlRSVl9VcGRhdGVfQ29vcGVyYXRpb25fU2V0dGluZ3NfOTI2IiwiVFJWX1JlcXVlc3RfQ29vcGVyYXRpb25fOTI2IiwiVFJWX0FwcHJvdmVfb3JfUmVqZWN0X0Nvb3BlcmF0aW9uX1JlcXVlc3RfOTI2IiwiVFJWX0Rhc2hib2FyZF85MjYiLCJUUlZfQ2FuY2VsX0Jvb2tpbmdzXzkyNiJdLCJjbGllbnRfaWQiOiJHb2RvIiwiY291bnRyeV9jb2RlIjoiSVMiLCJ1c2VyX2lkIjo0OTcsImFjdGl2ZV9hY2NvdW50cyI6IjkyNiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJ1c2VyX2Z1bGxfbmFtZSI6IkzDoXJ1cyDDk3NrYXJzc29uIiwiYXRpIjoiNmE1YjMxMmUtYmFmNS00ZjNkLWI0ZTQtOWU4OGI5MjIxYjViIiwiZXhwIjoxNjcwNzY3NTIxLCJqdGkiOiI2NDg4OWZhMi0xNjE2LTRhNmEtYTBhZi04MGVmMTU4YTk1MTQifQ.Y7EqaIEhLWprWAXOZbbruQa1cuIc7W7wL4RmHiWk5PN435-_3UZ980flzW2yPeDdrLBh309419-4vxzeKjNRoxBgw6oEtiiKuZNh6vqDXVfahg6EfC0QLZidQK5sJy3-NCzDJMS9eNWQDCUjXPiq8Ock9_dSb8dqseEwhChJfDnPUJ9IlNXyUR6uk6KIcCf6u0a7sSEfO3AtMcUknp9uKiDckNvLlGq3AokPAZXyICiOu9xQUDvjs0mq5BWkQVQwSL22o7zL-asz23ByH2FUQFQtZDKvY4EMmXsif60-cldbuew85WG0aHKv329ZfDs-W4DOL0cVDa6klkyvG_7Udg",
+        "expires_in": "2022-11-11T14:25:20.572",
         "scope": "read write"
     },
     "data": [
-        {
-            "hotelId": 556,
-            "name": "Travia Stage (GROSS) API Test",
-            "description": "Test property for GROSS prices\n\nPMS property ID 122207",
-            "address": "Skólavörðustígur",
-            "city": "Reykjavík",
-            "postalCode": "101",
-            "latitude": 64.1444948,
-            "longitude": -21.9303862,
-            "email": "hello@travia.is",
-            "phone": "5554363",
-            "propertyTypeName": "Hotel",
-            "propertyAmenityNames": [
-                "Air conditioning",
-                "Self service kitchen",
-                "Restaurant",
-                "Bar",
-                "24 hour front desk",
-                "Room service",
-                "Spa and wellness centre"
-            ],
-            "cancellationPolicy": [],
-            "rooms": [
-                {
-                    "roomId": 791,
-                    "propertyId": 556,
-                    "name": "Ocean View",
-                    "minOccupancy": 1,
-                    "maxOccupancy": 2,
-                    "roomSize": null,
-                    "description": null,
-                    "roomAmenityNames": [
-                        "Socket near the bed",
-                        "Free toiletries",
-                        "Non-feather pillow",
-                        "Microwave",
-                        "Refrigerator",
-                        "Cable channels",
-                        "Pajamas",
-                        "Mountain view",
-                        "Suit press",
-                        "Sofa",
-                        "Kitchenette",
-                        "Sofa bed",
-                        "Hot tub",
-                        "Heating",
-                        "Toaster",
-                        "Coffee Machine",
-                        "Linen",
-                        "Shower",
-                        "Satellite Channels",
-                        "Barbecue",
-                        "Drying rack for clothing",
-                        "Bidet",
-                        "Washing Machine"
-                    ],
-                    "wholeYearAvailability": true,
-                    "roomTypeName": "Suite",
-                    "roomCategoryName": "Deluxe",
-                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:43:20_206deb04-9e0c-45be-80b2-f2d0e5d898ee_hotelroom.jpg",
-                    "gallery": [
-                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:43:20_206deb04-9e0c-45be-80b2-f2d0e5d898ee_hotelroom.jpg"
-                    ],
-                    "addons": [
-                        "Breakfast"
-                    ],
-                    "isEmpty": false
-                },
-                {
-                    "roomId": 790,
-                    "propertyId": 556,
-                    "name": "Mountain View",
-                    "minOccupancy": 1,
-                    "maxOccupancy": 2,
-                    "roomSize": null,
-                    "description": null,
-                    "roomAmenityNames": [
-                        "Socket near the bed",
-                        "Free toiletries",
-                        "Garden view",
-                        "Tea/Coffee maker",
-                        "Quiet street view",
-                        "Hairdryer",
-                        "Radio",
-                        "Smoke Alarm",
-                        "Baby safety gates",
-                        "Sofa bed",
-                        "Stovetop",
-                        "Bathrobe",
-                        "Linen",
-                        "Satellite Channels",
-                        "Private bathroom",
-                        "Hypoallergenic pillow",
-                        "Bidet"
-                    ],
-                    "wholeYearAvailability": true,
-                    "roomTypeName": "Double",
-                    "roomCategoryName": "Standard",
-                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:43:03_132525ba-f8ad-45f3-9d6b-32f865133a14_hotelroomtest4.jpg",
-                    "gallery": [
-                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:43:03_132525ba-f8ad-45f3-9d6b-32f865133a14_hotelroomtest4.jpg"
-                    ],
-                    "addons": [
-                        "Breakfast"
-                    ],
-                    "isEmpty": false
-                },
-                {
-                    "roomId": 789,
-                    "propertyId": 556,
-                    "name": "River View",
-                    "minOccupancy": 1,
-                    "maxOccupancy": 1,
-                    "roomSize": null,
-                    "description": null,
-                    "roomAmenityNames": [
-                        "Hot tub",
-                        "Free toiletries",
-                        "Clothes Rack",
-                        "Tea/Coffee maker",
-                        "Lake view",
-                        "Minibar",
-                        "Electric Blankets",
-                        "Radio",
-                        "Satellite Channels",
-                        "Private bathroom",
-                        "Drying rack for clothing"
-                    ],
-                    "wholeYearAvailability": true,
-                    "roomTypeName": "Single",
-                    "roomCategoryName": "Standard",
-                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:42:50_11a38db0-8473-42b9-9e36-63ab77e71a59_hotelroomtest2.jpg",
-                    "gallery": [
-                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:42:50_11a38db0-8473-42b9-9e36-63ab77e71a59_hotelroomtest2.jpg"
-                    ],
-                    "addons": [
-                        "Breakfast"
-                    ],
-                    "isEmpty": false
-                }
-            ],
-            "featureImage": "",
-            "gallery": [],
-            "isEmpty": false
-        },
         {
             "hotelId": 4,
             "name": "Travia demo hotel",
@@ -167,7 +22,105 @@
             "phone": "6622231",
             "propertyTypeName": "Hotel",
             "propertyAmenityNames": [],
-            "cancellationPolicy": [],
+            "cancellationPolicy": [
+                {
+                    "id": 20663,
+                    "startDate": "2022-08-03",
+                    "endDate": null,
+                    "instantBookingsLimit": null,
+                    "maxBookingsPerMonth": null,
+                    "nameListReminderOffsetDays": null,
+                    "useExternalPrices": false,
+                    "barCommission": null,
+                    "cooperationStatusName": "Approved",
+                    "cooperationStatusCode": "APPROVED",
+                    "cooperationStatusColor": "#66AA9E",
+                    "issuedByEntity": "PROPERTY",
+                    "propertyId": 4,
+                    "propertyAccountId": 282,
+                    "propertyName": "Travia demo hotel",
+                    "propertyProviderName": "Godo API",
+                    "travelAgentId": 577,
+                    "travelAgentAccountId": 926,
+                    "travelAgentName": "Nicebooking",
+                    "travelAgentEmail": null,
+                    "cancellationPolicyId": 2,
+                    "cancellationPolicyName": "test",
+                    "cooperationEditable": true,
+                    "cancellationPolicy": {
+                        "id": 2,
+                        "name": "test",
+                        "description": "",
+                        "isDefault": false,
+                        "propertyId": null,
+                        "propertyName": null,
+                        "cancellationPolicyRules": [
+                            {
+                                "id": 2,
+                                "rangeRoomsFrom": 1,
+                                "rangeRoomsTo": 15,
+                                "cancellationPolicyLines": [
+                                    {
+                                        "id": 3,
+                                        "toPeriod": 48,
+                                        "percentage": 100,
+                                        "interval": "HOURS"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "priceAgreementId": null,
+                    "priceAgreement": null,
+                    "commission": null,
+                    "requestNotification": {
+                        "id": 180566,
+                        "reference": "[20663]",
+                        "entity": "Cooperation",
+                        "sentFrom": "staging@travia.is",
+                        "sentFromName": "travia.is",
+                        "sentTo": "gisli@nicebooking.is",
+                        "sentCc": "",
+                        "sentBcc": "",
+                        "subject": "New cooperation invite",
+                        "body": "<!DOCTYPE html><html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" /><style>body{color:#3F3E40;font-family:'Whitney SSm A','Whitney SSm B',Arial;font-weight:400;font-style:normal}a{color:#66AA9E}hr{display:block;height:1px;border:0;margin:2em 0;padding:0;border-top:1px solid}hr.orange{border-color:#E98C28}hr.gray{border-color:#DFDCD0}footer{color:#DFDCD0}.center-container{max-width:700px;margin:0 auto}.text-center{text-align:center!important}.button{background-color:#66AA9E;color:#fff;box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:0;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:88px;line-height:36px;padding:0 16px;border-radius:2px;overflow:visible;transform:translate3d(0,0,0);transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow 280ms cubic-bezier(.4,0,.2,1)}tbody,thead th{border-top:2px solid #3F3E40}table{width:90%;margin-bottom:10px;border-collapse:collapse}table td,table th{padding:5px;vertical-align:top;border-top:1px solid #3F3E40}thead th{vertical-align:bottom;border-bottom:2px solid #3F3E40}</style></head><body class=\"text-center\">\n<div class=\"center-container\"><h1>Dear <span>Nicebooking</span></h1>\n    <hr class=\"light-grey\"/>\n    <div><p>You have <span >a new cooperation invite from </span>    <span> <span>Travia demo hotel</span></span>.</p>    <p></p></div>        <p>Invite message:</p>\n    <p><span>Test hotel </span></p>\n    \n    <p>You can see the <span >cooperation invite </span> by following this link:</p>\n    <p><a class=\"button\" href=\"https://stage-app.travia.is/TravelAgent/577/Cooperations/20663\">DETAILS</a><p><hr class=\"gray\" />\n<footer>\n<img style=\"max-height: 150px;\" src=\"https://stage-app.travia.is/assets/godo-logo.png\" />\n<p>&copy; 2018 - Travia. All rights reserved</p>\n</footer></div></body></html>",
+                        "dateSent": "2022-08-03T15:43:28",
+                        "read": false,
+                        "errorSending": false,
+                        "errorMessage": "",
+                        "notificationTemplateCode": "PROPERTY_COOPERATION_REQUEST",
+                        "displayText": "",
+                        "link": ""
+                    },
+                    "notifications": [
+                        {
+                            "id": 180568,
+                            "reference": "20663",
+                            "entity": "Cooperation",
+                            "sentFrom": "staging@travia.is",
+                            "sentFromName": "travia.is",
+                            "sentTo": "haukur@godo.is",
+                            "sentCc": "",
+                            "sentBcc": "",
+                            "subject": "Cooperation accepted",
+                            "body": "<!DOCTYPE html><html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" /><style>body{color:#3F3E40;font-family:'Whitney SSm A','Whitney SSm B',Arial;font-weight:400;font-style:normal}a{color:#66AA9E}hr{display:block;height:1px;border:0;margin:2em 0;padding:0;border-top:1px solid}hr.orange{border-color:#E98C28}hr.gray{border-color:#DFDCD0}footer{color:#DFDCD0}.center-container{max-width:700px;margin:0 auto}.text-center{text-align:center!important}.button{background-color:#66AA9E;color:#fff;box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:0;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:88px;line-height:36px;padding:0 16px;border-radius:2px;overflow:visible;transform:translate3d(0,0,0);transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow 280ms cubic-bezier(.4,0,.2,1)}tbody,thead th{border-top:2px solid #3F3E40}table{width:90%;margin-bottom:10px;border-collapse:collapse}table td,table th{padding:5px;vertical-align:top;border-top:1px solid #3F3E40}thead th{vertical-align:bottom;border-bottom:2px solid #3F3E40}</style></head><body class=\"text-center\">\n<div class=\"center-container\"><h1>Dear <span>Travia demo hotel</span></h1>\n    <hr class=\"light-grey\"/>\n    <p>The invite for cooperation with the travel agent <span>Nicebooking</span> has been <strong>accepted</strong>.</p>\n    <div>\n        <p>Response message:</p>\n        <p>Travia test aðgangur </p>\n    </div>    <a class=\"button\" href=\"https://stage-app.travia.is/Property/4/Cooperations/20663\">DETAILS</a><hr class=\"gray\" />\n<footer>\n<img style=\"max-height: 150px;\" src=\"https://stage-app.travia.is/assets/godo-logo.png\" />\n<p>&copy; 2018 - Travia. All rights reserved</p>\n</footer></div></body></html>",
+                            "dateSent": "2022-08-03T15:45:31",
+                            "read": false,
+                            "errorSending": false,
+                            "errorMessage": "",
+                            "notificationTemplateCode": "PROPERTY_COOPERATION_APPROVED_MESSAGE",
+                            "displayText": "Cooperation Approved<br/>Travia test aðgangur ",
+                            "link": ""
+                        }
+                    ],
+                    "dateCreated": "2022-08-03T15:43:28",
+                    "bookRegularRoomsFirst": false,
+                    "invoiceeId": "",
+                    "travelAgentMapping": "",
+                    "inviteToExternalPortal": null,
+                    "tenant": null
+                }
+            ],
             "rooms": [
                 {
                     "roomId": 66,
@@ -532,6 +485,151 @@
                     "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:32:55_413eddf5-429c-4d8c-bcd9-366312d1052a_Hotel_room_ocean_view.jfif",
                     "gallery": [
                         "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:32:55_413eddf5-429c-4d8c-bcd9-366312d1052a_Hotel_room_ocean_view.jfif"
+                    ],
+                    "addons": [
+                        "Breakfast"
+                    ],
+                    "isEmpty": false
+                }
+            ],
+            "featureImage": "",
+            "gallery": [],
+            "isEmpty": false
+        },
+        {
+            "hotelId": 556,
+            "name": "Travia Stage (GROSS) API Test",
+            "description": "Test property for GROSS prices\n\nPMS property ID 122207",
+            "address": "Skólavörðustígur",
+            "city": "Reykjavík",
+            "postalCode": "101",
+            "latitude": 64.1444948,
+            "longitude": -21.9303862,
+            "email": "hello@travia.is",
+            "phone": "5554363",
+            "propertyTypeName": "Hotel",
+            "propertyAmenityNames": [
+                "Air conditioning",
+                "Self service kitchen",
+                "Restaurant",
+                "Bar",
+                "24 hour front desk",
+                "Room service",
+                "Spa and wellness centre"
+            ],
+            "cancellationPolicy": [],
+            "rooms": [
+                {
+                    "roomId": 791,
+                    "propertyId": 556,
+                    "name": "Ocean View",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 2,
+                    "roomSize": null,
+                    "description": null,
+                    "roomAmenityNames": [
+                        "Socket near the bed",
+                        "Free toiletries",
+                        "Non-feather pillow",
+                        "Microwave",
+                        "Refrigerator",
+                        "Cable channels",
+                        "Pajamas",
+                        "Mountain view",
+                        "Suit press",
+                        "Sofa",
+                        "Kitchenette",
+                        "Sofa bed",
+                        "Hot tub",
+                        "Heating",
+                        "Toaster",
+                        "Coffee Machine",
+                        "Linen",
+                        "Shower",
+                        "Satellite Channels",
+                        "Barbecue",
+                        "Drying rack for clothing",
+                        "Bidet",
+                        "Washing Machine"
+                    ],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Suite",
+                    "roomCategoryName": "Deluxe",
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:43:20_206deb04-9e0c-45be-80b2-f2d0e5d898ee_hotelroom.jpg",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:43:20_206deb04-9e0c-45be-80b2-f2d0e5d898ee_hotelroom.jpg"
+                    ],
+                    "addons": [
+                        "Breakfast"
+                    ],
+                    "isEmpty": false
+                },
+                {
+                    "roomId": 790,
+                    "propertyId": 556,
+                    "name": "Mountain View",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 2,
+                    "roomSize": null,
+                    "description": null,
+                    "roomAmenityNames": [
+                        "Socket near the bed",
+                        "Free toiletries",
+                        "Garden view",
+                        "Tea/Coffee maker",
+                        "Quiet street view",
+                        "Hairdryer",
+                        "Radio",
+                        "Smoke Alarm",
+                        "Baby safety gates",
+                        "Sofa bed",
+                        "Stovetop",
+                        "Bathrobe",
+                        "Linen",
+                        "Satellite Channels",
+                        "Private bathroom",
+                        "Hypoallergenic pillow",
+                        "Bidet"
+                    ],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Double",
+                    "roomCategoryName": "Standard",
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:43:03_132525ba-f8ad-45f3-9d6b-32f865133a14_hotelroomtest4.jpg",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:43:03_132525ba-f8ad-45f3-9d6b-32f865133a14_hotelroomtest4.jpg"
+                    ],
+                    "addons": [
+                        "Breakfast"
+                    ],
+                    "isEmpty": false
+                },
+                {
+                    "roomId": 789,
+                    "propertyId": 556,
+                    "name": "River View",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 1,
+                    "roomSize": null,
+                    "description": null,
+                    "roomAmenityNames": [
+                        "Hot tub",
+                        "Free toiletries",
+                        "Clothes Rack",
+                        "Tea/Coffee maker",
+                        "Lake view",
+                        "Minibar",
+                        "Electric Blankets",
+                        "Radio",
+                        "Satellite Channels",
+                        "Private bathroom",
+                        "Drying rack for clothing"
+                    ],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Single",
+                    "roomCategoryName": "Standard",
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:42:50_11a38db0-8473-42b9-9e36-63ab77e71a59_hotelroomtest2.jpg",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:42:50_11a38db0-8473-42b9-9e36-63ab77e71a59_hotelroomtest2.jpg"
                     ],
                     "addons": [
                         "Breakfast"
