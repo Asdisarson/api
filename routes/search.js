@@ -386,13 +386,14 @@ router.get('', function (req, res, next) {
 
                                     room.cancellationPolicy = output[0]
                                 }
+                                data.rooms.push(room)
+
                             }
 
 
                         });
 
                     }
-                    data.rooms.push(room)
                 }
 
 
