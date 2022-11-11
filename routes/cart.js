@@ -219,7 +219,7 @@ router.post("/confirm", function (req, res, next) {
                 var request1 = require('request');
                 options = {
                     'method': 'PUT',
-                    'url': 'https://nifty-cannon.134-209-30-23.plesk.page/wp-json/woorewards/v1/points/rest@nicebooking.is/nicebooking/-'+ points +'/' + req.body.notes,
+                    'url': 'https://nifty-cannon.134-209-30-23.plesk.page/wp-json/woorewards/v1/points/hallo@pineapple.is/nicebooking/-'+ points +'/' + req.body.notes,
                     'headers': {
                         'Authorization': 'Basic cmVzdDptcUdDIElvUXYgUFFlSiBkcHBoIGlXRGMgYUFDbQ==',
                         'Content-Type': 'application/json'
