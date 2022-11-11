@@ -215,6 +215,23 @@ router.post("/confirm", function (req, res, next) {
 
             request(options, function (error, response) {
                 response.body = JSON.parse(response.body)
+                var points = parseInt(response.body.totalPrice).toFixed(0)*0.1;
+                var request1 = require('request');
+                options = {
+                    'method': 'PUT',
+                    'url': 'https://nifty-cannon.134-209-30-23.plesk.page/wp-json/woorewards/v1/points/rest@nicebooking.is/nicebooking/-'+ points +'/' + req.body.notes,
+                    'headers': {
+                        'Authorization': 'Basic cmVzdDptcUdDIElvUXYgUFFlSiBkcHBoIGlXRGMgYUFDbQ==',
+                        'Content-Type': 'application/json'
+                    },
+                    body: ''
+
+
+                };
+                request1(options, function (error, response) {
+                    if (error) throw new Error(error);
+                    console.log(response.body);
+                });
                 console.log(response.body)
                 return response.body
             })
