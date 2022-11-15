@@ -15,18 +15,13 @@ function SortQuery(query) {
         data.end= query.duration[1]
 
 
-        if (query.end) {
-            data.end = query.end;
-            data.end = new Date(query.end * 1000)
+
+            data.end = new Date(data.end * 1000)
             data.end = data.end.toISOString().substring(0, 10)
 
-        }
-
-        if (query.start) {
-            data.start = query.start;
-            data.start = new Date(query.start * 1000)
+            data.start = new Date(data.start * 1000)
             data.start = data.start.toISOString().substring(0, 10)
-        }
+
     }
     else {
         data.start = addDays(Date.now(), 21 ).toISOString().substring(0, 10)
