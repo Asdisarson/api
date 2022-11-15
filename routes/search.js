@@ -220,7 +220,7 @@ router.get('', function (req, res, next) {
                 hotels.push(data);
             }
             let array = {
-                result: hotels
+                data: hotels
             }
 
             if (req.query.city) {
@@ -529,7 +529,7 @@ router.get('', function (req, res, next) {
 
             }
             let array = {
-                result: hotels
+                data: hotels
             }
 
             res.send(array);
