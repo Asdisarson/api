@@ -3,33 +3,20 @@ var router = express.Router();
 
 const JSONdb = require("simple-json-db");
 const request = require("request");
-const axios = require('axios');
 
 router.get('', function (req, res, next) {
-    var axios = require('axios');
-    var qs = require('qs');
-    var data = qs.stringify({
-        'grant_type': 'password',
-        'username': 'larus@islandsvefir.is',
-        'password': 'TAbekind4441!'
-    });
-    var config = {
-        method: 'post',
-        url: 'https://stage-api.travia.is/oauth/token',
-        headers: {
-            'Authorization': 'Basic Z29kby1pczpnb2RvQXBwbGljYXRpb24=',
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        data : data
-    };
+    var db = new JSONdb('./cache.json');
+    var auth = require('./auth.js');
+    request(auth, function (error, response) {
+        if (error) throw new Error(error)
+        db.set('token', JSON.parse(response.body));
+        db.sync();
+        next();
 
-    axios(config)
-        .then(function (response) {
-            console.log(JSON.stringify(response.data));
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
+    })
+
+});
+router.get('', function (req, res, next) {
     try {
 
         var data = {
@@ -308,6 +295,8 @@ router.get('', function (req, res, next) {
                     room.addons = addons;
 
                 }
+
+
                 array.result.push(
                     data
                 );
