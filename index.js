@@ -1,11 +1,11 @@
     const PORT = process.env.PORT || 5000
-var express = require('express');
-var path = require('path');
+    let express = require('express');
+    let path = require('path');
 
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+    let cookieParser = require('cookie-parser');
+    let logger = require('morgan');
     const bodyParser = require("express");
-    var app = express()
+    let app = express();
     const JSONdb = require("simple-json-db");
     const request = require("request");
     const auth = require("./routes/auth");
@@ -15,12 +15,13 @@ var logger = require('morgan');
     }));
     //const {save} = require("./routes/request2");
 const {save} = require("./routes/request");
-    var indexRouter = require('./routes/index');
-    var propertiesRouter = require('./routes/properties');
- //   var queriesRouter = require('./routes/searchtest');
-    var queriesRouter = require('./routes/search');
-    var roomsRouter = require('./routes/rooms');
-    var cartRouter = require('./routes/cart');
+    let indexRouter = require('./routes/index');
+    let propertiesRouter = require('./routes/properties');
+    //   var queriesRouter = require('./routes/searchtest');
+    let queriesRouter = require('./routes/search');
+    let roomsRouter = require('./routes/rooms');
+    let cancel = require('./routes/cancellationPolicy');
+    let cartRouter = require('./routes/cart');
     const {setTimeOut, checkCache} = require("./routes/checktime");
     app.use(cookieParser());
     app.use(express.json());
@@ -29,51 +30,28 @@ const {save} = require("./routes/request");
 
     request(auth, function(error, response) {
         if (error) throw new Error(error)
-        var db = new JSONdb('./cache.json');
+        let db = new JSONdb('./cache.json');
 
-        db.JSON({cache:false,
+        db.JSON({cache:true,
             cacheTimeOut: setTimeOut(3).toString(),
             token: JSON.parse(response.body),
             data: [],
             cart:[]
         });
         db.sync();
-         save();
-    })
-    app.use((req, res, next) => {
-      var  db = new JSONdb('./cache.json');
-        var cached = db.JSON().cache;
-        checkCache(db.JSON().cacheTimeOut)
-        if(cached)  {
-            console.log('cache')
-            next();
-        }
-        else {
-            request(auth, function(error, response) {
-                if (error) throw new Error(error)
-                console.log('Auth')
-                db.JSON({cache:false,
-                    cacheTimeOut: setTimeOut(3).toString(),
-                    token: JSON.parse(response.body),
-                    data: [],
-                    cart:[]
-                });
-                db.sync();
-                save();
-                next()
-                var log = save();
-                console.log(db.JSON())
-                if(log) {
-                    console.log(log)
-                }
-            })
-        }
+        let req = save(resolve => {
+            return resolve;
+        }).then(resolve => {
+            return resolve;
+        });
+        console.log(req)
     })
 
 
 app.use('/', indexRouter);
 app.use('/properties', propertiesRouter);
     app.use('/search', queriesRouter);
+    app.use('/cancellationPolicy', cancel);
 app.use('/rooms', roomsRouter);
 app.use('/cart', cartRouter);
 app

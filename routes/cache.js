@@ -45,8 +45,8 @@ module.exports = {
     {
         var db = new JSONdb('./cache.json');
         var data = db.JSON()
-        return data.data.filter(obj => {
-            return obj.hotelId.toString() === hotelId;
+        return data.data.find(obj => {
+            return obj.hotelId === hotelId;
         })
     },
     getRoomCache:function (hotelId, roomId) {
@@ -61,11 +61,11 @@ module.exports = {
         })
 
     },
-    getCancelCache:function(hotelId) {
-        var db = new JSONdb('./cache.json');
+        getCancelCache:function(hotelId) {
+        var db = new JSONdb('./data.json');
         var data = db.JSON()
-        return data.data.filter(obj => {
-            return obj.hotelId.toString() === hotelId;
+        return data.data.find(obj => {
+             if(obj.hotelId.toString() === hotelId) return obj.cancellationPolicy;
         })
     }
 }

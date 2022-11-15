@@ -11,12 +11,14 @@ app.use(logger('dev'));
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-var indexRouter = require('./new api/index');
+var queriesRouter    = require('./search.js');
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
+
+app.use('/search', queriesRouter);
 
 
 app

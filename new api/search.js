@@ -99,8 +99,8 @@ router.get('', function (req, res, next) {
                     data: data
                 })
             }).then(response => {
-            let hotels = [];
-            response = response.data
+                let hotels = [];
+                response = response.data
             for (let k = 0; k < response.length; k++) {
                 data = {
                     startDate: '',
@@ -214,8 +214,8 @@ router.get('', function (req, res, next) {
                     let temp = response[k].images[i].filePath;
                     data["gallery" + i] = response[k].images[i].filePath;
 
-                    data.gallery[i]=temp
-                }
+                data.gallery[i]=temp
+            }
 
                 hotels.push(data);
             }
@@ -311,7 +311,7 @@ router.get('', function (req, res, next) {
                     description: '',
                     additionalDescription: ''
                     , rooms: [],
-                    cancellationPolicy: []
+                    cancellationPolicy: ''
                 }
                 if (req.query.numberOfRooms) {
                     req.query.numberOfRooms = 1;
@@ -407,8 +407,6 @@ router.get('', function (req, res, next) {
                     }
                     let date = {}
                     dateFrom = new Date(dateFrom);
-
-
                     if (((check > dateFrom) && (check < dateTo))||(!dateTo)) {
 
                         let cancellationPolicy = cancellation[i].cancellationPolicy.cancellationPolicyRules
@@ -439,16 +437,14 @@ router.get('', function (req, res, next) {
                                         check.setTime(check.getTime() - dateOffset);
 
                                     }
-                                    if(check.toString() !== "Invalid Date"){
-                                        data.cancellationPolicy.push("Cancel Before: " + check.toISOString().substring(0, 10) + " For Full Refund")
-                                    }
+                                    room.push("Cancel Before: " + check.toISOString().substring(0, 10) + " For Full Refund")
                                 }
                             }
                         }
                     }
                 }
-                for (let i = 0; i < response[k].rooms.length; i++) {
-                    var room = {
+                    for (let i = 0; i < response[k].rooms.length; i++) {
+                    let room = {
 
                         name: response[k].rooms[i].name,
                         roomId: response[k].rooms[i].id,
@@ -522,11 +518,10 @@ router.get('', function (req, res, next) {
                     }
 
                     room.addons = addons;
-                    data.rooms.push(room);
-
+                    data.rooms[i] = room;
                 }
-                hotels=data
 
+                hotels.push(data);
             }
             let array = {
                 result: hotels
