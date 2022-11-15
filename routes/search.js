@@ -3,20 +3,33 @@ var router = express.Router();
 
 const JSONdb = require("simple-json-db");
 const request = require("request");
+const axios = require('axios');
 
 router.get('', function (req, res, next) {
-    var db = new JSONdb('./cache.json');
-    var auth = require('./auth.js');
-    request(auth, function (error, response) {
-        if (error) throw new Error(error)
-        db.set('token', JSON.parse(response.body));
-        db.sync();
-        next();
+    var axios = require('axios');
+    var qs = require('qs');
+    var data = qs.stringify({
+        'grant_type': 'password',
+        'username': 'larus@islandsvefir.is',
+        'password': 'TAbekind4441!'
+    });
+    var config = {
+        method: 'post',
+        url: 'https://stage-api.travia.is/oauth/token',
+        headers: {
+            'Authorization': 'Basic Z29kby1pczpnb2RvQXBwbGljYXRpb24=',
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        data : data
+    };
 
-    })
-
-});
-router.get('', function (req, res, next) {
+    axios(config)
+        .then(function (response) {
+            console.log(JSON.stringify(response.data));
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
     try {
 
         var data = {
@@ -293,110 +306,8 @@ router.get('', function (req, res, next) {
                         });
                     }
                     room.addons = addons;
-                    var cancellationPolicy = getCancelCache(data.id);
-                    data.cancellationPolicy = cancellationPolicy[0]
-                    if (req.query.propertyId && req.query.numberOfRooms) {
-                        var data = {
-                            end: '',
-                            start: '',
-                            static: ''
-                        }
-                        if (req.query.duration) {
-                            req.query.start = req.query.duration[0]
-                            req.query.end = req.query.duration[1]
-                        }
-                        if (req.query.end) {
-                            data.end = new Date(req.query.end * 1000)
-                            data.static = data.end
-                            data.end = data.end.toISOString().substring(0, 10)
 
-                        }
-
-                        if (req.query.start) {
-                            data.start = new Date(req.query.start * 1000)
-                            data.start = data.start.toISOString().substring(0, 10)
-                        }
-                        var db6 = new JSONdb('./cache.json');
-                        var token6 = db6.get('token');
-                        var options6 = {
-                            'method': 'get',
-                            'url': '',
-                            'headers': {
-                                'Authorization': 'Bearer ' + token6.access_token,
-                                'Content-Type': 'application/json',
-
-                            },
-                            'body': ''
-                        };
-                        var request6 = require('request');
-                        options.url = "https://stage-api.travia.is//api/v1/travelAgents/577/property/" + req.query.propertyId + "/cooperations";
-                        request6(options6, function (error4, response4) {
-                            var output = [];
-                            var cancellation = JSON.parse(response4.body);
-
-
-                            for (var i = 0; i < cancellation.length; i++) {
-                                var dateFrom = cancellation[i].startDate;
-                                var dateTo = cancellation[i].endDate;
-                                var dateCheck = data.start;
-                                var check = new Date(dateCheck);
-                                if (dateTo) {
-                                    dateTo = new Date(dateTo);
-
-                                }
-                                var date = {}
-                                dateFrom = new Date(dateFrom);
-                                console.log(dateFrom)
-                                console.log(check)// -1 because months are from 0 to 11// -1 because months are from 0 to 11
-                                console.log(check > dateFrom)
-                                if ((check > dateFrom) && (check < dateTo || !dateTo)) {
-
-                                    var cancellationPolicy = cancellation[i].cancellationPolicy.cancellationPolicyRules
-                                    for (var j = 0; j < cancellationPolicy.length; j++) {
-
-                                        if (cancellationPolicy[j].rangeRoomsTo
-                                            >= req.query.numberOfRooms >= cancellationPolicy[j].rangeRoomsFrom) {
-
-                                            for (var y = 0; y < cancellationPolicy[j].cancellationPolicyLines.length; y++) {
-                                                var cancel = cancellationPolicy[j].cancellationPolicyLines[y];
-
-                                                if (cancel.interval === "MONTHS") {
-                                                    var dateOffset = ((24 * 60 * 60 * 30 * 1000) * cancel.toPeriod); //5 days
-                                                    check.setTime(check.getTime() - dateOffset);
-
-                                                }
-                                                if (cancel.interval === "WEEKS") {
-                                                    var dateOffset = ((24 * 60 * 60 * 7 * 1000) * cancel.toPeriod); //5 days
-                                                    check.setTime(check.getTime() - dateOffset);
-                                                }
-                                                if (cancel.interval === "DAYS") {
-                                                    var dateOffset = ((24 * 60 * 60 * 1000) * cancel.toPeriod); //5 days
-                                                    check.setTime(check.getTime() - dateOffset);
-
-                                                }
-                                                if (cancel.interval === "HOURS") {
-                                                    var dateOffset = ((60 * 60 * 1000) * cancel.toPeriod); //5 days
-                                                    check.setTime(check.getTime() - dateOffset);
-
-                                                }
-                                                room.push("Cancel Before: " + check.toISOString().substring(0, 10) + " For Full Refund")
-                                            }
-                                        }
-                                    }
-
-                                    room.cancellationPolicy = output[0]
-                                }
-                                data.rooms.push(room)
-
-                            }
-
-
-                        });
-
-                    }
                 }
-
-
                 array.result.push(
                     data
                 );
