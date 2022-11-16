@@ -200,6 +200,7 @@
 
                         data.link = data.link + "numberOfPeople:" + req.query.numberOfPeople + ";";
                                            data.link = data.link + "numberOfRooms:1;";
+                                           data.link = data.link + "propertyId:" + data.id + ";";
 
                     }
 
