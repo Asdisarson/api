@@ -286,63 +286,65 @@
                         room.addons = addons;
                         var cancellationPolicy = getHotelCache(data.id);
                         var cancellation = cancellationPolicy
+                        if(cancellationPolicy) {
+                            for (var i = 0; i < cancellation.length; i++) {
+                                var dateFrom = cancellation[i].startDate;
 
-                        for (var i = 0; i < cancellation.length; i++) {
-                            var dateFrom = cancellation[i].startDate;
+                                var dateTo = cancellation[i].endDate;
+                                var dateCheck =data.start;
+                                var check = new Date(dateCheck);
+                                if(dateTo) {
+                                    dateTo   = new Date(dateTo);
 
-                            var dateTo = cancellation[i].endDate;
-                            var dateCheck =data.start;
-                            var check = new Date(dateCheck);
-                            if(dateTo) {
-                                dateTo   = new Date(dateTo);
-
-                            }
-                            var date = {}
-                            dateFrom= new Date(dateFrom);
-                            if((check > dateFrom) && (check < dateTo)) {
+                                }
+                                var date = {}
+                                dateFrom= new Date(dateFrom);
+                                if((check > dateFrom) && (check < dateTo)) {
 
 
-                                cancellationPolicy = cancellation[i].cancellationPolicy.cancellationPolicyRules
-                                for (var j = 0; j < cancellationPolicy.length; j++) {
+                                    cancellationPolicy = cancellation[i].cancellationPolicy.cancellationPolicyRules
+                                    for (var j = 0; j < cancellationPolicy.length; j++) {
 
-                                    if (cancellationPolicy[j].rangeRoomsTo
-                                        >= req.query.numberOfRooms >= cancellationPolicy[j].rangeRoomsFrom) {
+                                        if (cancellationPolicy[j].rangeRoomsTo
+                                            >= req.query.numberOfRooms >= cancellationPolicy[j].rangeRoomsFrom) {
 
-                                        for (var y = 0; y < cancellationPolicy[j].cancellationPolicyLines.length; y++) {
-                                            var cancel = cancellationPolicy[j].cancellationPolicyLines[y];
+                                            for (var y = 0; y < cancellationPolicy[j].cancellationPolicyLines.length; y++) {
+                                                var cancel = cancellationPolicy[j].cancellationPolicyLines[y];
 
-                                            if(cancel.interval === "MONTHS")
-                                            {
-                                                var dateOffset = ((24*60*60*30*1000) * cancel.toPeriod); //5 days
-                                                check.setTime(check.getTime() - dateOffset);
+                                                if(cancel.interval === "MONTHS")
+                                                {
+                                                    var dateOffset = ((24*60*60*30*1000) * cancel.toPeriod); //5 days
+                                                    check.setTime(check.getTime() - dateOffset);
 
+                                                }
+                                                if(cancel.interval === "WEEKS")
+                                                {
+                                                    var dateOffset = ((24*60*60*7*1000) * cancel.toPeriod); //5 days
+                                                    check.setTime(check.getTime() - dateOffset);
+                                                }
+                                                if(cancel.interval === "DAYS")
+                                                {
+                                                    var dateOffset = ((24*60*60*1000) * cancel.toPeriod); //5 days
+                                                    check.setTime(check.getTime() - dateOffset);
+
+                                                }
+                                                if(cancel.interval === "HOURS")
+                                                {
+                                                    var dateOffset = ((60*60*1000) * cancel.toPeriod); //5 days
+                                                    check.setTime(check.getTime() - dateOffset);
+
+                                                }
+                                                room.cancellationPolicy.push("Cancel Before: " + check.toISOString().substring(0, 10) + " For Full Refund")
                                             }
-                                            if(cancel.interval === "WEEKS")
-                                            {
-                                                var dateOffset = ((24*60*60*7*1000) * cancel.toPeriod); //5 days
-                                                check.setTime(check.getTime() - dateOffset);
-                                            }
-                                            if(cancel.interval === "DAYS")
-                                            {
-                                                var dateOffset = ((24*60*60*1000) * cancel.toPeriod); //5 days
-                                                check.setTime(check.getTime() - dateOffset);
-
-                                            }
-                                            if(cancel.interval === "HOURS")
-                                            {
-                                                var dateOffset = ((60*60*1000) * cancel.toPeriod); //5 days
-                                                check.setTime(check.getTime() - dateOffset);
-
-                                            }
-                                            room.cancellationPolicy.push("Cancel Before: " + check.toISOString().substring(0, 10) + " For Full Refund")
                                         }
                                     }
                                 }
-                            }
 
+                            }
+                            data.rooms.push(room)
                         }
-                        data.rooms.push(room)
-                    }
+                        }
+
 
 
                     array.result.push(
