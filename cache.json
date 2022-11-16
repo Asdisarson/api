@@ -1,5 +1,5 @@
 {
-    "cache": true,
+    "cache": false,
     "cacheTimeOut": "Wed Nov 16 2022 04:17:28 GMT+0000 (Greenwich Mean Time)",
     "token": {
         "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3VudHJ5X2NvZGUiOiJJUyIsImluY2x1ZGVfc3ViX2FjY291bnRzIjpmYWxzZSwidXNlcl9pZCI6NDk3LCJhY3RpdmVfYWNjb3VudHMiOiI5MjYiLCJ1c2VyX25hbWUiOiJsYXJ1c0Bpc2xhbmRzdmVmaXIuaXMiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwidXNlcl9mdWxsX25hbWUiOiJMw6FydXMgw5Nza2Fyc3NvbiIsImRlZmF1bHRfYWNjb3VudF9pZCI6OTI2LCJleHAiOjE2Njg1NjI2NDgsImF1dGhvcml0aWVzIjpbIlRSVl9BcHByb3ZlX29yX1JlamVjdF9Cb29raW5nc185MjYiLCJUUlZfU2VlX0Jvb2tpbmdzXzkyNiIsIlRSVl9NYW5hZ2VfUm9sZXNfOTI2IiwiVFJWX1NlZV9Qcm9wZXJ0eV9Hcm91cHNfOTI2IiwiVFJWX1VwZGF0ZV9BbGxvdG1lbnRzXzkyNiIsIlRSVl9NYW5hZ2VfVHJhdmVsX0FnZW5jaWVzXzkyNiIsIlRSVl9TZWFyY2hfOTI2IiwiVFJWX01hbmFnZV9QcmljZV9MaXN0c185MjYiLCJUUlZfQXBwcm92ZV9vcl9SZWplY3RfQWxsb3RtZW50c185MjYiLCJUUlZfUmVhc3NpZ25fQm9va2luZ3NfOTI2IiwiVFJWX0NyZWF0ZV9Cb29raW5nc185MjYiLCJUUlZfTWFuYWdlX1VzZXJzXzkyNiIsIlRSVl9PZmZlcl9BbGxvdG1lbnRzXzkyNiIsIlRSVl9VcGRhdGVfQm9va2luZ3NfOTI2IiwiVFJWX1NlZV9BbGxvdG1lbnRzXzkyNiIsIlRSVl9TZWVfQ2FuY2VsbGF0aW9uX1BvbGljaWVzXzkyNiIsIlRSVl9NYW5hZ2VfQ2FuY2VsbGF0aW9uX1BvbGljaWVzXzkyNiIsIlRSVl9TZWVfQ29vcGVyYXRpb25zXzkyNiIsIlRSVl9DYW5jZWxfQWxsb3RtZW50c185MjYiLCJUUlZfTWFuYWdlX1Byb3BlcnRpZXNfOTI2IiwiVFJWX1NlZV9QcmljZV9MaXN0c185MjYiLCJUUlZfTWFuYWdlX1Byb3BlcnR5X0dyb3Vwc185MjYiLCJUUlZfU2VlX1Byb3BlcnRpZXNfOTI2IiwiVFJWX01hbmFnZV9BY2NvdW50c19hbmRfQXV0aG9yaXphdGlvbl85MjYiLCJUUlZfU2VlX1RyYXZlbF9BZ2VuY2llc185MjYiLCJUUlZfUmVxdWVzdF9BbGxvdG1lbnRzXzkyNiIsIlRSVl9DYW5jZWxfQ29vcGVyYXRpb25fOTI2IiwiVFJWX1VwZGF0ZV9Db29wZXJhdGlvbl9TZXR0aW5nc185MjYiLCJUUlZfUmVxdWVzdF9Db29wZXJhdGlvbl85MjYiLCJUUlZfQXBwcm92ZV9vcl9SZWplY3RfQ29vcGVyYXRpb25fUmVxdWVzdF85MjYiLCJUUlZfRGFzaGJvYXJkXzkyNiIsIlRSVl9DYW5jZWxfQm9va2luZ3NfOTI2Il0sImp0aSI6Ijc3MDVjYmQ0LTczNGMtNGM1MS05OGEwLWY1MDVlMTEwMTdmOCIsImNsaWVudF9pZCI6IkdvZG8ifQ.W7LyZXRmluU0iE_B-zU_Ybxx0lFHcych8Gc8P75hR5BlV5q66KNZo6ON8IIb1WLFoIh0bKTynlwl_5vsiizZXiNzXfx48s31hktHAxlq8iMsIjp_tAEJGdTc1PczkKby6itKUvVth_WE-njSgY0VKtDweoSgiA6N1oXW0ZBGJEnNim4kWgiwT9P6MPszSVG_tW2rkxEaXLr9lOEAVPIkxEq8pVsgVX76A_huMnHaR0dYoInLV_KFl4BPrHjahMtG_SOOY3IijHQZrtpcXghMpNDolk1cazRxBad4hxPx2QvhxIHnqW9Zkwa-PvdmPAnL2I8O-OSlF7j8impOsiUawA",
@@ -8,6 +8,1170 @@
         "expires_in": "2022-11-16T01:37:27.697",
         "scope": "read write"
     },
-    "data": [],
+    "data": [
+        {
+            "hotelId": 115,
+            "name": "Travia Stage (NET) API Test ",
+            "description": "Testing hotel\n\nPMS property ID 123895",
+            "address": "Höfðabakki 9",
+            "city": "Reykjavík",
+            "postalCode": "110",
+            "latitude": 64.12482339319772,
+            "longitude": -21.81057577209472,
+            "email": "hello@travia.is",
+            "phone": "+3545553646",
+            "propertyTypeName": "Hotel",
+            "propertyAmenityNames": [
+                "Air conditioning",
+                "Bar",
+                "24 hour front desk",
+                "Business Center"
+            ],
+            "cancellationPolicy": [
+                {
+                    "id": 20427,
+                    "startDate": "2022-03-04",
+                    "endDate": null,
+                    "instantBookingsLimit": null,
+                    "maxBookingsPerMonth": null,
+                    "nameListReminderOffsetDays": 30,
+                    "useExternalPrices": false,
+                    "barCommission": null,
+                    "cooperationStatusName": "Approved",
+                    "cooperationStatusCode": "APPROVED",
+                    "cooperationStatusColor": "#66AA9E",
+                    "issuedByEntity": "TRAVEL_AGENT",
+                    "propertyId": 115,
+                    "propertyAccountId": 393,
+                    "propertyName": "Travia Stage (NET) API Test ",
+                    "propertyProviderName": "Godo API",
+                    "travelAgentId": 577,
+                    "travelAgentAccountId": 926,
+                    "travelAgentName": "Nicebooking",
+                    "travelAgentEmail": null,
+                    "cancellationPolicyId": 101,
+                    "cancellationPolicyName": "Cancellation policy",
+                    "cooperationEditable": true,
+                    "cancellationPolicy": {
+                        "id": 101,
+                        "name": "Cancellation policy",
+                        "description": "",
+                        "isDefault": true,
+                        "propertyId": null,
+                        "propertyName": null,
+                        "cancellationPolicyRules": [
+                            {
+                                "id": 113,
+                                "rangeRoomsFrom": 1,
+                                "rangeRoomsTo": 20,
+                                "cancellationPolicyLines": [
+                                    {
+                                        "id": 139,
+                                        "toPeriod": 2,
+                                        "percentage": 50,
+                                        "interval": "WEEKS"
+                                    },
+                                    {
+                                        "id": 140,
+                                        "toPeriod": 48,
+                                        "percentage": 100,
+                                        "interval": "HOURS"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "priceAgreementId": null,
+                    "priceAgreement": null,
+                    "commission": null,
+                    "requestNotification": {
+                        "id": 134417,
+                        "reference": "[20427]",
+                        "entity": "Cooperation",
+                        "sentFrom": "staging@travia.is",
+                        "sentFromName": "travia.is",
+                        "sentTo": "hello@travia.is",
+                        "sentCc": "",
+                        "sentBcc": "",
+                        "subject": "New cooperation invite",
+                        "body": "<!DOCTYPE html><html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" /><style>body{color:#3F3E40;font-family:'Whitney SSm A','Whitney SSm B',Arial;font-weight:400;font-style:normal}a{color:#66AA9E}hr{display:block;height:1px;border:0;margin:2em 0;padding:0;border-top:1px solid}hr.orange{border-color:#E98C28}hr.gray{border-color:#DFDCD0}footer{color:#DFDCD0}.center-container{max-width:700px;margin:0 auto}.text-center{text-align:center!important}.button{background-color:#66AA9E;color:#fff;box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:0;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:88px;line-height:36px;padding:0 16px;border-radius:2px;overflow:visible;transform:translate3d(0,0,0);transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow 280ms cubic-bezier(.4,0,.2,1)}tbody,thead th{border-top:2px solid #3F3E40}table{width:90%;margin-bottom:10px;border-collapse:collapse}table td,table th{padding:5px;vertical-align:top;border-top:1px solid #3F3E40}thead th{vertical-align:bottom;border-bottom:2px solid #3F3E40}</style></head><body class=\"text-center\">\n<div class=\"center-container\"><h1>Dear <span>Travia Stage API Test Hotel</span></h1>\n    <hr class=\"light-grey\"/>\n    <p>You have <span >a new cooperation invite from </span>    <span> <span>Nicebooking</span></span>.</p>    <p></p>    <p>Invite message:</p>\n    <p><span></span></p>\n    <p>You can see the <span >cooperation invite </span> by following this link:</p>\n    <p><a class=\"button\" href=\"https://stage-app.travia.is/Property/115/Cooperations/20427\">DETAILS</a><p><hr class=\"gray\" />\n<footer>\n<img style=\"max-height: 150px;\" src=\"https://stage-app.travia.is/assets/godo-logo.png\" />\n<p>&copy; 2018 - Travia. All rights reserved</p>\n</footer></div></body></html>",
+                        "dateSent": "2022-03-04T11:50:34",
+                        "read": false,
+                        "errorSending": false,
+                        "errorMessage": "",
+                        "notificationTemplateCode": "TRAVEL_AGENT_COOPERATION_REQUEST",
+                        "displayText": "",
+                        "link": ""
+                    },
+                    "notifications": [
+                        {
+                            "id": 134419,
+                            "reference": "20427",
+                            "entity": "Cooperation",
+                            "sentFrom": "staging@travia.is",
+                            "sentFromName": "travia.is",
+                            "sentTo": "gisli@nicebooking.is",
+                            "sentCc": "",
+                            "sentBcc": "",
+                            "subject": "Cooperation accepted",
+                            "body": "<!DOCTYPE html><html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" /><style>body{color:#3F3E40;font-family:'Whitney SSm A','Whitney SSm B',Arial;font-weight:400;font-style:normal}a{color:#66AA9E}hr{display:block;height:1px;border:0;margin:2em 0;padding:0;border-top:1px solid}hr.orange{border-color:#E98C28}hr.gray{border-color:#DFDCD0}footer{color:#DFDCD0}.center-container{max-width:700px;margin:0 auto}.text-center{text-align:center!important}.button{background-color:#66AA9E;color:#fff;box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:0;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:88px;line-height:36px;padding:0 16px;border-radius:2px;overflow:visible;transform:translate3d(0,0,0);transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow 280ms cubic-bezier(.4,0,.2,1)}tbody,thead th{border-top:2px solid #3F3E40}table{width:90%;margin-bottom:10px;border-collapse:collapse}table td,table th{padding:5px;vertical-align:top;border-top:1px solid #3F3E40}thead th{vertical-align:bottom;border-bottom:2px solid #3F3E40}</style></head><body class=\"text-center\">\n<div class=\"center-container\"><h1>Dear <span>Nicebooking</span></h1>\n    <hr class=\"light-grey\"/>\n    <p>The invite for cooperation with the property <span>Travia Stage API Test Hotel</span> has been <strong>accepted</strong>.</p>\n        <a class=\"button\" href=\"https://stage-app.travia.is/TravelAgent/577/Cooperations/20427\">DETAILS</a><hr class=\"gray\" />\n<footer>\n<img style=\"max-height: 150px;\" src=\"https://stage-app.travia.is/assets/godo-logo.png\" />\n<p>&copy; 2018 - Travia. All rights reserved</p>\n</footer></div></body></html>",
+                            "dateSent": "2022-03-04T11:50:50",
+                            "read": false,
+                            "errorSending": false,
+                            "errorMessage": "",
+                            "notificationTemplateCode": "TRAVEL_AGENT_COOPERATION_APPROVED_MESSAGE",
+                            "displayText": "Cooperation Approved",
+                            "link": ""
+                        }
+                    ],
+                    "dateCreated": "2022-03-04T11:50:34",
+                    "bookRegularRoomsFirst": false,
+                    "invoiceeId": "",
+                    "travelAgentMapping": "",
+                    "inviteToExternalPortal": null,
+                    "tenant": null
+                }
+            ],
+            "rooms": [
+                {
+                    "roomId": 275,
+                    "propertyId": 115,
+                    "name": "Awesome view double",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 2,
+                    "roomSize": 70,
+                    "description": "How much awesome?",
+                    "roomAmenityNames": [],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Double/Twin",
+                    "roomCategoryName": "Budget",
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2021-10-14T01:12:45_0b39a85e-3c91-477f-ade9-7bcc2bbd0a4f_images.jfif",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2021-10-14T01:12:45_0b39a85e-3c91-477f-ade9-7bcc2bbd0a4f_images.jfif"
+                    ],
+                    "addons": [
+                        "half board",
+                        "Boat trip",
+                        "Breakfast",
+                        "water"
+                    ],
+                    "isEmpty": false
+                },
+                {
+                    "roomId": 247,
+                    "propertyId": 115,
+                    "name": "Great",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 1,
+                    "roomSize": null,
+                    "description": null,
+                    "roomAmenityNames": [],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Double",
+                    "roomCategoryName": "Standard",
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2021-10-14T01:12:29_4e6cfe40-a105-4fd9-a054-d39485c25b47_7542736b26b0676a0e9e3c4aab831241.jpg",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2021-10-14T01:12:29_4e6cfe40-a105-4fd9-a054-d39485c25b47_7542736b26b0676a0e9e3c4aab831241.jpg"
+                    ],
+                    "addons": [
+                        "Breakfast",
+                        "water",
+                        "Boat trip",
+                        "half board",
+                        "Extra bed"
+                    ],
+                    "isEmpty": false
+                }
+            ],
+            "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2021-10-14T01:11:54_98f68b14-3bb4-4a23-a184-bad5f8bb1a1e_1246280_16061017110043391702.jpg",
+            "gallery": [
+                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2021-10-14T01:11:54_98f68b14-3bb4-4a23-a184-bad5f8bb1a1e_1246280_16061017110043391702.jpg",
+                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-07T10:05:43_6056c8c3-92d0-4b79-87a3-7b069e11c749_hotel.jfif"
+            ],
+            "isEmpty": false
+        },
+        {
+            "hotelId": 4,
+            "name": "Travia demo hotel",
+            "description": "This is a description",
+            "address": "Laugavegur 176",
+            "city": "Reykjavik",
+            "postalCode": "105",
+            "latitude": 64.14218559999999,
+            "longitude": -21.9049063,
+            "email": "haukur@godo.is",
+            "phone": "6622231",
+            "propertyTypeName": "Hotel",
+            "propertyAmenityNames": [],
+            "cancellationPolicy": [
+                {
+                    "id": 20663,
+                    "startDate": "2022-08-03",
+                    "endDate": null,
+                    "instantBookingsLimit": null,
+                    "maxBookingsPerMonth": null,
+                    "nameListReminderOffsetDays": null,
+                    "useExternalPrices": false,
+                    "barCommission": null,
+                    "cooperationStatusName": "Approved",
+                    "cooperationStatusCode": "APPROVED",
+                    "cooperationStatusColor": "#66AA9E",
+                    "issuedByEntity": "PROPERTY",
+                    "propertyId": 4,
+                    "propertyAccountId": 282,
+                    "propertyName": "Travia demo hotel",
+                    "propertyProviderName": "Godo API",
+                    "travelAgentId": 577,
+                    "travelAgentAccountId": 926,
+                    "travelAgentName": "Nicebooking",
+                    "travelAgentEmail": null,
+                    "cancellationPolicyId": 2,
+                    "cancellationPolicyName": "test",
+                    "cooperationEditable": true,
+                    "cancellationPolicy": {
+                        "id": 2,
+                        "name": "test",
+                        "description": "",
+                        "isDefault": false,
+                        "propertyId": null,
+                        "propertyName": null,
+                        "cancellationPolicyRules": [
+                            {
+                                "id": 2,
+                                "rangeRoomsFrom": 1,
+                                "rangeRoomsTo": 15,
+                                "cancellationPolicyLines": [
+                                    {
+                                        "id": 3,
+                                        "toPeriod": 48,
+                                        "percentage": 100,
+                                        "interval": "HOURS"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "priceAgreementId": null,
+                    "priceAgreement": null,
+                    "commission": null,
+                    "requestNotification": {
+                        "id": 180566,
+                        "reference": "[20663]",
+                        "entity": "Cooperation",
+                        "sentFrom": "staging@travia.is",
+                        "sentFromName": "travia.is",
+                        "sentTo": "gisli@nicebooking.is",
+                        "sentCc": "",
+                        "sentBcc": "",
+                        "subject": "New cooperation invite",
+                        "body": "<!DOCTYPE html><html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" /><style>body{color:#3F3E40;font-family:'Whitney SSm A','Whitney SSm B',Arial;font-weight:400;font-style:normal}a{color:#66AA9E}hr{display:block;height:1px;border:0;margin:2em 0;padding:0;border-top:1px solid}hr.orange{border-color:#E98C28}hr.gray{border-color:#DFDCD0}footer{color:#DFDCD0}.center-container{max-width:700px;margin:0 auto}.text-center{text-align:center!important}.button{background-color:#66AA9E;color:#fff;box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:0;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:88px;line-height:36px;padding:0 16px;border-radius:2px;overflow:visible;transform:translate3d(0,0,0);transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow 280ms cubic-bezier(.4,0,.2,1)}tbody,thead th{border-top:2px solid #3F3E40}table{width:90%;margin-bottom:10px;border-collapse:collapse}table td,table th{padding:5px;vertical-align:top;border-top:1px solid #3F3E40}thead th{vertical-align:bottom;border-bottom:2px solid #3F3E40}</style></head><body class=\"text-center\">\n<div class=\"center-container\"><h1>Dear <span>Nicebooking</span></h1>\n    <hr class=\"light-grey\"/>\n    <div><p>You have <span >a new cooperation invite from </span>    <span> <span>Travia demo hotel</span></span>.</p>    <p></p></div>        <p>Invite message:</p>\n    <p><span>Test hotel </span></p>\n    \n    <p>You can see the <span >cooperation invite </span> by following this link:</p>\n    <p><a class=\"button\" href=\"https://stage-app.travia.is/TravelAgent/577/Cooperations/20663\">DETAILS</a><p><hr class=\"gray\" />\n<footer>\n<img style=\"max-height: 150px;\" src=\"https://stage-app.travia.is/assets/godo-logo.png\" />\n<p>&copy; 2018 - Travia. All rights reserved</p>\n</footer></div></body></html>",
+                        "dateSent": "2022-08-03T15:43:28",
+                        "read": false,
+                        "errorSending": false,
+                        "errorMessage": "",
+                        "notificationTemplateCode": "PROPERTY_COOPERATION_REQUEST",
+                        "displayText": "",
+                        "link": ""
+                    },
+                    "notifications": [
+                        {
+                            "id": 180568,
+                            "reference": "20663",
+                            "entity": "Cooperation",
+                            "sentFrom": "staging@travia.is",
+                            "sentFromName": "travia.is",
+                            "sentTo": "haukur@godo.is",
+                            "sentCc": "",
+                            "sentBcc": "",
+                            "subject": "Cooperation accepted",
+                            "body": "<!DOCTYPE html><html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" /><style>body{color:#3F3E40;font-family:'Whitney SSm A','Whitney SSm B',Arial;font-weight:400;font-style:normal}a{color:#66AA9E}hr{display:block;height:1px;border:0;margin:2em 0;padding:0;border-top:1px solid}hr.orange{border-color:#E98C28}hr.gray{border-color:#DFDCD0}footer{color:#DFDCD0}.center-container{max-width:700px;margin:0 auto}.text-center{text-align:center!important}.button{background-color:#66AA9E;color:#fff;box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:0;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:88px;line-height:36px;padding:0 16px;border-radius:2px;overflow:visible;transform:translate3d(0,0,0);transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow 280ms cubic-bezier(.4,0,.2,1)}tbody,thead th{border-top:2px solid #3F3E40}table{width:90%;margin-bottom:10px;border-collapse:collapse}table td,table th{padding:5px;vertical-align:top;border-top:1px solid #3F3E40}thead th{vertical-align:bottom;border-bottom:2px solid #3F3E40}</style></head><body class=\"text-center\">\n<div class=\"center-container\"><h1>Dear <span>Travia demo hotel</span></h1>\n    <hr class=\"light-grey\"/>\n    <p>The invite for cooperation with the travel agent <span>Nicebooking</span> has been <strong>accepted</strong>.</p>\n    <div>\n        <p>Response message:</p>\n        <p>Travia test aðgangur </p>\n    </div>    <a class=\"button\" href=\"https://stage-app.travia.is/Property/4/Cooperations/20663\">DETAILS</a><hr class=\"gray\" />\n<footer>\n<img style=\"max-height: 150px;\" src=\"https://stage-app.travia.is/assets/godo-logo.png\" />\n<p>&copy; 2018 - Travia. All rights reserved</p>\n</footer></div></body></html>",
+                            "dateSent": "2022-08-03T15:45:31",
+                            "read": false,
+                            "errorSending": false,
+                            "errorMessage": "",
+                            "notificationTemplateCode": "PROPERTY_COOPERATION_APPROVED_MESSAGE",
+                            "displayText": "Cooperation Approved<br/>Travia test aðgangur ",
+                            "link": ""
+                        }
+                    ],
+                    "dateCreated": "2022-08-03T15:43:28",
+                    "bookRegularRoomsFirst": false,
+                    "invoiceeId": "",
+                    "travelAgentMapping": "",
+                    "inviteToExternalPortal": null,
+                    "tenant": null
+                }
+            ],
+            "rooms": [
+                {
+                    "roomId": 66,
+                    "propertyId": 4,
+                    "name": "new",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 2,
+                    "roomSize": null,
+                    "description": null,
+                    "roomAmenityNames": [],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Double",
+                    "roomCategoryName": "Standard",
+                    "gallery": [],
+                    "addons": [
+                        "Breakfast"
+                    ],
+                    "isEmpty": false
+                },
+                {
+                    "roomId": 5,
+                    "propertyId": 4,
+                    "name": "Standard",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 2,
+                    "roomSize": null,
+                    "description": null,
+                    "roomAmenityNames": [],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Double",
+                    "roomCategoryName": "Standard",
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:57_fb0798a9-92ea-49ef-be7b-b22e39198d35_noRooms.png",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:57_fb0798a9-92ea-49ef-be7b-b22e39198d35_noRooms.png",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:46_adbb2702-09c2-4002-b164-63abebd9a928_Capture.PNG"
+                    ],
+                    "addons": [
+                        "Breakfast",
+                        "Extra bed"
+                    ],
+                    "isEmpty": false
+                }
+            ],
+            "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:11_390bd8e0-a0dd-4bbc-bc5b-664e1bc062fc_all4.png",
+            "gallery": [
+                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:11_390bd8e0-a0dd-4bbc-bc5b-664e1bc062fc_all4.png",
+                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:04_1519cfe7-6179-47a4-a881-059ac1238cd7_all3.png",
+                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2019-05-29T10:19:16_b6a1249c-918a-4cd4-a1e5-d486c55df3b3_all3.png"
+            ],
+            "isEmpty": false
+        },
+        {
+            "hotelId": 530,
+            "name": "Nice Hotel",
+            "description": "Situated in Reykjavík, 1.5 km from Laugardalur Family Park, ODDSSON Hotel offers modern rooms with a flat-screen TV with satellite channels and a private bathroom. Free WiFi is offered.\n\nAt the hotel, rooms have a wardrobe. Family rooms are available.\n\nA buffet breakfast is available each morning at Hotel ODDSSON.\n\nLocal buses stop across the street. Kringlan Shopping Centre is 1,5 km away. Hallgrímskirkja Church is 3.3 km from the accommodation, while Solfar Sun Voyager is 3.9 km from the property. The nearest airport is Reykjavík Domestic Airport, 5 km from ODDSSON Hotel.",
+            "address": "Akureyri",
+            "city": "Akureyri",
+            "postalCode": "600",
+            "latitude": 65.6691338,
+            "longitude": -18.1023867,
+            "email": "nicehotel@nicehotel.io",
+            "phone": "5555555",
+            "propertyTypeName": "Hotel",
+            "propertyAmenityNames": [
+                "24 hour front desk",
+                "Room service",
+                "Gym",
+                "Business Center"
+            ],
+            "cancellationPolicy": [
+                {
+                    "id": 20685,
+                    "startDate": "2022-08-12",
+                    "endDate": null,
+                    "instantBookingsLimit": null,
+                    "maxBookingsPerMonth": null,
+                    "nameListReminderOffsetDays": null,
+                    "useExternalPrices": false,
+                    "barCommission": null,
+                    "cooperationStatusName": "Approved",
+                    "cooperationStatusCode": "APPROVED",
+                    "cooperationStatusColor": "#66AA9E",
+                    "issuedByEntity": "PROPERTY",
+                    "propertyId": 530,
+                    "propertyAccountId": 926,
+                    "propertyName": "Nice Hotel",
+                    "propertyProviderName": "Godo API",
+                    "travelAgentId": 577,
+                    "travelAgentAccountId": 926,
+                    "travelAgentName": "Nicebooking",
+                    "travelAgentEmail": null,
+                    "cancellationPolicyId": 389,
+                    "cancellationPolicyName": "Nice Policy",
+                    "cooperationEditable": true,
+                    "cancellationPolicy": {
+                        "id": 389,
+                        "name": "Nice Policy",
+                        "description": "Nice Cancellation Policy",
+                        "isDefault": true,
+                        "propertyId": null,
+                        "propertyName": null,
+                        "cancellationPolicyRules": [
+                            {
+                                "id": 411,
+                                "rangeRoomsFrom": 1,
+                                "rangeRoomsTo": 10,
+                                "cancellationPolicyLines": [
+                                    {
+                                        "id": 502,
+                                        "toPeriod": 4,
+                                        "percentage": 15,
+                                        "interval": "DAYS"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "priceAgreementId": null,
+                    "priceAgreement": null,
+                    "commission": 10,
+                    "requestNotification": {
+                        "id": 183722,
+                        "reference": "[20685]",
+                        "entity": "Cooperation",
+                        "sentFrom": "staging@travia.is",
+                        "sentFromName": "travia.is",
+                        "sentTo": "gisli@nicebooking.is",
+                        "sentCc": "",
+                        "sentBcc": "",
+                        "subject": "New cooperation invite",
+                        "body": "<!DOCTYPE html><html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" /><style>body{color:#3F3E40;font-family:'Whitney SSm A','Whitney SSm B',Arial;font-weight:400;font-style:normal}a{color:#66AA9E}hr{display:block;height:1px;border:0;margin:2em 0;padding:0;border-top:1px solid}hr.orange{border-color:#E98C28}hr.gray{border-color:#DFDCD0}footer{color:#DFDCD0}.center-container{max-width:700px;margin:0 auto}.text-center{text-align:center!important}.button{background-color:#66AA9E;color:#fff;box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:0;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:88px;line-height:36px;padding:0 16px;border-radius:2px;overflow:visible;transform:translate3d(0,0,0);transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow 280ms cubic-bezier(.4,0,.2,1)}tbody,thead th{border-top:2px solid #3F3E40}table{width:90%;margin-bottom:10px;border-collapse:collapse}table td,table th{padding:5px;vertical-align:top;border-top:1px solid #3F3E40}thead th{vertical-align:bottom;border-bottom:2px solid #3F3E40}</style></head><body class=\"text-center\">\n<div class=\"center-container\"><h1>Dear <span>Nicebooking</span></h1>\n    <hr class=\"light-grey\"/>\n    <div><p>You have <span >a new cooperation invite from </span>    <span> <span>Nice Hotel</span></span>.</p>    <p></p></div>        <p>Invite message:</p>\n    <p><span></span></p>\n    \n    <p>You can see the <span >cooperation invite </span> by following this link:</p>\n    <p><a class=\"button\" href=\"https://stage-app.travia.is/TravelAgent/577/Cooperations/20685\">DETAILS</a><p><hr class=\"gray\" />\n<footer>\n<img style=\"max-height: 150px;\" src=\"https://stage-app.travia.is/assets/godo-logo.png\" />\n<p>&copy; 2018 - Travia. All rights reserved</p>\n</footer></div></body></html>",
+                        "dateSent": "2022-08-12T11:36:54",
+                        "read": false,
+                        "errorSending": false,
+                        "errorMessage": "",
+                        "notificationTemplateCode": "PROPERTY_COOPERATION_REQUEST",
+                        "displayText": "",
+                        "link": ""
+                    },
+                    "notifications": [
+                        {
+                            "id": 183724,
+                            "reference": "20685",
+                            "entity": "Cooperation",
+                            "sentFrom": "staging@travia.is",
+                            "sentFromName": "travia.is",
+                            "sentTo": "nicehotel@nicehotel.io",
+                            "sentCc": "",
+                            "sentBcc": "",
+                            "subject": "Cooperation accepted",
+                            "body": "<!DOCTYPE html><html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" /><style>body{color:#3F3E40;font-family:'Whitney SSm A','Whitney SSm B',Arial;font-weight:400;font-style:normal}a{color:#66AA9E}hr{display:block;height:1px;border:0;margin:2em 0;padding:0;border-top:1px solid}hr.orange{border-color:#E98C28}hr.gray{border-color:#DFDCD0}footer{color:#DFDCD0}.center-container{max-width:700px;margin:0 auto}.text-center{text-align:center!important}.button{background-color:#66AA9E;color:#fff;box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:0;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:88px;line-height:36px;padding:0 16px;border-radius:2px;overflow:visible;transform:translate3d(0,0,0);transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow 280ms cubic-bezier(.4,0,.2,1)}tbody,thead th{border-top:2px solid #3F3E40}table{width:90%;margin-bottom:10px;border-collapse:collapse}table td,table th{padding:5px;vertical-align:top;border-top:1px solid #3F3E40}thead th{vertical-align:bottom;border-bottom:2px solid #3F3E40}</style></head><body class=\"text-center\">\n<div class=\"center-container\"><h1>Dear <span>Nice Hotel</span></h1>\n    <hr class=\"light-grey\"/>\n    <p>The invite for cooperation with the travel agent <span>Nicebooking</span> has been <strong>accepted</strong>.</p>\n        <a class=\"button\" href=\"https://stage-app.travia.is/Property/530/Cooperations/20685\">DETAILS</a><hr class=\"gray\" />\n<footer>\n<img style=\"max-height: 150px;\" src=\"https://stage-app.travia.is/assets/godo-logo.png\" />\n<p>&copy; 2018 - Travia. All rights reserved</p>\n</footer></div></body></html>",
+                            "dateSent": "2022-08-12T11:37:06",
+                            "read": false,
+                            "errorSending": false,
+                            "errorMessage": "",
+                            "notificationTemplateCode": "PROPERTY_COOPERATION_APPROVED_MESSAGE",
+                            "displayText": "Cooperation Approved",
+                            "link": ""
+                        }
+                    ],
+                    "dateCreated": "2022-08-12T11:36:54",
+                    "bookRegularRoomsFirst": false,
+                    "invoiceeId": "",
+                    "travelAgentMapping": "",
+                    "inviteToExternalPortal": null,
+                    "tenant": null
+                }
+            ],
+            "rooms": [
+                {
+                    "roomId": 797,
+                    "propertyId": 530,
+                    "name": "Triple Deluxe Room",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 3,
+                    "roomSize": 22,
+                    "description": null,
+                    "roomAmenityNames": [
+                        "Dvd Player",
+                        "Telephone",
+                        "Free toiletries",
+                        "Radio",
+                        "Smoke Alarm",
+                        "Sitting area",
+                        "Sofa",
+                        "Sofa bed",
+                        "Terrace",
+                        "Bathrobe",
+                        "Slippers",
+                        "Computer",
+                        "Towels",
+                        "iPad",
+                        "Shower",
+                        "Satellite Channels",
+                        "Private bathroom",
+                        "Flat-screen TV",
+                        "Bathtub",
+                        "Bidet",
+                        "Washing Machine",
+                        "Fireplace"
+                    ],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Triple",
+                    "roomCategoryName": "Deluxe",
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-11-09T12:04:28_f8d2f5a6-ef5e-4855-a2f4-7f833fe7ae69_216702647.jpg",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-11-09T12:04:28_f8d2f5a6-ef5e-4855-a2f4-7f833fe7ae69_216702647.jpg",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-11-09T12:04:28_8b6786a2-4f95-45bc-bdec-8be2e5ff38b2_216702684.jpg",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-11-09T12:04:28_74304580-c3d9-4890-8eee-7e1adf7960ad_216702642.jpg",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-11-09T12:04:28_83931bdc-a338-4bdb-9b18-c03ed6076b1e_216702678.jpg"
+                    ],
+                    "addons": [
+                        "Extra bed"
+                    ],
+                    "isEmpty": false
+                },
+                {
+                    "roomId": 767,
+                    "propertyId": 530,
+                    "name": "Nice Triple",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 3,
+                    "roomSize": 20,
+                    "description": "Tripe Nice Room",
+                    "roomAmenityNames": [
+                        "Free toiletries",
+                        "Microwave",
+                        "Shared bathroom",
+                        "Stovetop",
+                        "Oven",
+                        "Toilet paper",
+                        "Towels",
+                        "Shower",
+                        "Private bathroom",
+                        "Barbecue",
+                        "Kitchenware",
+                        "Bidet",
+                        "Washing Machine",
+                        "Outdoor dinning area",
+                        "Dishwasher",
+                        "Tea/Coffee maker",
+                        "Hairdryer",
+                        "Wine glasses",
+                        "Refrigerator",
+                        "Electric kettle",
+                        "Kitchenette",
+                        "Toaster",
+                        "Bathrobe",
+                        "Coffee Machine",
+                        "Slippers",
+                        "Bathtub",
+                        "Drying rack for clothing",
+                        "High chair"
+                    ],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Triple",
+                    "roomCategoryName": "Superior",
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-12T11:50:13_ef187186-fb07-459a-812e-7c1f08628298_204960711.jpg",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-12T11:50:13_ef187186-fb07-459a-812e-7c1f08628298_204960711.jpg",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-12T11:50:13_3b989c83-3f53-451e-b8ac-71d2c9e04414_229037253.jpg",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-18T03:41:29_6b41dc6a-3dca-4309-9e3e-589ad56d15a6_80327914.jpg",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-18T03:41:37_ce3e75fb-5490-4749-9ced-dc157c936d47_80327887.jpg",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-18T03:42:05_cdcb6bff-54f5-4b89-8003-2120f7ee9eb6_80327915.jpg"
+                    ],
+                    "addons": [
+                        "Extra bed",
+                        "Breakfast"
+                    ],
+                    "isEmpty": false
+                },
+                {
+                    "roomId": 753,
+                    "propertyId": 530,
+                    "name": "Nice Room",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 2,
+                    "roomSize": 18,
+                    "description": "Very nice room",
+                    "roomAmenityNames": [
+                        "Toilet paper",
+                        "Slippers",
+                        "Shower",
+                        "Bathtub",
+                        "Drying rack for clothing",
+                        "Bidet"
+                    ],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Double/Twin",
+                    "roomCategoryName": "Deluxe",
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-12T11:49:39_6e839352-4284-4361-af9c-bd99e6f100ef_204960846.jpg",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-12T11:49:39_6e839352-4284-4361-af9c-bd99e6f100ef_204960846.jpg",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-12T11:49:39_526923a6-8745-4cae-841a-a4dd1eb3d2f3_204960837.jpg",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-18T03:41:02_890e78fe-26d7-4d32-822d-5828b8c59790_80327957.jpg",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-18T03:41:02_b6d8c934-bac6-40b1-b1f7-d1072a68005c_80328050.jpg",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-18T03:41:23_fce7e1d0-ec43-4faf-b266-da1d1ee381e3_80328050.jpg",
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-18T03:42:22_489342f5-1557-4ef5-9fac-2cd21a57435f_80327916.jpg"
+                    ],
+                    "addons": [
+                        "Breakfast",
+                        "Extra bed"
+                    ],
+                    "isEmpty": false
+                }
+            ],
+            "featureImage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-12T11:52:46_50f21d21-b29c-45cd-bbff-b63a2b2fc568_223553018.jpg",
+            "gallery": [
+                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-12T11:52:46_50f21d21-b29c-45cd-bbff-b63a2b2fc568_223553018.jpg",
+                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-12T11:53:11_97b063f3-6f9e-4620-96fb-3ae81789eb43_202609455.jpg",
+                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-12T11:53:18_dda742a0-fd2e-4f55-82f1-d8e51f71e693_204962122.jpg",
+                "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-08-12T11:53:23_8d5ed85d-fb3c-4da2-992e-9e7b54ea6615_202609390.jpg"
+            ],
+            "isEmpty": false
+        },
+        {
+            "hotelId": 556,
+            "name": "Travia Stage (GROSS) API Test",
+            "description": "Test property for GROSS prices\n\nPMS property ID 122207",
+            "address": "Skólavörðustígur",
+            "city": "Reykjavík",
+            "postalCode": "101",
+            "latitude": 64.1444948,
+            "longitude": -21.9303862,
+            "email": "hello@travia.is",
+            "phone": "5554363",
+            "propertyTypeName": "Hotel",
+            "propertyAmenityNames": [
+                "Air conditioning",
+                "Self service kitchen",
+                "Restaurant",
+                "Bar",
+                "24 hour front desk",
+                "Room service",
+                "Spa and wellness centre"
+            ],
+            "cancellationPolicy": [
+                {
+                    "id": 20749,
+                    "startDate": "2022-11-03",
+                    "endDate": null,
+                    "instantBookingsLimit": null,
+                    "maxBookingsPerMonth": null,
+                    "nameListReminderOffsetDays": null,
+                    "useExternalPrices": false,
+                    "barCommission": null,
+                    "cooperationStatusName": "Approved",
+                    "cooperationStatusCode": "APPROVED",
+                    "cooperationStatusColor": "#66AA9E",
+                    "issuedByEntity": "PROPERTY",
+                    "propertyId": 556,
+                    "propertyAccountId": 809,
+                    "propertyName": "Travia Stage (GROSS) API Test",
+                    "propertyProviderName": "Godo API",
+                    "travelAgentId": 577,
+                    "travelAgentAccountId": 926,
+                    "travelAgentName": "Nicebooking",
+                    "travelAgentEmail": null,
+                    "cancellationPolicyId": 408,
+                    "cancellationPolicyName": "Default cancellation",
+                    "cooperationEditable": true,
+                    "cancellationPolicy": {
+                        "id": 408,
+                        "name": "Default cancellation",
+                        "description": "",
+                        "isDefault": false,
+                        "propertyId": null,
+                        "propertyName": null,
+                        "cancellationPolicyRules": [
+                            {
+                                "id": 432,
+                                "rangeRoomsFrom": 1,
+                                "rangeRoomsTo": 4,
+                                "cancellationPolicyLines": [
+                                    {
+                                        "id": 529,
+                                        "toPeriod": 14,
+                                        "percentage": 75,
+                                        "interval": "DAYS"
+                                    },
+                                    {
+                                        "id": 530,
+                                        "toPeriod": 7,
+                                        "percentage": 100,
+                                        "interval": "DAYS"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 433,
+                                "rangeRoomsFrom": 5,
+                                "rangeRoomsTo": 18,
+                                "cancellationPolicyLines": [
+                                    {
+                                        "id": 532,
+                                        "toPeriod": 6,
+                                        "percentage": 50,
+                                        "interval": "WEEKS"
+                                    },
+                                    {
+                                        "id": 533,
+                                        "toPeriod": 4,
+                                        "percentage": 75,
+                                        "interval": "DAYS"
+                                    },
+                                    {
+                                        "id": 531,
+                                        "toPeriod": 2,
+                                        "percentage": 100,
+                                        "interval": "WEEKS"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "priceAgreementId": null,
+                    "priceAgreement": null,
+                    "commission": 5,
+                    "requestNotification": {
+                        "id": 208919,
+                        "reference": "[20748, 20749]",
+                        "entity": "Cooperation",
+                        "sentFrom": "staging@travia.is",
+                        "sentFromName": "travia.is",
+                        "sentTo": "gisli@nicebooking.is",
+                        "sentCc": "",
+                        "sentBcc": "",
+                        "subject": "New cooperation invite",
+                        "body": "<!DOCTYPE html><html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" /><style>body{color:#3F3E40;font-family:'Whitney SSm A','Whitney SSm B',Arial;font-weight:400;font-style:normal}a{color:#66AA9E}hr{display:block;height:1px;border:0;margin:2em 0;padding:0;border-top:1px solid}hr.orange{border-color:#E98C28}hr.gray{border-color:#DFDCD0}footer{color:#DFDCD0}.center-container{max-width:700px;margin:0 auto}.text-center{text-align:center!important}.button{background-color:#66AA9E;color:#fff;box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:0;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:88px;line-height:36px;padding:0 16px;border-radius:2px;overflow:visible;transform:translate3d(0,0,0);transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow 280ms cubic-bezier(.4,0,.2,1)}tbody,thead th{border-top:2px solid #3F3E40}table{width:90%;margin-bottom:10px;border-collapse:collapse}table td,table th{padding:5px;vertical-align:top;border-top:1px solid #3F3E40}thead th{vertical-align:bottom;border-bottom:2px solid #3F3E40}</style></head><body class=\"text-center\">\n<div class=\"center-container\"><h1>Dear <span>Nicebooking</span></h1>\n    <hr class=\"light-grey\"/>\n    <div><p>You have <span >new cooperation invites from multiple properties</span>    .</p>    <p><span>The properties that want to cooperate with You are: <span>Travia Stage (BAR) API Test and Travia Stage (GROSS) API Test</span>.</span></p></div>        <p>Invite message:</p>\n    <p><span></span></p>\n    \n    <p>You can see the <span >details of the cooperations</span> by following this link:</p>\n    <p><a class=\"button\" href=\"https://stage-app.travia.is/TravelAgent/577/Cooperations/20748,20749\">DETAILS</a><p><hr class=\"gray\" />\n<footer>\n<img style=\"max-height: 150px;\" src=\"https://stage-app.travia.is/assets/godo-logo.png\" />\n<p>&copy; 2018 - Travia. All rights reserved</p>\n</footer></div></body></html>",
+                        "dateSent": "2022-11-03T17:20:02",
+                        "read": false,
+                        "errorSending": false,
+                        "errorMessage": "",
+                        "notificationTemplateCode": "PROPERTY_COOPERATION_REQUEST",
+                        "displayText": "",
+                        "link": ""
+                    },
+                    "notifications": [
+                        {
+                            "id": 208924,
+                            "reference": "20749",
+                            "entity": "Cooperation",
+                            "sentFrom": "staging@travia.is",
+                            "sentFromName": "travia.is",
+                            "sentTo": "hello@travia.is",
+                            "sentCc": "",
+                            "sentBcc": "",
+                            "subject": "Cooperation accepted",
+                            "body": "<!DOCTYPE html><html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" /><style>body{color:#3F3E40;font-family:'Whitney SSm A','Whitney SSm B',Arial;font-weight:400;font-style:normal}a{color:#66AA9E}hr{display:block;height:1px;border:0;margin:2em 0;padding:0;border-top:1px solid}hr.orange{border-color:#E98C28}hr.gray{border-color:#DFDCD0}footer{color:#DFDCD0}.center-container{max-width:700px;margin:0 auto}.text-center{text-align:center!important}.button{background-color:#66AA9E;color:#fff;box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:0;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:88px;line-height:36px;padding:0 16px;border-radius:2px;overflow:visible;transform:translate3d(0,0,0);transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow 280ms cubic-bezier(.4,0,.2,1)}tbody,thead th{border-top:2px solid #3F3E40}table{width:90%;margin-bottom:10px;border-collapse:collapse}table td,table th{padding:5px;vertical-align:top;border-top:1px solid #3F3E40}thead th{vertical-align:bottom;border-bottom:2px solid #3F3E40}</style></head><body class=\"text-center\">\n<div class=\"center-container\"><h1>Dear <span>Travia Stage (GROSS) API Test</span></h1>\n    <hr class=\"light-grey\"/>\n    <p>The invite for cooperation with the travel agent <span>Nicebooking</span> has been <strong>accepted</strong>.</p>\n        <a class=\"button\" href=\"https://stage-app.travia.is/Property/556/Cooperations/20749\">DETAILS</a><hr class=\"gray\" />\n<footer>\n<img style=\"max-height: 150px;\" src=\"https://stage-app.travia.is/assets/godo-logo.png\" />\n<p>&copy; 2018 - Travia. All rights reserved</p>\n</footer></div></body></html>",
+                            "dateSent": "2022-11-03T17:20:30",
+                            "read": false,
+                            "errorSending": false,
+                            "errorMessage": "",
+                            "notificationTemplateCode": "PROPERTY_COOPERATION_APPROVED_MESSAGE",
+                            "displayText": "Cooperation Approved",
+                            "link": ""
+                        }
+                    ],
+                    "dateCreated": "2022-11-03T17:20:01",
+                    "bookRegularRoomsFirst": false,
+                    "invoiceeId": "",
+                    "travelAgentMapping": "",
+                    "inviteToExternalPortal": null,
+                    "tenant": null
+                }
+            ],
+            "rooms": [
+                {
+                    "roomId": 791,
+                    "propertyId": 556,
+                    "name": "Ocean View",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 2,
+                    "roomSize": null,
+                    "description": null,
+                    "roomAmenityNames": [
+                        "Socket near the bed",
+                        "Free toiletries",
+                        "Non-feather pillow",
+                        "Microwave",
+                        "Refrigerator",
+                        "Cable channels",
+                        "Pajamas",
+                        "Mountain view",
+                        "Suit press",
+                        "Sofa",
+                        "Kitchenette",
+                        "Sofa bed",
+                        "Hot tub",
+                        "Heating",
+                        "Toaster",
+                        "Coffee Machine",
+                        "Linen",
+                        "Shower",
+                        "Satellite Channels",
+                        "Barbecue",
+                        "Drying rack for clothing",
+                        "Bidet",
+                        "Washing Machine"
+                    ],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Suite",
+                    "roomCategoryName": "Deluxe",
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:43:20_206deb04-9e0c-45be-80b2-f2d0e5d898ee_hotelroom.jpg",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:43:20_206deb04-9e0c-45be-80b2-f2d0e5d898ee_hotelroom.jpg"
+                    ],
+                    "addons": [
+                        "Breakfast"
+                    ],
+                    "isEmpty": false
+                },
+                {
+                    "roomId": 790,
+                    "propertyId": 556,
+                    "name": "Mountain View",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 2,
+                    "roomSize": null,
+                    "description": null,
+                    "roomAmenityNames": [
+                        "Socket near the bed",
+                        "Free toiletries",
+                        "Garden view",
+                        "Tea/Coffee maker",
+                        "Quiet street view",
+                        "Hairdryer",
+                        "Radio",
+                        "Smoke Alarm",
+                        "Baby safety gates",
+                        "Sofa bed",
+                        "Stovetop",
+                        "Bathrobe",
+                        "Linen",
+                        "Satellite Channels",
+                        "Private bathroom",
+                        "Hypoallergenic pillow",
+                        "Bidet"
+                    ],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Double",
+                    "roomCategoryName": "Standard",
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:43:03_132525ba-f8ad-45f3-9d6b-32f865133a14_hotelroomtest4.jpg",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:43:03_132525ba-f8ad-45f3-9d6b-32f865133a14_hotelroomtest4.jpg"
+                    ],
+                    "addons": [
+                        "Breakfast"
+                    ],
+                    "isEmpty": false
+                },
+                {
+                    "roomId": 789,
+                    "propertyId": 556,
+                    "name": "River View",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 1,
+                    "roomSize": null,
+                    "description": null,
+                    "roomAmenityNames": [
+                        "Hot tub",
+                        "Free toiletries",
+                        "Clothes Rack",
+                        "Tea/Coffee maker",
+                        "Lake view",
+                        "Minibar",
+                        "Electric Blankets",
+                        "Radio",
+                        "Satellite Channels",
+                        "Private bathroom",
+                        "Drying rack for clothing"
+                    ],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Single",
+                    "roomCategoryName": "Standard",
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:42:50_11a38db0-8473-42b9-9e36-63ab77e71a59_hotelroomtest2.jpg",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:42:50_11a38db0-8473-42b9-9e36-63ab77e71a59_hotelroomtest2.jpg"
+                    ],
+                    "addons": [
+                        "Breakfast"
+                    ],
+                    "isEmpty": false
+                }
+            ],
+            "featureImage": "",
+            "gallery": [],
+            "isEmpty": false
+        },
+        {
+            "hotelId": 555,
+            "name": "Travia Stage (BAR) API Test",
+            "description": "Demo hotel for BAR pices\n\nPMS Property ID 60062",
+            "address": "Smárarimi",
+            "city": "Reykjavík",
+            "postalCode": "112",
+            "latitude": 64.1468586,
+            "longitude": -21.7997555,
+            "email": "hello@travia.is",
+            "phone": "5554636",
+            "propertyTypeName": "Hotel",
+            "propertyAmenityNames": [
+                "Bar",
+                "24 hour front desk",
+                "Fitness Center",
+                "Business Center"
+            ],
+            "cancellationPolicy": [
+                {
+                    "id": 20748,
+                    "startDate": "2022-11-03",
+                    "endDate": null,
+                    "instantBookingsLimit": null,
+                    "maxBookingsPerMonth": null,
+                    "nameListReminderOffsetDays": null,
+                    "useExternalPrices": true,
+                    "barCommission": null,
+                    "cooperationStatusName": "Approved",
+                    "cooperationStatusCode": "APPROVED",
+                    "cooperationStatusColor": "#66AA9E",
+                    "issuedByEntity": "PROPERTY",
+                    "propertyId": 555,
+                    "propertyAccountId": 809,
+                    "propertyName": "Travia Stage (BAR) API Test",
+                    "propertyProviderName": "Godo API",
+                    "travelAgentId": 577,
+                    "travelAgentAccountId": 926,
+                    "travelAgentName": "Nicebooking",
+                    "travelAgentEmail": null,
+                    "cancellationPolicyId": 407,
+                    "cancellationPolicyName": "Standard",
+                    "cooperationEditable": true,
+                    "cancellationPolicy": {
+                        "id": 407,
+                        "name": "Standard",
+                        "description": "",
+                        "isDefault": false,
+                        "propertyId": null,
+                        "propertyName": null,
+                        "cancellationPolicyRules": [
+                            {
+                                "id": 430,
+                                "rangeRoomsFrom": 1,
+                                "rangeRoomsTo": 9,
+                                "cancellationPolicyLines": [
+                                    {
+                                        "id": 525,
+                                        "toPeriod": 14,
+                                        "percentage": 50,
+                                        "interval": "DAYS"
+                                    },
+                                    {
+                                        "id": 526,
+                                        "toPeriod": 7,
+                                        "percentage": 100,
+                                        "interval": "DAYS"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 431,
+                                "rangeRoomsFrom": 10,
+                                "rangeRoomsTo": 32,
+                                "cancellationPolicyLines": [
+                                    {
+                                        "id": 527,
+                                        "toPeriod": 6,
+                                        "percentage": 50,
+                                        "interval": "DAYS"
+                                    },
+                                    {
+                                        "id": 528,
+                                        "toPeriod": 4,
+                                        "percentage": 100,
+                                        "interval": "WEEKS"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "priceAgreementId": null,
+                    "priceAgreement": null,
+                    "commission": null,
+                    "requestNotification": {
+                        "id": 208919,
+                        "reference": "[20748, 20749]",
+                        "entity": "Cooperation",
+                        "sentFrom": "staging@travia.is",
+                        "sentFromName": "travia.is",
+                        "sentTo": "gisli@nicebooking.is",
+                        "sentCc": "",
+                        "sentBcc": "",
+                        "subject": "New cooperation invite",
+                        "body": "<!DOCTYPE html><html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" /><style>body{color:#3F3E40;font-family:'Whitney SSm A','Whitney SSm B',Arial;font-weight:400;font-style:normal}a{color:#66AA9E}hr{display:block;height:1px;border:0;margin:2em 0;padding:0;border-top:1px solid}hr.orange{border-color:#E98C28}hr.gray{border-color:#DFDCD0}footer{color:#DFDCD0}.center-container{max-width:700px;margin:0 auto}.text-center{text-align:center!important}.button{background-color:#66AA9E;color:#fff;box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:0;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:88px;line-height:36px;padding:0 16px;border-radius:2px;overflow:visible;transform:translate3d(0,0,0);transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow 280ms cubic-bezier(.4,0,.2,1)}tbody,thead th{border-top:2px solid #3F3E40}table{width:90%;margin-bottom:10px;border-collapse:collapse}table td,table th{padding:5px;vertical-align:top;border-top:1px solid #3F3E40}thead th{vertical-align:bottom;border-bottom:2px solid #3F3E40}</style></head><body class=\"text-center\">\n<div class=\"center-container\"><h1>Dear <span>Nicebooking</span></h1>\n    <hr class=\"light-grey\"/>\n    <div><p>You have <span >new cooperation invites from multiple properties</span>    .</p>    <p><span>The properties that want to cooperate with You are: <span>Travia Stage (BAR) API Test and Travia Stage (GROSS) API Test</span>.</span></p></div>        <p>Invite message:</p>\n    <p><span></span></p>\n    \n    <p>You can see the <span >details of the cooperations</span> by following this link:</p>\n    <p><a class=\"button\" href=\"https://stage-app.travia.is/TravelAgent/577/Cooperations/20748,20749\">DETAILS</a><p><hr class=\"gray\" />\n<footer>\n<img style=\"max-height: 150px;\" src=\"https://stage-app.travia.is/assets/godo-logo.png\" />\n<p>&copy; 2018 - Travia. All rights reserved</p>\n</footer></div></body></html>",
+                        "dateSent": "2022-11-03T17:20:02",
+                        "read": false,
+                        "errorSending": false,
+                        "errorMessage": "",
+                        "notificationTemplateCode": "PROPERTY_COOPERATION_REQUEST",
+                        "displayText": "",
+                        "link": ""
+                    },
+                    "notifications": [
+                        {
+                            "id": 208922,
+                            "reference": "20748",
+                            "entity": "Cooperation",
+                            "sentFrom": "staging@travia.is",
+                            "sentFromName": "travia.is",
+                            "sentTo": "hello@travia.is",
+                            "sentCc": "",
+                            "sentBcc": "",
+                            "subject": "Cooperation accepted",
+                            "body": "<!DOCTYPE html><html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" /><style>body{color:#3F3E40;font-family:'Whitney SSm A','Whitney SSm B',Arial;font-weight:400;font-style:normal}a{color:#66AA9E}hr{display:block;height:1px;border:0;margin:2em 0;padding:0;border-top:1px solid}hr.orange{border-color:#E98C28}hr.gray{border-color:#DFDCD0}footer{color:#DFDCD0}.center-container{max-width:700px;margin:0 auto}.text-center{text-align:center!important}.button{background-color:#66AA9E;color:#fff;box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:0;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:88px;line-height:36px;padding:0 16px;border-radius:2px;overflow:visible;transform:translate3d(0,0,0);transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow 280ms cubic-bezier(.4,0,.2,1)}tbody,thead th{border-top:2px solid #3F3E40}table{width:90%;margin-bottom:10px;border-collapse:collapse}table td,table th{padding:5px;vertical-align:top;border-top:1px solid #3F3E40}thead th{vertical-align:bottom;border-bottom:2px solid #3F3E40}</style></head><body class=\"text-center\">\n<div class=\"center-container\"><h1>Dear <span>Travia Stage (BAR) API Test</span></h1>\n    <hr class=\"light-grey\"/>\n    <p>The invite for cooperation with the travel agent <span>Nicebooking</span> has been <strong>accepted</strong>.</p>\n        <a class=\"button\" href=\"https://stage-app.travia.is/Property/555/Cooperations/20748\">DETAILS</a><hr class=\"gray\" />\n<footer>\n<img style=\"max-height: 150px;\" src=\"https://stage-app.travia.is/assets/godo-logo.png\" />\n<p>&copy; 2018 - Travia. All rights reserved</p>\n</footer></div></body></html>",
+                            "dateSent": "2022-11-03T17:20:23",
+                            "read": false,
+                            "errorSending": false,
+                            "errorMessage": "",
+                            "notificationTemplateCode": "PROPERTY_COOPERATION_APPROVED_MESSAGE",
+                            "displayText": "Cooperation Approved",
+                            "link": ""
+                        }
+                    ],
+                    "dateCreated": "2022-11-03T17:20:01",
+                    "bookRegularRoomsFirst": false,
+                    "invoiceeId": "",
+                    "travelAgentMapping": "",
+                    "inviteToExternalPortal": null,
+                    "tenant": null
+                }
+            ],
+            "rooms": [
+                {
+                    "roomId": 788,
+                    "propertyId": 555,
+                    "name": "Junior Suite",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 2,
+                    "roomSize": null,
+                    "description": null,
+                    "roomAmenityNames": [
+                        "Board games",
+                        "TV",
+                        "Telephone",
+                        "Free toiletries",
+                        "Outdoor furniture",
+                        "Game console",
+                        "Hairdryer",
+                        "Cable channels",
+                        "Stovetop",
+                        "Alarm clock",
+                        "Minibar",
+                        "Private entrance",
+                        "Towels",
+                        "iPad",
+                        "Linen",
+                        "Streaming service (like Netflix)",
+                        "Private bathroom",
+                        "Flat-screen TV",
+                        "Barbecue",
+                        "Drying rack for clothing",
+                        "Patio",
+                        "Feather pillow",
+                        "Fireplace"
+                    ],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Suite",
+                    "roomCategoryName": "Junior",
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:35:49_d152839b-cbb1-402a-8596-a138bd4754bd_hotelroom.jpg",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:35:49_d152839b-cbb1-402a-8596-a138bd4754bd_hotelroom.jpg"
+                    ],
+                    "addons": [
+                        "Breakfast"
+                    ],
+                    "isEmpty": false
+                },
+                {
+                    "roomId": 787,
+                    "propertyId": 555,
+                    "name": "Deluxe Double",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 2,
+                    "roomSize": null,
+                    "description": null,
+                    "roomAmenityNames": [
+                        "Outdoor dinning area",
+                        "Pool view",
+                        "Slippers",
+                        "Cable channels",
+                        "Radio",
+                        "Pajamas",
+                        "Wake-up service",
+                        "Private bathroom",
+                        "Bathtub",
+                        "Suit press",
+                        "Bidet"
+                    ],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Double",
+                    "roomCategoryName": "Deluxe",
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:34:10_1411adb7-5cdd-4371-a630-2dca6e0d99a0_Hotel_room_ocean_view_2.jfif",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:34:10_1411adb7-5cdd-4371-a630-2dca6e0d99a0_Hotel_room_ocean_view_2.jfif"
+                    ],
+                    "addons": [
+                        "Breakfast"
+                    ],
+                    "isEmpty": false
+                },
+                {
+                    "roomId": 786,
+                    "propertyId": 555,
+                    "name": "Standard Double",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 2,
+                    "roomSize": null,
+                    "description": null,
+                    "roomAmenityNames": [
+                        "Sofa",
+                        "Socket near the bed",
+                        "Board games",
+                        "Toaster",
+                        "Non-feather pillow",
+                        "Coffee Machine",
+                        "iPad",
+                        "Satellite Channels",
+                        "Patio",
+                        "Shared bathroom",
+                        "Washing Machine",
+                        "Fireplace"
+                    ],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Double",
+                    "roomCategoryName": "Standard",
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:33:12_63d3ce10-f25a-4592-b66d-7c37d34caf96_IMG_3639.jpg",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:33:12_63d3ce10-f25a-4592-b66d-7c37d34caf96_IMG_3639.jpg"
+                    ],
+                    "addons": [
+                        "Breakfast"
+                    ],
+                    "isEmpty": false
+                },
+                {
+                    "roomId": 785,
+                    "propertyId": 555,
+                    "name": "Standard Single",
+                    "minOccupancy": 1,
+                    "maxOccupancy": 1,
+                    "roomSize": null,
+                    "description": null,
+                    "roomAmenityNames": [],
+                    "wholeYearAvailability": true,
+                    "roomTypeName": "Single",
+                    "roomCategoryName": "Standard",
+                    "featureimage": "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:32:55_413eddf5-429c-4d8c-bcd9-366312d1052a_Hotel_room_ocean_view.jfif",
+                    "gallery": [
+                        "https://s3-eu-west-1.amazonaws.com/images-stage-app.travia.is/2022-10-28T09:32:55_413eddf5-429c-4d8c-bcd9-366312d1052a_Hotel_room_ocean_view.jfif"
+                    ],
+                    "addons": [
+                        "Breakfast"
+                    ],
+                    "isEmpty": false
+                }
+            ],
+            "featureImage": "",
+            "gallery": [],
+            "isEmpty": false
+        }
+    ],
     "cart": []
 }
