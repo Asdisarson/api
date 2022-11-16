@@ -264,7 +264,6 @@
                                     linkstartDate + "&endDate=" + linkendDate + "&numberOfPeople=" + req.query.numberOfPeople + "&roomname=" + response.body[k].name + "&hotelname=" + response.body[k].rooms[i].name
                                 + "&quantity=1"
                         }
-                        console.log(room.booking)
                         if (response.body[k].rooms[i].images[0]) {
                             room.featureImage = response.body[k].rooms[i].images[0].filePath;
                         }
@@ -366,7 +365,6 @@
                     }) === (req.query.city || str));
                 }
 
-                        console.log(JSON.stringify(array))
                 if (array.result.length === 0) {
                    next()
 
@@ -402,7 +400,6 @@
         router.get('', function (req, res, next){
             var data = new JSONdb('./cache.json');
             var output = data.get('data');
-            console.log(output)
             if(output.length > 0){
                 res.send({result:output});
             }
