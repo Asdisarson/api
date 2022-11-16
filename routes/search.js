@@ -1,12 +1,21 @@
-        var express = require('express');
-        var router = express.Router();
+var express = require('express');
+var router = express.Router();
 
-        const JSONdb = require("simple-json-db");
-        const request = require("request");
-        const request1 = require("request");
-        const auth = require("./auth");
+const JSONdb = require("simple-json-db");
+const request = require("request");
 
+router.get('', function (req, res, next) {
+    var db = new JSONdb('./cache.json');
+    var auth = require('./auth.js');
+    request(auth, function (error, response) {
+        if (error) throw new Error(error)
+        db.set('token', JSON.parse(response.body));
+        db.sync();
+        next();
 
+    })
+
+});
         router.get('', function (req, res, next) {
             var db = new JSONdb('./cache.json');
             var auth = require('./auth.js');
