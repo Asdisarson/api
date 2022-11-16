@@ -1,11 +1,11 @@
     const PORT = process.env.PORT || 5000
-    let express = require('express');
-    let path = require('path');
+var express = require('express');
+var path = require('path');
 
-    let cookieParser = require('cookie-parser');
-    let logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
     const bodyParser = require("express");
-    let app = express();
+    var app = express()
     const JSONdb = require("simple-json-db");
     const request = require("request");
     const auth = require("./routes/auth");
@@ -15,13 +15,12 @@
     }));
     //const {save} = require("./routes/request2");
 const {save} = require("./routes/request");
-    let indexRouter = require('./routes/index');
-    let propertiesRouter = require('./routes/properties');
-    //   var queriesRouter = require('./routes/searchtest');
-    let queriesRouter = require('./routes/search');
-    let roomsRouter = require('./routes/rooms');
-    let cancel = require('./routes/cancellationPolicy');
-    let cartRouter = require('./routes/cart');
+    var indexRouter = require('./routes/index');
+    var propertiesRouter = require('./routes/properties');
+ //   var queriesRouter = require('./routes/searchtest');
+    var queriesRouter = require('./routes/search');
+    var roomsRouter = require('./routes/rooms');
+    var cartRouter = require('./routes/cart');
     const {setTimeOut, checkCache} = require("./routes/checktime");
     app.use(cookieParser());
     app.use(express.json());
@@ -30,28 +29,22 @@ const {save} = require("./routes/request");
 
     request(auth, function(error, response) {
         if (error) throw new Error(error)
-        let db = new JSONdb('./cache.json');
+        var db = new JSONdb('./cache.json');
 
-        db.JSON({cache:true,
+        db.JSON({cache:false,
             cacheTimeOut: setTimeOut(3).toString(),
             token: JSON.parse(response.body),
             data: [],
             cart:[]
         });
         db.sync();
-        let req = save(resolve => {
-            return resolve;
-        }).then(resolve => {
-            return resolve;
-        });
-        console.log(req)
+         save();
     })
 
 
 app.use('/', indexRouter);
 app.use('/properties', propertiesRouter);
     app.use('/search', queriesRouter);
-    app.use('/cancellationPolicy', cancel);
 app.use('/rooms', roomsRouter);
 app.use('/cart', cartRouter);
 app

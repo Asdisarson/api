@@ -94,7 +94,7 @@ module.exports = {
     },
 
     save: async function () {
-        var resolve = new Promise(r => {
+        await new Promise(r => {
             var db = new JSONdb('./cache.json')
             var cache = db.JSON()
             var request = require('request');
@@ -190,26 +190,23 @@ module.exports = {
                             }
                             hotelargs.rooms = hotelargs.rooms.reverse()
                             var request4 = require('request');
-                                options.url = "https://stage-api.travia.is/api/v1/travelAgents/577/property/"+response1.body.id + "/cooperations";
+                                options.url = "https://stage-api.travia.is//api/v1/travelAgents/577/property/"+response1.body.id + "/cooperations";
                                 request4(options, function (error4,response4) {
                                       hotelargs.cancellationPolicy = JSON.parse(response4.body);
-
-
-                                cache.data.push(hotelargs);
-                                    db.JSON(cache)
-                                    db.sync();
-                                    db.set('cache', true)
-                                    db.sync()
+                                    cache.data.push(hotelargs);
+                            db.JSON(cache)
+                            db.sync();
                                 });
                         })
                         })  })
                 }
             });
+            db.set('cache', true)
+            db.sync()
+
+            console.log(db.JSON())
             return db.JSON().data;
-        }).then(resolve => {
-            return resolve
-            }
-        );
+        });
 
 
     },
