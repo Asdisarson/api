@@ -40,6 +40,35 @@ const {save} = require("./routes/request");
         db.sync();
          save();
     })
+    app.use((req, res, next) => {
+      var  db = new JSONdb('./cache.json');
+        var cached = db.JSON().cache;
+        checkCache(db.JSON().cacheTimeOut)
+        if(cached)  {
+            console.log('cache')
+            next();
+        }
+        else {
+            request(auth, function(error, response) {
+                if (error) throw new Error(error)
+                console.log('Auth')
+                db.JSON({cache:false,
+                    cacheTimeOut: setTimeOut(3).toString(),
+                    token: JSON.parse(response.body),
+                    data: [],
+                    cart:[]
+                });
+                db.sync();
+                save();
+                next()
+                var log = save();
+                console.log(db.JSON())
+                if(log) {
+                    console.log(log)
+                }
+            })
+        }
+    })
 
 
 app.use('/', indexRouter);
