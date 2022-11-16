@@ -200,12 +200,11 @@
 
                         data.link = data.link + "numberOfPeople:" + req.query.numberOfPeople + ";";
                                            data.link = data.link + "numberOfRooms:1;";
-                                                data.id = response.body[k].id
 
                     }
 
                     for (var i = 0; i < response.body[k].images.length; i++) {
-                        if (response.body[k].images[i]) {
+                        if (i === 0) {
                             data.featureImage = response.body[k].images[i].filePath
 
                         }
