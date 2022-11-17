@@ -140,7 +140,6 @@ router.get('', function (req, res, next) {
                 data.endDate = req.query.end
             }
             if (response.body[k].id) {
-                data.link = "propertyId:" + response.body[k].id + ";"
                 data.id = response.body[k].id
             }
             if (response.body[k].checkInStartTime) {
@@ -200,16 +199,12 @@ router.get('', function (req, res, next) {
             if (response.body[k].additionalDescription) {
                 data.additionalDescription = response.body[k].additionalDescription;
             }
-            if (req.query.start) {
+            if (req.query.start && req.query.end &&req.query.numberOfPeople) {
+                data.link = "propertyId:" + response.body[k].id + ";"
+
                 data.link = data.link + "start:" + req.query.start + ";";
-            }
-            if (req.query.end) {
                 data.link = data.link + "end:" + req.query.end + ";";
-            }
-            if (req.query.numberOfPeople) {
                 data.link = data.link + "numberOfPeople:" + req.query.numberOfPeople + ";";
-            }
-            if (req.query.numberOfRooms) {
                 data.link = data.link + "numberOfRooms:1;";
             }
 
