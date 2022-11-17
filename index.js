@@ -21,6 +21,7 @@ const {save} = require("./routes/request");
     var queriesRouter = require('./routes/search');
     var roomsRouter = require('./routes/rooms');
     var cartRouter = require('./routes/cart');
+    var nicedollarsRouter = require('./routes/niceDollars');
     const {setTimeOut, checkCache} = require("./routes/checktime");
     app.use(cookieParser());
     app.use(express.json());
@@ -72,7 +73,8 @@ const {save} = require("./routes/request");
 
 
 app.use('/', indexRouter);
-app.use('/properties', propertiesRouter);
+    app.use('/properties', propertiesRouter);
+    app.use('/nicedollars', nicedollarsRouter);
     app.use('/search', queriesRouter);
 app.use('/rooms', roomsRouter);
 app.use('/cart', cartRouter);
