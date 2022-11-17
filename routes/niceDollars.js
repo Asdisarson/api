@@ -3,7 +3,9 @@ var router = express.Router();
 var request = require('request');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.post('/', function(req, res, next) {
+    console.log(req.headers);
+    console.log(req.body)
     if(req.header('api-key-nicebooking') === "nicedollars") {
         var points = 0;
         var url = "https://nifty-cannon.134-209-30-23.plesk.page/wp-json/woorewards/v1/points/"
@@ -42,21 +44,19 @@ router.get('/', function(req, res, next) {
                 res.sendStatus(503)
                 return false;
             }
-            return true
-        }).then(result => {
-            if(result){
-                request(options1, function (error, response) {
-                    if (error) throw new Error(error);
-                    if(response.statusCode >= 400) {
-                        res.sendStatus(503)
-                        return false;
-                    }else {
-                        res.sendStatus(200)
-                    }
-                })
-            }
-            }
-        );
+            var request1 = require('request');
+
+            return request1(options1, function (error, response) {
+                if (error) throw new Error(error);
+                if(response.statusCode >= 400) {
+                    res.sendStatus(503)
+                    return false;
+                }else {
+                    res.sendStatus(200)
+                }
+            })
+        })
+1
 
     }  else {
         res.sendStatus(401)

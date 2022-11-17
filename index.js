@@ -46,7 +46,6 @@ const {save} = require("./routes/request");
         var cached = db.JSON().cache;
         checkCache(db.JSON().cacheTimeOut)
         if(cached)  {
-            console.log('cache')
             next();
         }
         else {
