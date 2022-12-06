@@ -18,7 +18,8 @@ const {save} = require("./routes/request");
     var indexRouter = require('./routes/index');
     var propertiesRouter = require('./routes/properties');
  //   var queriesRouter = require('./routes/searchtest');
-    var queriesRouter = require('./routes/search');
+    var cancelRouter = require('./routes/search');
+    var queriesRouter = require('./routes/cancellationPolicy');
     var roomsRouter = require('./routes/rooms');
     var cartRouter = require('./routes/cart');
     var nicedollarsRouter = require('./routes/niceDollars');
@@ -72,6 +73,7 @@ const {save} = require("./routes/request");
 
 
 app.use('/', indexRouter);
+    app.use('/cancellationpolicy', cancelRouter);
     app.use('/properties', propertiesRouter);
     app.use('/nicedollars', nicedollarsRouter);
     app.use('/search', queriesRouter);
