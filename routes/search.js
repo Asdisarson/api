@@ -290,125 +290,42 @@ router.get('', function (req, res, next) {
                 }
                 room.addons = addons;
                 var cancellationPolicy = getCancelCache(data.id);
-                if(req.query.propertyId && req.query.numberOfRooms && req.query.duration) {
-                    if (req.query.end) {
-                        data.end = new Date(req.query.end * 1000)
-                        data.static = data.end
-                        data.end = data.end.toISOString().substring(0, 10)
+                data.cancellationPolicy = cancellationPolicy[0]
 
-                    }
-
-                    if (req.query.start) {
-                        data.start = new Date(req.query.start * 1000)
-                        data.start = data.start.toISOString().substring(0, 10)
-                    }
-                    var options2 = {
-                        'method': 'get',
-                        'url': '',
-                        'headers': {
-                            'Authorization': 'Bearer ' + token.access_token,
-                            'Content-Type': 'application/json',
-
-                        },
-                        'body': ''
-                    };
-                    var request2 = require('request');
-                    options2.url = "https://stage-api.travia.is//api/v1/travelAgents/577/property/" + req.query.propertyId + "/cooperations";
-                    request2(options2, function (error4, response4) {
-                        var cancellation = JSON.parse(response4.body);
+                data.rooms.push(room)
+            }
 
 
-                        for (var i = 0; i < cancellation.length; i++) {
-                            var dateFrom = cancellation[i].startDate;
-                            var dateTo = cancellation[i].endDate;
-                            var dateCheck = data.start;
-                            var check = new Date(dateCheck);
-                            if (dateTo) {
-                                dateTo = new Date(dateTo);
+            array.result.push(
+                data
+            );
+        }
+        if (req.query.city) {
+            var s = req.query.city;
+            var translate = {
+                "á": "a", "ö": "o", "ú": "u",
+                "Á": "A", "Ö": "O", "Ú": "U",
+                "Ý": "Y", "í": "i", "Í": "I",
+                "ý": "y", "ó": "o", "Ó": "O"   // probably more to come
+            };
+            var translate_re = /[áÁöÖúÚóÓýÝíÍ]/g;
+            var str = (s.replace(translate_re, function (match) {
+                return translate[match];
+            }));
+            array.result = array.result.filter(hotel => hotel.city.replace(translate_re, function (match) {
+                return translate[match];
+            }) === (req.query.city || str));
+        }
 
-                            }
-                            var date = {}
-                            dateFrom = new Date(dateFrom);
-                            console.log(dateFrom)
-                            console.log(check)// -1 because months are from 0 to 11// -1 because months are from 0 to 11
-                            console.log(check > dateFrom)
-                            if ((check > dateFrom) && (check < dateTo || !dateTo)) {
+                console.log(JSON.stringify(array))
+        if (array.result.length === 0) {
+           next()
 
-                                var cancellationPolicy = cancellation[i].cancellationPolicy.cancellationPolicyRules
-                                for (var j = 0; j < cancellationPolicy.length; j++) {
+        }
+        else {
 
-                                    if (cancellationPolicy[j].rangeRoomsTo
-                                        >= req.query.numberOfRooms >= cancellationPolicy[j].rangeRoomsFrom) {
-
-                                        for (var y = 0; y < cancellationPolicy[j].cancellationPolicyLines.length; y++) {
-                                            var cancel = cancellationPolicy[j].cancellationPolicyLines[y];
-
-                                            if (cancel.interval === "MONTHS") {
-                                                var dateOffset = ((24 * 60 * 60 * 30 * 1000) * cancel.toPeriod); //5 days
-                                                check.setTime(check.getTime() - dateOffset);
-
-                                            }
-                                            if (cancel.interval === "WEEKS") {
-                                                var dateOffset = ((24 * 60 * 60 * 7 * 1000) * cancel.toPeriod); //5 days
-                                                check.setTime(check.getTime() - dateOffset);
-                                            }
-                                            if (cancel.interval === "DAYS") {
-                                                var dateOffset = ((24 * 60 * 60 * 1000) * cancel.toPeriod); //5 days
-                                                check.setTime(check.getTime() - dateOffset);
-
-                                            }
-                                            if (cancel.interval === "HOURS") {
-                                                var dateOffset = ((60 * 60 * 1000) * cancel.toPeriod); //5 days
-                                                check.setTime(check.getTime() - dateOffset);
-
-                                            }
-                                            room.cancellationPolicy.push("Cancel Before: " + check.toISOString().substring(0, 10) + " For Full Refund")
-                                        }
-                                    }
-                                }
-                            }
-                            data.cancellationPolicy = cancellationPolicy[0]
-
-                            data.rooms.push(room)
-
-                        }
-
-
-                        array.result.push(
-                            data
-                        );
-
-                    if (req.query.city) {
-                        var s = req.query.city;
-                        var translate = {
-                            "á": "a", "ö": "o", "ú": "u",
-                            "Á": "A", "Ö": "O", "Ú": "U",
-                            "Ý": "Y", "í": "i", "Í": "I",
-                            "ý": "y", "ó": "o", "Ó": "O"   // probably more to come
-                        };
-                        var translate_re = /[áÁöÖúÚóÓýÝíÍ]/g;
-                        var str = (s.replace(translate_re, function (match) {
-                            return translate[match];
-                        }));
-                        array.result = array.result.filter(hotel => hotel.city.replace(translate_re, function (match) {
-                            return translate[match];
-                        }) === (req.query.city || str));
-                    }
-
-                    console.log(JSON.stringify(array))
-                    if (array.result.length === 0) {
-                        next()
-
-                    }
-                    else {
-
-                        res.send(array);
-                    }
-                });
-
-            }             }
-
-                        }
+        res.send(array);
+        }
 
     })
 }
