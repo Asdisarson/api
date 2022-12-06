@@ -3,6 +3,7 @@ var router = express.Router();
 
 const JSONdb = require("simple-json-db");
 const request = require("request");
+const request2 = require("request");
 
 router.get('', function (req, res, next) {
     var db = new JSONdb('./cache.json');
@@ -126,7 +127,7 @@ router.get('', function (req, res, next) {
                 country: '',
                 description: '',
                 additionalDescription: ''
-                , rooms: []  ,
+                , rooms: [],
                 cancellationPolicy: []
             }
 
@@ -199,7 +200,7 @@ router.get('', function (req, res, next) {
             if (response.body[k].additionalDescription) {
                 data.additionalDescription = response.body[k].additionalDescription;
             }
-            if (req.query.start && req.query.end &&req.query.numberOfPeople) {
+            if (req.query.start && req.query.end && req.query.numberOfPeople) {
                 data.link = "propertyId:" + response.body[k].id + ";"
 
                 data.link = data.link + "start:" + req.query.start + ";";
@@ -259,14 +260,14 @@ router.get('', function (req, res, next) {
                     gallery: [],
                     roomAddonCategories: [],
                     booking: '',
-                    cancellationPolicy : []
+                    cancellationPolicy: []
                 }
                 var addons = [];
-                var gallery =[] ;
+                var gallery = [];
                 if (room.available && req.query.start && req.query.end && req.query.numberOfPeople) {
                     room.booking = "?add-to-cart=1209&propertyId=" + response.body[k].rooms[i].propertyId +
                         "&roomId=" + response.body[k].rooms[i].id + "&product_id=1209" + "&startDate=" +
-                            linkstartDate + "&endDate=" + linkendDate + "&numberOfPeople=" + req.query.numberOfPeople + "&roomname=" + response.body[k].name + "&hotelname=" + response.body[k].rooms[i].name
+                        linkstartDate + "&endDate=" + linkendDate + "&numberOfPeople=" + req.query.numberOfPeople + "&roomname=" + response.body[k].name + "&hotelname=" + response.body[k].rooms[i].name
                         + "&quantity=1"
                 }
                 console.log(room.booking)
@@ -275,8 +276,8 @@ router.get('', function (req, res, next) {
                 }
                 if (response.body[k].rooms[i].images.length > 0) {
                     for (let j = 0; j < response.body[k].rooms[i].images.length; j++) {
-                     var   obj = response.body[k].rooms[i].images[j].filePath
-                        room["gallery" + j]     = response.body[k].rooms[i].images[j].filePath
+                        var obj = response.body[k].rooms[i].images[j].filePath
+                        room["gallery" + j] = response.body[k].rooms[i].images[j].filePath
                         gallery.push(obj);
                     }
                 }
@@ -289,43 +290,99 @@ router.get('', function (req, res, next) {
                     });
                 }
                 room.addons = addons;
-                var cancellationPolicy = getCancelCache(data.id);
-                data.cancellationPolicy = cancellationPolicy[0]
+                var cancellation = getCancelCache(data.id)
+                cancellation = cancellation[0].cancellationPolicy
+                console.log(cancellation)
+                if(cancellation) {
+                for (var o = 0; o < cancellation.length; o++) {
+                    var dateFrom = cancellation[o].startDate;
+                    var dateTo = cancellation[o].endDate;
+                    var dateCheck = req.query.start * 1000;
+                    var check = new Date(dateCheck);
+                    if (dateTo) {
+                        dateTo = new Date(dateTo);
 
+                    }
+                    dateFrom = new Date(dateFrom);
+                    console.log(dateFrom)
+                    console.log(check)// -1 because months are from 0 to 11// -1 because months are from 0 to 11
+                    console.log(check > dateFrom)
+                    if ((check > dateFrom) && (check < dateTo || !dateTo) || (dateFrom == "Invalid Date")) {
+
+                       var cancellationPolicy = cancellation[o].cancellationPolicy.cancellationPolicyRules
+                        if(cancellationPolicy) {
+                        for (var u = 0; u < cancellationPolicy.length; u++) {
+
+                            if (cancellationPolicy[u].rangeRoomsTo
+                                >= req.query.numberOfRooms >= cancellationPolicy[u].rangeRoomsFrom) {
+
+                                for (var t = 0; t < cancellationPolicy[u].cancellationPolicyLines.length; t++) {
+                                    var cancel = cancellationPolicy[u].cancellationPolicyLines[t];
+
+                                    if (cancel.interval === "MONTHS") {
+                                        var dateOffset = ((24 * 60 * 60 * 30 * 1000) * cancel.toPeriod); //5 days
+                                         check.setTime(check.getTime() - dateOffset);
+
+                                    }
+                                    if (cancel.interval === "WEEKS") {
+                                        var dateOffset = ((24 * 60 * 60 * 7 * 1000) * cancel.toPeriod); //5 days
+                                        check.setTime(check.getTime() - dateOffset);
+                                    }
+                                    if (cancel.interval === "DAYS") {
+                                        var dateOffset = ((24 * 60 * 60 * 1000) * cancel.toPeriod); //5 days
+                                        check.setTime(check.getTime() - dateOffset);
+
+                                    }
+                                    if (cancel.interval === "HOURS") {
+                                        var dateOffset = ((60 * 60 * 1000) * cancel.toPeriod); //5 days
+                                        check.setTime(check.getTime() - dateOffset);
+
+                                    }
+                                    room.cancellationPolicy.push("Cancel Before: " + check.toISOString().substring(0, 10) + " For Full Refund")
+                                }
+                            }
+                        }
+                        }
+
+                    }
+                }
+                }
                 data.rooms.push(room)
+
+                array.result.push(
+                    data
+                );
             }
-
-
-            array.result.push(
-                data
-            );
         }
-        if (req.query.city) {
-            var s = req.query.city;
-            var translate = {
-                "á": "a", "ö": "o", "ú": "u",
-                "Á": "A", "Ö": "O", "Ú": "U",
-                "Ý": "Y", "í": "i", "Í": "I",
-                "ý": "y", "ó": "o", "Ó": "O"   // probably more to come
-            };
-            var translate_re = /[áÁöÖúÚóÓýÝíÍ]/g;
-            var str = (s.replace(translate_re, function (match) {
-                return translate[match];
-            }));
-            array.result = array.result.filter(hotel => hotel.city.replace(translate_re, function (match) {
-                return translate[match];
-            }) === (req.query.city || str));
-        }
+
+                if (req.query.city) {
+                    var s = req.query.city;
+                    var translate = {
+                        "á": "a", "ö": "o", "ú": "u",
+                        "Á": "A", "Ö": "O", "Ú": "U",
+                        "Ý": "Y", "í": "i", "Í": "I",
+                        "ý": "y", "ó": "o", "Ó": "O"   // probably more to come
+                    };
+                    var translate_re = /[áÁöÖúÚóÓýÝíÍ]/g;
+                    var str = (s.replace(translate_re, function (match) {
+                        return translate[match];
+                    }));
+                    array.result = array.result.filter(hotel => hotel.city.replace(translate_re, function (match) {
+                        return translate[match];
+                    }) === (req.query.city || str));
+                }
 
                 console.log(JSON.stringify(array))
-        if (array.result.length === 0) {
-           next()
+                if (array.result.length === 0) {
+                    next()
 
-        }
-        else {
+                } else {
 
-        res.send(array);
-        }
+                    res.send(array);
+                }
+
+
+
 
     })
 }
