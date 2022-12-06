@@ -396,7 +396,7 @@ catch (e) {
 }
 })
 const {save} = require("./request");
-const {getHotelCache, getCancelCache} = require("./cache");
+const {getHotelCache} = require("./cache");
 
 /* GET users listing. */
 
