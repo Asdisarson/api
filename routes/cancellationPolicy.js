@@ -98,9 +98,7 @@ router.get('', function(req, res, next) {
                                     check.setTime(check.getTime() - dateOffset);
 
                                 }
-                                var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-
-                                room.push("Cancel Before: " + check.toLocaleDateString("en-US",options) + " For Full Refund")
+                                    room.push("Cancel Before: " + check.toISOString().substring(0, 10) + " For Full Refund")
                             }
                         }
                     }

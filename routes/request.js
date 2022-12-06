@@ -215,13 +215,14 @@ module.exports = {
     },
     generateCancellationPolicy: function (id, numberOfRooms, DateStart) {
         var cancellation = getCancelCache(id)
+        var room = "";
+
         var data = {}
         try {
             cancellation = cancellation[0].cancellationPolicy
             if (DateStart) {
                 data.start = new Date(DateStart * 1000)
             }
-            var room = [];
 
 
             for (var i = 0; i < cancellation.length; i++) {
@@ -264,8 +265,9 @@ module.exports = {
                                     check.setTime(check.getTime() - dateOffset);
 
                                 }
-                                room.push("Cancel Before: " + check.toISOString().substring(0, 10) + " For Full Refund")
-                            }
+                                var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+                                room = "Cancel Before: " + check.toLocaleDateString("en-US",options) + " For Full Refund"                            }
                         }
                     }
                 }
