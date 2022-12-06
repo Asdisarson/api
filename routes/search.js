@@ -211,9 +211,9 @@ router.get('', function (req, res, next) {
             }
             if(req.query.numberOfRooms && req.query.start)  {
        //     var cancellation = generateCancellationPolicy(data.id,req.query.numberOfRooms, req.query.start)
-            console.log(cancellation)
+            //console.log(cancellation)
 
-            data.cancellationPolicy = cancellation;
+       //     data.cancellationPolicy = cancellation;
 
             }
             for (var i = 0; i < response.body[k].images.length; i++) {
