@@ -206,6 +206,7 @@ router.get('', function (req, res, next) {
                     data.link = data.link + "end:" + req.query.end + ";";
                     data.link = data.link + "numberOfPeople:" + req.query.numberOfPeople + ";";
                     data.link = data.link + "numberOfRooms:1;";
+                    data.cancellationPolicy = generateCancellationPolicy(data.id, req.query.numberOfRooms, req.query.start )
                 }
 
                 for (var i = 0; i < response.body[k].images.length; i++) {
@@ -280,6 +281,9 @@ router.get('', function (req, res, next) {
                             gallery.push(obj);
                         }
                     }
+                    if(data.cancellationPolicy) {
+                        room.cancellationPolicy = data.cancellationPolicy
+                    }
 
                     room.gallery = gallery.reverse();
                     for (let j = 0; j < response.body[k].rooms[i].roomAddonCategories.length; j++) {
@@ -289,8 +293,7 @@ router.get('', function (req, res, next) {
                         });
                     }
                     room.addons = addons;
-                    var cancellationPolicy = getCancelCache(data.id);
-                    data.cancellationPolicy = cancellationPolicy[0]
+
 
                     data.rooms.push(room)
                 }
@@ -334,7 +337,7 @@ router.get('', function (req, res, next) {
         next();
     }
 })
-const {save} = require("./request");
+const {save, generateCancellationPolicy} = require("./request");
 const {getHotelCache, getCancelCache} = require("./cache");
 
 /* GET users listing. */
