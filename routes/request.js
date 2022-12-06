@@ -1,5 +1,6 @@
 var request = require('request');
 const JSONdb = require('simple-json-db');
+const {getCancelCache} = require("./cache");
 
 
 
@@ -211,6 +212,69 @@ module.exports = {
         });
 
 
+    },
+    generateCancellationPolicy: function (id, numberOfRooms, DateStart) {
+        var cancellation = getCancelCache(id)
+        var data = {}
+        try {
+            cancellation = cancellation[0].cancellationPolicy
+            if (DateStart) {
+                data.start = new Date(DateStart * 1000)
+            }
+            var room = [];
+
+
+            for (var i = 0; i < cancellation.length; i++) {
+                var dateFrom = cancellation[i].startDate;
+                var dateTo = cancellation[i].endDate;
+                var check = data.start;
+                if (dateTo !== null) {
+                    dateTo = new Date(dateTo);
+
+                }
+                var date = {}
+                dateFrom = new Date(dateFrom);
+                if ((check > dateFrom) && (check < dateTo || !dateTo)) {
+
+                    var cancellationPolicy = cancellation[i].cancellationPolicy.cancellationPolicyRules
+                    for (var j = 0; j < cancellationPolicy.length; j++) {
+
+                        if (cancellationPolicy[j].rangeRoomsTo
+                            >= numberOfRooms >= cancellationPolicy[j].rangeRoomsFrom) {
+
+                            for (var y = 0; y < cancellationPolicy[j].cancellationPolicyLines.length; y++) {
+                                var cancel = cancellationPolicy[j].cancellationPolicyLines[y];
+
+                                if (cancel.interval === "MONTHS") {
+                                    var dateOffset = ((24 * 60 * 60 * 30 * 1000) * cancel.toPeriod); //5 days
+                                    check.setTime(check.getTime() - dateOffset);
+
+                                }
+                                if (cancel.interval === "WEEKS") {
+                                    var dateOffset = ((24 * 60 * 60 * 7 * 1000) * cancel.toPeriod); //5 days
+                                    check.setTime(check.getTime() - dateOffset);
+                                }
+                                if (cancel.interval === "DAYS") {
+                                    var dateOffset = ((24 * 60 * 60 * 1000) * cancel.toPeriod); //5 days
+                                    check.setTime(check.getTime() - dateOffset);
+
+                                }
+                                if (cancel.interval === "HOURS") {
+                                    var dateOffset = ((60 * 60 * 1000) * cancel.toPeriod); //5 days
+                                    check.setTime(check.getTime() - dateOffset);
+
+                                }
+                                room.push("Cancel Before: " + check.toISOString().substring(0, 10) + " For Full Refund")
+                            }
+                        }
+                    }
+                }
+
+            }
+        }catch (e) {
+            console.log(e)
+        }
+            return room;
     },
     getImage : function() {
         var data = new JSONdb('./data.json')

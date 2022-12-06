@@ -209,10 +209,13 @@ router.get('', function (req, res, next) {
                 data.link = data.link + "numberOfPeople:" + req.query.numberOfPeople + ";";
                 data.link = data.link + "numberOfRooms:1;";
             }
-            var cancellation = getCancelCache(data.id)
-            cancellation = cancellation[0].cancellationPolicy
+            if(req.query.numberOfRooms && req.query.start)  {
+            var cancellation = generateCancellationPolicy(data.id,req.query.numberOfRooms, req.query.start)
             console.log(cancellation)
 
+            data.cancellationPolicy = cancellation;
+
+            }
             for (var i = 0; i < response.body[k].images.length; i++) {
                 if (i === 0) {
                     data.featureImage = response.body[k].images[i].filePath
@@ -340,7 +343,7 @@ catch (e) {
     next();
 }
 })
-const {save} = require("./request");
+const {save, generateCancellationPolicy} = require("./request");
 const {getHotelCache} = require("./cache");
 
 /* GET users listing. */
