@@ -210,7 +210,7 @@ router.get('', function (req, res, next) {
                 data.link = data.link + "numberOfRooms:1;";
             }
             if(req.query.numberOfRooms && req.query.start)  {
-            var cancellation = generateCancellationPolicy(data.id,req.query.numberOfRooms, req.query.start)
+       //     var cancellation = generateCancellationPolicy(data.id,req.query.numberOfRooms, req.query.start)
             console.log(cancellation)
 
             data.cancellationPolicy = cancellation;
