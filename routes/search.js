@@ -295,7 +295,10 @@ router.get('', function (req, res, next) {
                     room.addons = addons;
 
 
+                    if(room.availableQuantity > 0) {
+
                     data.rooms.push(room)
+                    }
                 }
 
 
