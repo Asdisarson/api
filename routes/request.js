@@ -97,6 +97,7 @@ module.exports = {
         await new Promise(r => {
             var db = new JSONdb('./cache.json')
             var cache = db.JSON()
+            cache.data = [];
             var request = require('request');
             var token = cache.token;
             var options = {
