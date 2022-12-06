@@ -10,7 +10,7 @@ function addDays(date, days) {
 }
 /* GET home page. */
 router.get('', function(req, res, next) {
-    if(req.query.propertyId && req.query.numberOfRooms ) {
+    if(req.query.propertyId && req.query.numberOfRooms && (req.query.duration||(req.query.start && req.query.end)) ) {
         var data = {
             end:'',
             start:'',
