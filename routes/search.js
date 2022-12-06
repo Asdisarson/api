@@ -212,62 +212,7 @@ router.get('', function (req, res, next) {
             var cancellation = getCancelCache(data.id)
             cancellation = cancellation[0].cancellationPolicy
             console.log(cancellation)
-            if(cancellation) {
-                for (var o = 0; o < cancellation.length; o++) {
-                    var dateFrom = cancellation[o].startDate;
-                    var dateTo = cancellation[o].endDate;
-                    var dateCheck = req.query.start * 1000;
-                    var check = new Date(dateCheck);
-                    if (dateTo) {
-                        dateTo = new Date(dateTo);
 
-                    }
-                    dateFrom = new Date(dateFrom);
-                    console.log(dateFrom)
-                    console.log(check)// -1 because months are from 0 to 11// -1 because months are from 0 to 11
-                    console.log(check > dateFrom)
-                    if ((check > dateFrom) && (check < dateTo || !dateTo) || (dateFrom == "Invalid Date")) {
-
-                        var cancellationPolicy = cancellation[o].cancellationPolicy.cancellationPolicyRules
-                        if (cancellationPolicy) {
-                            for (var u = 0; u < cancellationPolicy.length; u++) {
-
-                                if (cancellationPolicy[u].rangeRoomsTo
-                                    >= req.query.numberOfRooms >= cancellationPolicy[u].rangeRoomsFrom) {
-
-                                    for (var t = 0; t < cancellationPolicy[u].cancellationPolicyLines.length; t++) {
-                                        var cancel = cancellationPolicy[u].cancellationPolicyLines[t];
-
-                                        if (cancel.interval === "MONTHS") {
-                                            var dateOffset = ((24 * 60 * 60 * 30 * 1000) * cancel.toPeriod); //5 days
-                                            check.setTime(check.getTime() - dateOffset);
-
-                                        }
-                                        if (cancel.interval === "WEEKS") {
-                                            var dateOffset = ((24 * 60 * 60 * 7 * 1000) * cancel.toPeriod); //5 days
-                                            check.setTime(check.getTime() - dateOffset);
-                                        }
-                                        if (cancel.interval === "DAYS") {
-                                            var dateOffset = ((24 * 60 * 60 * 1000) * cancel.toPeriod); //5 days
-                                            check.setTime(check.getTime() - dateOffset);
-
-                                        }
-                                        if (cancel.interval === "HOURS") {
-                                            var dateOffset = ((60 * 60 * 1000) * cancel.toPeriod); //5 days
-                                            check.setTime(check.getTime() - dateOffset);
-
-                                        }
-                                        var options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
-
-                                        data.cancellationPolicy ="Cancel Before: " + check.toLocaleDateString("en-US", options) + " For Full Refund"
-                                    }
-                                }
-                            }
-                        }
-
-                    }
-                }
-            }
             for (var i = 0; i < response.body[k].images.length; i++) {
                 if (i === 0) {
                     data.featureImage = response.body[k].images[i].filePath
@@ -400,7 +345,7 @@ const {getHotelCache} = require("./cache");
 
 /* GET users listing. */
 
-router.get('', function (req, res, next){
+router.get('', function (req, res, next ){
     if(req.query.hotelId) {
 
         res.send({

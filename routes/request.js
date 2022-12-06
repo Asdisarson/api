@@ -194,6 +194,7 @@ module.exports = {
                                 options.url = "https://stage-api.travia.is//api/v1/travelAgents/577/property/"+response1.body.id + "/cooperations";
                                 request4(options, function (error4,response4) {
                                       hotelargs.cancellationPolicy = JSON.parse(response4.body);
+
                                     cache.data.push(hotelargs);
                             db.JSON(cache)
                             db.sync();
