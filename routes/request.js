@@ -265,9 +265,10 @@ module.exports = {
                                     check.setTime(check.getTime() - dateOffset);
 
                                 }
-                                var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                                var options = { year: 'numeric', month: 'long', day: 'numeric' };
 
-                                room = "Cancel Before: " + check.toLocaleDateString("en-US",options) + " For Full Refund"                            }
+                                room = check.toLocaleDateString("en-US",options)
+                            }
                         }
                     }
                 }
