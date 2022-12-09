@@ -371,10 +371,11 @@ router.get('', function (req, res, next) {
 
                 }
 
-
+                if(data.pricesFrom) {
                 array.result.push(
                     data
                 );
+                }
             }
             if (req.query.city) {
                 var s = req.query.city;
@@ -430,10 +431,28 @@ router.get('', function (req, res, next){
     var output = data.get('data');
     console.log(output)
     if(output.length > 0){
-        res.send({result:output});
+        var array = {result:output};
+        if (req.query.city) {
+            var s = req.query.city;
+            var translate = {
+                "á": "a", "ö": "o", "ú": "u",
+                "Á": "A", "Ö": "O", "Ú": "U",
+                "Ý": "Y", "í": "i", "Í": "I",
+                "ý": "y", "ó": "o", "Ó": "O"   // probably more to come
+            };
+            var translate_re = /[áÁöÖúÚóÓýÝíÍ]/g;
+            var str = (s.replace(translate_re, function (match) {
+                return translate[match];
+            }));
+            array.result = array.result.filter(hotel => hotel.city.replace(translate_re, function (match) {
+                return translate[match];
+            }) === (req.query.city || str));
+        }
+
+        if (array.result.length > 0) {
+            res.send(array);
+        }
     }
-    else {
-        save()
         res.send({result:[{
                 query: "",
                 req:"",
@@ -464,6 +483,6 @@ router.get('', function (req, res, next){
                 , rooms: [],
                 information:{}
             }]})
-    }
+
 })
 module.exports = router;
