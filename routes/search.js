@@ -284,7 +284,7 @@ router.get('', function (req, res, next) {
                         room["available"]= response.body[k].rooms[i].available;
                     }
                     if(response.body[k].rooms[i].averageDailyPrice) {
-                        room["averageDailyPrice"]= rparseInt(response.body[k].rooms[i].averageDailyPrice).toLocaleString('de-DE');
+                        room["averageDailyPrice"]= parseInt(response.body[k].rooms[i].averageDailyPrice).toLocaleString('de-DE');
                     }
                     if(response.body[k].rooms[i].price) {
                         room["price"]= parseInt(response.body[k].rooms[i].price).toLocaleString('de-DE');
