@@ -92,16 +92,16 @@ router.get('', function (req, res, next) {
             var array = {
                 query: req.query,
                 req: options,
-                result: []
+                result: [],
+
             }
 
             if (error) throw new Error(error)
             response.body = JSON.parse(response.body)
+            console.log(response.body)
             for (var k = 0; k < response.body.length; k++) {
 
                 data = {
-                    query: JSON.stringify(req.query),
-                    req: JSON.stringify(options),
 
                 }
 
@@ -183,20 +183,20 @@ router.get('', function (req, res, next) {
                     data.link = data.link + "numberOfRooms:1;";
                     data['cancellationPolicy'] = generateCancellationPolicy(data.id, req.query.numberOfRooms, req.query.start )
                 }
-
-                var galleryHotel = [];
-                for (var i = 0; i < response.body[k].images.length; i++) {
-                    if (i === 0) {
-                        data.featureImage = response.body[k].images[i].filePath
-
+                if(data.id) {
+                var hotelgallery = getHotelCache(data.id);
+                if(hotelgallery.featureImage) {
+                    data['featureImage'] = hotelgallery.featureImage;
+                }
+                if(hotelgallery.gallery.length > 0){
+                    for (let i = 0; i < hotelgallery.gallery.length; i++) {
+                        data['gallery' + i] = hotelgallery.gallery[i];
+                        }
                     }
-                    var temp = response.body[k].images[i].filePath;
-                    data["gallery" + i] = response.body[k].images[i].filePath;
-                    galleryHotel.push(response.body[k].images[i].filePath);
+                    data['gallery'] = hotelgallery.gallery;
                 }
-                if(galleryHotel.length > 0 ) {
-                    data.gallery = galleryHotel.reverse();
-                }
+
+
                 for (var i = 0; i < response.body[k].rooms.length; i++) {
                    var room = {};
 

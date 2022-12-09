@@ -129,72 +129,137 @@ module.exports = {
                             request3(options, function (error3,response3)  {
                                 if (error3) throw new Error(error3)
                                 var hotelargs = {
-                                    hotelId: response1.body.id,
-                                    name: response1.body.name,
-                                    description: response1.body.description,
-                                    address: response1.body.location.address,
-                                    city: response1.body.location.city,
-                                    country: response1.body.country,
-                                    postalCode: response1.body.location.postalCode,
-                                    latitude: response1.body.location.latitude,
-                                    longitude: response1.body.location.longitude,
-                                    email: response1.body.contact.email,
-                                    phone: response1.body.contact.phone,
-                                    propertyTypeName: response1.body.propertyTypeName,
-                                    propertyAmenityNames: response1.body.propertyAmenityNames,
-                                    cancellationPolicy: [],
-                                    rooms: [],
-                                    featureImage: "",
-                                    gallery:[] ,
-                                    isEmpty:false
-                                }
-                                response3.body = JSON.parse(response3.body)
-                                for (var k = 0; k < response3.body.length; k++) {
-                                    hotelargs.gallery[k] =response3.body[k].filePath;
-                                    if(k === 0) {
-                                        hotelargs.featureImage = response3.body[k].filePath
-                                    }
 
                                 }
+
+                                response3.body = JSON.parse(response3.body)
+                                var gallery = [];
+                                if(response1.body.logo) {
+                                    hotelargs['featureImage'] = response1.body.logo.filePath
+                                }
+                                if(response1.body.name) {
+                                    hotelargs['name'] = response1.body.name
+                                }
+                                if(response1.body.description) {
+                                    hotelargs['description'] = response1.body.description
+                                }
+                                if(response1.body.location.address) {
+                                    hotelargs['address'] = response1.body.location.address
+                                }
+                                if(response1.body.location.postalCode) {
+                                    hotelargs['postalCode'] = response1.body.location.postalCode
+                                }
+                                if(response1.body.location.latitude) {
+                                    hotelargs['latitude'] = response1.body.location.latitude
+                                }
+                                if(response1.body.location.longitude) {
+                                    hotelargs['longitude'] = response1.body.location.longitude
+                                }
+                                if(response1.body.contact.email) {
+                                    hotelargs['email'] = response1.body.contact.email
+                                }
+                                if(response1.body.contact.phone) {
+                                    hotelargs['phone'] = response1.body.contact.phone
+                                }
+                                if(response1.body.propertyTypeName) {
+                                    hotelargs['propertyTypeName'] = response1.body.propertyTypeName
+                                }
+                                if(response1.body.propertyAmenityNames) {
+                                    hotelargs['propertyAmenityNames'] = response1.body.propertyAmenityNames
+                                }
+                                if(response1.body.propertyAddonNames) {
+                                    hotelargs['propertyAddonNames'] = response1.body.propertyAddonNames
+                                }
+
+
+
+
+                                for (var k = 0; k < response3.body.length; k++) {
+                                    gallery.push(response3.body[k].filePath);
+
+
+                                }
+                                if(gallery.length > 0 ) {
+                                    gallery = gallery.reverse();
+                                    for (let j = 0; j < gallery.length; j++) {
+                                        hotelargs['gallery' + j] = gallery[j]
+                                    }
+                                    if(!hotelargs.featureImage){
+                                        hotelargs['featureImage'] = gallery[0]
+                                    }
+                                    hotelargs['gallery'] = gallery;
+                                }
+
+                                var rooms = [];
+
                                 response2.body = JSON.parse(response2.body)
                             for (var j = 0; j < response2.body.length; j++) {
 
+                                var roomargs = {
+                                }
                                 var imgs = [];
                                 for (var k = 0; k < response2.body[j].files.length; k++) {
-                                    imgs[k] = (response2.body[j].files[k].filePath);
+                                    imgs[k] = response2.body[j].files[k].filePath;
+                                    roomargs['gallery' + k] = response2.body[j].files[k].filePath
                                 }
                                 var addons = []
                                 for (var k = 0; k < response2.body[j].roomAddOns.length; k++) {
                                     addons.push(response2.body[j].roomAddOns[k].addOnName)
                                 }
 
-                                var roomargs = {
-                                    roomId: response2.body[j].id,
-                                    propertyId: response2.body[j].propertyId,
-                                    name: response2.body[j].name,
-                                    minOccupancy: response2.body[j].minOccupancy,
-                                    maxOccupancy: response2.body[j].maxOccupancy,
-                                    roomSize: response2.body[j].roomSize,
-                                    description: response2.body[j].description,
-                                    roomAmenityNames: response2.body[j].roomAmenityNames,
-                                    wholeYearAvailability: response2.body[j].wholeYearAvailability,
-                                    roomTypeName: response2.body[j].roomTypeName,
-                                    roomCategoryName: response2.body[j].roomCategoryName,
-                                    featureimage: imgs[0],
-                                    gallery: imgs,
-                                    addons: addons,
-                                    isEmpty: false
 
 
+
+                                if (imgs.length > 0) {
+                                    roomargs['featureImage']     = imgs[0];
+                                    gallery['gallery'] = imgs
+                                }
+                                if(addons.length > 0) {
+                                    roomargs['addons'] = addons
+                                }
+                                if(response2.body[j].id) {
+                                    roomargs['roomId'] =  response2.body[j].id
+                                }
+                                if(response2.body[j].propertyId) {
+                                    roomargs['propertyId'] =  response2.body[j].propertyId
+                                }
+                                if(response2.body[j].name) {
+                                    roomargs['name'] =  response2.body[j].name
+                                }
+                                if(response2.body[j].minOccupancy) {
+                                    roomargs['minOccupancy'] =  response2.body[j].minOccupancy
+                                }
+                                if(response2.body[j].maxOccupancy) {
+                                    roomargs['maxOccupancy'] =  response2.body[j].maxOccupancy
+                                }
+                                if(response2.body[j].roomSize) {
+                                    roomargs['roomSize'] =  response2.body[j].roomSize
+                                }
+                                if(response2.body[j].description) {
+                                    roomargs['description'] =  response2.body[j].description
+                                }
+                                if(response2.body[j].roomAmenityNames) {
+                                    roomargs['roomAmenityNames'] =  response2.body[j].roomAmenityNames
+                                }
+                                if(response2.body[j].wholeYearAvailability) {
+                                    roomargs['wholeYearAvailability'] =  response2.body[j].wholeYearAvailability
+                                }
+                                if(response2.body[j].roomTypeName) {
+                                    roomargs['roomTypeName'] =  response2.body[j].roomTypeName
+                                }
+                                if(response2.body[j].roomCategoryName) {
+                                    roomargs['roomCategoryName'] =  response2.body[j].roomCategoryName
                                 }
 
-                                hotelargs.rooms.push(roomargs);
+
+                                rooms.push(roomargs);
                             }
-                            hotelargs.rooms = hotelargs.rooms.reverse()
-                            var request4 = require('request');
+                            if (rooms.length > 0) {
+                                hotelargs['rooms'] = rooms.reverse()
+                            } var request4 = require('request');
                                 options.url = "https://stage-api.travia.is//api/v1/travelAgents/577/property/"+response1.body.id + "/cooperations";
                                 request4(options, function (error4,response4) {
-                                      hotelargs.cancellationPolicy = JSON.parse(response4.body);
+                                      hotelargs['cancellationPolicy'] = JSON.parse(response4.body);
 
                                     cache.data.push(hotelargs);
                             db.JSON(cache)
