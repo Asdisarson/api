@@ -432,9 +432,9 @@ router.get('', function (req, res, next){
 router.get('', function (req, res, next){
     var data = new JSONdb('./cache.json');
     var output = data.get('data');
-    console.log(output)
+    var array = {result:output};
+
     if(output.length > 0){
-        var array = {result:output};
         if (req.query.city) {
             var s = req.query.city;
             var translate = {
@@ -456,36 +456,7 @@ router.get('', function (req, res, next){
             res.send(array);
         }
     }
-        res.send({result:[{
-                query: "",
-                req:"",
-                startDate: '',
-                endDate: '',
-                link: '',
-                checkInStartTime: '',
-                checkInEndTime: '',
-                propertyAmenityNames: '',
-                pricesFrom: '',
-                pricesFromCurrencySymbol: '',
-                featureImage: '',
-                gallery: [],
-                latitude: '',
-                longitude: '',
-                hotelId: '',
-                name: '',
-                propertyType: '',
-                email: '',
-                url: '',
-                phone: '',
-                address: '',
-                postalCode: '',
-                city: '',
-                country: '',
-                description: '',
-                additionalDescription: ''
-                , rooms: [],
-                information:{}
-            }]})
+        res.send(array)
 
 })
 module.exports = router;
