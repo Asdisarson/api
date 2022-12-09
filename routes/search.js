@@ -188,12 +188,15 @@ router.get('', function (req, res, next) {
                 if(hotelgallery.featureImage) {
                     data['featureImage'] = hotelgallery.featureImage;
                 }
-                if(hotelgallery.gallery.length > 0){
-                    for (let i = 0; i < hotelgallery.gallery.length; i++) {
-                        data['gallery' + i] = hotelgallery.gallery[i];
+                if(hotelgallery.gallery) {
+                    if(hotelgallery.gallery.length > 0){
+                        for (let i = 0; i < hotelgallery.gallery.length; i++) {
+                            data['gallery' + i] = hotelgallery.gallery[i];
                         }
                     }
                     data['gallery'] = hotelgallery.gallery;
+                }
+
                 }
 
 
