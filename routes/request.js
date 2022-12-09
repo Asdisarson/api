@@ -184,9 +184,7 @@ module.exports = {
                                     for (let j = 0; j < gallery.length; j++) {
                                         hotelargs['gallery' + j] = gallery[j]
                                     }
-                                    if(!hotelargs.featureImage){
-                                        hotelargs['featureImage'] = gallery[0]
-                                    }
+
                                     hotelargs['gallery'] = gallery;
                                 }
 
@@ -211,7 +209,7 @@ module.exports = {
 
 
                                 if (imgs.length > 0) {
-                                    roomargs['featureImage']     = imgs[0];
+                                    roomargs['featureImage'] = imgs[0];
                                     gallery['gallery'] = imgs
                                 }
                                 if(addons.length > 0) {
