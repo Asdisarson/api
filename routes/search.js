@@ -102,113 +102,89 @@ router.get('', function (req, res, next) {
                 data = {
                     query: JSON.stringify(req.query),
                     req: JSON.stringify(options),
-                    startDate: '',
-                    endDate: '',
-                    link: '',
-                    checkInStartTime: '',
-                    checkInEndTime: '',
-                    propertyAmenityNames: '',
-                    pricesFrom: '',
-                    pricesFromCurrencySymbol: '',
-                    featureImage: '',
-                    gallery: [],
-                    latitude: '',
-                    longitude: '',
-                    hotelId: '',
-                    name: '',
-                    propertyType: '',
-                    email: '',
-                    url: '',
-                    phone: '',
-                    address: '',
-                    postalCode: '',
-                    city: '',
-                    country: '',
-                    description: '',
-                    additionalDescription: ''
-                    , rooms: []  ,
-                    cancellationPolicy: []
+
                 }
 
                 if (req.query.numberOfRooms) {
                     req.query.numberOfRooms = 1;
                 }
                 if (req.query.start) {
-                    data.startDate = req.query.start
+                    data['startDate'] = req.query.start
                 }
                 if (req.query.end) {
-                    data.endDate = req.query.end
+                    data['endDate'] = req.query.end
                 }
                 if (response.body[k].id) {
-                    data.id = response.body[k].id
+                    data['id'] = response.body[k].id
                 }
                 if (response.body[k].checkInStartTime) {
-                    data.checkInStartTime = response.body[k].checkInStartTime;
+                    data['checkInStartTime'] = response.body[k].checkInStartTime;
                 }
                 if (response.body[k].checkInEndTime) {
-                    data.checkInEndTime = response.body[k].checkInEndTime;
+                    data['checkInEndTime'] = response.body[k].checkInEndTime;
                 }
                 if (response.body[k].propertyAmenityNames) {
-                    data.propertyAmenityNames = response.body[k].propertyAmenityNames;
+                    data['propertyAmenityNames'] = response.body[k].propertyAmenityNames;
                 }
                 if (response.body[k].pricesFrom) {
-                    data.pricesFrom = response.body[k].pricesFrom;
+                    data['pricesFrom'] = response.body[k].pricesFrom;
                 }
                 if (response.body[k].pricesFromCurrencySymbol) {
-                    data.pricesFromCurrencySymbol = response.body[k].pricesFromCurrencySymbol;
+                    data['pricesFromCurrencySymbol'] = response.body[k].pricesFromCurrencySymbol;
                 }
                 if (response.body[k].location.geoPoint.lat) {
-                    data.latitude = response.body[k].location.geoPoint.lat;
+                    data['latitude'] = response.body[k].location.geoPoint.lat;
                 }
                 if (response.body[k].location.geoPoint.lat) {
-                    data.longitude = response.body[k].location.geoPoint.lon;
+                    data['longitude'] = response.body[k].location.geoPoint.lon;
                 }
                 if (response.body[k].name) {
-                    data.name = response.body[k].name;
+                    data['name'] = response.body[k].name;
                 }
                 if (response.body[k].propertyTypeName) {
-                    data.propertyTypeName = response.body[k].propertyTypeName;
+                    data['propertyTypeName'] = response.body[k].propertyTypeName;
                 }
                 if (response.body[k].contact.email) {
-                    data.email = response.body[k].contact.email;
+                    data['email'] = response.body[k].contact.email;
                 }
                 if (response.body[k].contact.url) {
-                    data.url = response.body[k].contact.url;
+                    data['url'] = response.body[k].contact.url;
                 }
                 if (response.body[k].contact.phone) {
-                    data.phone = response.body[k].contact.phone;
+                    data['phone'] = response.body[k].contact.phone;
                 }
                 if (response.body[k].contact.email) {
-                    data.email = response.body[k].contact.email;
+                    data['email'] = response.body[k].contact.email;
                 }
                 if (response.body[k].location.address) {
-                    data.address = response.body[k].location.address;
+                    data['address'] = response.body[k].location.address;
                 }
                 if (response.body[k].location.postalCode) {
-                    data.postalCode = response.body[k].location.postalCode
+                    data['postalCode'] = response.body[k].location.postalCode
                 }
                 if (response.body[k].location.city) {
-                    data.city = response.body[k].location.city;
+                    data['city'] = response.body[k].location.city;
                 }
                 if (response.body[k].location.country) {
-                    data.country = response.body[k].location.country;
+                    data['country'] = response.body[k].location.country;
                 }
                 if (response.body[k].description) {
-                    data.description = response.body[k].description;
+                    data['description'] = response.body[k].description;
                 }
                 if (response.body[k].additionalDescription) {
-                    data.additionalDescription = response.body[k].additionalDescription;
+                    data['additionalDescription'] = response.body[k].additionalDescription;
                 }
                 if (req.query.start && req.query.end &&req.query.numberOfPeople) {
-                    data.link = "propertyId:" + response.body[k].id + ";"
+                    data['link'] = "propertyId:" + response.body[k].id + ";"
 
                     data.link = data.link + "start:" + req.query.start + ";";
                     data.link = data.link + "end:" + req.query.end + ";";
                     data.link = data.link + "numberOfPeople:" + req.query.numberOfPeople + ";";
                     data.link = data.link + "numberOfRooms:1;";
-                    data.cancellationPolicy = generateCancellationPolicy(data.id, req.query.numberOfRooms, req.query.start )
+                    data['cancellationPolicy'] = generateCancellationPolicy(data.id, req.query.numberOfRooms, req.query.start )
                 }
 
+                var galleryHotel = [];
                 for (var i = 0; i < response.body[k].images.length; i++) {
                     if (i === 0) {
                         data.featureImage = response.body[k].images[i].filePath
@@ -216,12 +192,15 @@ router.get('', function (req, res, next) {
                     }
                     var temp = response.body[k].images[i].filePath;
                     data["gallery" + i] = response.body[k].images[i].filePath;
-
-                    data.gallery.push(temp)
+                    galleryHotel.push(response.body[k].images[i].filePath);
                 }
-                data.gallery = data.gallery.reverse();
+                if(galleryHotel.length > 0 ) {
+                    data.gallery = galleryHotel.reverse();
+                }
                 for (var i = 0; i < response.body[k].rooms.length; i++) {
-                    var room = {
+                   var room = {};
+
+                   /* var room = {
 
                         name: response.body[k].rooms[i].name,
                         roomId: response.body[k].rooms[i].id,
@@ -261,18 +240,104 @@ router.get('', function (req, res, next) {
                         roomAddonCategories: [],
                         booking: '',
                         cancellationPolicy : []
+                    }*/
+                    if(response.body[k].rooms[i].name) {
+                        room["name"]= response.body[k].rooms[i].name;
+                    }
+                    if(response.body[k].rooms[i].id) {
+                        room["id"]= response.body[k].rooms[i].id;
+                    }
+                    if(response.body[k].rooms[i].description) {
+                        room["description"]= response.body[k].rooms[i].description;
+                    }
+                    if(response.body[k].rooms[i].minOccupancy) {
+                        room["minOccupancy"]= response.body[k].rooms[i].minOccupancy;
+                    }
+                    if(response.body[k].rooms[i].maxOccupancy) {
+                        room["maxOccupancy"]= response.body[k].rooms[i].maxOccupancy;
+                    }
+                    if(response.body[k].rooms[i].extraBed) {
+                        room["extraBed"]= response.body[k].rooms[i].extraBed;
+                    }
+                    if(response.body[k].rooms[i].extraBedQuantity) {
+                        room["extraBedQuantity"]= response.body[k].rooms[i].extraBedQuantity;
+                    }
+                    if(response.body[k].rooms[i].roomSize) {
+                        room["roomSize"]= response.body[k].rooms[i].roomSize;
+                    }
+                    if(response.body[k].rooms[i].propertyId) {
+                        room["propertyId"]= response.body[k].rooms[i].propertyId;
+                    }
+                    if(response.body[k].rooms[i].roomTypeName) {
+                        room["roomTypeName"]= response.body[k].rooms[i].roomTypeName;
+                    }
+                    if(response.body[k].rooms[i].roomCategoryName) {
+                        room["roomCategoryName"]= response.body[k].rooms[i].roomCategoryName;
+                    }
+                    if(response.body[k].rooms[i].wholeYearAvailability) {
+                        room["wholeYearAvailability"]= response.body[k].rooms[i].wholeYearAvailability;
+                    }
+                    if(response.body[k].rooms[i].availabilityChecked) {
+                        room["availabilityChecked"]= response.body[k].rooms[i].availabilityChecked;
+                    }
+                    if(response.body[k].rooms[i].available) {
+                        room["available"]= response.body[k].rooms[i].available;
+                    }
+                    if(response.body[k].rooms[i].averageDailyPrice) {
+                        room["averageDailyPrice"]= rparseInt(response.body[k].rooms[i].averageDailyPrice).toLocaleString('de-DE');
+                    }
+                    if(response.body[k].rooms[i].price) {
+                        room["price"]= parseInt(response.body[k].rooms[i].price).toLocaleString('de-DE');
+                    }
+                    if(response.body[k].rooms[i].niceDollars) {
+                        room["niceDollars"]=((parseInt(response.body[k].rooms[i].price) * 0.1).toFixed(0)).toLocaleString('de-DE')
+                    }
+                    if(response.body[k].rooms[i].currencyCode) {
+                        room["currencyCode"]= response.body[k].rooms[i].currencyCode;
+                    }
+                    if(response.body[k].rooms[i].currencySymbol) {
+                        room["currencySymbol"]= response.body[k].rooms[i].currencySymbol;
+                    }
+                    if(response.body[k].rooms[i].availableQuantity) {
+                        room["availableQuantity"]= response.body[k].rooms[i].availableQuantity;
+                    }
+                    if(response.body[k].rooms[i].discount) {
+                        room["discount"]= response.body[k].rooms[i].discount;
+                    }
+                    if(response.body[k].rooms[i].discountDescription) {
+                        room["discountDescription"]= response.body[k].rooms[i].discountDescription;
+                    }
+                    if(response.body[k].rooms[i].discountsUsed) {
+                        room["discountsUsed"]= response.body[k].rooms[i].discountsUsed;
+                    }
+                    if(response.body[k].rooms[i].breakfastAvailable) {
+                        room["breakfastAvailable"]= response.body[k].rooms[i].breakfastAvailable;
+                    }
+                    if(response.body[k].rooms[i].breakfastIncluded) {
+                        room["breakfastIncluded"]= response.body[k].rooms[i].breakfastIncluded;
+                    }
+                    if(response.body[k].rooms[i].totalBreakfastPrice) {
+                        room["totalBreakfastPrice"]=  parseInt(response.body[k].rooms[i].totalBreakfastPrice).toLocaleString('de-DE');
+                    }
+                    if(response.body[k].rooms[i].totalOriginalBreakfastPrice) {
+                        room["totalOriginalBreakfastPrice"]=  parseInt(response.body[k].rooms[i].totalOriginalBreakfastPrice).toLocaleString('de-DE')
+                    }
+                    if(response.body[k].rooms[i].extraBedPrice) {
+                        room["extraBedPrice"]=  parseInt(response.body[k].rooms[i].extraBedPrice).toLocaleString('de-DE')
+                    }
+                    if(response.body[k].rooms[i].extraBedOriginalPrice) {
+                        room["extraBedOriginalPrice"]=  parseInt(response.body[k].rooms[i].extraBedOriginalPrice).toLocaleString('de-DE')
                     }
                     var addons = [];
                     var gallery =[] ;
                     if (room.available && req.query.start && req.query.end && req.query.numberOfPeople) {
-                        room.booking = "?add-to-cart=1209&propertyId=" + response.body[k].rooms[i].propertyId +
+                        room['booking'] = "?add-to-cart=1209&propertyId=" + response.body[k].rooms[i].propertyId +
                             "&roomId=" + response.body[k].rooms[i].id + "&product_id=1209" + "&startDate=" +
                             linkstartDate + "&endDate=" + linkendDate + "&numberOfPeople=" + req.query.numberOfPeople + "&roomname=" + response.body[k].name + "&hotelname=" + response.body[k].rooms[i].name
                             + "&quantity=1"
                     }
-                    console.log(room.booking)
                     if (response.body[k].rooms[i].images[0]) {
-                        room.featureImage = response.body[k].rooms[i].images[0].filePath;
+                        room['featureImage'] = response.body[k].rooms[i].images[0].filePath;
                     }
                     if (response.body[k].rooms[i].images.length > 0) {
                         for (let j = 0; j < response.body[k].rooms[i].images.length; j++) {
@@ -282,23 +347,28 @@ router.get('', function (req, res, next) {
                         }
                     }
                     if(data.cancellationPolicy) {
-                        room.cancellationPolicy = data.cancellationPolicy
+                        room['cancellationPolicy'] = data.cancellationPolicy
+                    }
+                    if(gallery.length > 0) {
+                        room['gallery'] = gallery.reverse();
+                    }
+                    if(response.body[k].rooms[i].roomAddonCategories.length > 0) {
+                        for (let j = 0; j < response.body[k].rooms[i].roomAddonCategories.length; j++) {
+                            addons.push({
+                                name: response.body[k].rooms[i].roomAddonCategories[j].name,
+                                addonNames: response.body[k].rooms[i].roomAddonCategories[j].addonNames
+                            });
+                        }
                     }
 
-                    room.gallery = gallery.reverse();
-                    for (let j = 0; j < response.body[k].rooms[i].roomAddonCategories.length; j++) {
-                        addons.push({
-                            name: response.body[k].rooms[i].roomAddonCategories[j].name,
-                            addonNames: response.body[k].rooms[i].roomAddonCategories[j].addonNames
-                        });
+                    if(addons.length > 0) {
+                        room['addons'] = addons;
                     }
-                    room.addons = addons;
 
-
-                    if(room.availableQuantity > 0) {
-
-                    data.rooms.push(room)
+                    if(data.available) {
+                        data.rooms.push(room)
                     }
+
                 }
 
 
@@ -323,7 +393,6 @@ router.get('', function (req, res, next) {
                 }) === (req.query.city || str));
             }
 
-            console.log(JSON.stringify(array))
             if (array.result.length === 0) {
                 next()
 
