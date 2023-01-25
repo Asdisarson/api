@@ -365,6 +365,7 @@ router.get('', function (req, res, next) {
                     }
                     if(room["breakfastIncluded"] === false &&  room["breakfastAvailable"] === true) {
                         room["priceWithBreakfast"] = (parseInt(response.body[k].rooms[i].price) + parseInt(response.body[k].rooms[i].totalBreakfastPrice)).toFixed(0).toLocaleString("de-DE");
+                        room["priceWithBreakfastNicedollars"] = ((parseInt(response.body[k].rooms[i].price) + parseInt(response.body[k].rooms[i].totalBreakfastPrice))*0.1).toFixed(0).toLocaleString("de-DE");
                         if(room.booking) {
                             room["booking"] = room["booking"] + "&breakfast=true"
                         }
