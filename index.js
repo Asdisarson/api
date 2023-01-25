@@ -1,43 +1,36 @@
-    const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000
 var express = require('express');
 var path = require('path');
-
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-    const bodyParser = require("express");
-    var app = express()
-    const JSONdb = require("simple-json-db");
-    const request = require("request");
-    const auth = require("./routes/auth");
-    app.use(logger('dev'));
-    app.use(bodyParser.urlencoded({
-        extended: true
-    }));
-    //const {save} = require("./routes/request2");
+const bodyParser = require("express");
+var app = express()
+const JSONdb = require("simple-json-db");
+const request = require("request");
+const auth = require("./routes/auth");
+app.use(logger('dev'));
+app.use(bodyParser.urlencoded({extended: true}));
 const {save} = require("./routes/request");
-    var indexRouter = require('./routes/index');
-    var propertiesRouter = require('./routes/properties');
- //   var queriesRouter = require('./routes/searchtest');
-    var queriesRouter = require('./routes/search');
-    var cancelRouter = require('./routes/cancellationPolicy');
-    var roomsRouter = require('./routes/rooms');
-    var cartRouter = require('./routes/cart');
-    var nicedollarsRouter = require('./routes/niceDollars');
-    const {setTimeOut, checkCache} = require("./routes/checktime");
-    app.use(cookieParser());
-    app.use(express.json());
-    app.use(express.urlencoded({ extended: true }));
-
-
-    request(auth, function(error, response) {
-        if (error) throw new Error(error)
-        var db = new JSONdb('./cache.json');
-
-        db.JSON({cache:false,
-            cacheTimeOut: setTimeOut(3).toString(),
-            token: JSON.parse(response.body),
-            data: [],
-            cart:[]
+var indexRouter = require('./routes/index');
+var propertiesRouter = require('./routes/properties');
+var queriesRouter = require('./routes/search');
+var cancelRouter = require('./routes/cancellationPolicy');
+var roomsRouter = require('./routes/rooms');
+var cartRouter = require('./routes/cart');
+var nicedollarsRouter = require('./routes/niceDollars');
+const {setTimeOut, checkCache} = require("./routes/checktime");
+app.use(cookieParser());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+request(auth, function(error, response) {
+    if (error) throw new Error(error)
+    var db = new JSONdb('./cache.json');
+    db.JSON({
+        cache:false,
+        cacheTimeOut: setTimeOut(3).toString(),
+        token: JSON.parse(response.body),
+        data: [],
+        cart:[]
         });
         db.sync();
          save();
@@ -53,7 +46,8 @@ const {save} = require("./routes/request");
             request(auth, function(error, response) {
                 if (error) throw new Error(error)
                 console.log('Auth')
-                db.JSON({cache:false,
+                db.JSON({
+                    cache:false,
                     cacheTimeOut: setTimeOut(3).toString(),
                     token: JSON.parse(response.body),
                     data: [],
