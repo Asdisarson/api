@@ -5,18 +5,6 @@ const JSONdb = require("simple-json-db");
 const request = require("request");
 
 router.get('', function (req, res, next) {
-    var db = new JSONdb('./cache.json');
-    var auth = require('./auth.js');
-    request(auth, function (error, response) {
-        if (error) throw new Error(error)
-        db.set('token', JSON.parse(response.body));
-        db.sync();
-        next();
-
-    })
-
-});
-router.get('', function (req, res, next) {
     try {
 
         var data = {
@@ -45,39 +33,23 @@ router.get('', function (req, res, next) {
             req.query['start'] = req.query.duration[0]
             req.query['end'] = req.query.duration[1]
         }
-
-        if(req.query.start === undefined) {
-            req.query['start'] = new Date()
-        }
-        else  {
-            if (req.query.start) {
-                data.start = req.query.start;
-                data.start = new Date(req.query.start * 1000)
-                data.start = req.query.start.toISOString().substring(0, 10)
-                linkstartDate = data.start
-            }
-        }
-
-        if (req.query.end === undefined) {
-            req.query['end'] = new Date()
-            req.query.end.setDate(req.query.start.getDate() + 7)
-            data.end = req.query.end.toISOString().substring(0, 10)
+        if (req.query.end) {
+            data.end = req.query.end;
+            data.end = new Date(req.query.end * 1000)
+            data.end = data.end.toISOString().substring(0, 10)
             linkendDate = data.end
+
         }
-        else  {
-            if (req.query.end) {
-                data.end = req.query.end;
-                data.end = new Date(req.query.end * 1000)
-                data.end = data.end.toISOString().substring(0, 10)
-                linkendDate = data.end
-            }
+
+        if (req.query.start) {
+            data.start = req.query.start;
+            data.start = new Date(req.query.start * 1000)
+            data.start = data.start.toISOString().substring(0, 10)
+            linkstartDate = data.start
         }
 
         if (req.query.numberOfPeople) {
             data["numberOfPeople"] = req.query.numberOfPeople;
-        }
-        else {
-            data["numberOfPeople"] = 1;
         }
         if (req.query.numberOfExtraBeds) {
             data["numberOfExtraBeds"] = req.query.numberOfExtraBeds;
@@ -85,10 +57,7 @@ router.get('', function (req, res, next) {
         if (req.query.numberOfRooms) {
             data["numberOfRooms"] = req.query.numberOfRooms;
         }
-        else {
-            data["numberOfRooms"] = 1;
 
-        }
         if (req.query.latitude) {
             data["latitude"] = req.query.latitude;
         }
@@ -119,6 +88,8 @@ router.get('', function (req, res, next) {
             for (var k = 0; k < response.body.length; k++) {
 
                 data = {
+                    query: JSON.stringify(req.query),
+                    req: JSON.stringify(options),
                     startDate: '',
                     endDate: '',
                     link: '',
@@ -158,7 +129,6 @@ router.get('', function (req, res, next) {
                 }
                 if (response.body[k].id) {
                     data.id = response.body[k].id
-                    data.hotelId = data.id
                 }
                 if (response.body[k].checkInStartTime) {
                     data.checkInStartTime = response.body[k].checkInStartTime;
@@ -319,7 +289,7 @@ router.get('', function (req, res, next) {
 
                     if(room.availableQuantity > 0) {
 
-                    data.rooms.push(room)
+                        data.rooms.push(room)
                     }
                 }
 
@@ -345,6 +315,7 @@ router.get('', function (req, res, next) {
                 }) === (req.query.city || str));
             }
 
+            console.log(JSON.stringify(array))
             if (array.result.length === 0) {
                 next()
 
@@ -363,6 +334,7 @@ router.get('', function (req, res, next) {
 })
 const {save, generateCancellationPolicy} = require("./request");
 const {getHotelCache, getCancelCache} = require("./cache");
+const auth = require("../../routes/auth");
 
 /* GET users listing. */
 
