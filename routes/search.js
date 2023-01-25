@@ -73,21 +73,20 @@ router.get('', function (req, res, next) {
             }
         }
 
-        if (req.query.numberOfPeople) {
-            data["numberOfPeople"] = req.query.numberOfPeople;
+        if (req.query.numberOfPeople === undefined) {
+            data["numberOfPeople"] = 1;
         }
         else {
-            data["numberOfPeople"] = 1;
+            data["numberOfPeople"] = req.query.numberOfPeople;
         }
         if (req.query.numberOfExtraBeds) {
             data["numberOfExtraBeds"] = req.query.numberOfExtraBeds;
         }
-        if (req.query.numberOfRooms) {
-            data["numberOfRooms"] = req.query.numberOfRooms;
+        if (req.query.numberOfRooms === undefined) {
+            data["numberOfRooms"] = 1;
         }
         else {
-            data["numberOfRooms"] = 1;
-
+            data["numberOfRooms"] = req.query.numberOfRooms;
         }
         if (req.query.latitude) {
             data["latitude"] = req.query.latitude;
