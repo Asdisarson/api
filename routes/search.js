@@ -18,7 +18,6 @@ router.get('', function (req, res, next) {
 });
 router.get('', function (req, res, next) {
     try {
-
         var data = {
             "start": "",
             "end": "",
@@ -293,7 +292,7 @@ router.get('', function (req, res, next) {
                         room["price"]= parseInt(response.body[k].rooms[i].price).toLocaleString('de-DE');
                     }
                     if(response.body[k].rooms[i].niceDollars) {
-                        room["niceDollars"]=((parseInt(response.body[k].rooms[i].price) * 0.1).toFixed(0)).toLocaleString('de-DE')
+                        room["niceDollars"]=(parseInt(response.body[k].rooms[i].price) * 0.1).toFixed(0).toLocaleString('de-DE')
                     }
                     if(response.body[k].rooms[i].currencyCode) {
                         room["currencyCode"]= response.body[k].rooms[i].currencyCode;
@@ -331,6 +330,7 @@ router.get('', function (req, res, next) {
                     if(response.body[k].rooms[i].extraBedOriginalPrice) {
                         room["extraBedOriginalPrice"]=  parseInt(response.body[k].rooms[i].extraBedOriginalPrice).toLocaleString('de-DE')
                     }
+
                     var addons = [];
                     var gallery =[] ;
                     if (room.available && req.query.start && req.query.end && req.query.numberOfPeople) {
@@ -363,7 +363,12 @@ router.get('', function (req, res, next) {
                             });
                         }
                     }
-
+                    if(room["breakfastIncluded"] === false &&  room["breakfastAvailable"] === true) {
+                        room["priceWithBreakfast"] = (parseInt(response.body[k].rooms[i].price) + parseInt(response.body[k].rooms[i].totalBreakfastPrice)).toFixed(0).toLocaleString("de-DE");
+                        if(room.booking) {
+                            room["booking"] = room["booking"] + "&breakfast=true"
+                        }
+                    }
                     if(addons.length > 0) {
                         room['addons'] = addons;
                     }
