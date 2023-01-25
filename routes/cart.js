@@ -3,6 +3,7 @@ const JSONdb = require("simple-json-db");
 const request = require("request");
 const request1 = require("request");
 const auth = require("./auth");
+const {getRoomCache} = require("./cache");
 
 var router = express.Router();
 
@@ -59,15 +60,17 @@ router.post("/", function (req, res, next) {
         },
         "body": {}
     };
-    var date1 = new Date(req.body.startDate);
+     var date1 = new Date(req.body.startDate);
     var date2 = new Date(req.body.endDate);
     var timeDiff = Math.abs(date2.getTime() - date1.getTime());
     var numberOfNights = Math.ceil(timeDiff / (1000 * 3600 * 24));
-    options.body = {
+    var roomname = getRoomCache(req.body.propertyId , req.body.roomId).name;
+    var hotelname = getRoomCache(req.body.propertyId).name;
+        options.body = {
         "bookingRooms": [
             {
                 "endDate": req.body.endDate,
-                "name": req.body.name,
+                "name": roomname,
                 "notes": '',
                 "pax": req.body.numberOfPeople,
                 "numberOfNights": numberOfNights,
@@ -78,7 +81,7 @@ router.post("/", function (req, res, next) {
         ],
         "confirm": false,
         "instant": true,
-        "name": req.body.name,
+        "name": hotelname,
         "notes": req.body.notes,
         "propertyId": req.body.propertyId
     };
