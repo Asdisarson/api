@@ -258,7 +258,7 @@ router.get('', function (req, res, next) {
                         available: response.body[k].rooms[i].available,
                         averageDailyPrice: parseInt(response.body[k].rooms[i].averageDailyPrice).toLocaleString('de-DE'),
                         price: parseInt(response.body[k].rooms[i].price).toLocaleString('de-DE'),
-                        niceDollars: (parseInt(response.body[k].rooms[i].price) * 0.1).toFixed(0).toLocaleString('de-DE'),
+                        niceDollars: parseInt((response.body[k].rooms[i].price) * 0.1).toFixed(0).toLocaleString('de-DE'),
                         currencyCode: response.body[k].rooms[i].currencyCode,
                         currencySymbol: response.body[k].rooms[i].currencySymbol,
                         availableQuantity: response.body[k].rooms[i].availableQuantity,
