@@ -199,7 +199,7 @@ router.get('', function (req, res, next) {
                 if (response.body[k].additionalDescription) {
                     data.additionalDescription = response.body[k].additionalDescription;
                 }
-                if (req.query.start && req.query.end &&req.query.numberOfPeople && response.body[k].available ) {
+                if (req.query.start && req.query.end &&req.query.numberOfPeople  ) {
                     data.link = "propertyId:" + response.body[k].id + ";"
 
                     data.link = data.link + "start:" + req.query.start + ";";
