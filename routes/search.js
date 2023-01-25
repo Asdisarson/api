@@ -48,12 +48,14 @@ router.get('', function (req, res, next) {
 
         if(req.query.start === undefined) {
             req.query['start'] = new Date()
+            data.start = req.query.start.toISOString().substring(0, 10)
+            linkstartDate = data.start
         }
         else  {
             if (req.query.start) {
                 data.start = req.query.start;
                 data.start = new Date(req.query.start * 1000)
-                data.start = req.query.start.toISOString().substring(0, 10)
+                data.start = data.start.toISOString().substring(0, 10)
                 linkstartDate = data.start
             }
         }
