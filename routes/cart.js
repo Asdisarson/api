@@ -64,16 +64,11 @@ router.post("/", function (req, res, next) {
     var date2 = new Date(req.body.endDate);
     var timeDiff = Math.abs(date2.getTime() - date1.getTime());
     var numberOfNights = Math.ceil(timeDiff / (1000 * 3600 * 24));
-    console.log(getRoomCache(req.body.propertyId, req.body.propertyId))
-    var roomname = getRoomCache(req.body.propertyId , req.body.roomId);
-    var hotelname = getHotelCache(req.body.propertyId);
-    console.log(roomname)
-
     options.body = {
         "bookingRooms": [
             {
                 "endDate": req.body.endDate,
-                "name": roomname.name,
+                "name": req.body.name,
                 "notes": '',
                 "pax": req.body.numberOfPeople,
                 "numberOfNights": numberOfNights,
@@ -84,7 +79,7 @@ router.post("/", function (req, res, next) {
         ],
         "confirm": false,
         "instant": true,
-        "name": hotelname.name,
+        "name": req.body.hotelname,
         "notes": req.body.notes,
         "propertyId": req.body.propertyId
     };
