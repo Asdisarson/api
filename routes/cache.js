@@ -45,17 +45,17 @@ module.exports = {
     {
         var db = new JSONdb('./cache.json');
         var data = db.JSON()
-        return data.data.filter(obj => {
-            return obj.hotelId === hotelId;
+        return data.data.find(obj => {
+            return obj.hotelId.toString() === hotelId;
         })
     },
     getRoomCache:function (hotelId, roomId) {
         var db = new JSONdb('./cache.json');
         var data = db.JSON()
-        return data.data.find(obj => {
-            if (obj.hotelId === hotelId) {
-             return  obj.rooms.find(room => {
-                  return room.roomId === roomId;
+        return data.data.filter(obj => {
+            if (obj.hotelId.toString() === hotelId) {
+             return  obj.rooms.filter(room => {
+                  return room.roomId.toString() === roomId;
               })
             }
         })

@@ -258,7 +258,7 @@ router.get('', function (req, res, next) {
                         available: response.body[k].rooms[i].available,
                         averageDailyPrice: parseInt(response.body[k].rooms[i].averageDailyPrice).toLocaleString('de-DE'),
                         price: parseInt(response.body[k].rooms[i].price).toLocaleString('de-DE'),
-                        niceDollars: parseInt(response.body[k].rooms[i].price * 0.1).toLocaleString('de-DE'),
+                        niceDollars: parseInt(response.body[k].rooms[i].price * 0.1).toFixed(0).toLocaleString('de-DE'),
                         currencyCode: response.body[k].rooms[i].currencyCode,
                         currencySymbol: response.body[k].rooms[i].currencySymbol,
                         availableQuantity: response.body[k].rooms[i].availableQuantity,
@@ -289,7 +289,7 @@ router.get('', function (req, res, next) {
                             linkstartDate + "&endDate=" + linkendDate + "&numberOfPeople=" + req.query.numberOfPeople + "&hotelname=" + response.body[k].name + "&roomname=" + response.body[k].rooms[i].name
                             + "&quantity=1"
                     }
-                    console.log(room.booking)
+
                     if (response.body[k].rooms[i].images[0]) {
                         room.featureImage = response.body[k].rooms[i].images[0].filePath;
                     }
