@@ -407,8 +407,8 @@ router.get('', function (req, res, next) {
                         if (body.hasOwnProperty('propertyIds')) {
                             if (body.propertyIds) {
                                 cancellationPolicy(token, body.propertyIds[0]).then(function (result) {
-                                    if (result === false) {
                                         console.log(result)
+                                    if (result === false) {
                                         res.send(array)
                                     } else {
                                         try {
