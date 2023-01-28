@@ -189,10 +189,10 @@ router.get('', function (req, res, next) {
 
                         }
                         if (response.data[k].images.length > 0) {
-                            data['featureImage'] = response.data[k].images[0];
+                            data['featureImage'] = response.data[k].images[0].filePath;
 
                             for (let i = 0; i < response.data[k].images.length; i++) {
-                                data['gallery' + i] = response.data[k].images[i];
+                                data['gallery' + i] = response.data[k].images[i].filePath;
                             }
                         }
 
