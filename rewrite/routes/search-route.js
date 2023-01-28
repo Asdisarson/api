@@ -18,6 +18,7 @@ router.get('', function (req, res, next) {
             };
 
             if (!isEmpty(req.query)) {
+                console.log(req.query)
                 if (req.query.hasOwnProperty("numberOfPeople")) {
                     if(req.query.numberOfPeople) {
                         body["numberOfPeople"] = req.query.numberOfPeople;
