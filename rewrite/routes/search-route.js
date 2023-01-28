@@ -113,10 +113,10 @@ router.get('', function (req, res, next) {
                         let data = {};
 
                         if (response.data[k].startDate !== null) {
-                            data['startDate'] = response.data[k].startDate
+                            data['startDate'] = body.start
                         }
                         if (response.data[k].endDate !== null) {
-                            data['endDate'] = response.data[k].endDate
+                            data['endDate'] = body.end
                         }
                         if (response.data[k].id !== null) {
                             data['id'] = response.data[k].id
