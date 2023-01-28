@@ -368,7 +368,7 @@ router.get('', function (req, res, next) {
 
                         }
 
-                        if (data.pricesFrom !== null) {
+                        if (data.pricesFrom !== null && data.pricesFrom > 0) {
                             array.result.push(
                                 data
                             );
