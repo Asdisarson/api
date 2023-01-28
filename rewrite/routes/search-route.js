@@ -197,7 +197,9 @@ router.get('', function (req, res, next) {
                             }
                             data['gallery'] = gallery;
                         }
-
+                        if(body.hasOwnProperty('propertyIds')) {
+                            data['rooms'] = []
+                        }
 
                         for (var i = 0; i < response.data[k].rooms.length; i++) {
                             var room = {};
@@ -366,10 +368,13 @@ router.get('', function (req, res, next) {
                             if (addons.length > 0) {
                                 room['addons'] = addons;
                             }
+                            if(data.hasOwnProperty('rooms'))
+                            {
+                                if (room.price >0) {
 
-                            if (room.price >0) {
+                                    data.rooms.push(room)
+                                }
 
-                                data.rooms.push(room)
                             }
 
                         }
