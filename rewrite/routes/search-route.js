@@ -367,7 +367,8 @@ router.get('', function (req, res, next) {
                                 room['addons'] = addons;
                             }
 
-                            if (response.data[k].rooms[i].price >0) {
+                            if (room.price >0) {
+
                                 data.rooms.push(room)
                             }
 
