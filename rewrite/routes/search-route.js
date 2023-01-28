@@ -190,10 +190,12 @@ router.get('', function (req, res, next) {
                         }
                         if (response.data[k].images.length > 0) {
                             data['featureImage'] = response.data[k].images[0].filePath;
-
+                            let gallery = [];
                             for (let i = 0; i < response.data[k].images.length; i++) {
                                 data['gallery' + i] = response.data[k].images[i].filePath;
+                                gallery[i] = response.data[k].images[i].filePath
                             }
+                            data['gallery'] = gallery;
                         }
 
 
@@ -344,10 +346,13 @@ router.get('', function (req, res, next) {
                             }
 
                             if (response.data[k].rooms[i].images.length > 0) {
+                                let gallery = []
                                 room['featureImage'] = response.data[k].rooms[i].images[0].filePath;
                                 for (let j = 0; j < response.data[k].rooms[i].images.length; j++) {
                                     room["gallery" + j] = response.data[k].rooms[i].images[j].filePath
+                                    gallery[j] = response.data[k].rooms[i].images[j].filePath
                                 }
+                                room["gallery"] = gallery;
                             }
                             if (response.data[k].rooms[i].roomAddonCategories.length > 0) {
                                 for (let j = 0; j < response.data[k].rooms[i].roomAddonCategories.length; j++) {
