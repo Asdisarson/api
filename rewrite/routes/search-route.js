@@ -417,6 +417,9 @@ router.get('', function (req, res, next) {
                                   }
                               })
                           }
+                          else {
+                              res.send(array)
+                          }
                         }
                         else {
                             res.send(array)
