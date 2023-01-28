@@ -199,7 +199,6 @@ router.get('', function (req, res, next) {
 
                         for (var i = 0; i < response.data[k].rooms.length; i++) {
                             var room = {};
-console.log(k, i )
                             /* var room = {
 
                                  name: response.data[k].rooms[i].name,
