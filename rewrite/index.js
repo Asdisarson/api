@@ -44,6 +44,6 @@ app.use(expressWinston.logger({
 app.use((req, res, next) => {
     next()
 })
-app.use('/', indexRouter);
+app.use('/search', indexRouter);
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
