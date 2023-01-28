@@ -183,7 +183,7 @@ router.get('', function (req, res, next) {
 
                             data.link = data.link + "start:" + data.startDate + ";";
                             data.link = data.link + "end:" + data.endDate + ";";
-                            data.link = data.link + "numberOfPeople:" + data.numberOfPeople + ";";
+                            data.link = data.link + "numberOfPeople:" + body.numberOfPeople + ";";
                             data.link = data.link + "numberOfRooms:1;";
 
 
