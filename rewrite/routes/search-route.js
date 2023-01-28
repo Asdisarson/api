@@ -393,42 +393,44 @@ router.get('', function (req, res, next) {
                     }
                     if(array.result.length > 0) {
                         if (req.query.hasOwnProperty('city')) {
-                            var s = req.query.city;
-                            var translate = {
-                                "á": "a", "ö": "o", "ú": "u",
-                                "Á": "A", "Ö": "O", "Ú": "U",
-                                "Ý": "Y", "í": "i", "Í": "I",
-                                "ý": "y", "ó": "o", "Ó": "O"   // probably more to come
-                            };
-                            var translate_re = /[áÁöÖúÚóÓýÝíÍ]/g;
-                            var str = (s.replace(translate_re, function (match) {
-                                return translate[match];
-                            }));
-                            array.result = array.result.filter(hotel => hotel.city.replace(translate_re, function (match) {
-                                return translate[match];
-                            }) === (req.query.city || str));
+                            if (req.query.city) {
+                                var s = req.query.city;
+                                var translate = {
+                                    "á": "a", "ö": "o", "ú": "u",
+                                    "Á": "A", "Ö": "O", "Ú": "U",
+                                    "Ý": "Y", "í": "i", "Í": "I",
+                                    "ý": "y", "ó": "o", "Ó": "O"   // probably more to come
+                                };
+                                var translate_re = /[áÁöÖúÚóÓýÝíÍ]/g;
+                                var str = (s.replace(translate_re, function (match) {
+                                    return translate[match];
+                                }));
+                                array.result = array.result.filter(hotel => hotel.city.replace(translate_re, function (match) {
+                                    return translate[match];
+                                }) === (req.query.city || str));
+                            }
                         }
                         if(req.query.hasOwnProperty('propertyId')) {
-                            cancellationPolicy(token, req.query.propertyId).then(function (result) {
-                                if(result === false) {
-                                    res.send(array)
-                                }
-                                else {
-                                    try {
-                                        var c = generateCancellationPolicy(req.query.propertyId, data.numberOfRooms,data.startDate,result);
-                                        for (let i = 0; i < array.result[0].rooms.length; i++) {
-                                            array.result[0].rooms[i]['cancellationPolicy'] = c;
-                                        }
-                                        res.send(array)
+                          if(req.query.propertyId) {
+                              cancellationPolicy(token, req.query.propertyId).then(function (result) {
+                                  if (result === false) {
+                                      res.send(array)
+                                  } else {
+                                      try {
+                                          var c = generateCancellationPolicy(req.query.propertyId, data.numberOfRooms, data.startDate, result);
+                                          for (let i = 0; i < array.result[0].rooms.length; i++) {
+                                              array.result[0].rooms[i]['cancellationPolicy'] = c;
+                                          }
+                                          res.send(array)
 
-                                    }
-                                    catch (e) {
-                                        console.log(e) ;
-                                        res.send(array)
+                                      } catch (e) {
+                                          console.log(e);
+                                          res.send(array)
 
-                                    }
-                                }
-                            })
+                                      }
+                                  }
+                              })
+                          }
                         }
                         else {
                             res.send(array)
