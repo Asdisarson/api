@@ -5,21 +5,28 @@
   "engines": {
     "node": "16.x"
   },
-  "main": "index.js",
+  "main": "rewrite/index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node rewrite/index.js",
     "test": "node test.js"
   },
   "dependencies": {
-    "axios": "^1.1.3",
+    "async": "^3.2.4",
+    "axios": "^1.2.5",
     "cookie-parser": "^1.4.6",
+    "dayjs": "^1.11.7",
+    "dotenv": "^16.0.3",
     "ejs": "^3.1.5",
     "express": "^4.15.2",
+    "express-winston": "^4.2.0",
     "morgan": "^1.10.0",
     "node-dev": "^7.4.3",
+    "node-json-db": "^2.1.4",
     "qs": "^6.11.0",
     "request": "^2.88.2",
-    "simple-json-db": "^2.0.0"
+    "simple-json-db": "^2.0.0",
+    "validator": "^13.7.0",
+    "winston": "^3.8.2"
   },
   "devDependencies": {
     "got": "^11.3.0",

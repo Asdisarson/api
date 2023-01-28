@@ -1,0 +1,13 @@
+{
+  "search" : {
+    "method": "post",
+    "url": "https://stage-api.travia.is/api/v1/travelAgents/577/search",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization" : ""
+    },
+    "data" :{
+
+    }
+  }
+}
