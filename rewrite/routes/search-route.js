@@ -367,7 +367,7 @@ router.get('', function (req, res, next) {
                                 room['addons'] = addons;
                             }
 
-                            if (data.price > 0) {
+                            if (response.data[k].rooms[i].available === true) {
                                 data.rooms.push(room)
                             }
 
