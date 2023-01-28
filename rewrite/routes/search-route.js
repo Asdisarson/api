@@ -18,7 +18,6 @@ router.get('', function (req, res, next) {
             };
 
             if (!isEmpty(req.query)) {
-                console.log(req.query)
                 if (req.query.hasOwnProperty("numberOfPeople")) {
                     if (req.query.numberOfPeople) {
                         body["numberOfPeople"] = req.query.numberOfPeople;
@@ -409,6 +408,7 @@ router.get('', function (req, res, next) {
                             if (body.propertyIds) {
                                 cancellationPolicy(token, body.propertyIds[0]).then(function (result) {
                                     if (result === false) {
+                                        console.log(result)
                                         res.send(array)
                                     } else {
                                         try {
