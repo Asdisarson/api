@@ -405,14 +405,14 @@ router.get('', function (req, res, next) {
                                 }) === (req.query.city || str));
                             }
                         }
-                        if (req.query.hasOwnProperty('propertyId')) {
-                            if (req.query.propertyId) {
-                                cancellationPolicy(token, req.query.propertyId).then(function (result) {
+                        if (body.hasOwnProperty('propertyIds')) {
+                            if (body.propertyIds) {
+                                cancellationPolicy(token, body.propertyIds[0]).then(function (result) {
                                     if (result === false) {
                                         res.send(array)
                                     } else {
                                         try {
-                                            var c = generateCancellationPolicy(req.query.propertyId, body.numberOfRooms, body.startDate, result);
+                                            var c = generateCancellationPolicy(body.propertyIds[0], body.numberOfRooms, body.startDate, result);
                                             for (let i = 0; i < array.result[0].rooms.length; i++) {
                                                 array.result[0].rooms[i]['cancellationPolicy'] = c;
                                             }
