@@ -39,8 +39,6 @@ router.get('', function (req, res, next) {
                     if(req.query.start) {
                         if (dayjs(req.query.start, 'YYYY-MM-DD').isValid()) {
                             body.start = req.query.start
-                        } else {
-                            body.start = dayjs.unix(req.query.start).format("YYYY-MM-DD");
                         }
                         if (!req.query.hasOwnProperty("end")) {
                             let args = dayjs(body.start, 'YYYY-MM-DD')
@@ -52,8 +50,6 @@ router.get('', function (req, res, next) {
                     if(req.query.end) {
                         if (dayjs(req.query.end, 'YYYY-MM-DD').isValid()) {
                             body.end = req.query.end
-                        } else {
-                            body.end = dayjs.unix(req.query.end).format("YYYY-MM-DD");
                         }
                         if (dayjs(body.end, 'YYYY-MM-DD').isBefore(dayjs(body.start, 'YYYY-MM-DD'))) {
                             let args = dayjs(body.start, 'YYYY-MM-DD')
@@ -62,30 +58,19 @@ router.get('', function (req, res, next) {
                     }
                 }
                 if (req.query.hasOwnProperty("duration")) {
-                    if(req.query.duration) {
+                    if(req.query.duration.length > 0) {
                         if (req.query.duration.length === 1) {
-                            if (dayjs(req.query.duration[0], 'YYYY-MM-DD').isValid()) {
-                                body.start = req.query.duration[0]
-                            } else {
+
                                 body.start = dayjs.unix(req.query.duration[0]).format("YYYY-MM-DD");
-                            }
                         }
                         if (req.query.duration.length === 2) {
-                            if (dayjs(req.query.duration[0], 'YYYY-MM-DD').isValid()) {
-                                body.start = req.query.duration[0]
-                            } else {
                                 body.start = dayjs.unix(req.query.duration[0]).format("YYYY-MM-DD");
-                            }
-                            if (dayjs(req.query.duration[1], 'YYYY-MM-DD').isValid()) {
-                                body.end = req.query.duration[1]
-                            } else {
-                                body.start = dayjs.unix(req.query.duration[1]).format("YYYY-MM-DD");
+                                body.end = dayjs.unix(req.query.duration[1]).format("YYYY-MM-DD");
                             }
                             if (dayjs(body.end, 'YYYY-MM-DD').isBefore(dayjs(body.start, 'YYYY-MM-DD'))) {
                                 let args = dayjs(body.start, 'YYYY-MM-DD')
                                 body.end = args.add(5, "day").format("YYYY-MM-DD");
                             }
-                        }
                     }
                 }
                 if (req.query.hasOwnProperty("latitude")) {
