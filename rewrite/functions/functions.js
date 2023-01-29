@@ -44,9 +44,8 @@ module.exports = {
 
         var data = {}
         try {
-            cancellation = cancellation[0].cancellationPolicy
             if (DateStart) {
-                data.start = new Date(DateStart * 1000)
+                data.start = new Date(DateStart)
             }
 
 
