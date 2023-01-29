@@ -335,11 +335,12 @@ router.get('', function (req, res, next) {
                                 if (room.price !== null) {
                                     room['booking'] = "?add-to-cart=1209&propertyId=" + response.data[k].rooms[i].propertyId +
                                         "&roomId=" + response.data[k].rooms[i].id + "&product_id=1209" + "&startDate=" +
-                                        startDate + "&endDate=" + data.endDate + "&numberOfPeople=" + req.query.numberOfPeople + "&hotelname=" + response.data[k].name + "&roomname=" + response.data[k].rooms[i].name
+                                        data.startDate + "&endDate=" + data.endDate + "&numberOfPeople=" + req.query.numberOfPeople + "&hotelname=" + response.data[k].name + "&roomname=" + response.data[k].rooms[i].name
                                         + "&quantity=1"
                                     if (room.breakfastIncluded === false && room.breakfastAvailable === true) {
                                         room['priceWithBreakfast'] = parseInt(response.data[k].rooms[i].price + response.data[k].rooms[i].totalBreakfastPrice).toLocaleString("de-DE");
                                         room['priceWithBreakfastNicedollars'] = parseInt((response.data[k].rooms[i].price + response.data[k].rooms[i].totalBreakfastPrice) * 0.1).toLocaleString("de-DE");
+                                        room['bookingWithBreakfast'] = room.booking + "&breakfast=true"
                                         room.booking = room.booking + "&breakfast=false"
                                     } else {
                                         room.booking = room.booking + "&breakfast=true"
