@@ -25,6 +25,7 @@ router.post('/valid', function (req, res, next) {
                         "quantity": req.body.quantity,
                         "roomId": req.body.roomId,
                         "startDate": req.body.startDate,
+                        "breakfast": req.body.breakfast
                     }
                 ],
                 "confirm": false,
