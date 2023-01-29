@@ -188,7 +188,7 @@ router.get('', function (req, res, next) {
 
                             }
                             if (response.data[k].images.length > 0) {
-                                data['featureImage'] = response.data[k].logo.filePath;
+                                data['featureImage'] = response.data[k].images[0].filePath;
                                 let gallery = [];
                                 for (let i = 0; i < response.data[k].images.length; i++) {
                                     data['gallery' + i] = response.data[k].images[i].filePath;
