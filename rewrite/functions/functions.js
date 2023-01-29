@@ -37,7 +37,6 @@ module.exports = {
          let config = require('./config.json').cancellationPolicy;
          config.url = "https://stage-api.travia.is//api/v1/travelAgents/577/property/"+ id + "/cooperations"
          config.headers.Authorization = "Bearer " + token.access_token;
-         config.data = JSON.stringify(body);
          return await axios(config)
              .then(function (response) {
                  return response.data
