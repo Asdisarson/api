@@ -338,11 +338,11 @@ router.get('', function (req, res, next) {
                                         startDate + "&endDate=" + data.endDate + "&numberOfPeople=" + req.query.numberOfPeople + "&hotelname=" + response.data[k].name + "&roomname=" + response.data[k].rooms[i].name
                                         + "&quantity=1"
                                     if (room.breakfastIncluded === false && room.breakfastAvailable === true) {
-                                        room.priceWithBreakfast = parseInt(response.data[k].rooms[i].price + response.data[k].rooms[i].totalBreakfastPrice).toLocaleString("de-DE");
-                                        room.priceWithBreakfastNicedollars = parseInt((response.data[k].rooms[i].price + response.data[k].rooms[i].totalBreakfastPrice) * 0.1).toLocaleString("de-DE");
-                                        room.booking = room.booking + "&breakfast=true"
-                                    } else {
+                                        room['priceWithBreakfast'] = parseInt(response.data[k].rooms[i].price + response.data[k].rooms[i].totalBreakfastPrice).toLocaleString("de-DE");
+                                        room['priceWithBreakfastNicedollars'] = parseInt((response.data[k].rooms[i].price + response.data[k].rooms[i].totalBreakfastPrice) * 0.1).toLocaleString("de-DE");
                                         room.booking = room.booking + "&breakfast=false"
+                                    } else {
+                                        room.booking = room.booking + "&breakfast=true"
                                     }
                                 }
 
