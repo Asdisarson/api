@@ -413,6 +413,7 @@ router.get('', function (req, res, next) {
                                         } else {
                                             try {
                                                 var c = generateCancellationPolicy(body.propertyIds[0], body.numberOfRooms, body.start, result);
+                                                array.result[0]['cancellationPolicy'] = c;
                                                 for (let i = 0; i < array.result[0].rooms.length; i++) {
                                                     array.result[0].rooms[i]['cancellationPolicy'] = c;
                                                 }
