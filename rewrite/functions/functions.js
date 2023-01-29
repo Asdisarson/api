@@ -19,16 +19,25 @@ module.exports = {
             data : {}
         }
      },
+    removeFromCart:async function(token, id) {
+        let axios = require('axios');
+        let config = require('./config.json').RemoveBookingCart;
+        config.url = "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts/" + id.toString()
+        config.headers.Authorization = "Bearer " + token.access_token;
+        return await axios(config)
+            .then(function (response) {
+                return response.data
+            }).catch(function (error) {
+                console.log(error)
+                return false
+            })
+    },
      cancellationPolicy: async function(token,id) {
          let axios = require('axios');
-         let config = {
-             "method": "get",
-                 "url": "https://stage-api.travia.is//api/v1/travelAgents/577/property/"+ id + "/cooperations" ,
-                 "headers": {
-                 "Content-Type": "application/json",
-                     "Authorization" :"Bearer " + token.access_token
-             }
-         }
+         let config = require('./config.json').cancellationPolicy;
+         config.url = "https://stage-api.travia.is//api/v1/travelAgents/577/property/"+ id + "/cooperations"
+         config.headers.Authorization = "Bearer " + token.access_token;
+         config.data = JSON.stringify(body);
          return await axios(config)
              .then(function (response) {
                  return response.data

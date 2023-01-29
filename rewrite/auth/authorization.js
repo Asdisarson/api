@@ -5,7 +5,7 @@ const config = require("./config.json");
 module.exports = {
     getToken: async function () {
         var auth = require("./auth.json")
-        var data = qs.stringify(auth);
+        var data = qs.stringify(auth.travia);
         var config = require("./config.json");
 
         config.data = data;
@@ -17,5 +17,14 @@ module.exports = {
                 console.log(error);
                 return false
             });
+    },
+    checkAuth: function(password){
+        var auth = require("./auth.json");
+        if(auth.nicebooking === password) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }

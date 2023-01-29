@@ -9,6 +9,7 @@ var winston = require('winston'),
 
 const {getToken} = require("./auth/authorization");
 const indexRouter = require("./routes/search-route");
+const cartRouter = require("./routes/cart-route");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 app.use(express.json());
@@ -45,5 +46,6 @@ app.use((req, res, next) => {
     next()
 })
 app.use('/search', indexRouter);
+app.use('/cart', cartRouter);
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))

@@ -9,5 +9,17 @@
     "data" :{
 
     }
+  },
+  "valid_cart" : {
+    "method": "post",
+    "url": "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts?createNewBookingCart=true",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization" : ""
+    },
+    "data" :{
+
+    }
   }
+
 }

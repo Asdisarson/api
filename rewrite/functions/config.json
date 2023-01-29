@@ -1,0 +1,19 @@
+{
+  "cancellationPolicy" : {
+    "method": "get",
+    "url": "" ,
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization" : ""
+    }
+  },
+  "RemoveBookingCart" : {
+    "method": "delete",
+    "url": "",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization" : ""
+    }
+  }
+
+}

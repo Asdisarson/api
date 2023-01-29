@@ -59,10 +59,10 @@ router.post("/", function (req, res, next) {
         },
         "body": {}
     };
-    var date1 = new Date(req.body.startDate);
-    var date2 = new Date(req.body.endDate);
-    var timeDiff = Math.abs(date2.getTime() - date1.getTime());
-    var numberOfNights = Math.ceil(timeDiff / (1000 * 3600 * 24));
+                        var date1 = new Date(req.body.startDate);
+                        var date2 = new Date(req.body.endDate);
+                        var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+                        var numberOfNights = Math.ceil(timeDiff / (1000 * 3600 * 24));
     options.body = {
         "bookingRooms": [
             {
