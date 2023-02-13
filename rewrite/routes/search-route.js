@@ -338,7 +338,7 @@ router.get('', function (req, res, next) {
                                     room['booking'] = "?add-to-cart=1209&propertyId=" + response.data[k].rooms[i].propertyId +
                                         "&roomId=" + response.data[k].rooms[i].id + "&product_id=1209" + "&startDate=" +
                                         data.startDate + "&endDate=" + data.endDate + "&numberOfPeople=" + req.query.numberOfPeople + "&hotelname=" + response.data[k].name + "&roomname=" + response.data[k].rooms[i].name
-                                        "&numberOfRooms=" + req.query.numberOfRooms 
+                                       + "&numberOfRooms=" + req.query.numberOfRooms 
                                         + "&quantity=1"
                                     if (room.breakfastIncluded === false && room.breakfastAvailable === true) {
                                         room['priceWithBreakfast'] = parseInt(response.data[k].rooms[i].price + response.data[k].rooms[i].totalBreakfastPrice).toLocaleString("de-DE");
