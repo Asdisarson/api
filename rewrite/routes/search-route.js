@@ -249,7 +249,7 @@ router.get('', function (req, res, next) {
                                     room["name"] = response.data[k].rooms[i].name;
                                 }
                                 if (response.data[k].rooms[i].id !== null) {
-                                    room["id"] = response.data[k].rooms[i].id;
+                                    room["roomId"] = response.data[k].rooms[i].id;
                                 }
                                 if (response.data[k].rooms[i].description !== null) {
                                     room["description"] = response.data[k].rooms[i].description;
