@@ -187,11 +187,11 @@ router.get('', function (req, res, next) {
 
 
                             }
-                            if(response.data[k].logo !== null) {
-                                data['featureImage'] = response.data[k].logo.filePath;
-                            }
+                           
                             if (response.data[k].images.length > 0) {
-                                data['featureImage'] = response.data[k].images[0].filePath;
+                                if(response.data[k].featuredImageIndex !== null) {
+                                    data['featureImage'] = response.data[k].images[response.data[k].featuredImageIndex].filePath;
+                                }
                                 let gallery = [];
                                 for (let i = 0; i < response.data[k].images.length; i++) {
                                     data['gallery' + i] = response.data[k].images[i].filePath;
