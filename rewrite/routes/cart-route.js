@@ -71,7 +71,7 @@ router.post('/confirm', function (req, res, next) {
             let token = results;
             var options = {
                 "method": "post",
-                "url": "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts",
+                "url": "https://-api.travia.is/api/v1/travelAgents/577/bookingCarts",
                 "headers": {
                     "Authorization": "Bearer " + token.access_token,
                     "Content-Type": "application/json",
@@ -157,7 +157,7 @@ router.post('/confirm', function (req, res, next) {
             }
             for (var i = 0; i < bookings.length; i++) {
 
-                options.url = "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts/" + bookings[i].bookingCartId.toString()
+                options.url = "https://-api.travia.is/api/v1/travelAgents/577/bookingCarts/" + bookings[i].bookingCartId.toString()
                 options.method = "delete"
                 options.body = ''
                 request(options, function (error, response) {
@@ -165,7 +165,7 @@ router.post('/confirm', function (req, res, next) {
                 })
                 options.method = "post"
 
-                options.url = "https://stage-api.travia.is/api/v1/travelAgents/577/bookingCarts?createNewBookingCart=true";
+                options.url = "https://-api.travia.is/api/v1/travelAgents/577/bookingCarts?createNewBookingCart=true";
 
 
                 options.body = {
