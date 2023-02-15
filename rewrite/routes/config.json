@@ -1,7 +1,7 @@
 {
   "search" : {
     "method": "post",
-    "url": "https://api.travia.is/api/v1/travelAgents/577/search",
+    "url": "https://api.travia.is/api/v1/travelAgents/1665/search",
     "headers": {
       "Content-Type": "application/json",
       "Authorization" : ""
@@ -12,7 +12,7 @@
   },
   "valid_cart" : {
     "method": "post",
-    "url": "https://api.travia.is/api/v1/travelAgents/577/bookingCarts?createNewBookingCart=true",
+    "url": "https://api.travia.is/api/v1/travelAgents/1665/bookingCarts?createNewBookingCart=true",
     "headers": {
       "Content-Type": "application/json",
       "Authorization" : ""

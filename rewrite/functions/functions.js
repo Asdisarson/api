@@ -22,7 +22,7 @@ module.exports = {
     removeFromCart:async function(token, id) {
         let axios = require('axios');
         let config = require('./config.json').RemoveBookingCart;
-        config.url = "https://-api.travia.is/api/v1/travelAgents/577/bookingCarts/" + id.toString()
+        config.url = "https://-api.travia.is/api/v1/travelAgents/1665/bookingCarts/" + id.toString()
         config.headers.Authorization = "Bearer " + token.access_token;
         return await axios(config)
             .then(function (response) {
@@ -35,7 +35,7 @@ module.exports = {
      cancellationPolicy: async function(token,id) {
          let axios = require('axios');
          let config = require('./config.json').cancellationPolicy;
-         config.url = "https://-api.travia.is//api/v1/travelAgents/577/property/"+ id + "/cooperations"
+         config.url = "https://-api.travia.is//api/v1/travelAgents/1665/property/"+ id + "/cooperations"
          config.headers.Authorization = "Bearer " + token.access_token;
          return await axios(config)
              .then(function (response) {
