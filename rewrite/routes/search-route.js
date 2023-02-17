@@ -407,9 +407,9 @@ router.get('', function (req, res, next) {
                                 if (req.query.city) {
                                     var s = req.query.city;
                                     var str = substituteIcelandic(s); // Use the function to replace Icelandic letters with English letters
-                                    array.result = array.result.filter(hotel => substituteIcelandic(hotel.city), function (match) {
-                                        return translate[match];
-                                    } === str);
+                                    array.result = array.result.filter(hotel => {
+                                       return substituteIcelandic(hotel.city) === str
+                                    })
                                     
                                 }
                             }
