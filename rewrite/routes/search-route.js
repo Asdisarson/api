@@ -3,6 +3,18 @@ const {isEmpty, cancellationPolicy, generateCancellationPolicy} = require("../fu
 const dayjs = require("dayjs");
 const {getToken} = require("../auth/authorization");
 const router = express.Router();
+const icelandicLetters = "ÁáÐðÉéÍíÓóÚúÝýÞþÆæÖö";
+const englishLetters = "AaDdEeIiOoUuYyThthAeOo";
+
+// Define a function to substitute Icelandic letters for their English counterparts
+function substituteIcelandic(text) {
+  for (let i = 0; i < icelandicLetters.length; i++) {
+    const icelandic = icelandicLetters[i];
+    const english = englishLetters[i];
+    text = text.replace(new RegExp(icelandic, "g"), english);
+  }
+  return text;
+}
 router.get('', function (req, res, next) {
     getToken().then(function (results) {
         if (results.hasOwnProperty('access_token')) {
@@ -394,19 +406,11 @@ router.get('', function (req, res, next) {
                             if (req.query.hasOwnProperty('city')) {
                                 if (req.query.city) {
                                     var s = req.query.city;
-                                    var translate = {
-                                        "á": "a", "ö": "o", "ú": "u",
-                                        "Á": "A", "Ö": "O", "Ú": "U",
-                                        "Ý": "Y", "í": "i", "Í": "I",
-                                        "ý": "y", "ó": "o", "Ó": "O"   // probably more to come
-                                    };
-                                    var translate_re = /[áÁöÖúÚóÓýÝíÍ]/g;
-                                    var str = (s.replace(translate_re, function (match) {
+                                    var str = substituteIcelandic(s); // Use the function to replace Icelandic letters with English letters
+                                    array.result = array.result.filter(hotel => substituteIcelandic(hotel.city), function (match) {
                                         return translate[match];
-                                    }));
-                                    array.result = array.result.filter(hotel => hotel.city.replace(translate_re, function (match) {
-                                        return translate[match];
-                                    }) === (req.query.city || str));
+                                    } === str);
+                                    
                                 }
                             }
                             if (body.hasOwnProperty('propertyIds')) {
