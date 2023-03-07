@@ -383,9 +383,9 @@ router.get('', function (req, res, next) {
                                 }
                                 if (response.data[k].rooms[i].roomAmenityTypes.length > 0) {
                                     for (let j = 0; j < response.data[k].rooms[i].roomAmenityTypes.length; j++) {
-                                        roomAmenityTypes.push({
-                                            name: response.data[k].rooms[i].roomAmenityTypes[j].name,
-                                        });
+                                        roomAmenityTypes.push(
+                                         response.data[k].rooms[i].roomAmenityTypes[j].name,
+                                        );
                                     }
                                 }
                                 if (roomAmenityTypes.length > 0) {
