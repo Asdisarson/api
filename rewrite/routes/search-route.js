@@ -346,6 +346,7 @@ router.get('', function (req, res, next) {
                                     room["extraBedOriginalPrice"] = parseInt(response.data[k].rooms[i].extraBedOriginalPrice).toLocaleString('de-DE')
                                 }
 
+                                var roomAmenityTypes = [];
                                 var addons = [];
                                 if (room.price !== null) {
                                     room['booking'] = "?add-to-cart=1209&propertyId=" + response.data[k].rooms[i].propertyId +
@@ -380,7 +381,16 @@ router.get('', function (req, res, next) {
                                         });
                                     }
                                 }
-
+                                if (response.data[k].rooms[i].roomAmenityTypes.length > 0) {
+                                    for (let j = 0; j < response.data[k].rooms[i].roomAmenityTypes.length; j++) {
+                                        roomAmenityTypes.push({
+                                            name: response.data[k].rooms[i].roomAmenityTypes[j].name,
+                                        });
+                                    }
+                                }
+                                if (roomAmenityTypes.length > 0) {
+                                    room['roomAmenity'] = roomAmenityTypes;
+                                }
                                 if (addons.length > 0) {
                                     room['addons'] = addons;
                                 }
