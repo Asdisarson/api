@@ -7,7 +7,7 @@ module.exports = {
     },
     form: {
         'grant_type': 'password',
-        'username': 'hafsteinn@pineapple.is',
-        'password': 'Novatron'
+        'username': 'larus@islandsvefir.is',
+        'password': 'TAbekind4441!'
     }
 };
